@@ -2,6 +2,7 @@ import streamlit as st
 import psycopg2
 import os
 from sqlalchemy import text
+import hydralit_components as hc
 
 
 
