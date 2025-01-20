@@ -4,7 +4,8 @@ import os
 from sqlalchemy import text
 from streamlit_navigation_bar import st_navbar
 
-
+page3 = st_navbar(["Home", "Documentation", "Examples", "Community", "About"],key=4)
+st.write(page3)
 
 
 
@@ -49,8 +50,7 @@ def show_fuentes():
   )
   
   st.write(page)
-  page3 = st_navbar(["Home", "Documentation", "Examples", "Community", "About"],key=4)
-  st.write(page3)
+
 
 
 
