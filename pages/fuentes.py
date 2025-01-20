@@ -11,6 +11,23 @@ def show_fuentes():
   vdetalle = ''
   vlink = ''
   vimagen = ''
+  option_data = [
+   {'icon': "bi bi-hand-thumbs-up", 'label':"Agree"},
+   {'icon':"fa fa-question-circle",'label':"Unsure"},
+   {'icon': "bi bi-hand-thumbs-down", 'label':"Disagree"},
+  ]
+
+
+  over_theme = {'txc_inactive': 'white','menu_background':'purple','txc_active':'yellow','option_active':'blue'}
+  font_fmt = {'font-class':'h2','font-size':'150%'}
+
+  op = hc.option_bar(option_definition=option_data,title='Feedback Response',key='PrimaryOption',override_theme=over_theme,font_styling=font_fmt,horizontal_orientation=True)
+
+  op2 = hc.option_bar(option_definition=option_data,title='Feedback Response',key='PrimaryOption',override_theme=over_theme,font_styling=font_fmt,horizontal_orientation=False)
+
+
+
+  
   col1, col2, col3,col4,col5,col6,col7 = st.columns(7)
   if col1.button("Home" ,  type='primary'):
     st.switch_page("streamlit_app.py")
