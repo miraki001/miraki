@@ -33,7 +33,7 @@ def show_fuentes():
           "background-color": "white",
           "color": "var(--text-color)",
           "font-weight": "normal",
-          "padding": "54px",
+          "padding": "14px",
       }
   }
   options = {
