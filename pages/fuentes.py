@@ -22,7 +22,7 @@ def show_fuentes():
   over_theme = {'txc_inactive': 'white','menu_background':'purple','txc_active':'yellow','option_active':'blue'}
   #font_fmt = {'font-class':'h2','font-size':'150%'}
 
-  op = hc.option_bar(option_definition=option_data,title='Fuentes,key='PrimaryOption',override_theme=over_theme,font_styling=font_fmt,horizontal_orientation=True)
+  op = hc.option_bar(option_definition=option_data,title='Fuentes',key='PrimaryOption',override_theme=over_theme,font_styling=font_fmt,horizontal_orientation=True)
 
   op2 = hc.option_bar(option_definition=option_data,title='Feedback Response',key='PrimaryOption',override_theme=over_theme,font_styling=font_fmt,horizontal_orientation=False)
 
