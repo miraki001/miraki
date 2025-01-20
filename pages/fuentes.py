@@ -7,6 +7,7 @@ import hydralit_components as hc
 
 
 def show_fuentes():
+  st.set_page_config(initial_sidebar_state="collapsed")
   tnuri = 0
   vtitulo= ''
   vdetalle = ''
