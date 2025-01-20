@@ -48,7 +48,9 @@ def show_fuentes():
       key= 2,
   )
   
-st.write(page)
+  st.write(page)
+  page3 = st_navbar(["Home", "Documentation", "Examples", "Community", "About"],key=4)
+  st.write(page3)
 
 
 
