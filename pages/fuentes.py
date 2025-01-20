@@ -10,7 +10,7 @@ def show_fuentes():
   vdetalle = ''
   vlink = ''
   vimagen = ''
-  spage = st_navbar(["Home", "Documentation", "Examples", "Community", "About"])
+  spage = st_navbar(["Home", "Documentation", "Examples", "Community", "About"], selected="Page 1")
   st.write(spage)
   
 
