@@ -13,9 +13,10 @@ def show_fuentes():
   vlink = ''
   vimagen = ''
   option_data = [
-   {'icon': "bi bi-hand-thumbs-up", 'label':"Agree"},
-   {'icon':"fa fa-question-circle",'label':"Unsure"},
-   {'icon': "bi bi-hand-thumbs-down", 'label':"Disagree"},
+   {'icon': "bi bi-hand-thumbs-up", 'label':"Ingresar"},
+   {'icon':"fa fa-question-circle",'label':"Editar"},
+   {'icon': "bi bi-hand-thumbs-down", 'label':"Borrar"},
+   {'icon': "bi bi-hand-thumbs-down", 'label':"Duplicar"},    
   ]
 
 
@@ -24,7 +25,7 @@ def show_fuentes():
 
   op = hc.option_bar(option_definition=option_data,title='Fuentes',key='PrimaryOption',override_theme=over_theme,horizontal_orientation=True)
 
-  op2 = hc.option_bar(option_definition=option_data,title='Feedback Response',key='PrimaryOption1',override_theme=over_theme,horizontal_orientation=False)
+  #op2 = hc.option_bar(option_definition=option_data,title='Feedback Response',key='PrimaryOption1',override_theme=over_theme,horizontal_orientation=False)
 
 
 
