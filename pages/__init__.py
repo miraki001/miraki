@@ -1,2 +1,2 @@
-from pages.fuentes import show_fuentes2
+from pages.fuentes import show_fuentes
 
