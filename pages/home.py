@@ -3,6 +3,7 @@ import streamlit as st
 
 def show_home():
     st.header("Miraki")
+    st.set_page_config(initial_sidebar_state="collapsed")
     st.write(
         """
         Miraki
