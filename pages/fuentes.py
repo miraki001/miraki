@@ -15,7 +15,7 @@ def show_fuentes():
   vdetalle = ''
   vlink = ''
   vimagen = ''
-  pages1 = ["Home", "Ingresar", "Editar", "Borrar", "Duplicar", "Parametros", "GitHub"]
+  pages = ["Home", "Ingresar", "Editar", "Borrar", "Duplicar", "Parametros", "GitHub"]
   parent_dir = os.path.dirname(os.path.abspath(__file__))
   styles = {
       "nav": {
@@ -42,7 +42,7 @@ def show_fuentes():
   }
 
   page = st_navbar(
-      pages1,
+      pages,
       styles=styles,
       options=options,
       key= 2,
