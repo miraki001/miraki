@@ -1,2 +1,1 @@
-from pages.fuentes import show_fuentes
-
+from pages.home import show_home
