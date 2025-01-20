@@ -5,8 +5,10 @@ def show_home():
     st.header("Miraki")
     st.write(
         """
-        Miraki/n
+        Miraki
+        
         Plataforma de Vigilancia Tecnologica e Inteligencia Competitiva.
+        
         ornare. Morbi id ex pulvinar dui placerat congue. Suspendisse ultricies, lacus
         eget porttitor blandit, enim nisi tincidunt eros, nec varius tortor turpis et
         tortor.
