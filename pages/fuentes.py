@@ -13,10 +13,10 @@ def show_fuentes():
   vlink = ''
   vimagen = ''
   option_data = [
-   {'icon': "bi bi-hand-thumbs-up", 'label':"Ingresar"},
-   {'icon':"fa fa-question-circle",'label':"Editar"},
-   {'icon': "bi bi-hand-thumbs-down", 'label':"Borrar"},
-   {'icon': "🍷", 'label':"Duplicar"},    
+   {'icon': "➕", 'label':"Ingresar"},
+   {'icon':"📝",'label':"Editar"},
+   {'icon': "➖", 'label':"Borrar"},
+   {'icon': "🟰", 'label':"Duplicar"},    
   ]
 
 
