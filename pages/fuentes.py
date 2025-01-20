@@ -52,7 +52,7 @@ def show_fuentes():
   
   st.write(page)
 
-if page == "Home":
+if page1 == "Home":
     st.switch_page("miraki.py")
 
 
