@@ -8,6 +8,16 @@ import hydralit_components as hc
 
 def show_fuentes():
   st.set_page_config(initial_sidebar_state="collapsed")
+  st.markdown(
+      """
+    <style>
+      [data-testid="collapsedControl"] {
+          display: none
+      }
+    </style>
+      """,
+    unsafe_allow_html=True,
+  )
   tnuri = 0
   vtitulo= ''
   vdetalle = ''
