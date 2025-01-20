@@ -10,6 +10,8 @@ def show_fuentes():
   vdetalle = ''
   vlink = ''
   vimagen = ''
+  page = st_navbar(["Home", "Documentation", "Examples", "Community", "About"])
+  st.write(page)
   
 
 
