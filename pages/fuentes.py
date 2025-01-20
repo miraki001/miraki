@@ -45,7 +45,6 @@ def show_fuentes():
       pages,
       styles=styles,
       options=options,
-      key= 2,
   )
   
   st.write(page)
