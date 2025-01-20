@@ -24,7 +24,7 @@ def show_fuentes():
 
   op = hc.option_bar(option_definition=option_data,title='Fuentes',key='PrimaryOption',override_theme=over_theme,horizontal_orientation=True)
 
-  op2 = hc.option_bar(option_definition=option_data,title='Feedback Response',key='PrimaryOption',override_theme=over_theme,horizontal_orientation=False)
+  op2 = hc.option_bar(option_definition=option_data,title='Feedback Response',key='PrimaryOption1',override_theme=over_theme,horizontal_orientation=False)
 
 
 
