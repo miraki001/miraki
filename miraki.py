@@ -45,6 +45,9 @@ page = st_navbar(
     key= 1,
 )
 
+if page == "Fuentes":
+    st.switch_page("./pages/fuentes.py")
+"""
 functions = {
     "Home": pg.show_home,
     "Seleccionar": pg.show_home,
@@ -58,3 +61,4 @@ go_to = functions.get(page)
 if go_to:
     go_to()
 
+"""
