@@ -46,11 +46,11 @@ page = st_navbar(
 
 functions = {
     "Home": pg.show_home,
-    "Install": pg.show_fuentes,
-    "User Guide": pg.show_fuentes,
-    "API": pg.show_fuentes,
-    "Examples": pg.show_fuentes,
-    "Community": pg.show_fuentes,
+    "Install": pg.show_home,
+    "User Guide": pg.show_home,
+    "API": pg.show_home,
+    "Examples": pg.show_home,
+    "Community": pg.show_home,
 }
 go_to = functions.get(page)
 if go_to:
