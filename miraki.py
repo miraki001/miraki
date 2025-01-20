@@ -14,7 +14,7 @@ logo_path = os.path.join(parent_dir, "cubes.svg")
 urls = {"GitHub": "https://github.com/miraki001/miraki/blob/main/miraki.py"}
 styles = {
     "nav": {
-        "background-color": "royalblue",
+        "background-color": "#604283",
         "justify-content": "left",
     },
     "img": {
