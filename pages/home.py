@@ -5,8 +5,8 @@ def show_home():
     st.header("Home")
     st.write(
         """
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra
-        facilisis mauris, vel consequat odio. Nam pretium neque id sem malesuada
+        Miraki
+        Plataforma de Vigilancia Tecnologica e Inteligencia Competitiva.
         ornare. Morbi id ex pulvinar dui placerat congue. Suspendisse ultricies, lacus
         eget porttitor blandit, enim nisi tincidunt eros, nec varius tortor turpis et
         tortor.
