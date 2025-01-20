@@ -7,9 +7,6 @@ wordcloud
 nltk
 gensim 
 scikit-learn
-hydralit_components
-hydralit 
-streamlit_multipage 
 selenium==4.11.2
 webdriver-manager
 streamlit_extras
@@ -17,6 +14,4 @@ streamlit_echarts
 psutil
 requests
 beautifulsoup4==4.9.0
-langchain
-langchain_ollama
 streamlit_navigation_bar 
