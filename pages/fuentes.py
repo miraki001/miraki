@@ -4,8 +4,6 @@ import os
 from sqlalchemy import text
 from streamlit_navigation_bar import st_navbar
 
-page3 = st_navbar(["Home", "Documentation", "Examples", "Community", "About"],key=4)
-st.write(page3)
 
 
 
@@ -28,13 +26,13 @@ def show_fuentes():
       },
       "span": {
           "color": "white",
-          "padding": "14px",
+          "padding": "44px",
       },
       "active": {
           "background-color": "white",
           "color": "var(--text-color)",
           "font-weight": "normal",
-          "padding": "14px",
+          "padding": "54px",
       }
   }
   options = {
