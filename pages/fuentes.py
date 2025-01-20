@@ -16,7 +16,7 @@ def show_fuentes():
    {'icon': "bi bi-hand-thumbs-up", 'label':"Ingresar"},
    {'icon':"fa fa-question-circle",'label':"Editar"},
    {'icon': "bi bi-hand-thumbs-down", 'label':"Borrar"},
-   {'icon': "bi bi-hand-thumbs-down", 'label':"Duplicar"},    
+   {'icon': "bi questionn", 'label':"Duplicar"},    
   ]
 
 
