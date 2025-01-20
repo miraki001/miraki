@@ -2,6 +2,7 @@ import streamlit as st
 import psycopg2
 import os
 from sqlalchemy import text
+from streamlit_navigation_bar import st_navbar
 import hydralit_components as hc
 
 
@@ -19,7 +20,12 @@ def show_fuentes():
    {'icon': "bi bi-hand-thumbs-down", 'label':"Duplicar"},    
   ]
 
+  col11 = st.columns(1)
+  if col11:
+    page = st_navbar(["Home", "Documentation", "Examples", "Community", "About"])
+    st.write(page)
 
+  
   over_theme = {'txc_inactive': 'white','menu_background':'purple','txc_active':'yellow','option_active':'blue'}
   #font_fmt = {'font-class':'h2','font-size':'150%'}
 
