@@ -6,7 +6,7 @@ from streamlit_navigation_bar import st_navbar
 
 
 
-page = st_navbar(["Home", "Page 1", "Page 2"], selected="Page 2")
+#page = st_navbar(["Home", "Page 1", "Page 2"], selected="Page 2")
 
 
 def show_fuentes():
