@@ -8,6 +8,9 @@ from streamlit_navigation_bar import st_navbar
 
 page = st_navbar(["Home", "Page 1", "Page 2"], selected="Page 2")
 
+if page == "Fuentes":
+    st.switch_page("miraki.py")
+
 def show_fuentes():
   tnuri = 0
   vtitulo= ''
