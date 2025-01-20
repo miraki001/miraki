@@ -8,10 +8,10 @@ import pages as pg
 
 st.set_page_config(initial_sidebar_state="collapsed")
 
-pages = ["Install", "User Guide", "API", "Examples", "Community", "GitHub"]
+pages = ["Seleccionar", "Editar", "Desmarcar", "Informes", "Fuentes", "Parametros"]
 parent_dir = os.path.dirname(os.path.abspath(__file__))
 logo_path = os.path.join(parent_dir, "cubes.svg")
-urls = {"GitHub": "https://github.com/gabrieltempass/streamlit-navigation-bar"}
+urls = {"GitHub": "https://github.com/miraki001/miraki/blob/main/miraki.py"}
 styles = {
     "nav": {
         "background-color": "royalblue",
