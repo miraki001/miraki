@@ -50,7 +50,7 @@ functions = {
     "Editar": pg.show_home,
     "Desmarcar": pg.show_home,
     "Informes": pg.show_home,
-    "Fuentes": pg.show_home,
+    "Fuentes": pg.show_fuentes,
     "Parametros": pg.show_home,
 }
 go_to = functions.get(page)
