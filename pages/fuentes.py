@@ -26,8 +26,8 @@ def show_fuentes():
   option_data = [
    {'icon': " ➕ ", 'label':"Ingresar"},
    {'icon':" 📝 ",'label':"Editar"},
-   {'icon': " ➖ ", 'label':"Borrar"},
-   {'icon': "🟰", 'label':"Duplicar"},    
+   {'icon': " ❌ ", 'label':"Borrar"},
+   {'icon': " ⏸️ ", 'label':"Duplicar"},    
   ]
 
 
