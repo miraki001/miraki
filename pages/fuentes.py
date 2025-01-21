@@ -21,8 +21,8 @@ def show_fuentes():
   )
   col = st.columns((6.5, 4.5, 2), gap='medium')
   with col[0]:
-    selected = option_menu(None, ["Home", 'Ingresar'], 
-        icons=['house', 'gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
+    selected = option_menu(None, ["Home", 'Ingresar','Editar' ], 
+        icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
         styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
         "icon": {"color": "orange", "font-size": "14px"}, 
@@ -36,7 +36,11 @@ def show_fuentes():
       st.page_link(page='pages/editar_fuentes.py')
       #show_editar_fuentes()
       #st.switch_page("./pages/editar_fuentes.py")   
-  
+  if selected=="Editar":
+      st.session_state['vTipo'] = 'Ingresar'
+      st.page_link(page='pages/editar_fuentes.py')
+      #show_editar_fuentes()
+      st.switch_page("./pages/sectores.py") 
   tnuri = 0
   vtitulo= ''
   vdetalle = ''
