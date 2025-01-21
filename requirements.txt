@@ -3,3 +3,4 @@ psycopg2-binary
 sqlalchemy
 beautifulsoup4==4.9.0
 streamlit_option_menu
+hydralit_components 
