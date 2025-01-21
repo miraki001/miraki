@@ -8,7 +8,6 @@ import pages as pg
 #from pages import editar_fuentes
 
 def show_fuentes():
-  #st.set_page_config(initial_sidebar_state="collapsed")
   st.markdown(
       """
     <style>
