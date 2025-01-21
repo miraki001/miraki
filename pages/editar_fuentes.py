@@ -9,7 +9,7 @@ def show_editar_fuentes():
 
     #st.set_page_config(initial_sidebar_state="collapsed",
     #              layout="wide",)
-
+"""
     pages = ["Seleccionar", "Editar", "Desmarcar", "Informes", "Fuentes", "Parametros", "GitHub"]
     parent_dir = os.path.dirname(os.path.abspath(__file__))
     logo_path = os.path.join(parent_dir, "cubes.svg")
@@ -46,7 +46,7 @@ def show_editar_fuentes():
         options=options,
         key= 12,
     )
-
+"""
     if page == "Fuentes":
        st.write('aca') 
        pg.show_fuentes()
