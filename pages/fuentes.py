@@ -7,7 +7,8 @@ from streamlit_option_menu import option_menu
 #import pages as pg
 #from pages import editar_fuentes
 
-
+st.set_page_config(initial_sidebar_state="collapsed",
+                  layout="wide",menu_items=None)
 st.markdown(
     """
     <style>
@@ -31,7 +32,7 @@ with col[0]:
   )
 
 
-if selected=="Homes":
+if selected=="Home":
     st.switch_page("miraki.py") 
 if selected=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
