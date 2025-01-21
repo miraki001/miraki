@@ -4,7 +4,7 @@ from sqlalchemy import text
 
 
 def show_editar_fuentes():
-    st.set_page_config(layout="wide")
+    #st.set_page_config(layout="wide")
     conn = st.connection("postgresql", type="sql")
 
     def ingresar():
