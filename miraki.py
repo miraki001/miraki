@@ -46,7 +46,7 @@ page = st_navbar(
     key= 1,
 )
 
-if page == 'Fuentes':
+if page == "Fuentes":
    st.write('aca') 
    st.switch_page("./pages/fuentes.py")
 if page == "Home":
