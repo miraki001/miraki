@@ -27,6 +27,7 @@ def show_fuentes():
         "icon": {"color": "orange", "font-size": "25px"}, 
         "nav-link": {"font-size": "25px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
         "nav-link-selected": {"background-color": "green"}
+        }
       )
 
     if select="Ingresar"
