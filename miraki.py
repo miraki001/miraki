@@ -48,7 +48,7 @@ page = st_navbar(
 
 if page == "Fuentes":
    st.write('aca') 
-   st.session_state['vTipo'] = 'Editar'
+   st.session_state['vTipo'] = 'Ingresar'
    pg.show_editar_fuentes()
 if page == "Home":
    pg.show_home()  
