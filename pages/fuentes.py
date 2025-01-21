@@ -20,7 +20,7 @@ st.markdown(
 )
 col = st.columns((6.5, 4.5, 2), gap='medium')
 with col[0]:
-  selected = option_menu(None, ["Home", 'Ingresar','Editar' ], 
+  selected = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar' ], 
       icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
@@ -30,6 +30,9 @@ with col[0]:
       }
   )
 
+
+if selected=="Homes":
+    st.switch_page("miraki.py") 
 if selected=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
     #pg.show_editar_fuentes()
