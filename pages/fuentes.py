@@ -52,7 +52,7 @@ def show_fuentes():
   # {'icon':" 📝 ",'label':"Editar"},
   # {'icon': " ❌ ", 'label':"Borrar"},
   # {'icon': " ⏸️ ", 'label':"Duplicar"},    
-  3]
+  #]
 
 
   
