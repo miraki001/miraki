@@ -33,14 +33,14 @@ def show_fuentes():
 
   if selected=="Ingresar":
       st.session_state['vTipo'] = 'Ingresar'
-      st.page_link(page='pages/editar_fuentes.py')
+      #st.page_link(page='pages/editar_fuentes.py')
       #show_editar_fuentes()
       #st.switch_page("./pages/editar_fuentes.py")   
   if selected=="Editar":
       st.session_state['vTipo'] = 'Ingresar'
       pg.show_editar_fuentes()
       #show_editar_fuentes()
-      st.switch_page("./pages/sectores.py") 
+      #st.switch_page("./pages/sectores.py") 
   tnuri = 0
   vtitulo= ''
   vdetalle = ''
