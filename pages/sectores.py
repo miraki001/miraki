@@ -42,7 +42,7 @@ page = st_navbar(
     urls=urls,
     styles=styles,
     options=options,
-    key= 1,
+    key= 14,
 )
 
 
