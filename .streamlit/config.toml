@@ -2,4 +2,6 @@
 fileWatcherType = "poll"
 [ui]
 hideTopBar = true
+[client]
+showSidebarNavigation = false
 
