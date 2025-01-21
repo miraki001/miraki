@@ -1,11 +1,10 @@
 import streamlit as st
 
 
-def show_home():
-    st.header("Miraki")
+st.header("Miraki")
 
-    st.write(
-        """
+st.write(
+    """
         Miraki
         
         Plataforma de Vigilancia Tecnologica e Inteligencia Competitiva.
@@ -21,5 +20,5 @@ def show_home():
         lectus. Pellentesque id laoreet ex, sit amet consequat leo. Aenean commodo
         luctus tristique. Curabitur arcu urna, tempus ut lectus et, pulvinar lobortis
         urna.
-        """
-    )
+    """
+)
