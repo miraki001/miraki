@@ -43,7 +43,7 @@ if tipo == 'Editar':
     idioma = st.session_state['vidioma']
     codigo = st.session_state['vcod']
 
-if tipo == 'Editar':
+if tipo == 'Ingresar':
     fuente = ''
     pais = ''
     activa = ''
