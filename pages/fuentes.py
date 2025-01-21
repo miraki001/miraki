@@ -24,9 +24,9 @@ def show_fuentes():
   vlink = ''
   vimagen = ''
   option_data = [
-   {'icon': "➕", 'label':"Ingresar"},
-   {'icon':"📝",'label':"Editar"},
-   {'icon': "➖", 'label':"Borrar"},
+   {'icon': " ➕ ", 'label':"Ingresar"},
+   {'icon':" 📝 ",'label':"Editar"},
+   {'icon': " ➖ ", 'label':"Borrar"},
    {'icon': "🟰", 'label':"Duplicar"},    
   ]
 
