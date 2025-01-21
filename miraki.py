@@ -31,6 +31,6 @@ selected1 = option_menu(None, ["Miraki", 'Ingresar','Editar', 'Informes','Parame
         "nav-link-selected": {"background-color": "#604283"}
         }
   )
-if selected1=="Miraki":
+if selected1=="Ingresar":
   st.write('aca')
   st.switch_page("./pages/home.py")
