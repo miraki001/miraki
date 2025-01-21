@@ -20,8 +20,7 @@ selected = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Param
         }
   )
 
-if selected=="Miraki":
-  st.switch_page("./pages/home.py")
+
 
 selected1 = option_menu(None, ["Miraki", 'Ingresar','Editar', 'Informes','Parametros','Github' ], 
         icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
@@ -33,5 +32,3 @@ selected1 = option_menu(None, ["Miraki", 'Ingresar','Editar', 'Informes','Parame
         }
   )
 
-if selected1=="Miraki":
-  st.switch_page("./pages/home.py")
