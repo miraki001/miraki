@@ -21,7 +21,7 @@ st.markdown(
 )
 col = st.columns((6.5, 4.5, 2), gap='medium')
 with col[0]:
-  selected4 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar' ], 
+  selected4 = option_menu(None, ["Home1", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar' ], 
       icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
