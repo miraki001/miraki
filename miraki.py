@@ -31,4 +31,5 @@ selected1 = option_menu(None, ["Miraki", 'Ingresar','Editar', 'Informes','Parame
         "nav-link-selected": {"background-color": "#604283"}
         }
   )
-
+if selected1=="Miraki":
+  st.write('aca')
