@@ -8,16 +8,7 @@ st.set_page_config(initial_sidebar_state="collapsed",
 
 
 
-st.markdown("""
-        <style>
-               .block-container {
-                    padding-top: 0rem;
-                    padding-bottom: 0rem;
-                    padding-left: 5rem;
-                    padding-right: 5rem;
-                }
-        </style>
-        """, unsafe_allow_html=True)
+
 
 selected = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Parametros','Github' ], 
         icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
