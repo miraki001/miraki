@@ -6,7 +6,7 @@ import streamlit as st
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",)
 
-selected = option_menu(None, ["Home", 'Ingresar','Editar' ], 
+selected = option_menu(None, ["Home", 'Ingresar','Editar','Github' ], 
         icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
         styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
