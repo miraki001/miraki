@@ -7,7 +7,7 @@ import pages as pg
 
 
 
-def sectores():
+def show_sectores():
 
             col1, col2, col3,col4 = st.columns(4)
 
