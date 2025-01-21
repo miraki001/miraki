@@ -1,4 +1,4 @@
 [server]
 fileWatcherType = "poll"
-ui]
+[ui]
 hideTopBar = true
