@@ -6,7 +6,14 @@ import streamlit as st
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",)
 
+st.markdown("""
+<style>
+	[data-testid="stDecoration"] {
+		display: none;
+	}
 
+</style>""",
+unsafe_allow_html=True)
 
 hide_menu_style = """
         <style>
