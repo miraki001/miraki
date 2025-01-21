@@ -1,7 +1,5 @@
 [server]
 fileWatcherType = "poll"
-[client]
-toolbarMode = “minimal”
 [ui]
 hideTopBar = true
 
