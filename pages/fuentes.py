@@ -5,7 +5,7 @@ from sqlalchemy import text
 import hydralit_components as hc
 from streamlit_option_menu import option_menu
 #import pages as pg
-from miraki.pages.editar_fuentes import show_editar_fuentes
+from pages import editar_fuentes
 
 def show_fuentes():
   #st.set_page_config(initial_sidebar_state="collapsed")
