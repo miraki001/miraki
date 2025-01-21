@@ -4,7 +4,7 @@ import os
 from sqlalchemy import text
 import hydralit_components as hc
 from streamlit_option_menu import option_menu
-
+import pages as pg
 
 def show_fuentes():
   #st.set_page_config(initial_sidebar_state="collapsed")
@@ -32,7 +32,8 @@ def show_fuentes():
 
   if selected=="Ingresar":
       st.session_state['vTipo'] = 'Ingresar'
-      st.switch_page("./pages/editar_fuentes.py")   
+      show_editar_fuentes()
+      #st.switch_page("./pages/editar_fuentes.py")   
   
   tnuri = 0
   vtitulo= ''
