@@ -7,7 +7,7 @@ import hydralit_components as hc
 
 
 def show_fuentes():
-  st.set_page_config(initial_sidebar_state="collapsed")
+  #st.set_page_config(initial_sidebar_state="collapsed")
   st.markdown(
       """
     <style>
