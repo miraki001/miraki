@@ -6,16 +6,13 @@ import streamlit as st
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",)
 
-
-hide_streamlit_style = """
-<style>
-    #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 0rem;}
-</style>
-
+no_sidebar_style = """
+    <style>
+        div[data-testid="stSidebarNav"] {display: none;}
+    </style>
 """
-st.title("Test")
-if st.checkbox('Remove padding'):
-    st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+st.markdown(no_sidebar_style, unsafe_allow_html=True)
+
 
 selected = option_menu(None, ["Home", 'Ingresar','Editar','Github' ], 
         icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
