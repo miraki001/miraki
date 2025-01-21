@@ -93,6 +93,7 @@ def show_editar_fuentes():
         busqueda = st.session_state['vbus']
         idioma = st.session_state['vidioma']
         codigo = st.session_state['vcod']
+        observa = st.session_state['vobserva']
 
     if tipo == 'Ingresar':
         fuente = ''
@@ -118,6 +119,7 @@ def show_editar_fuentes():
         busqueda = ''
         idioma = ''
         codigo = ''
+        observa = ''
 
     st.markdown("""
     <style>
@@ -137,7 +139,7 @@ def show_editar_fuentes():
 
     vtitle = st.text_input("fuente", fuente)
     vurl = st.text_input("url ", url)
-    observa = st.text_input("Observaciones ",  st.session_state['vobserva'])
+    observa = st.text_input("Observaciones ",  observa)
 
     col = st.columns((6.5, 4.5, 2), gap='medium')
 
