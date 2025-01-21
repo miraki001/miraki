@@ -15,7 +15,7 @@ hide_menu_style = """
         """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
-selected = option_menu(None, ["Home", 'Ingresar','Editar','Github' ], 
+selected = option_menu(None, ["Home", 'Novedades','Fuentes', 'Informes','Parametros','Github' ], 
         icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
         styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
