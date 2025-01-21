@@ -33,3 +33,4 @@ selected1 = option_menu(None, ["Miraki", 'Ingresar','Editar', 'Informes','Parame
   )
 if selected1=="Miraki":
   st.write('aca')
+  st.switch_page("./pages/home.py")
