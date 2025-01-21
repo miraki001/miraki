@@ -54,8 +54,8 @@ if page == "Home":
 if page == "Informes":
    #st.switch_page("./pages/sectores.py")  
 
-"""
-functions = {
+ """
+  functions = {
     "Home": pg.show_home,
     "Seleccionar": pg.show_home,
     "Editar": pg.show_home,
@@ -63,9 +63,9 @@ functions = {
     "Informes": pg.show_home,
     "Fuentes": pg.show_fuentes,
     "Parametros": pg.show_home,
-}
-go_to = functions.get(page)
-if go_to:
+  }
+  go_to = functions.get(page)
+  if go_to:
     go_to()
 
-"""
+ """
