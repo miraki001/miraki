@@ -24,3 +24,6 @@ selected1 = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Para
 if selected1=="Miraki":
   st.write('aca')
   st.switch_page("./pages/home.py")
+if selected1=="Fuentes":
+  st.write('aca')
+  st.switch_page("./pages/fuentes.py")
