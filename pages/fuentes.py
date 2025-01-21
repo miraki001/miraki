@@ -22,7 +22,7 @@ st.markdown(
 col = st.columns((6.5, 4.5, 2), gap='medium')
 with col[0]:
   selected4 = option_menu(None, ["Home1", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar' ], 
-      icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
+      icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=-1,
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
         "icon": {"color": "orange", "font-size": "14px"}, 
@@ -32,7 +32,7 @@ with col[0]:
   )
 
 
-if selected4=="Home":
+if selected4=="Home1":
     st.switch_page("miraki.py") 
 if selected4=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
