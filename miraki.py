@@ -19,7 +19,7 @@ st.markdown("""
         </style>
         """, unsafe_allow_html=True)
 
-selected = option_menu(None, ["Home", 'Novedades','Fuentes', 'Informes','Parametros','Github' ], 
+selected = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Parametros','Github' ], 
         icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
         styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
@@ -28,6 +28,9 @@ selected = option_menu(None, ["Home", 'Novedades','Fuentes', 'Informes','Paramet
         "nav-link-selected": {"background-color": "#604283"}
         }
   )
+
+if selected=="Miraki":
+  st.switch_page("./pages/home.py")
 
 selected1 = option_menu(None, ["Home", 'Ingresar','Editar', 'Informes','Parametros','Github' ], 
         icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
