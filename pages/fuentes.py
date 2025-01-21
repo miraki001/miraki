@@ -2,7 +2,7 @@ import streamlit as st
 import psycopg2
 import os
 from sqlalchemy import text
-import hydralit_components as hc
+#import hydralit_components as hc
 from streamlit_option_menu import option_menu
 import pages as pg
 #from pages import editar_fuentes
@@ -47,19 +47,19 @@ def show_fuentes():
   vdetalle = ''
   vlink = ''
   vimagen = ''
-  option_data = [
-   {'icon': " ➕ ", 'label':"Ingresar"},
-   {'icon':" 📝 ",'label':"Editar"},
-   {'icon': " ❌ ", 'label':"Borrar"},
-   {'icon': " ⏸️ ", 'label':"Duplicar"},    
-  ]
+  #option_data = [
+  # {'icon': " ➕ ", 'label':"Ingresar"},
+  # {'icon':" 📝 ",'label':"Editar"},
+  # {'icon': " ❌ ", 'label':"Borrar"},
+  # {'icon': " ⏸️ ", 'label':"Duplicar"},    
+  3]
 
 
   
-  over_theme = {'txc_inactive': 'white','menu_background':'#604283','txc_active':'yellow','option_active':'blue'}
+  #over_theme = {'txc_inactive': 'white','menu_background':'#604283','txc_active':'yellow','option_active':'blue'}
   #font_fmt = {'font-class':'h2','font-size':'150%'}
 
-  op = hc.option_bar(option_definition=option_data,title='Fuentes',key='PrimaryOption',override_theme=over_theme,horizontal_orientation=True)
+  #op = hc.option_bar(option_definition=option_data,title='Fuentes',key='PrimaryOption',override_theme=over_theme,horizontal_orientation=True)
 
   #if op=="Ingresar":
   #  st.switch_page("./pages/fuentes.py")    
