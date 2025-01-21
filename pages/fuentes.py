@@ -3,7 +3,7 @@ import psycopg2
 import os
 from sqlalchemy import text
 import hydralit_components as hc
-from streamlit_navigation_bar import st_navbar
+from streamlit_option_menu import option_menu
 
 
 def show_fuentes():
