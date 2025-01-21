@@ -25,7 +25,7 @@ selected = option_menu(None, ["Home", 'Novedades','Fuentes', 'Informes','Paramet
         }
   )
 
-selected = option_menu(None, ["Home", 'Ingresar','Editar', 'Informes','Parametros','Github' ], 
+selected1 = option_menu(None, ["Home", 'Ingresar','Editar', 'Informes','Parametros','Github' ], 
         icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
         styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
