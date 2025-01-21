@@ -1,6 +1,7 @@
 import streamlit as st
 import psycopg2
 from sqlalchemy import text
+import pages as pg
 
 
 def show_editar_fuentes():
