@@ -30,9 +30,9 @@ def show_fuentes():
         }
       )
 
-    if selected=="Ingresar":
-      st.session_state['vTipo'] = 'Ingresar'
-      st.switch_page("./pages/editar_fuentes.py")   
+    #if selected=="Ingresar":
+    #  st.session_state['vTipo'] = 'Ingresar'
+    #  st.switch_page("./pages/editar_fuentes.py")   
   
   tnuri = 0
   vtitulo= ''
