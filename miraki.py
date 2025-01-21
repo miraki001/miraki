@@ -47,9 +47,9 @@ page = st_navbar(
 )
 
 if page == "Fuentes":
-   st.switch_page("fuentes.py")
+   st.switch_page("./pages/fuentes.py")
 if page == "Informes":
-   st.switch_page("sectores.py")  
+   st.switch_page("./pages/sectores.py")  
 
 """
 functions = {
