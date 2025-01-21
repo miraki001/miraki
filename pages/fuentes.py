@@ -32,7 +32,7 @@ def show_fuentes():
 
 
   
-  over_theme = {'txc_inactive': 'white','menu_background':'purple','txc_active':'yellow','option_active':'blue'}
+  over_theme = {'txc_inactive': 'white','menu_background':'#604283','txc_active':'yellow','option_active':'blue'}
   #font_fmt = {'font-class':'h2','font-size':'150%'}
 
   op = hc.option_bar(option_definition=option_data,title='Fuentes',key='PrimaryOption',override_theme=over_theme,horizontal_orientation=True)
