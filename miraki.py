@@ -46,7 +46,7 @@ page = st_navbar(
     key= 1,
 )
 
-if page == "Fuentes"
+if page == "Fuentes":
    st.switch_page("fuentes.py")
 
 """
