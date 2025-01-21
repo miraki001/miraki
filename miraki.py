@@ -1,4 +1,4 @@
-import os
+itimport os
 
 import streamlit as st
 from streamlit_navigation_bar import st_navbar
@@ -48,7 +48,7 @@ page = st_navbar(
 
 if page == "Fuentes":
    st.write('aca') 
-   pg.show_fuentes()
+   pg.show_editar_fuentes()
 if page == "Home":
    pg.show_home()  
 if page == "Informes":
