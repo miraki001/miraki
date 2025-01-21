@@ -20,8 +20,9 @@ def show_fuentes():
   )
   col = st.columns((6.5, 4.5, 2), gap='medium')
   with col[0]:
-    page = st_navbar(["Home", "Documentation", "Examples", "Community", "About"])
-    st.write(page)
+    selected = option_menu(None, ["Home", 'Settings'], 
+        icons=['house', 'gear'] , menu_icon="cast",orientation="horizontal", default_index=1)
+
 
 
   
