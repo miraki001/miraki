@@ -30,7 +30,7 @@ def show_fuentes():
         }
       )
 
-    if selected="Ingresar"
+    if selected=="Ingresar":
       st.switch_page("./pages/editar_fuentes.py")   
   
   tnuri = 0
