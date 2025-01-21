@@ -37,6 +37,7 @@ def show_fuentes():
       #show_editar_fuentes()
       #st.switch_page("./pages/editar_fuentes.py")   
   if selected=="Editar":
+      st.write('editar')
       st.session_state['vTipo'] = 'Ingresar'
       pg.show_editar_fuentes()
       #show_editar_fuentes()
