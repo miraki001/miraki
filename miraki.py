@@ -6,18 +6,6 @@ import streamlit as st
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None)
 
-
-hide_streamlit_style = """
-<style>
-    #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 0rem;}
-</style>
-
-"""
-st.title("Test")
-if st.checkbox('Remove padding'):
-    st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
-
 st.markdown("""
 <style>
 	[data-testid="stDecoration"] {
