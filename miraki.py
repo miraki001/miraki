@@ -6,7 +6,8 @@ from streamlit_navigation_bar import st_navbar
 import pages as pg
 
 
-st.set_page_config(initial_sidebar_state="collapsed")
+st.set_page_config(initial_sidebar_state="collapsed",
+                  layout="wide",)
 
 pages = ["Seleccionar", "Editar", "Desmarcar", "Informes", "Fuentes", "Parametros", "GitHub"]
 parent_dir = os.path.dirname(os.path.abspath(__file__))
