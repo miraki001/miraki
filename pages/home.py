@@ -12,6 +12,10 @@ selected2 = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Para
         "nav-link-selected": {"background-color": "#604283"}
         }
   )
+
+if selected2=="Fuentes":
+  st.write('aca')
+  st.switch_page("./pages/fuentes.py")
 st.header("Miraki")
 
 st.write(
