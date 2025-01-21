@@ -22,6 +22,18 @@ hide_menu_style = """
         """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
+hide_streamlit_style = """
+<style>
+    #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 0rem;}
+</style>
+
+"""
+st.title("Test")
+if st.checkbox('Remove padding'):
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+
+
 clicked_menu_item = st.menu_items(['Item 1', 'Item 2', 'Item 3'], expanded=True, floating=True, emphasized_items=[0])
 
 selected = option_menu(None, ["Home", 'Novedades','Fuentes', 'Informes','Parametros','Github' ], 
