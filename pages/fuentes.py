@@ -4,7 +4,7 @@ import os
 from sqlalchemy import text
 import hydralit_components as hc
 from streamlit_option_menu import option_menu
-#import pages as pg
+import pages as pg
 from pages import editar_fuentes
 
 def show_fuentes():
@@ -38,7 +38,7 @@ def show_fuentes():
       #st.switch_page("./pages/editar_fuentes.py")   
   if selected=="Editar":
       st.session_state['vTipo'] = 'Ingresar'
-      st.page_link(page='pages/editar_fuentes.py')
+      pg.show_editar_fuentes()
       #show_editar_fuentes()
       st.switch_page("./pages/sectores.py") 
   tnuri = 0
