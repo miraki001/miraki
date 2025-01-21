@@ -52,7 +52,7 @@ if page == "Fuentes":
 if page == "Home":
    pg.show_home()  
 if page == "Informes":
-   st.switch_page("./pages/sectores.py")  
+   #st.switch_page("./pages/sectores.py")  
 
 """
 functions = {
