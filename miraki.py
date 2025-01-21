@@ -48,9 +48,9 @@ page = st_navbar(
 
 if page == "Fuentes":
    st.write('aca') 
-    pg.fuentes()
+   pg.fuentes()
 if page == "Home":
-    pg.home()  
+   pg.home()  
 if page == "Informes":
    st.switch_page("./pages/sectores.py")  
 
