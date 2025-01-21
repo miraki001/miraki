@@ -1,7 +1,6 @@
 import os
 from streamlit_option_menu import option_menu
 import streamlit as st
-import hydralit_components as hc
 
 
 st.set_page_config(initial_sidebar_state="collapsed",
