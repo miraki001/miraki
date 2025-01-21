@@ -34,7 +34,6 @@ if st.checkbox('Remove padding'):
 
 
 
-clicked_menu_item = st.menu_items(['Item 1', 'Item 2', 'Item 3'], expanded=True, floating=True, emphasized_items=[0])
 
 selected = option_menu(None, ["Home", 'Novedades','Fuentes', 'Informes','Parametros','Github' ], 
         icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
