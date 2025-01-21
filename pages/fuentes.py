@@ -19,9 +19,8 @@ st.markdown(
     """,
   unsafe_allow_html=True,
 )
-col = st.columns((6.5, 4.5, 2), gap='medium')
-with col[0]:
-  selected4 = option_menu(None, ["Home1", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar' ], 
+
+selected4 = option_menu(None, ["Home1", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar' ], 
       icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=-1,
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
@@ -29,7 +28,7 @@ with col[0]:
         "nav-link": {"font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
         "nav-link-selected": {"background-color": "#604283"}
       }
-  )
+)
 
 
 if selected4=="Home1":
