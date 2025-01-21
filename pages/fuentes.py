@@ -37,8 +37,8 @@ def show_fuentes():
 
   op = hc.option_bar(option_definition=option_data,title='Fuentes',key='PrimaryOption',override_theme=over_theme,horizontal_orientation=True)
 
-  if op=="Ingresar":
-    st.switch_page("./pages/fuentes.py")    
+  #if op=="Ingresar":
+  #  st.switch_page("./pages/fuentes.py")    
   
   conn = st.connection("postgresql", type="sql")
   qq = 'select nuri,fuente as url,activa,fecha_act,descrip as fuente,pais,fuente_org,urllink,tipo_busq,posjson from fuentes_py where proyecto_nuri = 1  ;'
