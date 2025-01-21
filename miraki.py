@@ -15,6 +15,13 @@ st.markdown(no_sidebar_style, unsafe_allow_html=True)
 
 st.markdown("<style> ul {display: none;} </style>", unsafe_allow_html=True)
 
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
+
 selected = option_menu(None, ["Home", 'Ingresar','Editar','Github' ], 
         icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
         styles={
