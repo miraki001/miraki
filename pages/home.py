@@ -3,19 +3,7 @@ import streamlit as st
 
 def show_home():
     st.header("Miraki")
-    st.set_page_config(initial_sidebar_state="collapsed")
-    st.markdown("""
 
-        <style>
-
-
-         .css-1iyw2u1 {
-            display: none;
-    }
-
-        </style>
-
-    """, unsafe_allow_html=True)
     st.write(
         """
         Miraki
