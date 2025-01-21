@@ -21,7 +21,7 @@ def show_fuentes():
   col = st.columns((6.5, 4.5, 2), gap='medium')
   with col[0]:
     selected = option_menu(None, ["Home", 'Ingresar'], 
-        icons=['house', 'gear'] , menu_icon="cast",orientation="horizontal", default_index=1
+        icons=['house', 'gear'] , menu_icon="cast",orientation="horizontal", default_index=1,
         styles={
         "container": {"padding": "0!important", "background-color": "#fafafa"},
         "icon": {"color": "orange", "font-size": "25px"}, 
