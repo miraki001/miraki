@@ -7,8 +7,8 @@ def show_editar_fuentes():
     #st.set_page_config(layout="wide")
     conn = st.connection("postgresql", type="sql")
 
-    st.set_page_config(initial_sidebar_state="collapsed",
-                  layout="wide",)
+    #st.set_page_config(initial_sidebar_state="collapsed",
+    #              layout="wide",)
 
     pages = ["Seleccionar", "Editar", "Desmarcar", "Informes", "Fuentes", "Parametros", "GitHub"]
     parent_dir = os.path.dirname(os.path.abspath(__file__))
