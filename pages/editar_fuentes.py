@@ -196,6 +196,6 @@ def show_editar_fuentes():
         if tipo == 'Ingresar':
             ingresar()
     
-        st.switch_page("./pages/fuentes.py")
+        pg.show_fuentes()
     if col20.button(":red[**Cancelar**]"):
-        st.switch_page("./pages/fuentes.py")
+        pg.show_fuentes()
