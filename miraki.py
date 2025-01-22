@@ -31,5 +31,7 @@ if selected1=="Miraki":
   st.switch_page("./pages/home.py")
 if selected1=="Fuentes":
   st.switch_page("./pages/fuentes.py")
+if selected1=="Novedades":
+  st.switch_page("./pages/novedades.py")  
 if selected1=="Parametros":
   st.switch_page("./pages/parametros.py")  
