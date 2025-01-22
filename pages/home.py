@@ -123,5 +123,5 @@ plt.imshow(wordcloud, interpolation='bilinear')
 fig = plt.figure(figsize=(8,8))
 plt.axis("off")
 plt.show()
-st.pyplot(fig)
+st.pyplot(plt.clf())
 
