@@ -8,19 +8,21 @@ selected2 = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Para
         styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
         "icon": {"color": "orange", "font-size": "14px"}, 
-        "nav-link": {"font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
+        "nav-link": {"color": "white",  "font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
         "nav-link-selected": {"background-color": "#604283"}
         }
   )
 
 if selected2=="Fuentes":
-  st.write('aca')
   st.switch_page("./pages/fuentes.py")
+if selected2=="Parametros":
+  st.switch_page("./pages/parametros.py")
+        
 st.header("Miraki")
 
 st.write(
     """
-        Miraki
+        
         
         Plataforma de Vigilancia Tecnologica e Inteligencia Competitiva.
         
