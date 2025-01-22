@@ -8,7 +8,7 @@ st.set_page_config(initial_sidebar_state="collapsed",
 
 
 selected6 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar' ], 
-      icons=['house', 'plus' ,'pencil-square','eraser','files','play','activity'] , menu_icon="cast",orientation="horizontal", default_index=-1,
+      icons=['house', 'plus' ,'pencil-square','eraser','files','play','activity'] , menu_icon="cast",orientation="horizontal", default_index=-2,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
@@ -105,19 +105,6 @@ def dataframe_with_selections(df):
 selection = dataframe_with_selections(df)
 
 
-col1, col2, col3,col4 = st.columns(4)
-
-
-if col1.button("Volver" ,  type='primary'):
-    st.switch_page("./pages/parametros.py")
-if col2.button("Insertar"):
-    st.session_state['vTipo'] = 'Ingresar'
-    st.switch_page("./pages/ingproyectos.py")
-if col3.button("Editar"):
-    st.session_state['vTipo'] = 'Editar'
-    st.switch_page("./pages/ingproyectos.py")
-if col4.button("Borrar"):
-    st.switch_page("./pages/borrarproyectos.py") 
 
 cnt = len(selection)
 
