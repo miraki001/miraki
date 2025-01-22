@@ -15,10 +15,23 @@ selected4 = option_menu(None, ["Home", 'Palabras Claves','Excluidas','Sectores',
         "nav-link-selected": {"background-color": "#604283"}
       }
 )
-st.header("Fuentes")
+st.subheader("Parametros")
 
+if selected4=="Home":
+    st.switch_page("miraki.py") 
+if selected4=="Palabras Claves":
+    st.switch_page("./pages/palabrasclaves.py")  
+if selected4=="Excluidas":
+    st.switch_page("./pages/editar_fuentes.py")  
+if selected4=="Sectores":
+    st.switch_page("./pages/sectores.py")  
+if selected4=="Ejes":
+    st.switch_page("./pages/ejes.py")
+if selected4=="Palabras por Sector":
+    st.switch_page("./pages/ejes.py")
+if selected4=="Proyectos":
+    st.switch_page("./pages/proyectos.py")
 
-col1, col2, col3,col4,col5,col6,col7 = st.columns(7)
 
 tnuri = 0
 vtitulo= ''
@@ -43,18 +56,3 @@ st.markdown("""
             </style>""", unsafe_allow_html=True)
 
 
-
-if col1.button("Volver" ,  type='primary'):
-    st.switch_page("streamlit_app.py")
-if col2.button("Palabras Claves"):
-    st.switch_page("./pages/palabrasclaves.py")
-if col3.button("Excluidas"):
-    st.switch_page("./pages/editar_fuentes.py")
-if col4.button("Sectores"):
-    st.switch_page("./pages/sectores.py")   
-if col5.button("Ejes"):
-    st.switch_page("./pages/ejes.py")
-if col6.button("Palabras por Sector"):
-    st.switch_page("./pages/scraptodo.py")
-if col7.button("Proyectos"):
-    st.switch_page("./pages/proyectos.py")
