@@ -35,16 +35,9 @@ if selected4=="Home1":
     st.switch_page("miraki.py") 
 if selected4=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
-    #pg.show_editar_fuentes()
-    #st.page_link(page='pages/editar_fuentes.py')
-    #show_editar_fuentes()
-    #st.switch_page("./pages/editar_fuentes.py")   
+    st.switch_page("./pages/editar_fuentes.py")   
 if selected4=="Editar":
-    st.write('editar')
-    st.session_state['vTipo'] = 'Ingresar'
-    #pg.show_editar_fuentes()
-    #show_editar_fuentes()
-    #st.switch_page("./pages/editar_fuentes.py") 
+    st.switch_page("./pages/editar_fuentes.py") 
 tnuri = 0
 vtitulo= ''
 vdetalle = ''
