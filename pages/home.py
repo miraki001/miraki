@@ -13,7 +13,7 @@ st.markdown("""
 [data-testid="stHeader"] {
     background-image: url(ic_launcher44.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 20px;
     background-orgin: content-box;
     background-color: grey;
     padding-top: var(--header-height);
