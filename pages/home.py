@@ -11,7 +11,7 @@ st.markdown("""
 }
 
 [data-testid="stHeader"] {
-    background-image: url(/app/static/icon.png);
+    background-image: url(ic_launcher44.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-orgin: content-box;
