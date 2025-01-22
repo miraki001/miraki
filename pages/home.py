@@ -1,9 +1,9 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide",page_title="Miraki")
 
-background-image: url(ic_launcher44.png);
+
 
 st.markdown("""
 <style>
