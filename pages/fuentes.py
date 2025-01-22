@@ -9,6 +9,8 @@ from streamlit_option_menu import option_menu
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None)
+
+st.topbar.markdown("# Application Title")
 st.markdown(
     """
     <style>
