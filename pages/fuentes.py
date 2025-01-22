@@ -22,7 +22,7 @@ st.markdown(
   unsafe_allow_html=True,
 )
 #eee
-selected4 = option_menu(None, ["Home1", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar' ], 
+selected4 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar' ], 
       icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=-1,
                 
       styles={
