@@ -20,10 +20,10 @@ if selected7=="Home":
     st.switch_page("miraki.py") 
 if selected7=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
-    st.switch_page("./pages/ingejes.py")   
+    st.switch_page("./pages/ingpalabraclaves.py")   
 if selected7=="Editar":
     st.session_state['vTipo'] = 'Editar'
-    st.switch_page("./pages/ingejes.py") 
+    st.switch_page("./pages/ingpalabraclaves.py") 
 
 
 tnuri = 0
