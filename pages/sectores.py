@@ -4,7 +4,8 @@ from sqlalchemy import text
 #from streamlit_extras.stylable_container import stylable_container
 
 
-
+st.set_page_config(initial_sidebar_state="collapsed",
+                  layout="wide",menu_items=None)
 
 
 tnuri = 0
