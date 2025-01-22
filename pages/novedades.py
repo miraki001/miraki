@@ -31,7 +31,7 @@ if selected24=="Editar":
     st.session_state['vTipo'] = 'Editar'
     st.switch_page("./pages/editarnovedades.py") 
 if selected24=="Seleccionar":
-    st.switch_page("./pages/seleccionar.py"
+    st.switch_page("./pages/seleccionar.py")
 if selected24=="Desmarcar":
     st.switch_page("./pages/desmarcar.py")
 
