@@ -17,7 +17,7 @@ selected7 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ],
 st.subheader("Palabras Claves")
 
 if selected7=="Home":
-    st.switch_page("miraki.py") 
+    st.switch_page("./pages/parametros.py") 
 if selected7=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
     st.switch_page("./pages/ingpalabraclaves.py")   
