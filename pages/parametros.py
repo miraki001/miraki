@@ -3,8 +3,8 @@ from streamlit_option_menu import option_menu
 
 st.subheader("Parametros")
 
-selecteds = option_menu(None, ["Home", "Palabras Claves","Excluidas","Sectores","Ejes","Palabras por Sector","Proyectos" ], 
-      icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index = 0,
+selected3 = option_menu(None, ["Home", "Palabras Claves","Excluidas","Sectores","Ejes","Palabras por Sector","Proyectos" ], 
+      icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index = -1,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
@@ -14,19 +14,19 @@ selecteds = option_menu(None, ["Home", "Palabras Claves","Excluidas","Sectores",
       }
 )
 
-if selecteds=="Home":
+if selected3=="Home":
     st.switch_page("miraki.py") 
-if selecteds=="Palabras Claves":
+if selected3=="Palabras Claves":
     st.switch_page("./pages/palabrasclaves.py")  
-if selecteds=="Excluidas":
+if selected3=="Excluidas":
     st.switch_page("./pages/editar_fuentes.py")  
-if selecteds=="Sectores":
+if selected3=="Sectores":
     st.switch_page("./pages/sectores.py")  
-if selecteds=="Ejes":
+if selected3=="Ejes":
     st.switch_page("./pages/ejes.py")
-if selecteds=="Palabras por Sector":
+if selected3=="Palabras por Sector":
     st.switch_page("./pages/ejes.py")
-if selecteds=="Proyectos":
+if selected3=="Proyectos":
     st.switch_page("./pages/fuentes.py")
 
 
