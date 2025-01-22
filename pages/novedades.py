@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 #import pages as pg
 import os
-import itables.options as it_op
-from itables.streamlit import interactive_table
 from streamlit_option_menu import option_menu
 
 st.set_page_config(initial_sidebar_state="collapsed",
