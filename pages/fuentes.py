@@ -34,7 +34,7 @@ selected4 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Duplicar','
 )
 st.header("Fuentes")
 
-if selected4=="Home1":
+if selected4=="Home":
     st.switch_page("miraki.py") 
 if selected4=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
