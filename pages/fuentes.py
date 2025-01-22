@@ -26,7 +26,7 @@ selected4 = option_menu("mi titulo", ["Home1", 'Ingresar','Editar','Borrar','Dup
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
         "icon": {"color": "orange", "font-size": "14px"}, 
-        "nav-link": {"font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "white"},
+        "nav-link": {"font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#B3D3F0"},
         "nav-link-selected": {"background-color": "#604283"}
       }
 )
