@@ -3,6 +3,13 @@ from streamlit_option_menu import option_menu
 
 st.set_page_config(layout="wide",page_title="Miraki")
 
+hide_default_format = """
+       <style>
+       #MainMenu {visibility: hidden; }
+       footer {visibility: hidden;}
+       </style>
+       """
+st.markdown(hide_default_format, unsafe_allow_html=True)
 
 
 st.markdown("""
