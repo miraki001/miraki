@@ -12,6 +12,27 @@ st.set_page_config(initial_sidebar_state="collapsed",
 vnuri =0
 st.session_state.vnuri = 0
 
+selected24 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar' ], 
+      icons=['house', 'plus' ,'pencil-square','eraser','chek','patch-chek'] , menu_icon="cast",orientation="horizontal", default_index=-1,
+                
+      styles={
+        "container": {"padding": "0!important", "background-color": "#604283"},
+        "icon": {"color": "orange", "font-size": "14px"}, 
+        "nav-link": {"color": "white", "font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#B3D3F0"},
+        "nav-link-selected": {"background-color": "#604283"}
+      }
+)
+st.header("Fuentes")
+
+if selected24=="Home":
+    st.switch_page("miraki.py") 
+if selected24=="Ingresar":
+    st.session_state['vTipo'] = 'Ingresar'
+    st.switch_page("./pages/editar_fuentes.py")   
+if selected24=="Editar":
+    st.session_state['vTipo'] = 'Editar'
+    st.switch_page("./pages/editar_fuentes.py") 
+
 
 
 col1, col2, col3,col4,col5,col6,col7 = st.columns(7)
