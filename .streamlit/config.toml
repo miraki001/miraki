@@ -5,3 +5,4 @@ hideTopBar = true
 [client]
 showSidebarNavigation = false
 
+backgroundColor = '#00325B' 
