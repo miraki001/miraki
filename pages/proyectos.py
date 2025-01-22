@@ -1,17 +1,7 @@
 import streamlit as st
 import psycopg2
 from sqlalchemy import text
-from streamlit_extras.stylable_container import stylable_container
-
-
-#col41, mid, col42 = st.columns([1,1,20])
-#with col41:
-st.image('ic_launcher44.png', width=40)
-#with col42:
-#    st.title('Miraki')
-
-#st.subheader("Plataforma de Vigilancia Tecnólogica e Inteligencia Competitiva")
-
+from streamlit_option_menu import option_menu
 
 
 
