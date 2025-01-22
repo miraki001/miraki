@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-#import pages as pg
 import os
 from streamlit_option_menu import option_menu
 
@@ -11,7 +10,7 @@ vnuri =0
 st.session_state.vnuri = 0
 
 selected241 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar' ], 
-      icons=['house', 'plus' ,'pencil-square','eraser','chek','patch-chek'] , menu_icon="cast",orientation="horizontal", default_index=-1,
+      icons=['house', 'plus' ,'pencil-square','eraser','chek','patch-chek'] , menu_icon="cast",orientation="horizontal", default_index=-3,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
