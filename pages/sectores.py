@@ -6,7 +6,6 @@ from sqlalchemy import text
 
 
 
-col1, col2, col3,col4 = st.columns(4)
 
 tnuri = 0
 vtitulo= ''
@@ -30,18 +29,31 @@ st.markdown("""
                 }
             </style>""", unsafe_allow_html=True)
 
+selected5 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ], 
+      icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=-1,
+                
+      styles={
+        "container": {"padding": "0!important", "background-color": "#604283"},
+        "icon": {"color": "orange", "font-size": "14px"}, 
+        "nav-link": {"color": "white", "font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#B3D3F0"},
+        "nav-link-selected": {"background-color": "#604283"}
+      }
+)
+st.header("Sectores")
 
-
-if col1.button("Volver" ,  type='primary'):
-    st.switch_page("./pages/parametros.py")
-if col2.button("Insertar"):
+if selected5=="Home":
+    st.switch_page("./pages/parametros.py") 
+if selected5=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
-    st.switch_page("./pages/ingsectores.py")
-if col3.button("Editar"):
+    st.switch_page("./pages/ingsectores.py")   
+if selected5=="Editar":
     st.session_state['vTipo'] = 'Editar'
-    st.switch_page("./pages/ingsectores.py")
-if col4.button("Borrar"):
-    st.switch_page("./pages/borrarsectores.py")   
+    st.switch_page("./pages/ingsectores.py") 
+if selected5=="Editar":
+    st.session_state['vTipo'] = 'Editar'
+    st.switch_page("./pages/borrarsectores.py") 
+
+
 
 
 
