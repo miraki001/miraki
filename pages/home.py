@@ -59,11 +59,9 @@ selected2 = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Para
 if selected2=="Fuentes":
   st.switch_page("./pages/fuentes.py")
 if selected2=="Novedades":
-  st.switch_page("./pages/novedades.py")
-       
+  st.switch_page("./pages/novedades.py")       
 if selected2=="Parametros":
-  st.switch_page("./pages/parametros.py")
-        
+  st.switch_page("./pages/parametros.py")        
 st.header("Miraki")
 
 st.write(
