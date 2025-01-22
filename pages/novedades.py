@@ -6,7 +6,8 @@ import itables.options as it_op
 from itables.streamlit import interactive_table
 from streamlit_option_menu import option_menu
 
-
+st.set_page_config(initial_sidebar_state="collapsed",
+                  layout="wide",menu_items=None,page_title="Miraki")
 
 vnuri =0
 st.session_state.vnuri = 0
