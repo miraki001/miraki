@@ -1,6 +1,22 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 
+st.set_page_config(initial_sidebar_state="collapsed",
+                  layout="wide",menu_items=None)
+
+
+st.markdown(
+    """
+    <style>
+      [data-testid="collapsedControl"] {
+          display: none
+      }
+    </style>
+    """,
+  unsafe_allow_html=True,
+)
+
+
 st.subheader("Parametros")
 
 selected3 = option_menu(None, ["Home", "Palabras","Excluidas","Sectores","Ejes","PalabrasporSector","Proyectos" ], 
