@@ -4,6 +4,7 @@ import pandas as pd
 import os
 import itables.options as it_op
 from itables.streamlit import interactive_table
+from streamlit_option_menu import option_menu
 
 
 
