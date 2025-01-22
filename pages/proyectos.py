@@ -17,10 +17,10 @@ selected6 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar'],
         "nav-link-selected": {"background-color": "#604283"}
       }
 )
-st.header("Proyectos")
+st.subheader("Proyectos")
 
 if selected6=="Home":
-    st.switch_page("miraki.py") 
+    st.switch_page("./pages/parametros.py") 
 if selected6=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
     st.switch_page("./pages/ingproyectos.py")   
