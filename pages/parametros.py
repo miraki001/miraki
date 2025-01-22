@@ -43,7 +43,7 @@ if selected3=="Ejes":
 if selected3=="Palabras por Sector":
     st.switch_page("./pages/ejes.py")
 if selected3=="Proyectos":
-    st.switch_page("./pages/fuentes.py")
+    st.switch_page("./pages/proyectos.py")
 
 pfuente = st.text_input("ingrese el nombre de la fuente")
 
