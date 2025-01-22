@@ -8,7 +8,7 @@ st.set_page_config(initial_sidebar_state="collapsed",
 
 
 selected6 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar'], 
-      icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=-2,
+      icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=-1,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
