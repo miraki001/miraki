@@ -3,7 +3,7 @@ from streamlit_option_menu import option_menu
 
 st.subheader("Parametros")
 
-selected3 = option_menu(None, ["Home", "Palabras Claves","Excluidas","Sectores","Ejes","Palabras por Sector","Proyectos" ], 
+selected3 = option_menu(None, ["Home", "Palabras","Excluidas","Sectores","Ejes","PalabrasporSector","Proyectos" ], 
       icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index = -1,
                 
       styles={
