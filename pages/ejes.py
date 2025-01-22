@@ -9,8 +9,8 @@ vdetalle = ''
 vlink = ''
 vimagen = ''
 
-selected4 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar' ], 
-      icons=['house', 'plus' ,'pencil-square','eraser','files','play','activity'] , menu_icon="cast",orientation="horizontal", default_index=-1,
+selected4 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ], 
+      icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=-1,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
