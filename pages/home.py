@@ -3,6 +3,8 @@ from streamlit_option_menu import option_menu
 
 st.set_page_config(layout="wide")
 
+background-image: url(ic_launcher44.png);
+
 st.markdown("""
 <style>
 :root {
