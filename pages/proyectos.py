@@ -4,7 +4,7 @@ from sqlalchemy import text
 from streamlit_option_menu import option_menu
 
 st.set_page_config(initial_sidebar_state="collapsed",
-                  layout="wide",menu_items=None)
+                  layout="wide",menu_items=None ,page_title="Miraki")
 
 
 selected6 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar' ], 
