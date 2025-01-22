@@ -147,7 +147,8 @@ if col10.button(":red[**Grabar**]"):
             st.success("Data sent")
     if tipo == 'Ingresar':
         ingresar()
-    
+        st.switch_page("./pages/fuentes.py")
 
 if col20.button(":red[**Cancelar**]"):
-    pg.show_fuentes()
+    st.switch_page("./pages/fuentes.py")
+
