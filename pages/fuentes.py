@@ -8,7 +8,7 @@ from streamlit_option_menu import option_menu
 #from pages import editar_fuentes
 
 st.set_page_config(initial_sidebar_state="collapsed",
-                  layout="wide",menu_items=None)
+                  layout="wide",menu_items=None,page_title="Miraki")
 
 
 st.markdown(
