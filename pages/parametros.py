@@ -20,7 +20,7 @@ st.markdown(
 st.subheader("Parametros")
 
 selected3 = option_menu(None, ["Home", "Palabras","Excluidas","Sectores","Ejes","PalabrasporSector","Proyectos" ], 
-      icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index = 0,
+      icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index = -2,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
@@ -41,7 +41,7 @@ if selected3=="Sectores":
 if selected3=="Ejes":
     st.switch_page("./pages/ejes.py")
 if selected3=="Palabras por Sector":
-    st.switch_page("./pages/ejes.py")
+    st.switch_page("./pages/sectores.py")
 if selected3=="Proyectos":
     st.switch_page("./pages/fuentes.py")
 
