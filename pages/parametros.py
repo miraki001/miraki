@@ -30,7 +30,7 @@ if selected4=="Ejes":
 if selected4=="Palabras por Sector":
     st.switch_page("./pages/ejes.py")
 if selected4=="Proyectos":
-    st.switch_page("./pages/proyectos.py")
+#    st.switch_page("./pages/proyectos.py")
 
 
 tnuri = 0
