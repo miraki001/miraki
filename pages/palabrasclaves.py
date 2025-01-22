@@ -14,7 +14,7 @@ selected7 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ],
         "nav-link-selected": {"background-color": "#604283"}
       }
 )
-st.header("Ejes")
+st.subheader("Palabras Claves")
 
 if selected7=="Home":
     st.switch_page("miraki.py") 
