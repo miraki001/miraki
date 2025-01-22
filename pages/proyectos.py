@@ -3,6 +3,9 @@ import psycopg2
 from sqlalchemy import text
 from streamlit_option_menu import option_menu
 
+st.set_page_config(initial_sidebar_state="collapsed",
+                  layout="wide",menu_items=None)
+
 
 selected6 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar' ], 
       icons=['house', 'plus' ,'pencil-square','eraser','files','play','activity'] , menu_icon="cast",orientation="horizontal", default_index=-1,
