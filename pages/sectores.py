@@ -2,6 +2,7 @@ import streamlit as st
 import psycopg2
 from sqlalchemy import text
 #from streamlit_extras.stylable_container import stylable_container
+from streamlit_option_menu import option_menu
 
 
 st.set_page_config(initial_sidebar_state="collapsed",
