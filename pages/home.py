@@ -6,8 +6,8 @@ st.set_page_config(layout="wide")
 st.markdown("""
 <style>
 :root {
-  --header-height: 50px;
-  --header-height-padded: 59px;
+  --header-height: 40px;
+  --header-height-padded: 40px;
 }
 
 [data-testid="stHeader"] {
@@ -19,22 +19,11 @@ st.markdown("""
     padding-top: var(--header-height);
 }
 
-[data-testid="stSidebar"] {
-    margin-top: var(--header-height-padded);
-}
 
-[data-testid="stSidebarCollapsedControl"] {
-    margin-top: var(--header-height);
-}
-
-[data-testid="stSidebarUserContent"] {
-    padding-top: 0rem;
 }
 </style>
 """, unsafe_allow_html=True)
 
-with st.sidebar:
-    st.markdown("sidebar")
 
 st.markdown("main")
 
