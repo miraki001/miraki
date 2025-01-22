@@ -9,7 +9,7 @@ vdetalle = ''
 vlink = ''
 vimagen = ''
 
-selected4 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ], 
+selected41 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ], 
       icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=-1,
                 
       styles={
@@ -21,12 +21,12 @@ selected4 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ],
 )
 st.header("Ejes")
 
-if selected4=="Home":
+if selected41=="Home":
     st.switch_page("miraki.py") 
-if selected4=="Ingresar":
+if selected41=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
     st.switch_page("./pages/ingejes.py")   
-if selected4=="Editar":
+if selected41=="Editar":
     st.session_state['vTipo'] = 'Editar'
     st.switch_page("./pages/ingejes.py") 
 
