@@ -120,7 +120,8 @@ for i in data_v1.titulo:
     common_words += " ".join(tokens)+" "
 wordcloud = wordcloud.WordCloud().generate(common_words)
 plt.imshow(wordcloud, interpolation='bilinear')
+fig = plt.figure(figsize=(8,8))
 plt.axis("off")
 plt.show()
-st.pyplot()
+st.pyplot(fig)
 
