@@ -123,6 +123,6 @@ fig, plt = plt.subplots(figsize = (12, 8))
 plt.imshow(wordcloud, interpolation='bilinear')
 #fig = plt.figure(figsize=(8,8))
 plt.axis("off")
-plt.show()
+#plt.show()
 st.pyplot(fig)
 
