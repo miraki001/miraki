@@ -20,7 +20,7 @@ st.markdown(
 st.subheader("Parametros")
 
 selected3 = option_menu(None, ["Home", "Palabras","Excluidas","Sectores","Ejes","PalabrasporSector","Proyectos" ], 
-      icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index = -2,
+      icons=['house', 'gear' ,'gear','diagram-3'] , menu_icon="cast",orientation="horizontal", default_index = -2,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
