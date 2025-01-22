@@ -1,13 +1,10 @@
 import streamlit as st
-import psycopg2
-from sqlalchemy import text
-#from streamlit_extras.stylable_container import stylable_container
 from streamlit_option_menu import option_menu
 
 st.subheader("Parametros")
 
 selecteds = option_menu(None, ["Home", "Palabras Claves","Excluidas","Sectores","Ejes","Palabras por Sector","Proyectos" ], 
-      icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index = -1,
+      icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index = -2,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
