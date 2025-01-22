@@ -25,7 +25,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-st.markdown("main")
 
 
 selected2 = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Parametros','Github' ], 
