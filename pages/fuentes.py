@@ -22,6 +22,7 @@ st.markdown(
 #eee
 selected4 = option_menu(None, ["Home1", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar' ], 
       icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=-1,
+      menu_title="This is the title",                  
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
         "icon": {"color": "orange", "font-size": "14px"}, 
