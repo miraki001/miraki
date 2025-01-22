@@ -7,8 +7,8 @@ st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None ,page_title="Miraki")
 
 
-selected6 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar' ], 
-      icons=['house', 'plus' ,'pencil-square','eraser','files','play','activity'] , menu_icon="cast",orientation="horizontal", default_index=-2,
+selected6 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar'], 
+      icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=-2,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
