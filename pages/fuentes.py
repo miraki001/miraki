@@ -26,7 +26,7 @@ selected4 = option_menu(None, ["Home1", 'Ingresar','Editar','Borrar','Duplicar',
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
         "icon": {"color": "orange", "font-size": "14px"}, 
-        "nav-link": {"color": "white", "font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
+        "nav-link": {"color": "white", "font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#B3D3F0"},
         "nav-link-selected": {"background-color": "#604283"}
       }
 )
