@@ -10,7 +10,7 @@ st.set_page_config(initial_sidebar_state="collapsed",
 vnuri =0
 st.session_state.vnuri = 0
 
-selected24 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar' ], 
+selected241 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar' ], 
       icons=['house', 'plus' ,'pencil-square','eraser','chek','patch-chek'] , menu_icon="cast",orientation="horizontal", default_index=-1,
                 
       styles={
@@ -22,17 +22,17 @@ selected24 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Selecciona
 )
 st.subheader("Novedades")
 
-if selected24=="Home":
+if selected241=="Home":
     st.switch_page("miraki.py") 
-if selected24=="Ingresar":
+if selected241=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
     st.switch_page("./pages/editarnovedades.py")   
-if selected24=="Editar":
+if selected241=="Editar":
     st.session_state['vTipo'] = 'Editar'
     st.switch_page("./pages/editarnovedades.py") 
-if selected24=="Seleccionar":
+if selected241=="Seleccionar":
     st.switch_page("./pages/seleccionar.py")
-if selected24=="Desmarcar":
+if selected241=="Desmarcar":
     st.switch_page("./pages/desmarcar.py")
 
 
