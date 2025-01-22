@@ -49,9 +49,6 @@ vimagen = ''
 conn = st.connection("postgresql", type="sql")
 df1 = conn.query('select nuri,fuente,fecha,titulo,select_web as sel,detalle,imagen,link,titulo_es,detalle_es,eje_nuri from novedades order by nuri desc limit 50;', ttl="0"),
 df = df1[0]
-#st.write(df1[0])
-#st.dataframe(df, hide_index=True, column_config={"titulo_es": None})
-#st.dataframe(df, hide_index=True, column_config={"detalle_es": None})
 
 colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 config = {
@@ -91,30 +88,11 @@ def dataframe_with_selections(df):
                   
 selection = dataframe_with_selections(df)
 
-#st.dataframe(selection, use_container_width=False)
-#selection.drop(selection.columns[-1],axis=1, inplace = True)
-#st.write(selection)
-#selection.drop(columns=[1], axis=1) 
 ss = st.dataframe(selection, hide_index=True)
-#st.write(ss)
-#st.dataframe(selection.style.hide(axis="index"))
-#st.write("Your selection:")
-#st.write(ss[nuri])
-#st.write(selection)
-#st.write(f'selected row index: {selection.selected_row_index}')
-#st.write(f'car name: {selection.df.at[selection.selected_row_index, "nuri"]}')
-#st.write(selection[0])
 st.write(selection['nuri'])
 vnuri= selection.to_string(columns=['nuri'], header=False, index=False)
 st.session_state.vnuri = vnuri
-#with server_state_lock.count:
-# server_state.count = vnuri
 server_state.vnuri = vnuri
-#st.write('vnuri valor')
-#st.write(selection.nuri)
-#st.write(selection.to_string(columns=['nuri'], header=False, index=False))
-#st.write(selection.to_string(columns=['titulo'], header=False, index=False))
-#st.write(selection.to_string(columns=['detalle'], header=False, index=False))
 
 st.session_state['user_select_value'] = vnuri
 st.session_state['vnuri'] = vnuri
