@@ -19,7 +19,7 @@ st.markdown(
 
 st.subheader("Parametros")
 
-selected3 = option_menu(None, ["Home", "Palabras","Excluidas","Sectores","Ejes","PalabrasporSector","Proyectos" ], 
+selected3 = option_menu(None, ["Home", "Palabras Claves","Excluidas","Sectores","Ejes","PalabrasporSector","Proyectos" ], 
       icons=['house', 'alphabet' ,'x-circle','diagram-3','list-check','alphabet-uppercase','building-fill' ] , menu_icon="cast",orientation="horizontal", default_index = -2,
                 
       styles={
