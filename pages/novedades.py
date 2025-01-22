@@ -26,14 +26,15 @@ if selected24=="Home":
     st.switch_page("miraki.py") 
 if selected24=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
-    st.switch_page("./pages/editar_fuentes.py")   
+    st.switch_page("./pages/editarnovedades.py")   
 if selected24=="Editar":
     st.session_state['vTipo'] = 'Editar'
-    st.switch_page("./pages/editar_fuentes.py") 
+    st.switch_page("./pages/editarnovedades.py") 
+if selected24=="Seleccionar":
+    st.switch_page("./pages/seleccionar.py"
+if selected24=="Desmarcar":
+    st.switch_page("./pages/desmarcar.py")
 
-
-
-col1, col2, col3,col4,col5,col6,col7 = st.columns(7)
 
 vnuri = 500
 vtitulo= ''
@@ -41,38 +42,8 @@ vdetalle = ''
 vlink = ''
 vimagen = ''
 
-#st.query_params.from_dict({"foo": "bar", "baz": [1, 2, 3]})
-if col1.button("Home"):
-    st.switch_page("streamlit_app.py")
-if col2.button("Editar"):
-    st.switch_page("./pages/editar.py")
-if col3.button("Seleccionar"):
-    st.write(st.session_state.vnuri)
-    st.write("vnuri = ", server_state.vnuri)
-    #st.switch_page("./pages/seleccionar.py")
-if col4.button("Desmarcar"):
-    st.switch_page("./pages/desmarcar.py")
-if col5.button("Informes"):
-    st.switch_page("./pages/nuevo.py")
-if col6.button("Parametros"):
-    st.switch_page("./pages/parametros.py")
-if col7.button("Fuentes"):
-    st.switch_page("./pages/fuentes.py")
+
  
-
-#default=["copyHtml5", "csvHtml5", "excelHtml5", "colvis"],
-#default=["copyHtml5", "csvHtml5", "excelHtml5"],
-
-
-
-
-#it_args = {}
-#it_args["buttons"] = default
-#it_args["select"] = True
-
-  
-
-
 
 
 conn = st.connection("postgresql", type="sql")
