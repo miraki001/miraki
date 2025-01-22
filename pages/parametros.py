@@ -7,7 +7,7 @@ from streamlit_option_menu import option_menu
 st.subheader("Parametros")
 
 selecteds = option_menu(None, ["Home", "Palabras Claves","Excluidas","Sectores","Ejes","Palabras por Sector","Proyectos" ], 
-      icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=-1,
+      icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index = -1,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
@@ -32,27 +32,5 @@ if selecteds=="Palabras por Sector":
 if selecteds=="Proyectos":
     st.switch_page("./pages/fuentes.py")
 
-
-tnuri = 0
-vtitulo= ''
-vdetalle = ''
-vlink = ''
-vimagen = ''
-
-
-
-st.markdown("""
-            <style>
-            div.stButton {text-align:center}
-            div.stButton > button:first-child {
-                background-color: #b579c2;
-                color:#000000;
-                font-weight: bold;
-            }
-            div.stButton > button:hover {
-                background-color: #79adc2;
-                color:#ff0000;
-                }
-            </style>""", unsafe_allow_html=True)
 
 
