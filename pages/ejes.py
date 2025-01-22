@@ -9,6 +9,27 @@ vdetalle = ''
 vlink = ''
 vimagen = ''
 
+selected4 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar' ], 
+      icons=['house', 'plus' ,'pencil-square','eraser','files','play','activity'] , menu_icon="cast",orientation="horizontal", default_index=-1,
+                
+      styles={
+        "container": {"padding": "0!important", "background-color": "#604283"},
+        "icon": {"color": "orange", "font-size": "14px"}, 
+        "nav-link": {"color": "white", "font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#B3D3F0"},
+        "nav-link-selected": {"background-color": "#604283"}
+      }
+)
+st.header("Fuentes")
+
+if selected4=="Home":
+    st.switch_page("miraki.py") 
+if selected4=="Ingresar":
+    st.session_state['vTipo'] = 'Ingresar'
+    st.switch_page("./pages/editar_fuentes.py")   
+if selected4=="Editar":
+    st.session_state['vTipo'] = 'Editar'
+    st.switch_page("./pages/editar_fuentes.py") 
+
 
 
 st.markdown("""
