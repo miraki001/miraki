@@ -1,9 +1,10 @@
 import streamlit as st
 import psycopg2
 from sqlalchemy import text
+from streamlit_option_menu import option_menu
 
 
-selected4 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ], 
+selected7 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ], 
       icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=-1,
                 
       styles={
@@ -15,12 +16,12 @@ selected4 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ],
 )
 st.header("Ejes")
 
-if selected4=="Home":
+if selected7=="Home":
     st.switch_page("miraki.py") 
-if selected4=="Ingresar":
+if selected7=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
     st.switch_page("./pages/ingejes.py")   
-if selected4=="Editar":
+if selected7=="Editar":
     st.session_state['vTipo'] = 'Editar'
     st.switch_page("./pages/ingejes.py") 
 
