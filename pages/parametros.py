@@ -29,5 +29,5 @@ if selected3=="Palabras por Sector":
 if selected3=="Proyectos":
     st.switch_page("./pages/fuentes.py")
 
-
+pfuente = st.text_input("ingrese el nombre de la fuente")
 
