@@ -4,8 +4,9 @@ from sqlalchemy import text
 #from streamlit_extras.stylable_container import stylable_container
 from streamlit_option_menu import option_menu
 
+st.subheader("Parametros")
 
-selecteds = option_menu(None, ["Home", 'Palabras Claves','Excluidas','Sectores','Ejes','Palabras por Sector','Proyectos' ], 
+selecteds = option_menu(None, ["Home", "Palabras Claves","Excluidas","Sectores","Ejes","Palabras por Sector","Proyectos" ], 
       icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=-1,
                 
       styles={
@@ -15,7 +16,6 @@ selecteds = option_menu(None, ["Home", 'Palabras Claves','Excluidas','Sectores',
         "nav-link-selected": {"background-color": "#604283"}
       }
 )
-st.subheader("Parametros")
 
 if selecteds=="Home":
     st.switch_page("miraki.py") 
@@ -30,7 +30,7 @@ if selecteds=="Ejes":
 if selecteds=="Palabras por Sector":
     st.switch_page("./pages/ejes.py")
 if selecteds=="Proyectos":
-    st.switch_page("./pages/editar_fuentes.py")
+    st.switch_page("./pages/fuentes.py")
 
 
 tnuri = 0
