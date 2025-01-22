@@ -5,7 +5,7 @@ from sqlalchemy import text
 from streamlit_option_menu import option_menu
 
 
-selected4 = option_menu(None, ["Home", 'Palabras Claves','Excluidas','Sectores','Ejes','Palabras por Sector','Proyectos' ], 
+selecteds = option_menu(None, ["Home", 'Palabras Claves','Excluidas','Sectores','Ejes','Palabras por Sector','Proyectos' ], 
       icons=['house', 'gear' ,'gear'] , menu_icon="cast",orientation="horizontal", default_index=-1,
                 
       styles={
@@ -17,19 +17,19 @@ selected4 = option_menu(None, ["Home", 'Palabras Claves','Excluidas','Sectores',
 )
 st.subheader("Parametros")
 
-if selected4=="Home":
+if selecteds=="Home":
     st.switch_page("miraki.py") 
-if selected4=="Palabras Claves":
+if selecteds=="Palabras Claves":
     st.switch_page("./pages/palabrasclaves.py")  
-if selected4=="Excluidas":
+if selecteds=="Excluidas":
     st.switch_page("./pages/editar_fuentes.py")  
-if selected4=="Sectores":
+if selecteds=="Sectores":
     st.switch_page("./pages/sectores.py")  
-if selected4=="Ejes":
+if selecteds=="Ejes":
     st.switch_page("./pages/ejes.py")
-if selected4=="Palabras por Sector":
+if selecteds=="Palabras por Sector":
     st.switch_page("./pages/ejes.py")
-if selected4=="Proyectos":
+if selecteds=="Proyectos":
     st.switch_page("./pages/sectores.py")
 
 
