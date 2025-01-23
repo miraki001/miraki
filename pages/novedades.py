@@ -55,9 +55,9 @@ config = {
     'fuente' : st.column_config.TextColumn('fuente'),
 #    'selec' : st.column_config.CheckboxColumn('selec'),
     'titulo' : st.column_config.TextColumn('titulo',  width='large'),
-    'detalle' : st.column_config.TextColumn('detalle', width='large'),
-    'imagen' : st.column_config.ImageColumn('imagen'),
     'link' : st.column_config.LinkColumn('link'),
+    'imagen' : st.column_config.ImageColumn('imagen'),
+    'detalle' : st.column_config.TextColumn('detalle', width='large'),
 
     
 }
