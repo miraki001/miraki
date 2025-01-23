@@ -8,4 +8,4 @@ wordcloud
 nltk
 gensim 
 scikit-learn
-st_aggrid 
+streamlit-aggrid 
