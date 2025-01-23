@@ -73,7 +73,7 @@ config = {
 
 builder = GridOptionsBuilder.from_dataframe(df)
 builder.configure_pagination(enabled=True)
-builder.configure_selection(selection_mode='single', use_checkbox=False)
+builder.configure_selection(selection_mode='single', use_checkbox=True)
 builder.configure_column('titulo', editable=False)
 grid_options = builder.build()
 
@@ -82,7 +82,7 @@ grid_options = builder.build()
 return_value = AgGrid(df, gridOptions=grid_options)
 if return_value['selected_rows']:
     system_name = return_value['selected_rows'][0]['nuri']
-    st.write(f"Selected System Name: {nuri}")
+    st.write(f"Selected System Name: {system_name}")
 else:
     st.write("No row selected")
 
