@@ -21,17 +21,25 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+col = st.columns((8.5, 4.5, 2), gap='medium')
 
-vtitle = st.text_input("**Titulo**", ttitulo)
-vtitle_es = st.text_input("**Titulo en Castellano** ", st.session_state['vtitulo_es'])
 
-vdet= st.text_input("**Detalle**", st.session_state['vdetalle'])
-vdet_es = st.text_input(":red[Detalle en Castellano] ", st.session_state['vdetalle_es'])
+with col[0]:
+  vtitle = st.text_input("**Titulo**", ttitulo)
+  vtitle_es = st.text_input("**Titulo en Castellano** ", st.session_state['vtitulo_es'])
 
-vlink = st.text_input("**Link** ", st.session_state['vlink'])
-vimg = st.text_input("**Imagen** ", st.session_state['vimagen'])
-#st.write("This is :blue[test]")
-#st.markdown("This text is :red[colored red], and this is **:blue[colored]** and bold.")
+  vdet= st.text_input("**Detalle**", st.session_state['vdetalle'])
+  vdet_es = st.text_input(":red[Detalle en Castellano] ", st.session_state['vdetalle_es'])
+
+  vlink = st.text_input("**Link** ", st.session_state['vlink'])
+  vimg = st.text_input("**Imagen** ", st.session_state['vimagen'])
+with col[1]:
+  st.image(
+            vimg,
+            width=400, # Manually Adjust the width of the image as per requirement
+     )
+
+
 
 col10, col20 = st.columns(2)
 if col10.button(":red[**Grabar**]"):
