@@ -133,7 +133,7 @@ def dataframe_with_selections(df):
 
 
 
-selection = dataframe_with_selections(df)
+selection = dataframe_with_selections(df, column_config = config, num_rows='dynamic')
 
 ss = st.dataframe(selection, hide_index=True)
 st.write(selection['nuri'])
