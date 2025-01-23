@@ -75,7 +75,7 @@ event = st.dataframe(
         df,
         column_config=config,
         use_container_width=True,
-        hide_index=False,
+        hide_index=True,
         on_select="rerun",
         selection_mode="single-row",
     )
