@@ -87,7 +87,7 @@ image_nation = JsCode("""function (params) {
         element.appendChild(document.createTextNode(params.value));
         return element;
         }""")
-builder.configure_column('image', cellRenderer=image_nation)
+builder.configure_column('imagen', cellRenderer=image_nation)
 #builder = GridOptionsBuilder.from_dataframe(df)
 builder.configure_pagination(enabled=True)
 builder.configure_selection(selection_mode='single', use_checkbox=True)
