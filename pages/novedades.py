@@ -69,6 +69,7 @@ config = {
     
 }
 result = st.data_editor(df, column_config = config, num_rows='dynamic')
+st.write('este es resultado')
 st.write(result)
 
 #AgGrid(df, height=500, fit_columns_on_grid_load=True)
@@ -102,7 +103,7 @@ df.style.set_table_styles({
            'props': [('color', 'blue')]}]
 }, overwrite=False)
 
-st.write(df)
+#st.write(df)
 
 def dataframe_with_selections(df):
                     df_with_selections = df.copy()
