@@ -49,6 +49,11 @@ conn = st.connection("postgresql", type="sql")
 df1 = conn.query('select nuri,fuente,fecha,titulo,select_web as sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri from novedades order by nuri desc limit 50;', ttl="0"),
 df = df1[0]
 
+
+st.markdown(""" <style> .font {
+font-size:50px;} 
+</style> """, unsafe_allow_html=True)
+
 colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 config = {
     'nuri' : st.column_config.NumberColumn('nuri', required=True),
