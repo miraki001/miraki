@@ -94,6 +94,13 @@ st.write(vnuri)
 
 df.style.set_properties(subset=['titulo'], **{'width': '30px'})
 
+df.style.set_table_styles({
+    'Tiutlo': [{'selector': '',
+           'props': [('color', 'red'), ('width', '20px')]}],
+    'detalle': [{'selector': 'td',
+           'props': [('color', 'blue')]}]
+}, overwrite=False)
+
 def dataframe_with_selections(df):
                     df_with_selections = df.copy()
                     df_with_selections.insert(0, "Selec", False)
