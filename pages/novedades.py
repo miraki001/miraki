@@ -63,7 +63,7 @@ config = {
     'titulo' : st.column_config.TextColumn('titulo',  width=200),
     'link' : st.column_config.LinkColumn('link',  width=200),
     'imagen' : st.column_config.ImageColumn('imagen'),
-    'detalle' : st.column_config.TextColumn('detalle', width="small"),
+    'detalle' : st.column_config.TextColumn('detalle', width=200),
     'titulo_es' : None,                                           
     'detalle_es' :None,
     'eje_nuri': None,
