@@ -70,8 +70,8 @@ config = {
 }
 st.write('este es resultado antes')
 result = st.data_editor(df, column_config = config, num_rows='dynamic')
-#favorite_command = result.loc[result[“nuri”].idxmax()][“command”]
-#st.markdown(f"Your favorite command is {favorite_command} :balloon:")
+favorite_command = result.loc[result["nuri"].idxmax()]
+st.markdown(favorite_command)
 st.write(result["nuri"].idxmax())
 
 
