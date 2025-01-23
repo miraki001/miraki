@@ -82,13 +82,13 @@ st.header("Selected members")
 people = event.selection.rows
 st.write(people)
 
-pp  =df.iloc[people]
+selection  =df.iloc[people]
 
 st.write(pp)
 
 
 
-vnuri= pp.to_string(columns=['nuri'], header=False, index=False)
+vnuri= selection.to_string(columns=['nuri'], header=False, index=False)
 st.write(vnuri)
 st.session_state.vnuri = vnuri
 
