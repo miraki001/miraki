@@ -71,6 +71,20 @@ config = {
 
 #AgGrid(df, height=500, fit_columns_on_grid_load=True)
 
+image_nation = JsCode("""function (params) {
+        console.log(params);
+        var element = document.createElement("span");
+        var imageElement = document.createElement("img");
+    
+        imageElement.src = params.data.image_path;
+        imageElement.width="40";
+        imageElement.height="40";
+
+        element.appendChild(imageElement);
+        element.appendChild(document.createTextNode(params.value));
+        return element;
+        }""")
+options_builder.configure_column('image', cellRenderer=image_nation)
 builder = GridOptionsBuilder.from_dataframe(df)
 builder.configure_pagination(enabled=True)
 builder.configure_selection(selection_mode='single', use_checkbox=True)
