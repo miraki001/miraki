@@ -53,7 +53,7 @@ df = df1[0]
 
 
 st.markdown(""" <style> .font {
-font-size:20px;} 
+font-size:80px;} 
 </style> """, unsafe_allow_html=True)
 
 colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
