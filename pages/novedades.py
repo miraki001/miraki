@@ -81,6 +81,7 @@ grid_options = builder.build()
 #st.write("AgGrid Demo")
 grid_response  = AgGrid(df, gridOptions=grid_options)
 selected_rows = grid_response['selected_rows']
+st.write(selected_rows)
 st.write(return_value['selected_rows'][0]['nuri'])
 if return_value['selected_rows']:
     system_name = return_value['selected_rows'][0]['nuri']
