@@ -68,8 +68,9 @@ config = {
 
     
 }
+st.write('este es resultado antes')
 result = st.data_editor(df, column_config = config, num_rows='dynamic')
-st.write('este es resultado')
+st.write('este es resultado despues')
 st.write(result)
 
 #AgGrid(df, height=500, fit_columns_on_grid_load=True)
