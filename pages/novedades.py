@@ -90,7 +90,7 @@ event = st.dataframe(
 st.header("Selected members")
 people = event.selection.rows
 st.write(people)
-p1 = df[rows]['nuri']
+p1 = df['nuri'][rows]
 st.write(p1)
 
 
