@@ -85,7 +85,7 @@ grid_options = builder.build()
 
 # Display AgGrid
 #st.write("AgGrid Demo")
-grid_response  = AgGrid(df, gridOptions=grid_options,allow_unsafe_jscode=True,)
+grid_response  = AgGrid(df, gridOptions=grid_options)
 selected_rows = grid_response['selected_rows']
 #st.write(selected_rows)
 vnuri= selected_rows.to_string(columns=['nuri'], header=False, index=False)
