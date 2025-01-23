@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 from streamlit_option_menu import option_menu
+from st_aggrid import AgGrid
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
@@ -68,7 +69,7 @@ config = {
 }
 #result = st.data_editor(df, column_config = config, num_rows='dynamic')
 
-st.dataframe(df.style.set_properties(subset=['titulo'], **{'white-space': 'normal'}))
+AgGrid(df, height=500, fit_columns_on_grid_load=True)
 
 def dataframe_with_selections(df):
                     df_with_selections = df.copy()
