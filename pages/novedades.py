@@ -69,7 +69,23 @@ config = {
 }
 #result = st.data_editor(df, column_config = config, num_rows='dynamic')
 
-AgGrid(df, height=500, fit_columns_on_grid_load=True)
+#AgGrid(df, height=500, fit_columns_on_grid_load=True)
+
+builder = GridOptionsBuilder.from_dataframe(df)
+builder.configure_pagination(enabled=True)
+builder.configure_selection(selection_mode='single', use_checkbox=False)
+builder.configure_column('titulo', editable=False)
+grid_options = builder.build()
+
+# Display AgGrid
+#st.write("AgGrid Demo")
+return_value = AgGrid(df, gridOptions=grid_options)
+if return_value['selected_rows']:
+    system_name = return_value['selected_rows'][0]['nuri']
+    st.write(f"Selected System Name: {nuri}")
+else:
+    st.write("No row selected")
+
 
 def dataframe_with_selections(df):
                     df_with_selections = df.copy()
