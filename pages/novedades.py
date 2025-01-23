@@ -87,6 +87,13 @@ image_nation = JsCode("""function (params) {
         element.appendChild(document.createTextNode(params.value));
         return element;
         }""")
+
+cell_renderer =  JsCode("""
+function(params) {return `<a href=${params.value} target="_blank">${params.value}</a>`}
+""")
+
+builder.configure_column("link", cellRenderer=cell_renderer)
+
 builder.configure_column('imagen', cellRenderer=image_nation)
 #builder = GridOptionsBuilder.from_dataframe(df)
 builder.configure_pagination(enabled=True)
