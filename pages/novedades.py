@@ -2,8 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 from streamlit_option_menu import option_menu
-from st_aggrid import AgGrid, GridOptionsBuilder, JsCode
-from st_aggrid.grid_options_builder import GridOptionsBuilder
+
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
@@ -68,15 +67,7 @@ config = {
 
     
 }
-#st.write('este es resultado antes')
-#result = st.data_editor(df, column_config = config, num_rows='dynamic')
-#favorite_command = result.loc[result["nuri"].idxmax()]
-#st.markdown(favorite_command)
-#st.write(result["nuri"].idxmax())
 
-
-#st.write('este es resultado despues')
-#st.write(result)
 
 event = st.dataframe(
         df,
@@ -97,71 +88,8 @@ st.write(pp)
 
 
 
-#AgGrid(df, height=500, fit_columns_on_grid_load=True)
-
-builder = GridOptionsBuilder.from_dataframe(df)
-
-
-
-
-#builder = GridOptionsBuilder.from_dataframe(df)
-builder.configure_pagination(enabled=True)
-builder.configure_selection(selection_mode='single', use_checkbox=True)
-builder.configure_column('nuri', editable=False)
-grid_options = builder.build()
-
-# Display AgGrid
-#st.write("AgGrid Demo")
-grid_response  = AgGrid(df, gridOptions=grid_options)
-selected_rows = grid_response['selected_rows']
-#st.write(selected_rows)
-vnuri= selected_rows.to_string(columns=['nuri'], header=False, index=False)
+vnuri= pp.to_string(columns=['nuri'], header=False, index=False)
 st.write(vnuri)
-#st.write(selected_rows['nuri'][0])
-
-df.style.set_properties(subset=['titulo'], **{'width': '30px'})
-
-df.style.set_table_styles({
-    'Tiutlo': [{'selector': '',
-           'props': [('color', 'red'), ('width', '20px')]}],
-    'detalle': [{'selector': 'td',
-           'props': [('color', 'blue')]}]
-}, overwrite=False)
-
-#st.write(df)
-
-def dataframe_with_selections(df):
-                    df_with_selections = df.copy()
-                    df_with_selections.insert(0, "Selec", False)
-                    # Get dataframe row-selections from user with st.data_editor
-                    edited_df = st.data_editor(
-                        df_with_selections,
-                        hide_index=True,
-                        column_config=
-                        {"Select": st.column_config.CheckboxColumn(required=True),
-                        'imagen' : st.column_config.ImageColumn('imagen'),
-                        'link' : st.column_config.LinkColumn('link') ,      
-                        'titulo_es' : None,                        
-                        'detalle_es' : None,    
-                        'eje_nuri' : None,    
-                         
-                        },
-                        disabled=df.columns,
-#                        num_rows="dynamic",
-                    )
-
-                    # Filter the dataframe using the temporary column, then drop the column
-                    selected_rows = edited_df[edited_df.Selec]
-                    return selected_rows.drop('Selec', axis=1)
-
-
-
-
-selection = dataframe_with_selections(df)
-
-ss = st.dataframe(selection, hide_index=True)
-st.write(selection['nuri'])
-vnuri= selection.to_string(columns=['nuri'], header=False, index=False)
 st.session_state.vnuri = vnuri
 server_state.vnuri = vnuri
 
