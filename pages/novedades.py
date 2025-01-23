@@ -74,26 +74,9 @@ config = {
 
 builder = GridOptionsBuilder.from_dataframe(df)
 
-image_nation = JsCode("""function (params) {
-        console.log(params);
-        var element = document.createElement("span");
-        var imageElement = document.createElement("img");
-    
-        imageElement.src = params.data.imagen;
-        imageElement.width="20";
-        imageElement.height="20";
 
-        element.appendChild(imageElement);
-        element.appendChild(document.createTextNode(params.value));
-        return element;
-        }""")
 
-builder.configure_column("link",
-                            headerName="Link",
-                            cellRenderer=JsCode('''function(params) {return '<a href="https://www.google.com">params.value</a>'}'''),
-                            width=300)
 
-builder.configure_column('imagen', cellRenderer=image_nation)
 #builder = GridOptionsBuilder.from_dataframe(df)
 builder.configure_pagination(enabled=True)
 builder.configure_selection(selection_mode='single', use_checkbox=True)
