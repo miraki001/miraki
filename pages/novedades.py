@@ -74,12 +74,14 @@ config = {
 builder = GridOptionsBuilder.from_dataframe(df)
 builder.configure_pagination(enabled=True)
 builder.configure_selection(selection_mode='single', use_checkbox=True)
-builder.configure_column('titulo', editable=False)
+builder.configure_column('nuri', editable=False)
 grid_options = builder.build()
 
 # Display AgGrid
 #st.write("AgGrid Demo")
-return_value = AgGrid(df, gridOptions=grid_options)
+grid_response  = AgGrid(df, gridOptions=grid_options)
+selected_rows = grid_response['selected_rows']
+st.write(return_value['selected_rows'][0]['nuri'])
 if return_value['selected_rows']:
     system_name = return_value['selected_rows'][0]['nuri']
     st.write(f"Selected System Name: {system_name}")
