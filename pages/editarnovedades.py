@@ -56,7 +56,8 @@ with col[0]:
   vlink = st.text_input("**Link** ", st.session_state['vlink'])
   vimg = st.text_input("**Imagen** ", st.session_state['vimagen'])
 with col[1]:
-  st.image(
+  if vimg != '':
+    st.image(
             vimg,
             width=600, # Manually Adjust the width of the image as per requirement
      )
