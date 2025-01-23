@@ -59,7 +59,7 @@ font-size:10px;}
 colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 config = {
     'nuri' : st.column_config.NumberColumn('nuri', required=True),
-    'fuente' : st.column_config.TextColumn('fuente'),
+    'fuente' : st.column_config.TextColumn('fuente,width=350'),
 #    'selec' : st.column_config.CheckboxColumn('selec'),
     'titulo' : st.column_config.TextColumn('titulo',  width="small"),
     'link' : st.column_config.LinkColumn('link',  width="small"),
@@ -68,7 +68,8 @@ config = {
 
     
 }
-#result = st.data_editor(df, column_config = config, num_rows='dynamic')
+result = st.data_editor(df, column_config = config, num_rows='dynamic')
+st.write(result)
 
 #AgGrid(df, height=500, fit_columns_on_grid_load=True)
 
