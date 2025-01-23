@@ -82,7 +82,7 @@ event = st.dataframe(
         df,
         column_config=config,
         use_container_width=True,
-        hide_index=flase,
+        hide_index=false,
         on_select="rerun",
         selection_mode="single-row",
     )
