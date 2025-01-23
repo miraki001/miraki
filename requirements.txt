@@ -9,4 +9,3 @@ nltk
 gensim 
 scikit-learn
 streamlit-aggrid 
-grid_options_builder 
