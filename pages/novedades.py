@@ -89,8 +89,31 @@ def dataframe_with_selections(df):
                     # Filter the dataframe using the temporary column, then drop the column
                     selected_rows = edited_df[edited_df.Selec]
                     return selected_rows.drop('Selec', axis=1)
-                  
-selection = dataframe_with_selections(df)
+def style_dataframe(df):
+    return df.style.set_table_styles(
+        [{
+            'selector': 'th',
+            'props': [
+                ('background-color', '#4CAF50'),
+                ('color', 'white'),
+                ('font-family', 'Arial, sans-serif'),
+                ('font-size', '16px')
+            ]
+        }, 
+        {
+            'selector': 'td, th',
+            'props': [
+                ('border', '2px solid #4CAF50')
+            ]
+        }]
+    )
+
+#styled_df = style_dataframe(df)
+
+
+
+#selection = dataframe_with_selections(df)
+selection = dataframe_with_selections(style_dataframe(df))
 
 ss = st.dataframe(selection, hide_index=True)
 st.write(selection['nuri'])
