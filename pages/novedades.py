@@ -81,6 +81,7 @@ def dataframe_with_selections(df):
                         'titulo_es' : None,                        
                         'detalle_es' : None,    
                         'eje_nuri' : None,    
+                         width="small",
                         },
                         disabled=df.columns,
 #                        num_rows="dynamic",
