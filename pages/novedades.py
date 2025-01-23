@@ -88,11 +88,10 @@ image_nation = JsCode("""function (params) {
         return element;
         }""")
 
-cell_renderer =  JsCode("""
-function(params) {return `<a href=${params.value} target="_blank">${params.value}</a>`}
-""")
-
-builder.configure_column("link", cellRenderer=cell_renderer)
+builder.configure_column("link",
+                            headerName="Link",
+                            cellRenderer=JsCode('''function(params) {return '<a href="https://www.google.com">params.value</a>'}'''),
+                            width=300)
 
 builder.configure_column('imagen', cellRenderer=image_nation)
 #builder = GridOptionsBuilder.from_dataframe(df)
