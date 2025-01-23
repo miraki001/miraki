@@ -52,14 +52,14 @@ df = df1[0]
 
 
 st.markdown(""" <style> .font {
-font-size:80px;} 
+font-size:20px;} 
 </style> """, unsafe_allow_html=True)
 
 colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 config = {
     'nuri' : st.column_config.NumberColumn('nuri', required=True ,width= 30),
     'fuente' : st.column_config.TextColumn('fuente', width=50),
-    'selec' : st.column_config.TextColumn('selec', width = 20 ),
+    'selec' : st.column_config.TextColumn('selec', width = 10 ),
     'titulo' : st.column_config.TextColumn('titulo',  width=200),
     'link' : st.column_config.LinkColumn('link',  width=200),
     'imagen' : st.column_config.ImageColumn('imagen'),
@@ -80,7 +80,7 @@ event = st.dataframe(
         selection_mode="single-row",
     )
 
-st.header("Selected members")
+#st.header("Selected members")
 people = event.selection.rows
 #st.write(people)
 
