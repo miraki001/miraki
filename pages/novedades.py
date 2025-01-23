@@ -80,24 +80,23 @@ event = st.dataframe(
 
 st.header("Selected members")
 people = event.selection.rows
-st.write(people)
+#st.write(people)
 
 selection  =df.iloc[people]
 
-st.write(pp)
+#st.write(pp)
 
+cnt = len(selection)
+if cnt>0:
 
-
-vnuri= selection.to_string(columns=['nuri'], header=False, index=False)
-st.write(vnuri)
-st.session_state.vnuri = vnuri
-
-
-st.session_state['user_select_value'] = vnuri
-st.session_state['vnuri'] = vnuri
-st.session_state['vtitulo'] = selection.to_string(columns=['titulo'], header=False, index=False)
-st.session_state['vdetalle'] = selection.to_string(columns=['detalle'], header=False, index=False)
-st.session_state['vlink'] = selection.to_string(columns=['link'], header=False, index=False)
-st.session_state['vimagen'] = selection.to_string(columns=['imagen'], header=False, index=False)
-st.session_state['vtitulo_es'] = selection.to_string(columns=['titulo_es'], header=False, index=False)
-st.session_state['vdetalle_es'] = selection.to_string(columns=['detalle_es'], header=False, index=False)
+  vnuri= selection.to_string(columns=['nuri'], header=False, index=False)
+  st.write(vnuri)
+  st.session_state.vnuri = vnuri
+  st.session_state['user_select_value'] = vnuri
+  st.session_state['vnuri'] = vnuri
+  st.session_state['vtitulo'] = selection.to_string(columns=['titulo'], header=False, index=False)
+  st.session_state['vdetalle'] = selection.to_string(columns=['detalle'], header=False, index=False)
+  st.session_state['vlink'] = selection.to_string(columns=['link'], header=False, index=False)
+  st.session_state['vimagen'] = selection.to_string(columns=['imagen'], header=False, index=False)
+  st.session_state['vtitulo_es'] = selection.to_string(columns=['titulo_es'], header=False, index=False)
+  st.session_state['vdetalle_es'] = selection.to_string(columns=['detalle_es'], header=False, index=False)
