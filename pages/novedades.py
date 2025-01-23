@@ -58,7 +58,7 @@ font-size:80px;}
 colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 config = {
     'nuri' : st.column_config.NumberColumn('nuri', required=True),
-    'fuente' : st.column_config.TextColumn('fuente, width=50),
+    'fuente' : st.column_config.TextColumn('fuente', width=50),
 #    'selec' : st.column_config.CheckboxColumn('selec'),
     'titulo' : st.column_config.TextColumn('titulo',  width=200),
     'link' : st.column_config.LinkColumn('link',  width=200),
