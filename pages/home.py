@@ -62,6 +62,11 @@ if selected2=="Novedades":
   st.switch_page("./pages/novedades.py")       
 if selected2=="Parametros":
   st.switch_page("./pages/parametros.py")        
+if selected2=="Github":
+   st.write("check out this [link](https://github.com/miraki001/miraki/edit/main/pages/home.py)")  
+
+
+
 st.header("Miraki")
 
 st.write(
