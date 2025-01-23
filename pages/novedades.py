@@ -54,10 +54,10 @@ config = {
     'nuri' : st.column_config.NumberColumn('nuri', required=True),
     'fuente' : st.column_config.TextColumn('fuente'),
 #    'selec' : st.column_config.CheckboxColumn('selec'),
-    'titulo' : st.column_config.TextColumn('titulo',  width='large'),
-    'link' : st.column_config.LinkColumn('link'),
+    'titulo' : st.column_config.TextColumn('titulo',  width='medium'),
+    'link' : st.column_config.LinkColumn('link',  width='medium'),
     'imagen' : st.column_config.ImageColumn('imagen'),
-    'detalle' : st.column_config.TextColumn('detalle', width='large'),
+    'detalle' : st.column_config.TextColumn('detalle', width='medium'),
 
     
 }
