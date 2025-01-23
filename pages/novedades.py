@@ -101,6 +101,8 @@ df.style.set_table_styles({
            'props': [('color', 'blue')]}]
 }, overwrite=False)
 
+st.write(df)
+
 def dataframe_with_selections(df):
                     df_with_selections = df.copy()
                     df_with_selections.insert(0, "Selec", False)
