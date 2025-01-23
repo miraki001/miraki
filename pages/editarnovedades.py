@@ -21,7 +21,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-col = st.columns((8.5, 4.5, 2), gap='medium')
+col = st.columns((12.5, 4.5, 2), gap='medium')
 
 
 with col[0]:
