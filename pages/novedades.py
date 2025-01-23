@@ -118,7 +118,7 @@ def dataframe_with_selections(df):
 
 
 
-
+df.set_option('max_colwidth', 40)
 selection = dataframe_with_selections(df)
 
 ss = st.dataframe(selection, hide_index=True)
