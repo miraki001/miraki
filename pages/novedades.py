@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 from streamlit_option_menu import option_menu
-from st_aggrid import AgGrid, GridOptionsBuilder
+from st_aggrid import AgGrid, GridOptionsBuilder, JsCode
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
