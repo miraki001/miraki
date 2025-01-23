@@ -91,7 +91,7 @@ st.write(pp)
 vnuri= pp.to_string(columns=['nuri'], header=False, index=False)
 st.write(vnuri)
 st.session_state.vnuri = vnuri
-server_state.vnuri = vnuri
+
 
 st.session_state['user_select_value'] = vnuri
 st.session_state['vnuri'] = vnuri
