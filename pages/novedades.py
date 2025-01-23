@@ -46,7 +46,7 @@ vimagen = ''
 
 
 conn = st.connection("postgresql", type="sql")
-df1 = conn.query('select nuri,fuente,fecha,titulo,select_web as sel,detalle,imagen,link,titulo_es,detalle_es,eje_nuri from novedades order by nuri desc limit 50;', ttl="0"),
+df1 = conn.query('select nuri,fuente,fecha,titulo,select_web as sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri from novedades order by nuri desc limit 50;', ttl="0"),
 df = df1[0]
 
 colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
