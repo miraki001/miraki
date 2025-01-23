@@ -59,7 +59,7 @@ colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 config = {
     'nuri' : st.column_config.NumberColumn('nuri', required=True),
     'fuente' : st.column_config.TextColumn('fuente', width=60),
-#    'selec' : st.column_config.CheckboxColumn('selec'),
+    'selec' : st.column_config.TextColumn('selec', width = 40 ),
     'titulo' : st.column_config.TextColumn('titulo',  width=200),
     'link' : st.column_config.LinkColumn('link',  width=200),
     'imagen' : st.column_config.ImageColumn('imagen'),
