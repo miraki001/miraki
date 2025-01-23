@@ -70,6 +70,11 @@ config = {
 }
 st.write('este es resultado antes')
 result = st.data_editor(df, column_config = config, num_rows='dynamic')
+#favorite_command = result.loc[result[“nuri”].idxmax()][“command”]
+#st.markdown(f"Your favorite command is {favorite_command} :balloon:")
+st.write(result[“nuri”].idxmax())
+
+
 st.write('este es resultado despues')
 st.write(result)
 
@@ -133,7 +138,7 @@ def dataframe_with_selections(df):
 
 
 
-selection = dataframe_with_selections(df, column_config = config, num_rows='dynamic')
+selection = dataframe_with_selections(df)
 
 ss = st.dataframe(selection, hide_index=True)
 st.write(selection['nuri'])
