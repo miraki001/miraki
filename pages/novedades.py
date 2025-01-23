@@ -78,6 +78,21 @@ st.write(result["nuri"].idxmax())
 st.write('este es resultado despues')
 st.write(result)
 
+event = st.dataframe(
+        df,
+        column_config=config,
+        use_container_width=True,
+        hide_index=flase,
+        on_select="rerun",
+        selection_mode="single-row",
+    )
+
+st.header("Selected members")
+people = event.selection.rows
+st.write(people)
+
+
+
 #AgGrid(df, height=500, fit_columns_on_grid_load=True)
 
 builder = GridOptionsBuilder.from_dataframe(df)
