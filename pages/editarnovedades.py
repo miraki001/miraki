@@ -36,7 +36,7 @@ with col[0]:
 with col[1]:
   st.image(
             vimg,
-            width=400, # Manually Adjust the width of the image as per requirement
+            width=600, # Manually Adjust the width of the image as per requirement
      )
 
 
