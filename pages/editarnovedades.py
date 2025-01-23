@@ -8,6 +8,28 @@ vtitulo = st.session_state['vtitulo']
 tnuri = st.session_state['vnuri']
 ttitulo = st.session_state['vtitulo']
 
+def actualizar():
+    conn = st.connection("postgresql", type="sql")
+    with conn.session as session:
+        actualiza = "UPDATE novedades SET titulo = :titulo"
+        actualiza = actualiza + " ,detalle = :detalle "
+        actualiza = actualiza + " ,link = :link "
+        actualiza = actualiza + " ,titulo_es = :titulo_es "
+        actualiza = actualiza + " ,detalle_es = :detalle_es "
+        actualiza = actualiza + " ,imagen = :imagen "
+        actualiza = actualiza + " WHERE nuri = :nuri ;"
+        session.execute(text(actualiza), {"titulo": vtitle,"detalle": vdet,"titulo_es": vtitle_es,"detalle_es": vdet_es, "link": vlink,"imagen": vimg, "nuri": tnuri})
+        session.commit()
+
+def ingresar():
+    conn = st.connection("postgresql", type="sql")
+    with conn.session as session:
+        actualiza = "insert into sectores (nuri,proyecto_nuri,sector,color)"
+        actualiza = actualiza + " values (nextval('sectores_seq'),:proyecto_nuri,:sector,:color) ;"
+        session.execute(text(actualiza), {"proyecto_nuri": vpro_nuri,"sector": vsector,"color": vcolor})
+        session.commit()
+
+
 st.markdown("""
 <style>
     .stTextInput input[aria-label="**Titulo**"] {
@@ -43,6 +65,7 @@ with col[1]:
 
 col10, col20 = st.columns(2)
 if col10.button(":red[**Grabar**]"):
+    actualizar()
     st.switch_page("./pages/novedades.py")
 if col20.button(":red[**Cancelar**]"):
     st.switch_page("./pages/novedades.py")
