@@ -72,6 +72,7 @@ config = {
 
 #AgGrid(df, height=500, fit_columns_on_grid_load=True)
 
+builder = GridOptionsBuilder.from_dataframe(df)
 image_nation = JsCode("""function (params) {
         console.log(params);
         var element = document.createElement("span");
@@ -85,8 +86,8 @@ image_nation = JsCode("""function (params) {
         element.appendChild(document.createTextNode(params.value));
         return element;
         }""")
-options_builder.configure_column('image', cellRenderer=image_nation)
-builder = GridOptionsBuilder.from_dataframe(df)
+builder.configure_column('image', cellRenderer=image_nation)
+#builder = GridOptionsBuilder.from_dataframe(df)
 builder.configure_pagination(enabled=True)
 builder.configure_selection(selection_mode='single', use_checkbox=True)
 builder.configure_column('nuri', editable=False)
