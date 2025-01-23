@@ -92,6 +92,8 @@ vnuri= selected_rows.to_string(columns=['nuri'], header=False, index=False)
 st.write(vnuri)
 #st.write(selected_rows['nuri'][0])
 
+df.style.set_properties(subset=['titulo'], **{'width': '30px'})
+
 def dataframe_with_selections(df):
                     df_with_selections = df.copy()
                     df_with_selections.insert(0, "Selec", False)
@@ -118,7 +120,7 @@ def dataframe_with_selections(df):
 
 
 
-df.set_option('max_colwidth', 40)
+
 selection = dataframe_with_selections(df)
 
 ss = st.dataframe(selection, hide_index=True)
