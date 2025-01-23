@@ -67,6 +67,9 @@ config = {
     
 }
 #result = st.data_editor(df, column_config = config, num_rows='dynamic')
+
+st.dataframe(df.style.set_properties(subset=['titulo'], **{'white-space': 'normal'}))
+
 def dataframe_with_selections(df):
                     df_with_selections = df.copy()
                     df_with_selections.insert(0, "Selec", False)
@@ -77,7 +80,7 @@ def dataframe_with_selections(df):
                         column_config=
                         {"Select": st.column_config.CheckboxColumn(required=True),
                         'imagen' : st.column_config.ImageColumn('imagen'),
-                        'link' : st.column_config.LinkColumn('link') , width="small",      
+                        'link' : st.column_config.LinkColumn('link') ,      
                         'titulo_es' : None,                        
                         'detalle_es' : None,    
                         'eje_nuri' : None,    
