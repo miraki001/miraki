@@ -77,13 +77,12 @@ def dataframe_with_selections(df):
                         column_config=
                         {"Select": st.column_config.CheckboxColumn(required=True),
                         'imagen' : st.column_config.ImageColumn('imagen'),
-                        'link' : st.column_config.LinkColumn('link'),      
+                        'link' : st.column_config.LinkColumn('link') , width="small",      
                         'titulo_es' : None,                        
                         'detalle_es' : None,    
                         'eje_nuri' : None,    
                          
                         },
-                        width="small",
                         disabled=df.columns,
 #                        num_rows="dynamic",
                     )
