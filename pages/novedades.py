@@ -73,14 +73,15 @@ config = {
 #AgGrid(df, height=500, fit_columns_on_grid_load=True)
 
 builder = GridOptionsBuilder.from_dataframe(df)
+
 image_nation = JsCode("""function (params) {
         console.log(params);
         var element = document.createElement("span");
         var imageElement = document.createElement("img");
     
         imageElement.src = params.data.image_path;
-        imageElement.width="40";
-        imageElement.height="40";
+        imageElement.width="20";
+        imageElement.height="20";
 
         element.appendChild(imageElement);
         element.appendChild(document.createTextNode(params.value));
@@ -95,7 +96,7 @@ grid_options = builder.build()
 
 # Display AgGrid
 #st.write("AgGrid Demo")
-grid_response  = AgGrid(df, gridOptions=grid_options)
+grid_response  = AgGrid(df, gridOptions=grid_options,allow_unsafe_jscode=True,)
 selected_rows = grid_response['selected_rows']
 #st.write(selected_rows)
 vnuri= selected_rows.to_string(columns=['nuri'], header=False, index=False)
