@@ -79,7 +79,7 @@ image_nation = JsCode("""function (params) {
         var element = document.createElement("span");
         var imageElement = document.createElement("img");
     
-        imageElement.src = params.data.image_path;
+        imageElement.src = params.data.imagen;
         imageElement.width="20";
         imageElement.height="20";
 
