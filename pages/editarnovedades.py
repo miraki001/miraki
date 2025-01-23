@@ -43,6 +43,6 @@ with col[1]:
 
 col10, col20 = st.columns(2)
 if col10.button(":red[**Grabar**]"):
-    st.switch_page("streamlit_app.py")
+    st.switch_page("./pages/novedades.py")
 if col20.button(":red[**Cancelar**]"):
-    st.switch_page("streamlit_app.py")
+    st.switch_page("./pages/novedades.py")
