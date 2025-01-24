@@ -142,7 +142,7 @@ if selected241=="Desmarcar":
 
 
 #st.header("Selected members")
-#people = event.selection.rows
+people = selection.selection.rows
 st.write(selection)
 
 #selection  =df.iloc[people]
