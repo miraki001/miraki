@@ -133,7 +133,7 @@ def dataframe_with_selections(df):
                     edited_df = st.data_editor(
                         df_with_selections,
                         hide_index=False,
-                        style.apply(lambda x: ["background: red" if v > x.iloc[0] else "" for v in x], axis = 1),
+                        #style.apply(lambda x: ["background: red" if v > x.iloc[0] else "" for v in x], axis = 1),
                         use_container_width=True,
                         column_config=config
                        ,num_rows=20
