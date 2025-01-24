@@ -135,7 +135,7 @@ edited_df = st.data_editor(
 
 def dataframe_with_selections(df):
                     df_with_selections = df.copy()
-                    df_with_selections.insert(0, "Selec", False)
+                    #df_with_selections.insert(0, "Selec", False)
                     # Get dataframe row-selections from user with st.data_editor
                     edited_df = st.data_editor(
                         df_with_selections,
@@ -148,8 +148,8 @@ def dataframe_with_selections(df):
 
                     # Filter the dataframe using the temporary column, then drop the column
                     #edited_df = edited_df[edited_df.nuri == 461048]
-                    selected_rows = edited_df[edited_df.Selec]
-                    return selected_rows.drop('Selec', axis=1)
+                    selected_rows = edited_df[edited_df.selec]
+                    return selected_rows.drop('selec', axis=1)
 
 
 selection = dataframe_with_selections(df)
