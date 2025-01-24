@@ -136,7 +136,7 @@ edited_df = st.data_editor(
 
 def dataframe_with_selections(df):
                     df_with_selections = df.copy()
-                    #df_with_selections.insert(0, "Selec", False)
+                    df_with_selections.insert(0, "Selec", False)
                     # Get dataframe row-selections from user with st.data_editor
                     edited_df = st.data_editor(
                         df_with_selections,
