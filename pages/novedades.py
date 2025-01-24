@@ -123,7 +123,7 @@ selection = dataframe_with_selections(df)
 
 #st.header("Selected members")
 people = event.selection.rows
-#st.write(people)
+st.write(people)
 
 selection  =df.iloc[people]
 
