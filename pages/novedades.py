@@ -126,7 +126,7 @@ edited_df = st.data_editor(
 )
 """
 
-df.loc[0] = 461048
+df.loc[0,'nuri'] = 461048
 
 def dataframe_with_selections(df):
                     df_with_selections = df.copy()
