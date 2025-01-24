@@ -47,7 +47,7 @@ vimagen = ''
 
 
 conn = st.connection("postgresql", type="sql")
-df1 = conn.query('select nuri,fuente,fecha,titulo,select_web as sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri from novedades order by nuri desc limit 50;', ttl="0"),
+df1 = conn.query('select nuri,fuente,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje from nov_web desc limit 50;', ttl="0"),
 df = df1[0]
 
 
@@ -102,3 +102,4 @@ if cnt>0:
   st.session_state['vimagen'] = selection.to_string(columns=['imagen'], header=False, index=False)
   st.session_state['vtitulo_es'] = selection.to_string(columns=['titulo_es'], header=False, index=False)
   st.session_state['vdetalle_es'] = selection.to_string(columns=['detalle_es'], header=False, index=False)
+  st.session_state['veje'] = selection.to_string(columns=['eje'], header=False, index=False)
