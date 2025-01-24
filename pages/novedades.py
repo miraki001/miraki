@@ -56,31 +56,6 @@ vimagen = ''
 
 
 
-selected241 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar' ], 
-      icons=['house', 'plus' ,'pencil-square','eraser','chek','patch-chek'] , menu_icon="cast",orientation="horizontal", default_index=-3,
-                
-      styles={
-        "container": {"padding": "0!important", "background-color": "#604283"},
-        "icon": {"color": "orange", "font-size": "14px"}, 
-        "nav-link": {"color": "white", "font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#B3D3F0"},
-        "nav-link-selected": {"background-color": "#604283"}
-      }
-)
-
-
-if selected241=="Home":
-    st.switch_page("miraki.py") 
-if selected241=="Ingresar":
-    st.session_state['vTipo'] = 'Ingresar'
-    st.switch_page("./pages/editarnovedades.py")   
-if selected241=="Editar":
-    st.session_state['vTipo'] = 'Editar'
-    st.switch_page("./pages/editarnovedades.py") 
-if selected241=="Seleccionar":
-    seleccionar(df)
-if selected241=="Desmarcar":
-    desmarcar(df)
-
 
  
 
@@ -107,7 +82,7 @@ config = {
 
 
 
-
+"""
 event = st.dataframe(
         df,
         column_config=config,
@@ -116,7 +91,7 @@ event = st.dataframe(
         on_select="rerun",
         selection_mode="single-row",
     )
-"""
+
 edited_df = st.data_editor(
    df, column_config=config
    ,use_container_width=True
@@ -126,7 +101,7 @@ edited_df = st.data_editor(
 )
 """
 
-df.loc[0,'nuri'] = 461048
+#df.loc[0,'nuri'] = 461048
 
 def dataframe_with_selections(df):
                     df_with_selections = df.copy()
@@ -151,6 +126,32 @@ def dataframe_with_selections(df):
 selection = dataframe_with_selections(df)
 
 #aca
+
+selected241 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar' ], 
+      icons=['house', 'plus' ,'pencil-square','eraser','chek','patch-chek'] , menu_icon="cast",orientation="horizontal", default_index=-3,
+                
+      styles={
+        "container": {"padding": "0!important", "background-color": "#604283"},
+        "icon": {"color": "orange", "font-size": "14px"}, 
+        "nav-link": {"color": "white", "font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#B3D3F0"},
+        "nav-link-selected": {"background-color": "#604283"}
+      }
+)
+
+
+if selected241=="Home":
+    st.switch_page("miraki.py") 
+if selected241=="Ingresar":
+    st.session_state['vTipo'] = 'Ingresar'
+    st.switch_page("./pages/editarnovedades.py")   
+if selected241=="Editar":
+    st.session_state['vTipo'] = 'Editar'
+    st.switch_page("./pages/editarnovedades.py") 
+if selected241=="Seleccionar":
+    seleccionar(df)
+if selected241=="Desmarcar":
+    desmarcar(df)
+
 
 
 
