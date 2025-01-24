@@ -4,6 +4,12 @@ import os
 from streamlit_option_menu import option_menu
 import psycopg2
 from sqlalchemy import text
+st.set_page_config(initial_sidebar_state="collapsed",
+                  layout="wide",menu_items=None,page_title="Miraki")
+
+vnuri =0
+st.session_state.vnuri = 0
+st.subheader("Novedades")
 
 conn = st.connection("postgresql", type="sql")
 df1 = conn.query('select nuri,fuente,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje from nov_web limit 50;', ttl="0"),
@@ -53,12 +59,6 @@ def desmarcar(df):
       session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0 WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
       session.commit()
 
-st.set_page_config(initial_sidebar_state="collapsed",
-                  layout="wide",menu_items=None,page_title="Miraki")
-
-vnuri =0
-st.session_state.vnuri = 0
-st.subheader("Novedades")
 
 
 
