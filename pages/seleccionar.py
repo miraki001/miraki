@@ -14,12 +14,13 @@ new = 'S'
 
 with conn.session as session:
     #session.execute(f"UPDATE novedades SET select_web = '{new}' WHERE nuri='{nuri}'")
-    session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0 WHERE nuri= :nuri"), {"val": new,"nuri": nuri})
+    session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0 WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
                         
     session.commit()
     st.success("Data sent")
 
-st.switch_page("./pages/novedades.py")
 
 
-#df1 = conn.execute(actualizar, ttl="0",params={"estado": "S"} ),
+#st.switch_page("./pages/novedades.py")
+
+
