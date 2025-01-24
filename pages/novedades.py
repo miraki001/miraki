@@ -124,6 +124,7 @@ def dataframe_with_selections(df):
                         hide_index=True,
                         use_container_width=True,
                         column_config=config
+                       ,selection_mode="single-row"
                        ,num_rows=20
 
                     )
