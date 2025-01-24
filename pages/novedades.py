@@ -46,7 +46,7 @@ df = df1[0]
 pnuri = st.text_input("ingrese el nombre de la fuente",vnuri)
 if pnuri:
     mask = df.applymap(lambda x: pnuri in str(x).lower()).any(axis=1)
-    df = df[mask]
+    df = df.loc[df['nuri'] >= mask]
 
 vnuri = 500
 vtitulo= ''
