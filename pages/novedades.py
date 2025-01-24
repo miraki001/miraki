@@ -11,6 +11,26 @@ vnuri =0
 st.session_state.vnuri = 0
 st.subheader("Novedades")
 
+def seleccionar(df):
+   new = 'S'
+   nuri = st.session_state['vnuri1']
+   trec = st.session_state['recno']
+   df.sel[trec] = 'S'
+   with conn.session as session: 
+      session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0 WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
+      session.commit()
+
+def desmarcar(df):
+   new = 'N'
+   nuri = st.session_state['vnuri1']
+   trec = st.session_state['recno']
+   df.sel[trec] = 'N'
+   with conn.session as session: 
+      session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0 WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
+      session.commit()
+
+
+
 conn = st.connection("postgresql", type="sql")
 df1 = conn.query('select nuri,fuente,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje from nov_web limit 50;', ttl="0"),
 df = df1[0]
@@ -40,24 +60,6 @@ if selected241=="Seleccionar":
 if selected241=="Desmarcar":
     desmarcar(df)
 
-
-def seleccionar(df):
-   new = 'S'
-   nuri = st.session_state['vnuri1']
-   trec = st.session_state['recno']
-   df.sel[trec] = 'S'
-   with conn.session as session: 
-      session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0 WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
-      session.commit()
-
-def desmarcar(df):
-   new = 'N'
-   nuri = st.session_state['vnuri1']
-   trec = st.session_state['recno']
-   df.sel[trec] = 'N'
-   with conn.session as session: 
-      session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0 WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
-      session.commit()
 
 
 
