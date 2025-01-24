@@ -52,7 +52,7 @@ vimagen = ''
 selection = dataframe_with_selections(df)
 
 selected241 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar' ], 
-      icons=['house', 'plus' ,'pencil-square','eraser','chek','patch-chek'] , menu_icon="cast",orientation="horizontal", default_index=-1,
+      icons=['house', 'plus' ,'pencil-square','eraser','chek','patch-chek'] , menu_icon="cast",orientation="horizontal", default_index=-2,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
