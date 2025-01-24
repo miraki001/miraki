@@ -11,6 +11,8 @@ conn = st.connection("postgresql", type="sql")
 def seleccionar():
    new = 'S'
    nuri = st.session_state['vnuri1']
+   trec = st.session_state['recno']
+   df[trec].sel = 'S'
    with conn.session as session: 
       session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0 WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
       session.commit()
@@ -128,6 +130,7 @@ st.write(people)
 selection  =df.iloc[people]
 
 st.write(people[0])
+st.session_state['recno'] =  people[0]
 
 cnt = len(selection)
 if cnt>0:
