@@ -6,6 +6,8 @@ st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
 
 vtitulo = st.session_state['vtitulo']
+veje1 = st.session_state['veje']
+st.write(veje1)
 
 conn = st.connection("postgresql", type="sql")
 df1 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
@@ -13,7 +15,7 @@ df = df1[0]
 
 
 
-#df[df['A']==5].index.item()
+pos = df[df['eje']==veje1].index.item()
 tnuri = st.session_state['vnuri']
 ttitulo = st.session_state['vtitulo']
 
