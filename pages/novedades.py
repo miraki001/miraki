@@ -126,6 +126,8 @@ edited_df = st.data_editor(
 )
 """
 
+df.loc[index_reco1, 'nuri'] = 461048
+
 def dataframe_with_selections(df):
                     df_with_selections = df.copy()
                     df_with_selections.insert(0, "Selec", False)
