@@ -67,6 +67,8 @@ with col[1]:
   veje = st.selectbox('Categoria ', df.eje , df.columns.tolist().index('nuri'))
   st.write('')
   st.write('')
+  st.write(veje)
+  st.write(veje.index)
   if vimg != '':
     st.image(
             vimg,
