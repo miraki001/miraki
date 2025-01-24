@@ -91,7 +91,7 @@ event = st.dataframe(
         on_select="rerun",
         selection_mode="single-row",
     )
-
+"""
 edited_df = st.data_editor(
    df, column_config=config
    ,use_container_width=True
@@ -99,6 +99,26 @@ edited_df = st.data_editor(
    #,selection_mode="single-row"
    ,num_rows=20
 )
+"""
+
+def dataframe_with_selections(df):
+                    df_with_selections = df.copy()
+                    df_with_selections.insert(0, "Selec", False)
+                    # Get dataframe row-selections from user with st.data_editor
+                    edited_df = st.data_editor(
+                        df_with_selections,
+                        hide_index=True,
+                        column_config=config
+
+                    )
+
+                    # Filter the dataframe using the temporary column, then drop the column
+                    selected_rows = edited_df[edited_df.Selec]
+                    return selected_rows.drop('Selec', axis=1)
+                  
+selection = dataframe_with_selections(df)
+
+
 #st.header("Selected members")
 people = event.selection.rows
 #st.write(people)
