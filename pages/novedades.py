@@ -9,6 +9,7 @@ conn = st.connection("postgresql", type="sql")
 
 
 def seleccionar():
+   new = 'S'
    with conn.session as session: 
       session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0 WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
       session.commit()
