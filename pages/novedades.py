@@ -7,7 +7,7 @@ from sqlalchemy import text
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
 
-vnuri =0
+vnuri = st.session_state['vnuri']
 st.session_state.vnuri = 0
 st.subheader("Novedades")
 
@@ -43,8 +43,10 @@ df1 = conn.query('select nuri,fuente,fecha,titulo,sel,link,imagen, detalle,titul
 df = df1[0]
 
 
-pnuri = st.text_input("ingrese el nombre de la fuente")
-
+pnuri = st.text_input("ingrese el nombre de la fuente",vnuri)
+if pnuri:
+    mask = df.applymap(lambda x: pfuente in str(x).lower()).any(axis=1)
+    df = df[mask]
 
 vnuri = 500
 vtitulo= ''
