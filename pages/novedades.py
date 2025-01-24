@@ -100,15 +100,6 @@ def dataframe_with_selections(df):
 selection = dataframe_with_selections(df)
 
 
-#st.header("Selected members")
-people = event.selection.rows
-st.write(people)
-
-selection  =df.iloc[people]
-
-#st.write(people[0])
-st.session_state['recno'] =  people[0]
-cnt = len(selection)
 
 selected241 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar' ], 
       icons=['house', 'plus' ,'pencil-square','eraser','chek','patch-chek'] , menu_icon="cast",orientation="horizontal", default_index=-3,
@@ -136,7 +127,15 @@ if selected241=="Desmarcar":
     st.switch_page("./pages/desmarcar.py")
 
 
+#st.header("Selected members")
+people = event.selection.rows
+st.write(people)
 
+selection  =df.iloc[people]
+
+#st.write(people[0])
+st.session_state['recno'] =  people[0]
+cnt = len(selection)
 
 if cnt>0:
 
