@@ -71,6 +71,8 @@ config = {
 }
 
 
+
+
 event = st.dataframe(
         df,
         column_config=config,
@@ -80,6 +82,7 @@ event = st.dataframe(
         selection_mode="single-row",
     )
 
+edited_df = st.data_editor(df, num_rows="dynamic")
 #st.header("Selected members")
 people = event.selection.rows
 #st.write(people)
