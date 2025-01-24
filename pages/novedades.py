@@ -141,7 +141,7 @@ event = st.dataframe(
         hide_index=True,
         on_select="rerun",
         key='_df',
-        on_change=store_df, args=['df']
+        on_change=store_df, args=['df'],
         selection_mode="single-row",
     )
 """
