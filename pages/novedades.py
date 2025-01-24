@@ -108,6 +108,7 @@ def dataframe_with_selections(df):
                     edited_df = st.data_editor(
                         df_with_selections,
                         hide_index=True,
+                        use_container_width=True,
                         column_config=config
 
                     )
