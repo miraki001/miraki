@@ -18,6 +18,7 @@ df = df1[0]
 pos = df[df['eje']==veje1].index.item()
 st.write(pos)
 tnuri = st.session_state['vnuri']
+st.write(tnuri)
 ttitulo = st.session_state['vtitulo']
 
 def actualizar():
