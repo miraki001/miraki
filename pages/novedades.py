@@ -82,7 +82,7 @@ event = st.dataframe(
         selection_mode="single-row",
     )
 
-edited_df = st.data_editor(df, column_config=config,num_rows="dynamic")
+edited_df = st.data_editor(df, column_config=config,use_container_width=True,hide_index=True,num_rows="dynamic")
 #st.header("Selected members")
 people = event.selection.rows
 #st.write(people)
