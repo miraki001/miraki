@@ -17,6 +17,15 @@ def seleccionar(df):
       session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0 WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
       session.commit()
 
+def desmarcar(df):
+   new = 'N'
+   nuri = st.session_state['vnuri1']
+   trec = st.session_state['recno']
+   df.sel[trec] = 'N'
+   with conn.session as session: 
+      session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0 WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
+      session.commit()
+
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
 
@@ -124,8 +133,7 @@ if selected241=="Editar":
 if selected241=="Seleccionar":
     seleccionar(df)
 if selected241=="Desmarcar":
-    st.switch_page("./pages/desmarcar.py")
-
+    desmarcar(df)
 
 #st.header("Selected members")
 people = event.selection.rows
