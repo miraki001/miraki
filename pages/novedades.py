@@ -140,8 +140,8 @@ event = st.dataframe(
         use_container_width=True,
         hide_index=True,
         on_select="rerun",
-        key='_df',
-        on_change=store_df, args=['df'],
+        #key='_df',
+        #on_change=store_df, args=['df'],
         selection_mode="single-row",
     )
 """
