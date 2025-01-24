@@ -65,8 +65,8 @@ config = {
     'link' : st.column_config.LinkColumn('link',  width=200),
     'imagen' : st.column_config.ImageColumn('imagen'),
     'detalle' : st.column_config.TextColumn('detalle', width=200),
-    'titulo_es' : None,                                           
-    'detalle_es' :None,
+    'titulo_es' : st.column_config.TextColumn('titulo_es', width=200),                                           
+    'detalle_es' : st.column_config.TextColumn('detalle_es', width=200),
     'eje_nuri': None,
     
 }
