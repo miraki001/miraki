@@ -64,7 +64,7 @@ with col[0]:
 
   
 with col[1]:
-  veje = st.selectbox('Categoria ', df.eje)
+  veje = st.selectbox('Categoria ', df.eje , index = df.nuri)
   st.write('')
   st.write('')
   if vimg != '':
