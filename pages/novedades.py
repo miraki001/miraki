@@ -132,7 +132,7 @@ config = {
     
 }
 
-df1 = st.session_state['df1']
+df = st.session_state['df1']
 
 """
 event = st.dataframe(
