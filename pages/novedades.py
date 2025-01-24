@@ -142,13 +142,13 @@ if selected241=="Desmarcar":
 
 
 #st.header("Selected members")
-people = event.selection.rows
-st.write(people)
+#people = event.selection.rows
+st.write(selection)
 
-selection  =df.iloc[people]
+#selection  =df.iloc[people]
 
 #st.write(people[0])
-st.session_state['recno'] =  people[0]
+#st.session_state['recno'] =  people[0]
 cnt = len(selection)
 
 if cnt>0:
