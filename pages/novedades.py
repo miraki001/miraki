@@ -164,8 +164,8 @@ def dataframe_with_selections(df):
                     edited_df = st.data_editor(
                         df_with_selections,
                         hide_index=False,
-                        #key='_df',
-                        #on_change=store_df, args=['df'],
+                        key='_df1',
+                        on_change=store_df1, args=['df1'],
                         #style.apply(lambda x: ["background: red" if v > x.iloc[0] else "" for v in x], axis = 1),
                         use_container_width=True,
                         column_config=config
