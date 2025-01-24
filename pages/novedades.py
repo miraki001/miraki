@@ -146,8 +146,7 @@ people = selection.selection.rows
 st.write(selection)
 
 #selection  =df.iloc[people]
-vv= df.iloc[selection]  
-st.write(vv)
+st.write(selection.index[0])
 #st.session_state['recno'] =  people[0]
 cnt = len(selection)
 
