@@ -126,13 +126,14 @@ edited_df = st.data_editor(
 )
 """
 
-def dataframe_with_selections(df.style.apply(lambda x: ["background: red" if v > x.iloc[0] else "" for v in x], axis = 1)):
+def dataframe_with_selections(df):
                     df_with_selections = df.copy()
                     df_with_selections.insert(0, "Selec", False)
                     # Get dataframe row-selections from user with st.data_editor
                     edited_df = st.data_editor(
                         df_with_selections,
                         hide_index=False,
+                        style.apply(lambda x: ["background: red" if v > x.iloc[0] else "" for v in x], axis = 1,
                         use_container_width=True,
                         column_config=config
                        ,num_rows=20
