@@ -7,9 +7,9 @@ conn = st.connection("postgresql", type="sql")
 
 
 def seleccionar():
-   
-   session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0 WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
-   session.commit()
+   with conn.session as session: 
+      session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0 WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
+      session.commit()
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
