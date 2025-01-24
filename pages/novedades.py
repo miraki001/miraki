@@ -96,7 +96,7 @@ edited_df = st.data_editor(
    df, column_config=config
    ,use_container_width=True
    ,hide_index=True
-   ,selection_mode="single-row"
+   #,selection_mode="single-row"
    ,num_rows=20
 )
 #st.header("Selected members")
