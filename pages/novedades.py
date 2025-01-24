@@ -146,7 +146,7 @@ if selected241=="Desmarcar":
 st.write(selection)
 
 #selection  =df.iloc[people]
-vv=  selection[0]
+vv=  selection[-1]
 st.write(vv)
 #st.session_state['recno'] =  people[0]
 cnt = len(selection)
