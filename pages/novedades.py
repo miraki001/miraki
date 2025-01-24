@@ -12,30 +12,30 @@ vnuri = st.session_state['vnuri']
 st.session_state.vnuri = 0
 st.subheader("Novedades")
 
-if 'df' not in st.session_state:
-    st.session_state['df'] = 0
+if 'df1' not in st.session_state:
+    st.session_state['df1'] = 0
   
-def store_df(key):
+def store_df1(key):
     pkey = '_' + key
     changes = st.session_state[pkey]
-    df = st.session_state[key]
+    df1 = st.session_state[key]
 
     # Apply edits
     for row, edit in changes['edited_rows'].items():
         for column, new_value in edit.items():
-            df.loc[row, column] = new_value
+            df1.loc[row, column] = new_value
 
     # Apply added rows
     for row in changes['added_rows']:
         # Create empty row
-        df.loc[df.shape[0]] = None
-        df = df.reset_index(drop=True)
+        df1.loc[df.shape[0]] = None
+        df1 = df1.reset_index(drop=True)
 
     # Remove deleted rows
-    df = df.drop(changes['deleted_rows'])
+    df1 = df1.drop(changes['deleted_rows'])
 
     # Store the dataframe in the session key
-    st.session_state[key] = df  
+    st.session_state[key] = df1  
 
 def color_coding(row):
     return ['background-color:red'] * len(
