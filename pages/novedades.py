@@ -96,9 +96,10 @@ if cnt>0:
 
   vnuri= selection.to_string(columns=['nuri'], header=False, index=False)
   st.write(vnuri)
-  st.session_state.vnuri = vnuri
+  #st.session_state.vnuri = vnuri
   st.session_state['user_select_value'] = vnuri
   st.session_state['vnuri'] = vnuri
+  st.session_state['vnuri1'] = selection.to_string(columns=['nuri'], header=False, index=False)
   st.session_state['vtitulo'] = selection.to_string(columns=['titulo'], header=False, index=False)
   st.session_state['vdetalle'] = selection.to_string(columns=['detalle'], header=False, index=False)
   st.session_state['vlink'] = selection.to_string(columns=['link'], header=False, index=False)
