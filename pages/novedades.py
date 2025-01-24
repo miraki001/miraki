@@ -43,7 +43,7 @@ df1 = conn.query('select nuri,fuente,fecha,titulo,sel,link,imagen, detalle,titul
 df = df1[0]
 
 
-
+pnuri = st.text_input("ingrese el nombre de la fuente")
 
 
 vnuri = 500
