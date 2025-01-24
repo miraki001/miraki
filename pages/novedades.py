@@ -156,7 +156,7 @@ if cnt>0:
   nuri = selection.to_string(columns=['nuri'], header=False, index=False)
   st.write(vnuri)
   #st.session_state.vnuri = vnuri
-  st.session_state['recno'] =  selection.to_string(columns=[0], header=False, index=False)
+  st.session_state['recno'] =  selection.index[0]
   st.session_state['user_select_value'] = vnuri
   st.session_state['vnuri'] = vnuri
   st.session_state['vnuri1'] = selection.to_string(columns=['nuri'], header=False, index=False)
