@@ -71,7 +71,7 @@ with col[0]:
   
 with col[1]:
   #veje = st.selectbox('Categoria ', df.eje , df.columns.tolist().index('nuri'),placeholder="Enoturismo")
-  veje = st.selectbox('Categoria ', df.eje ,index= 1)
+  veje = st.selectbox('Categoria ', df.eje ,index= pos)
   st.write('')
   st.write('')
   st.write(veje)
