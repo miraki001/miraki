@@ -112,7 +112,7 @@ def dataframe_with_selections(df):
 selection = dataframe_with_selections(df)
 
 selected241 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar' ], 
-      icons=['house', 'plus' ,'pencil-square','eraser','chek','patch-chek'] , menu_icon="cast",orientation="horizontal", default_index=-3,
+      icons=['house', 'plus' ,'pencil-square','eraser','chek','patch-chek'] , menu_icon="cast",orientation="horizontal", default_index=-1,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
@@ -147,7 +147,7 @@ st.write(selection)
 
 #selection  =df.iloc[people]
 
-#st.write(people[0])
+st.write(selection.to_string(columns=[0], header=False, index=False))
 #st.session_state['recno'] =  people[0]
 cnt = len(selection)
 
@@ -157,6 +157,7 @@ if cnt>0:
   nuri = selection.to_string(columns=['nuri'], header=False, index=False)
   st.write(vnuri)
   #st.session_state.vnuri = vnuri
+  st.session_state['recno'] =  selection.to_string(columns=[0], header=False, index=False)
   st.session_state['user_select_value'] = vnuri
   st.session_state['vnuri'] = vnuri
   st.session_state['vnuri1'] = selection.to_string(columns=['nuri'], header=False, index=False)
