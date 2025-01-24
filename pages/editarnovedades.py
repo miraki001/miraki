@@ -69,7 +69,7 @@ with col[1]:
   st.write('')
   st.write('')
   st.write(veje)
-  st.write(veje.index)
+  st.write(veje.index('end'))
   if vimg != '':
     st.image(
             vimg,
