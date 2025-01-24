@@ -2,7 +2,7 @@ import streamlit as st
 import psycopg2
 from sqlalchemy import text
 
-tnuri = st.session_state['vnuri']
+tnuri = st.session_state['vnuri1']
 st.write(tnuri)
 conn = st.connection("postgresql", type="sql")
 
