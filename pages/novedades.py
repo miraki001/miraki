@@ -12,7 +12,7 @@ st.session_state.vnuri = 0
 st.subheader("Novedades")
 
 if 'df' not in st.session_state:
-    st.session_state['df'] = DEFAULT_DF
+    st.session_state['df'] = 0
   
 def store_df(key):
     pkey = '_' + key
