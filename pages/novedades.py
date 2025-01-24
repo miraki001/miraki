@@ -190,6 +190,6 @@ if cnt>0:
   st.session_state['veje'] = selection.to_string(columns=['eje'], header=False, index=False)
   with conn.session as session: 
       new = 'S'
-      session.execute(text("UPDATE novedades SET selec = :val, WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
+      session.execute(text("UPDATE novedades SET selec = :val  WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
       session.commit()
  
