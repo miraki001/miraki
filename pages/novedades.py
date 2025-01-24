@@ -49,7 +49,7 @@ vimagen = ''
 
 #aca
 
-selection = dataframe_with_selections(df)
+
 
 selected241 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar' ], 
       icons=['house', 'plus' ,'pencil-square','eraser','chek','patch-chek'] , menu_icon="cast",orientation="horizontal", default_index=-2,
@@ -137,7 +137,9 @@ def dataframe_with_selections(df):
                     # Filter the dataframe using the temporary column, then drop the column
                     selected_rows = edited_df[edited_df.Selec]
                     return selected_rows.drop('Selec', axis=1)
-                  
+
+selection = dataframe_with_selections(df)
+
 #aca
 
 
