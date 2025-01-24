@@ -188,3 +188,8 @@ if cnt>0:
   st.session_state['vtitulo_es'] = selection.to_string(columns=['titulo_es'], header=False, index=False)
   st.session_state['vdetalle_es'] = selection.to_string(columns=['detalle_es'], header=False, index=False)
   st.session_state['veje'] = selection.to_string(columns=['eje'], header=False, index=False)
+  with conn.session as session: 
+      new = 'S'
+      session.execute(text("UPDATE novedades SET selec = :val, WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
+      session.commit()
+ 
