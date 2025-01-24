@@ -7,6 +7,10 @@ st.set_page_config(initial_sidebar_state="collapsed",
 
 vtitulo = st.session_state['vtitulo']
 
+conn = st.connection("postgresql", type="sql")
+df1 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
+df = df1[0]
+
 tnuri = st.session_state['vnuri']
 ttitulo = st.session_state['vtitulo']
 
@@ -57,6 +61,8 @@ with col[0]:
 
   vlink = st.text_input("**Link** ", st.session_state['vlink'])
   vimg = st.text_input("**Imagen** ", st.session_state['vimagen'])
+
+  veje = st.selectbox('Categoria ', df.eje)
 with col[1]:
   if vimg != '':
     st.image(
