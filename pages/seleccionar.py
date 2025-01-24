@@ -21,6 +21,6 @@ with conn.session as session:
 
 
 
-#st.switch_page("./pages/novedades.py")
+st.switch_page("./pages/novedades.py")
 
 
