@@ -12,30 +12,6 @@ vnuri = st.session_state['vnuri']
 st.session_state.vnuri = 0
 st.subheader("Novedades")
 
-if 'df1' not in st.session_state:
-    st.session_state['df1'] = 0
-  
-def store_df1(key):
-    pkey = '_' + key
-    changes = st.session_state[pkey]
-    df1 = st.session_state[key]
-
-    # Apply edits
-    for row, edit in changes['edited_rows'].items():
-        for column, new_value in edit.items():
-            df1.loc[row, column] = new_value
-
-    # Apply added rows
-    for row in changes['added_rows']:
-        # Create empty row
-        df1.loc[df.shape[0]] = None
-        df1 = df1.reset_index(drop=True)
-
-    # Remove deleted rows
-    df1 = df1.drop(changes['deleted_rows'])
-
-    # Store the dataframe in the session key
-    st.session_state[key] = df1  
 
 def color_coding(row):
     return ['background-color:red'] * len(
@@ -132,9 +108,9 @@ config = {
     
 }
 
-df = st.session_state['df1']
 
-"""
+
+
 event = st.dataframe(
         df,
         column_config=config,
@@ -145,7 +121,7 @@ event = st.dataframe(
         #on_change=store_df, args=['df'],
         selection_mode="single-row",
     )
-
+"""
 edited_df = st.data_editor(
    df, column_config=config
    ,use_container_width=True
@@ -155,7 +131,7 @@ edited_df = st.data_editor(
 )
 """
 
-#df.loc[0,'nuri'] = 461048
+#df.iloc[0,'nuri'] = 461048
 
 def dataframe_with_selections(df):
                     df_with_selections = df.copy()
@@ -164,9 +140,6 @@ def dataframe_with_selections(df):
                     edited_df = st.data_editor(
                         df_with_selections,
                         hide_index=False,
-                        key='_df1',
-                        on_change=store_df1, args=['df1'],
-                        #style.apply(lambda x: ["background: red" if v > x.iloc[0] else "" for v in x], axis = 1),
                         use_container_width=True,
                         column_config=config
                        ,num_rows=20
