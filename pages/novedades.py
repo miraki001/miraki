@@ -98,7 +98,7 @@ def dataframe_with_selections(df):
                     # Get dataframe row-selections from user with st.data_editor
                     edited_df = st.data_editor(
                         df_with_selections,
-                        hide_index=True,
+                        hide_index=False,
                         use_container_width=True,
                         column_config=config
                        ,num_rows=20
