@@ -62,8 +62,9 @@ with col[0]:
   vlink = st.text_input("**Link** ", st.session_state['vlink'])
   vimg = st.text_input("**Imagen** ", st.session_state['vimagen'])
 
-  veje = st.selectbox('Categoria ', df.eje)
+  
 with col[1]:
+  veje = st.selectbox('Categoria ', df.eje)
   if vimg != '':
     st.image(
             vimg,
