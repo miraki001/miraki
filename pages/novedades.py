@@ -8,7 +8,7 @@ from sqlalchemy import text
 conn = st.connection("postgresql", type="sql")
 
 
-def seleccionar():
+def seleccionar(df):
    new = 'S'
    nuri = st.session_state['vnuri1']
    trec = st.session_state['recno']
@@ -44,7 +44,7 @@ if selected241=="Editar":
     st.session_state['vTipo'] = 'Editar'
     st.switch_page("./pages/editarnovedades.py") 
 if selected241=="Seleccionar":
-    seleccionar()
+    seleccionar(df)
 if selected241=="Desmarcar":
     st.switch_page("./pages/desmarcar.py")
 
