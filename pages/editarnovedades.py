@@ -11,6 +11,9 @@ conn = st.connection("postgresql", type="sql")
 df1 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
 df = df1[0]
 
+
+
+#df[df['A']==5].index.item()
 tnuri = st.session_state['vnuri']
 ttitulo = st.session_state['vtitulo']
 
