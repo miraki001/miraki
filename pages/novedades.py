@@ -11,6 +11,11 @@ vnuri =0
 st.session_state.vnuri = 0
 st.subheader("Novedades")
 
+def color_coding(row):
+    return ['background-color:red'] * len(
+        row) if row.col1 == 2 else ['background-color:green'] * len(row)
+
+
 def seleccionar(df):
    new = 'S'
    nuri = st.session_state['vnuri1']
@@ -100,7 +105,7 @@ config = {
     
 }
 
-
+df.style.apply(lambda x: ["background: red" if v > x.iloc[0] else "" for v in x], axis = 1)
 
 
 event = st.dataframe(
