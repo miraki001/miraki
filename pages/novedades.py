@@ -22,31 +22,8 @@ st.set_page_config(initial_sidebar_state="collapsed",
 
 vnuri =0
 st.session_state.vnuri = 0
-
-selected241 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar' ], 
-      icons=['house', 'plus' ,'pencil-square','eraser','chek','patch-chek'] , menu_icon="cast",orientation="horizontal", default_index=-3,
-                
-      styles={
-        "container": {"padding": "0!important", "background-color": "#604283"},
-        "icon": {"color": "orange", "font-size": "14px"}, 
-        "nav-link": {"color": "white", "font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#B3D3F0"},
-        "nav-link-selected": {"background-color": "#604283"}
-      }
-)
 st.subheader("Novedades")
 
-if selected241=="Home":
-    st.switch_page("miraki.py") 
-if selected241=="Ingresar":
-    st.session_state['vTipo'] = 'Ingresar'
-    st.switch_page("./pages/editarnovedades.py")   
-if selected241=="Editar":
-    st.session_state['vTipo'] = 'Editar'
-    st.switch_page("./pages/editarnovedades.py") 
-if selected241=="Seleccionar":
-    seleccionar(df)
-if selected241=="Desmarcar":
-    st.switch_page("./pages/desmarcar.py")
 
 
 vnuri = 500
@@ -131,8 +108,36 @@ selection  =df.iloc[people]
 
 st.write(people[0])
 st.session_state['recno'] =  people[0]
-
 cnt = len(selection)
+
+selected241 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar' ], 
+      icons=['house', 'plus' ,'pencil-square','eraser','chek','patch-chek'] , menu_icon="cast",orientation="horizontal", default_index=-3,
+                
+      styles={
+        "container": {"padding": "0!important", "background-color": "#604283"},
+        "icon": {"color": "orange", "font-size": "14px"}, 
+        "nav-link": {"color": "white", "font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#B3D3F0"},
+        "nav-link-selected": {"background-color": "#604283"}
+      }
+)
+
+
+if selected241=="Home":
+    st.switch_page("miraki.py") 
+if selected241=="Ingresar":
+    st.session_state['vTipo'] = 'Ingresar'
+    st.switch_page("./pages/editarnovedades.py")   
+if selected241=="Editar":
+    st.session_state['vTipo'] = 'Editar'
+    st.switch_page("./pages/editarnovedades.py") 
+if selected241=="Seleccionar":
+    seleccionar(df)
+if selected241=="Desmarcar":
+    st.switch_page("./pages/desmarcar.py")
+
+
+
+
 if cnt>0:
 
   vnuri= selection.to_string(columns=['nuri'], header=False, index=False)
