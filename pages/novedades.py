@@ -133,7 +133,7 @@ config = {
 
 df = st.session_state['df']
 
-
+"""
 event = st.dataframe(
         df,
         column_config=config,
@@ -144,7 +144,7 @@ event = st.dataframe(
         #on_change=store_df, args=['df'],
         selection_mode="single-row",
     )
-"""
+
 edited_df = st.data_editor(
    df, column_config=config
    ,use_container_width=True
@@ -163,6 +163,8 @@ def dataframe_with_selections(df):
                     edited_df = st.data_editor(
                         df_with_selections,
                         hide_index=False,
+                        key='_df',
+                        on_change=store_df, args=['df'],
                         #style.apply(lambda x: ["background: red" if v > x.iloc[0] else "" for v in x], axis = 1),
                         use_container_width=True,
                         column_config=config
