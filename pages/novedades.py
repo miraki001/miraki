@@ -3,6 +3,12 @@ import pandas as pd
 import os
 from streamlit_option_menu import option_menu
 
+conn = st.connection("postgresql", type="sql")
+
+
+def seleccionar():
+   session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0 WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
+   session.commit()
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
@@ -31,7 +37,7 @@ if selected241=="Editar":
     st.session_state['vTipo'] = 'Editar'
     st.switch_page("./pages/editarnovedades.py") 
 if selected241=="Seleccionar":
-    st.switch_page("./pages/seleccionar.py")
+    seleccionar()
 if selected241=="Desmarcar":
     st.switch_page("./pages/desmarcar.py")
 
@@ -46,7 +52,6 @@ vimagen = ''
  
 
 
-conn = st.connection("postgresql", type="sql")
 df1 = conn.query('select nuri,fuente,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje from nov_web limit 50;', ttl="0"),
 df = df1[0]
 
@@ -95,6 +100,7 @@ cnt = len(selection)
 if cnt>0:
 
   vnuri= selection.to_string(columns=['nuri'], header=False, index=False)
+  nuri = selection.to_string(columns=['nuri'], header=False, index=False)
   st.write(vnuri)
   #st.session_state.vnuri = vnuri
   st.session_state['user_select_value'] = vnuri
