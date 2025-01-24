@@ -105,7 +105,7 @@ config = {
     
 }
 
-df.style.apply(lambda x: ["background: red" if v > x.iloc[0] else "" for v in x], axis = 1)
+#df.style.apply(lambda x: ["background: red" if v > x.iloc[0] else "" for v in x], axis = 1)
 
 
 event = st.dataframe(
