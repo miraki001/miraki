@@ -9,7 +9,7 @@ conn = st.connection("postgresql", type="sql")
 #actualizar = 'update novedades set select_web = :estado,nro_reporte = 0 where nuri = ' + tnuri + ';'
 nuri = tnuri
 new = 'S'
-st.write(actualizar)
+#st.write(actualizar)
 
 
 with conn.session as session:
