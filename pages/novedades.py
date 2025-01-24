@@ -104,6 +104,7 @@ config = {
     'detalle' : st.column_config.TextColumn('detalle', width=200),
     'titulo_es' : st.column_config.TextColumn('titulo_es', width=200),                                           
     'detalle_es' : st.column_config.TextColumn('detalle_es', width=200),
+    'selec' : st.column_config.CheckboxColumn('selec',default=False),
     'eje_nuri': None,
     
 }
