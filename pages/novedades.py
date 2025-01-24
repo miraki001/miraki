@@ -11,6 +11,31 @@ vnuri = st.session_state['vnuri']
 st.session_state.vnuri = 0
 st.subheader("Novedades")
 
+if 'df' not in st.session_state:
+    st.session_state['df'] = DEFAULT_DF
+  
+def store_df(key):
+    pkey = '_' + key
+    changes = st.session_state[pkey]
+    df = st.session_state[key]
+
+    # Apply edits
+    for row, edit in changes['edited_rows'].items():
+        for column, new_value in edit.items():
+            df.loc[row, column] = new_value
+
+    # Apply added rows
+    for row in changes['added_rows']:
+        # Create empty row
+        df.loc[df.shape[0]] = None
+        df = df.reset_index(drop=True)
+
+    # Remove deleted rows
+    df = df.drop(changes['deleted_rows'])
+
+    # Store the dataframe in the session key
+    st.session_state[key] = df  
+
 def color_coding(row):
     return ['background-color:red'] * len(
         row) if row.col1 == 2 else ['background-color:green'] * len(row)
@@ -106,18 +131,20 @@ config = {
     
 }
 
+df = st.session_state['df']
 
 
-"""
 event = st.dataframe(
         df,
         column_config=config,
         use_container_width=True,
         hide_index=True,
         on_select="rerun",
+        key='_df',
+        on_change=store_df, args=['df']
         selection_mode="single-row",
     )
-
+"""
 edited_df = st.data_editor(
    df, column_config=config
    ,use_container_width=True
