@@ -47,7 +47,7 @@ vdetalle = ''
 vlink = ''
 vimagen = ''
 
-""" aca
+#aca
 
 selection = dataframe_with_selections(df)
 
@@ -138,7 +138,7 @@ def dataframe_with_selections(df):
                     selected_rows = edited_df[edited_df.Selec]
                     return selected_rows.drop('Selec', axis=1)
                   
-"""aca
+#aca
 
 
 
