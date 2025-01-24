@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import os
 from streamlit_option_menu import option_menu
+import psycopg2
+from sqlalchemy import text
 
 conn = st.connection("postgresql", type="sql")
 
