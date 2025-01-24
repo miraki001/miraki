@@ -141,7 +141,7 @@ def dataframe_with_selections(df):
                     )
 
                     # Filter the dataframe using the temporary column, then drop the column
-                    selected_rows = edited_df[edited_df.nuri == 461047]
+                    selected_rows = edited_df[edited_df.nuri == 461046]
                     return selected_rows.drop('Selec', axis=1)
 
 
