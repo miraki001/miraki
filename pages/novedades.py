@@ -127,7 +127,7 @@ st.write(people)
 
 selection  =df.iloc[people]
 
-#st.write(pp)
+st.write(pp)
 
 cnt = len(selection)
 if cnt>0:
