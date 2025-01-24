@@ -7,7 +7,9 @@ st.set_page_config(initial_sidebar_state="collapsed",
 
 vtitulo = st.session_state['vtitulo']
 veje1 = st.session_state['veje']
+votro_nuri = st.session_state['vnuri1']
 st.write(veje1)
+st.write(votro_nuri)
 
 conn = st.connection("postgresql", type="sql")
 df1 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
