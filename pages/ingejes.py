@@ -6,36 +6,31 @@ from sqlalchemy import text
 def actualizar():
     conn = st.connection("postgresql", type="sql")
     with conn.session as session:
-        actualiza = "UPDATE sectores SET proyecto_nuri = :pro_nuri"
-        actualiza = actualiza + " ,sector = :sector "
-        actualiza = actualiza + " ,color = :color "
+        actualiza = "UPDATE ejestemas SET sector_nuri = :sec_nuri"
+        actualiza = actualiza + " ,eje = :eje "
         actualiza = actualiza + " WHERE nuri = :nuri ;"
-        session.execute(text(actualiza), {"pro_nuri": vpro_nuri,"sector": vsector,"color": vcolor,"nuri": tnuri})
+        session.execute(text(actualiza), {"sec_nuri": vsec_nuri,"eje": eje,"nuri": tnuri})
         session.commit()
 
 def ingresar():
     conn = st.connection("postgresql", type="sql")
     with conn.session as session:
-        actualiza = "insert into sectores (nuri,proyecto_nuri,sector,color)"
-        actualiza = actualiza + " values (nextval('sectores_seq'),:proyecto_nuri,:sector,:color) ;"
-        session.execute(text(actualiza), {"proyecto_nuri": vpro_nuri,"sector": vsector,"color": vcolor})
+        actualiza = "insert into ejestemas (nuri,sector_nuri,eje)"
+        actualiza = actualiza + " values (nextval('ejestemas_seq'),:sec_nuri,:eje) ;"
+        session.execute(text(actualiza), {"sec_nuri": vsec_nuri,"eje": veje})
         session.commit()
 
 
 tipo = st.session_state['vTipo'] 
 if tipo == 'Editar':
-    tsector = st.session_state['vsector'] 
-    tpro_nuri = st.session_state['vpro_nuri'] 
-    tcolor = st.session_state['vcolor'] 
+    teje = st.session_state['veje'] 
+    tsec_nuri = st.session_state['vsec_nuri'] 
     tnuri = st.session_state['vnuri'] 
-    tpro_nuri = int(tpro_nuri)
 
 if tipo == 'Ingresar':
-    tsector = ''
-    tcolor = ''
-    tpro_nuri = 0
+    teje = ''
+    tsec_nuri = 0
 
-vpro_nuri = st.number_input("Proyecto ", tpro_nuri)
 
 vsector = st.text_input("Sector ", tsector)
 vcolor  = st.text_input("Color ", tcolor)
@@ -47,6 +42,6 @@ if col1.button("Grabar" ,  type='primary'):
         actualizar()
     if tipo == 'Ingresar':
         ingresar()
-    st.switch_page("./pages/sectores.py")
+    st.switch_page("./pages/ejes.py")
 if col2.button("Cancelar"):
-    st.switch_page("./pages/sectores.py")
+    st.switch_page("./pages/ejes.py")
