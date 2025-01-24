@@ -19,6 +19,7 @@ def seleccionar(df):
    with conn.session as session: 
       session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0 WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
       session.commit()
+   return df     
 
 def desmarcar(df):
    new = 'N'
@@ -28,6 +29,7 @@ def desmarcar(df):
    with conn.session as session: 
       session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0 WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
       session.commit()
+   return df
 
 
 
