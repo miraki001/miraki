@@ -27,9 +27,11 @@ def actualizar():
     conn = st.connection("postgresql", type="sql")
     veje1 = st.session_state['veje']
     st.write(veje1)
-    vquery = "select nuri,eje from ejestemas where eje = '" + veje1 +  "'  ;"
-
-    df2 = conn.query(vquery, ttl="0"),
+    vquery = "select nuri,eje from ejestemas where eje = :eje  ;"
+    with conn.session as session:
+      df1 =  session.execute(text(vquery), {"eje": veje1})
+      
+    #df2 = conn.query(vquery, ttl="0"),
     st.write(df2)
     
     ejenuri = df2['nuri']
