@@ -2,6 +2,7 @@ import streamlit as st
 import psycopg2
 import os
 from sqlalchemy import text
+import pandas as pd
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
