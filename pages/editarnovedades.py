@@ -17,7 +17,7 @@ df1 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
 df = df1[0]
 
 vquery = "select nuri,eje from ejestemas where eje = :eje  ;"
-df2 = conn1.query(vquery, ttl="0",params={"eje": 'Enoturismo'}),
+df2 = conn.query(vquery, ttl="0",params={"eje": 'Enoturismo'}),
 st.write(df2)
 
 
