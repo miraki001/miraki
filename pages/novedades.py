@@ -25,6 +25,13 @@ def highlight(row):
         return 'color: %s' % 'green'
 
 
+def highlighter(x):
+    # initialize default colors
+    color_codes = pd.DataFrame('', index=x.index, columns=x.columns)
+    # set Check color to red if consumption exceeds threshold green otherwise
+    color_codes['fuentes'] = np.where(x['leido'] == 'N', 'color:red', 'color:green')
+    return color_codes
+
 
 
 
@@ -125,7 +132,7 @@ config = {
 }
 
 
-df_style = df.style.applymap(highlight, subset=['fuente'])
+df_style = df.style.apply(highlighter, axis=None)
 
 event = st.dataframe(
         df_style,
