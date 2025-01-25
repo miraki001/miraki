@@ -9,3 +9,4 @@ nltk
 gensim 
 scikit-learn
 streamlit-aggrid 
+numpy 
