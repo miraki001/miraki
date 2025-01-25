@@ -18,15 +18,7 @@ df1 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
 df = df1[0]
 st.write(df)
 conn1 = st.connection("postgresql", type="sql")
-#vquery = "select nuri,eje from ejestemas where eje = :eje  ;"
-#df234 = conn.query('select nuri,eje from ejestemas ; ', ttl="0"),
 
-cursor = conn1.cursor()
-cursor.execute('select nuri,eje from ejestemas ;')
-tuples_list = cursor.fetchall()
-cursor.close()
-df2 = pd.DataFrame(tuples_list, columns=column_names)
-st.write(df2)
 df11 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
 st.write(df11)
 #columns = [desc[0] for desc in df1.description] 
