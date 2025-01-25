@@ -140,8 +140,8 @@ config = {
 def color_backgroubd_red_column(col):
     return ['background-color: red' for _ in col]
 
-df_style = (df.style.apply(color_red_column, subset=['A'])
-                    .apply(color_backgroubd_red_column, subset=['B']))
+df_style = (df.style.apply(color_red_column, subset=['fuente'])
+                    .apply(color_backgroubd_red_column, subset=['titulo']))
 
 #df_style = df.style.apply(highlighter, subset=['fuente'] )
 
