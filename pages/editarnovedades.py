@@ -24,12 +24,12 @@ tnuri = st.session_state['vnuri1']
 ttitulo = st.session_state['vtitulo']
 
 def actualizar():
-    conn = st.connection("postgresql", type="sql")
+    conn1 = st.connection("postgresql", type="sql")
     veje1 = st.session_state['veje']
     st.write(veje1)
     vquery = "select nuri,eje from ejestemas where eje = :eje  ;"
     
-    df2 = conn.query(vquery, ttl="0",params={"eje": veje1}),
+    df2 = conn1.query(vquery, ttl="0",params={"eje": veje1}),
     st.write(df2)
     cnt = df2.to_string(columns=['nuri'], header=False, index=False)
     st.write(cnt)
