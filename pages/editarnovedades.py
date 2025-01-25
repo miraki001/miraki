@@ -1,5 +1,6 @@
 import streamlit as st
 import psycopg2
+import os
 from sqlalchemy import text
 
 st.set_page_config(initial_sidebar_state="collapsed",
