@@ -17,6 +17,11 @@ def highlight(val):
     color = 'red' if val.leido == 'N' else 'green'
     return 'color: %s' % color
 
+def color_red_column(col):
+    return ['color: red' for _ in col]
+
+
+
 #df_style = df.style.applymap(highlight, subset=['Check'])
 #st.dataframe(df_style)
 def highlight(row):
@@ -132,8 +137,13 @@ config = {
     
 }
 
+def color_backgroubd_red_column(col):
+    return ['background-color: red' for _ in col]
 
-df_style = df.style.apply(highlighter, subset=['fuente'] )
+df_style = (df.style.apply(color_red_column, subset=['A'])
+                    .apply(color_backgroubd_red_column, subset=['B']))
+
+#df_style = df.style.apply(highlighter, subset=['fuente'] )
 
 event = st.dataframe(
         df_style,
