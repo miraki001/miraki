@@ -13,37 +13,6 @@ st.set_page_config(initial_sidebar_state="collapsed",
 #st.session_state.vnuri = 0
 st.subheader("Novedades")
 
-def highlight(val):
-    color = 'red' if val.leido == 'N' else 'green'
-    return 'color: %s' % color
-
-def color_red_column(col):
-    return ['color: red' for _ in col]
-
-
-
-#df_style = df.style.applymap(highlight, subset=['Check'])
-#st.dataframe(df_style)
-def highlight(row):
-    if row['leido'] == 'N':
-        return 'color: %s' % 'red'
-    elif row['leido'] == 'S':
-        return 'color: %s' % 'green'
-
-
-def highlighter(x):
-    # initialize default colors
-    color_codes = pd.DataFrame('', index=x.index, columns=x.columns)
-    # set Check color to red if consumption exceeds threshold green otherwise
-    color_codes['fuentes'] = np.where(x['leido'] == 'N', 'color:red', 'color:green')
-    return color_codes
-
-
-
-
-def color_coding(row):
-    return ['background-color:red'] * len(
-        row) if row.col1 == 2 else ['background-color:green'] * len(row)
 
 
 def seleccionar(df):
@@ -62,7 +31,7 @@ def desmarcar(df):
    trec = st.session_state['recno']
    df.sel[trec] = 'N'
    with conn.session as session: 
-      session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0 WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
+      session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = null WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
       session.commit()
    return df
 
@@ -72,11 +41,6 @@ conn = st.connection("postgresql", type="sql")
 df1 = conn.query('select nuri,fuente,leido,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje from nov_web limit 50;', ttl="0"),
 df = df1[0]
 
-
-#pnuri = st.text_input("ingrese el nombre de la fuente",vnuri)
-#if pnuri:
-#    mask = df.applymap(lambda x: pnuri in str(x).lower()).any(axis=1)
-#    df = df.loc[df['nuri'] >= mask]
 
 vnuri = 500
 vtitulo= ''
@@ -138,18 +102,12 @@ config = {
     
 }
 
-def color_backgroubd_red_column(col):
-    return ['background-color: red' for _ in col]
 
 def color_vowel(value):
     return f"color: red;" if  value in [*"N"] else None
 
 df_style= df.style.applymap(color_vowel, subset=["leido"])
 
-#df_style = (df.style.apply(color_red_column, subset=['fuente'])
-#                    .apply(color_backgroubd_red_column, subset=['titulo']))
-
-#df_style = df.style.apply(highlighter, subset=['fuente'] )
 
 event = st.dataframe(
         df_style,
@@ -171,7 +129,7 @@ edited_df = st.data_editor(
 )
 """
 
-#df.iloc[0,'nuri'] = 461048
+
 
 def dataframe_with_selections(df):
                     df_with_selections = df.copy()
@@ -203,8 +161,8 @@ selection = dataframe_with_selections(df)
 
 
 #st.header("Selected members")
-#people = selection.selection.rows
-st.write(selection)
+people = event.selection.rows
+st.write(people)
 
 #selection  =df.iloc[people]
 st.write(selection.index[0])
