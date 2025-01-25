@@ -8,8 +8,8 @@ st.set_page_config(initial_sidebar_state="collapsed",
 vtitulo = st.session_state['vtitulo']
 veje1 = st.session_state['veje']
 votro_nuri = st.session_state['vnuri1']
-st.write(veje1)
-st.write(votro_nuri)
+#st.write(veje1)
+#st.write(votro_nuri)
 
 conn = st.connection("postgresql", type="sql")
 df1 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
@@ -18,9 +18,9 @@ df = df1[0]
 
 
 pos = df[df['eje']==veje1].index.item()
-st.write(pos)
+#st.write(pos)
 tnuri = st.session_state['vnuri1']
-st.write(tnuri)
+#st.write(tnuri)
 ttitulo = st.session_state['vtitulo']
 
 def actualizar():
@@ -39,7 +39,7 @@ def actualizar():
 def ingresar():
     conn = st.connection("postgresql", type="sql")
     with conn.session as session:
-        actualiza = "insert into sectores (nuri,proyecto_nuri,sector,color)"
+        actualiza = "insert into novedades (nuri,proyecto_nuri,sector,color)"
         actualiza = actualiza + " values (nextval('sectores_seq'),:proyecto_nuri,:sector,:color) ;"
         session.execute(text(actualiza), {"proyecto_nuri": vpro_nuri,"sector": vsector,"color": vcolor})
         session.commit()
@@ -77,8 +77,8 @@ with col[1]:
   veje = st.selectbox('Categoria ', df.eje ,index= pos)
   st.write('')
   st.write('')
-  st.write(veje)
-  st.write(veje.index)
+  #st.write(veje)
+  #st.write(veje.index)
   if vimg != '':
     st.image(
             vimg,
