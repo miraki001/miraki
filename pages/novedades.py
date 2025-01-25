@@ -144,10 +144,10 @@ def color_backgroubd_red_column(col):
 def color_vowel(value):
     return f"background-color: red;" if if value in [*"N"] else None
 
-df_style= df.style.applymap(color_vowel, subset=["leido"]))
+df_style= df.style.applymap(color_vowel, subset=["leido"])
 
-df_style = (df.style.apply(color_red_column, subset=['fuente'])
-                    .apply(color_backgroubd_red_column, subset=['titulo']))
+#df_style = (df.style.apply(color_red_column, subset=['fuente'])
+#                    .apply(color_backgroubd_red_column, subset=['titulo']))
 
 #df_style = df.style.apply(highlighter, subset=['fuente'] )
 
