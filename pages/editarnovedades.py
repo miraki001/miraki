@@ -30,11 +30,12 @@ def actualizar():
     st.write(veje1)
     vquery = "select nuri,eje from ejestemas where eje = :eje  ;"
     vquery = 'select * from fuentes limit 10  ;'
+    qq = 'select nuri,fuente as url,activa,fecha_act,descrip as fuente,pais,fuente_org,urllink,tipo_busq,posjson from fuentes_py where proyecto_nuri = 1  ;'
 
   
     
     #df2 = conn1.query(vquery, ttl="0",params={"eje": veje1}),
-    df2 = conn1.query(vquery, ttl="0"),
+    df2 = conn1.query(qq, ttl="0"),
     st.write(df2)
     cnt = df2.to_string(columns=['nuri'], header=False, index=False)
     st.write(cnt)
