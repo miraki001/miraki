@@ -25,6 +25,9 @@ ttitulo = st.session_state['vtitulo']
 
 def actualizar():
     conn = st.connection("postgresql", type="sql")
+    df2 = conn.query('select nuri,eje from ejestemas where eje = :eje ;', ttl="0"),
+    df3 = df2[0]
+  
     with conn.session as session:
         actualiza = "UPDATE novedades SET titulo = :titulo"
         actualiza = actualiza + " ,detalle = :detalle "
