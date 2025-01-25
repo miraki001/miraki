@@ -31,8 +31,8 @@ def actualizar():
 
     df2 = conn.query(vquery, ttl="0"),
     st.write(df2)
-    df3 = df2[0]
-    ejenuri = df3['nuri']
+    
+    ejenuri = df2['nuri']
     st.write(eje)
   
     with conn.session as session:
