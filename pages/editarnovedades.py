@@ -21,7 +21,7 @@ st.write(df)
 #df234 = conn.query('select nuri,eje from ejestemas ; ', ttl="0"),
 df1 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
 st.write(df1)
-columns = [desc[0] for desc in df1.description] 
+#columns = [desc[0] for desc in df1.description] 
 df2 = pd.DataFrame(df1)
 st.write(df2)
 
