@@ -133,7 +133,7 @@ config = {
 }
 
 
-df_style = df.style.apply(highlighter, axis=None)
+df_style = df.style.apply(highlighter, subset=['fuente'] )
 
 event = st.dataframe(
         df_style,
