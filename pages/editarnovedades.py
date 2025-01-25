@@ -18,7 +18,7 @@ conn = st.connection("postgresql", type="sql")
 
 df11 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
 st.write(df11)
-#columns = [desc[0] for desc in df1.description] 
+st.write(df11[0])
 
 
 df1 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
