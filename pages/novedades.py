@@ -119,52 +119,11 @@ event = st.dataframe(
         #on_change=store_df, args=['df'],
         selection_mode="single-row",
     )
-"""
-edited_df = st.data_editor(
-   df, column_config=config
-   ,use_container_width=True
-   ,hide_index=True
-   #,selection_mode="single-row"
-   ,num_rows=20
-)
-"""
 
-
-
-def dataframe_with_selections(df):
-                    df_with_selections = df.copy()
-                    df_with_selections.insert(0, "Selec", False)
-                    # Get dataframe row-selections from user with st.data_editor
-                    edited_df = st.data_editor(
-                        df_with_selections,
-                        hide_index=False,
-                        use_container_width=True,
-                        column_config=config
-                       ,num_rows=20
-
-                    )
-
-                    # Filter the dataframe using the temporary column, then drop the column
-                    #edited_df = edited_df[edited_df.nuri == 461048]
-                    selected_rows = edited_df[edited_df.Selec]
-                    return selected_rows.drop('Selec', axis=1)
-
-
-selection = dataframe_with_selections(df)
-
-#aca
-
-
-
-
-
-
-
-#st.header("Selected members")
 people = event.selection.rows
 st.write(people)
 
-#selection  =df.iloc[people]
+selection  =df.iloc[people]
 st.write(selection.index[0])
 #st.session_state['recno'] =  people[0]
 cnt = len(selection)
