@@ -8,7 +8,7 @@ from sqlalchemy import text
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
 
-vnuri = st.session_state['vnuri']
+#vnuri = st.session_state['vnuri']
 #st.session_state.vnuri = 0
 st.subheader("Novedades")
 
