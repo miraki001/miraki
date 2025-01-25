@@ -31,6 +31,7 @@ def actualizar():
     with conn.session as session:
       session.execute(text(vquery), {"eje": veje1})
       df2 = session.fetchall()
+      st.write(df2)
       
     #df2 = conn.query(vquery, ttl="0"),
     st.write(df2)
