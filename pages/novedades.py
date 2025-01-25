@@ -125,6 +125,7 @@ colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 config = {
     'nuri' : st.column_config.NumberColumn('nuri', required=True ,width= 30),
     'fuente' : st.column_config.TextColumn('fuente', width=50),
+    'leido' : st.column_config.TextColumn('leido',default=False),    
     'selec' : st.column_config.TextColumn('selec', width = 10 ),
     'titulo' : st.column_config.TextColumn('titulo',  width=200),
     'link' : st.column_config.LinkColumn('link',  width=200),
@@ -132,9 +133,8 @@ config = {
     'detalle' : st.column_config.TextColumn('detalle', width=200),
     'titulo_es' : st.column_config.TextColumn('titulo_es', width=200),                                           
     'detalle_es' : st.column_config.TextColumn('detalle_es', width=200),
-    'selec' : st.column_config.CheckboxColumn('selec',default=False),
-    'leido' : st.column_config.CheckboxColumn('leido',default=False),  
-    'eje_nuri': None,
+    'selec' : None,
+     'eje_nuri': None,
     
 }
 
