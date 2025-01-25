@@ -25,8 +25,13 @@ ttitulo = st.session_state['vtitulo']
 
 def actualizar():
     conn = st.connection("postgresql", type="sql")
-    df2 = conn.query('select nuri,eje from ejestemas where eje = :eje ;', ttl="0"),
+    veje1 = st.session_state['veje']
+    vquery = "select nuri,eje from ejestemas where eje = "  '" + veje1 +  "'  ;"
+
+    df2 = conn.query(vquery, ttl="0"),
     df3 = df2[0]
+    ejenuri = df3['nuri']
+    st.write(eje)
   
     with conn.session as session:
         actualiza = "UPDATE novedades SET titulo = :titulo"
@@ -35,9 +40,10 @@ def actualizar():
         actualiza = actualiza + " ,titulo_es = :titulo_es "
         actualiza = actualiza + " ,detalle_es = :detalle_es "
         actualiza = actualiza + " ,imagen = :imagen "
+        actualiza = actualiza + " ,ejenuri = :ejenuri "
         actualiza = actualiza + " WHERE nuri = :nuri ;"
-        session.execute(text(actualiza), {"titulo": vtitle,"detalle": vdet,"titulo_es": vtitle_es,"detalle_es": vdet_es, "link": vlink,"imagen": vimg, "nuri": tnuri})
-        session.commit()
+#        session.execute(text(actualiza), {"titulo": vtitle,"detalle": vdet,"titulo_es": vtitle_es,"detalle_es": vdet_es, "link": vlink,"imagen": vimg,"ejenrui": ejenuri, "nuri": tnuri})
+#        session.commit()
 
 def ingresar():
     conn = st.connection("postgresql", type="sql")
@@ -78,6 +84,7 @@ with col[0]:
 with col[1]:
   #veje = st.selectbox('Categoria ', df.eje , df.columns.tolist().index('nuri'),placeholder="Enoturismo")
   veje = st.selectbox('Categoria ', df.eje ,index= pos)
+  st.session_state['veje'] = veje
   st.write('')
   st.write('')
   #st.write(veje)
