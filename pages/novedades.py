@@ -125,7 +125,7 @@ st.write(people)
 
 selection  =df.iloc[people]
 st.write(selection.index[0])
-#st.session_state['recno'] =  people[0]
+st.session_state['recno'] =  people[0]
 cnt = len(selection)
 
 if cnt>0:
