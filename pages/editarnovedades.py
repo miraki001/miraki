@@ -1,6 +1,6 @@
 import streamlit as st
 import psycopg2
-#from sqlalchemy import text
+from sqlalchemy import text
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
@@ -28,8 +28,10 @@ def actualizar():
     veje1 = st.session_state['veje']
     st.write(veje1)
     vquery = "select nuri,eje from ejestemas where eje = :eje  ;"
+    vquery = "select nuri,eje from ejestemas where nuri = 9  ;"
     
-    df2 = conn1.query(vquery, ttl="0",params={"eje": veje1}),
+    #df2 = conn1.query(vquery, ttl="0",params={"eje": veje1}),
+    df2 = conn1.query(vquery, ttl="0"),
     st.write(df2)
     cnt = df2.to_string(columns=['nuri'], header=False, index=False)
     st.write(cnt)
