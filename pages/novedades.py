@@ -95,8 +95,8 @@ config = {
     'link' : st.column_config.LinkColumn('link',  width=200),
     'imagen' : st.column_config.ImageColumn('imagen'),
     'detalle' : st.column_config.TextColumn('detalle', width=200),
-    'titulo_es' : st.column_config.TextColumn('titulo_es', width=200),                                           
-    'detalle_es' : st.column_config.TextColumn('detalle_es', width=200),
+    'titulo_es' : st.column_config.TextColumn('titulo_es', width=50),                                           
+    'detalle_es' : st.column_config.TextColumn('detalle_es', width=50),
     'selec' : None,
      'eje_nuri': None,
     
@@ -121,11 +121,11 @@ event = st.dataframe(
     )
 
 people = event.selection.rows
-st.write(people)
+#st.write(people)
 
 selection  =df.iloc[people]
-st.write(selection.index[0])
-st.write(selection)
+#st.write(selection.index[0])
+#st.write(selection)
 st.session_state['recno'] =  people[0]
 cnt = len(selection)
 
@@ -146,8 +146,5 @@ if cnt>0:
   st.session_state['vtitulo_es'] = selection.to_string(columns=['titulo_es'], header=False, index=False)
   st.session_state['vdetalle_es'] = selection.to_string(columns=['detalle_es'], header=False, index=False)
   st.session_state['veje'] = selection.to_string(columns=['eje'], header=False, index=False)
-  with conn.session as session: 
-      new = 'S'
-      session.execute(text("UPDATE novedades SET selec = :val  WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
-      session.commit()
+
  
