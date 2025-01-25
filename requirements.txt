@@ -1,6 +1,6 @@
 streamlit==1.41.0
 psycopg2-binary
-sqlalchemy=2.0.27
+sqlalchemy==2.0.27
 beautifulsoup4==4.9.0
 streamlit_option_menu
 matplotlib
