@@ -16,21 +16,10 @@ conn = st.connection("postgresql", type="sql")
 
 
 
-df11 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
-st.write(df11)
-st.write(df11[0])
-
 
 df1 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
 df = df1[0]
-st.write(df)
-conn1 = st.connection("postgresql", type="sql")
 
-df11 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
-st.write(df11)
-#columns = [desc[0] for desc in df1.description] 
-df2 = pd.DataFrame(df11)
-st.write(df2)
 
 pos = df[df['eje']==veje1].index.item()
 #st.write(pos)
@@ -48,16 +37,16 @@ def actualizar():
 
   
     
-    #df2 = conn1.query(vquery, ttl="0",params={"eje": veje1}),
-    df2 = conn1.query(qq, ttl="0"),
-    st.write(df2)
-    cnt = df2.to_string(columns=['nuri'], header=False, index=False)
+    df2 = conn1.query(vquery, ttl="0",params={"eje": veje1}),
+    #df2 = conn1.query(qq, ttl="0"),
+    st.write(df2[0])
+    cnt = df2[0].to_string(columns=['nuri'], header=False, index=False)
     st.write(cnt)
-    df3 = st.dataframe(df2)
-    st.write(df3)
+    #df3 = st.dataframe(df2)
+    #st.write(df3)
     
-    ejenuri = df2['nuri']
-    st.write(eje)
+    #ejenuri = df2['nuri']
+    #st.write(eje)
   
     with conn.session as session:
         actualiza = "UPDATE novedades SET titulo = :titulo"
