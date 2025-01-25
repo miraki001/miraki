@@ -29,6 +29,8 @@ def actualizar():
     st.write(veje1)
     vquery = "select nuri,eje from ejestemas where eje = :eje  ;"
     vquery = 'select * from fuentes limit 10  ;'
+
+  
     
     #df2 = conn1.query(vquery, ttl="0",params={"eje": veje1}),
     df2 = conn1.query(vquery, ttl="0"),
