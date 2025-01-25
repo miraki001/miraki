@@ -12,6 +12,21 @@ vnuri = st.session_state['vnuri']
 st.session_state.vnuri = 0
 st.subheader("Novedades")
 
+def highlight(val):
+    color = 'red' if val.leido == 'N' else 'green'
+    return 'color: %s' % color
+
+#df_style = df.style.applymap(highlight, subset=['Check'])
+#st.dataframe(df_style)
+def highlight(row):
+    if row['leido'] == 'N':
+        return 'color: %s' % 'red'
+    elif row['leido'] == 'S':
+        return 'color: %s' % 'green'
+
+
+
+
 
 def color_coding(row):
     return ['background-color:red'] * len(
@@ -41,7 +56,7 @@ def desmarcar(df):
 
 
 conn = st.connection("postgresql", type="sql")
-df1 = conn.query('select nuri,fuente,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje from nov_web limit 50;', ttl="0"),
+df1 = conn.query('select nuri,fuente,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje,leido from nov_web limit 50;', ttl="0"),
 df = df1[0]
 
 
@@ -110,10 +125,10 @@ config = {
 }
 
 
-
+df_style = df.style.applymap(highlight, subset=['fuente'])
 
 event = st.dataframe(
-        df,
+        df_style,
         column_config=config,
         use_container_width=True,
         hide_index=True,
