@@ -31,6 +31,8 @@ def actualizar():
     
     df2 = conn.query(vquery, ttl="0",params={"eje": veje1}),
     st.write(df2)
+    df3 = st.dataframe(df2)
+    st.write(df3)
     
     ejenuri = df2['nuri']
     st.write(eje)
