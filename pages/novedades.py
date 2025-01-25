@@ -133,12 +133,18 @@ config = {
     'titulo_es' : st.column_config.TextColumn('titulo_es', width=200),                                           
     'detalle_es' : st.column_config.TextColumn('detalle_es', width=200),
     'selec' : st.column_config.CheckboxColumn('selec',default=False),
+    'leido' : st.column_config.CheckboxColumn('leido',default=False),  
     'eje_nuri': None,
     
 }
 
 def color_backgroubd_red_column(col):
     return ['background-color: red' for _ in col]
+
+def color_vowel(value):
+    return f"background-color: red;" if if value in [*"N"] else None
+
+df_style= df.style.applymap(color_vowel, subset=["leido"]))
 
 df_style = (df.style.apply(color_red_column, subset=['fuente'])
                     .apply(color_backgroubd_red_column, subset=['titulo']))
