@@ -12,6 +12,9 @@ veje1 = st.session_state['veje']
 votro_nuri = st.session_state['vnuri1']
 #st.write(veje1)
 #st.write(votro_nuri)
+conn = st.connection("postgresql", type="sql")
+
+
 
 df11 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
 st.write(df11)
@@ -19,7 +22,7 @@ st.write(df11)
 df2 = pd.DataFrame(df11)
 st.write(df2)
 
-conn = st.connection("postgresql", type="sql")
+
 df1 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
 df = df1[0]
 st.write(df)
