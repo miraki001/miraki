@@ -28,13 +28,8 @@ def actualizar():
     veje1 = st.session_state['veje']
     st.write(veje1)
     vquery = "select nuri,eje from ejestemas where eje = :eje  ;"
-    with conn.session as session:
-      st.write('antes')
-      session.execute(text(vquery), {"eje": veje1})
-      df2 = session.fetchall()
-      st.write(df2)
-      
-    #df2 = conn.query(vquery, ttl="0"),
+    
+    df2 = conn.query(vquery, ttl="0",params={"eje": veje1}),
     st.write(df2)
     
     ejenuri = df2['nuri']
