@@ -15,7 +15,7 @@ votro_nuri = st.session_state['vnuri1']
 conn = st.connection("postgresql", type="sql")
 df1 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
 df = df1[0]
-
+st.write(df)
 vquery = "select nuri,eje from ejestemas where eje = :eje  ;"
 df2 = conn.query(vquery, ttl="0",params={"eje": 'Enoturismo'}),
 st.write(df2)
