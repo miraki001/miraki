@@ -26,9 +26,11 @@ ttitulo = st.session_state['vtitulo']
 def actualizar():
     conn = st.connection("postgresql", type="sql")
     veje1 = st.session_state['veje']
+    st.write(veje1)
     vquery = "select nuri,eje from ejestemas where eje = '" + veje1 +  "'  ;"
 
     df2 = conn.query(vquery, ttl="0"),
+    st.write(df2)
     df3 = df2[0]
     ejenuri = df3['nuri']
     st.write(eje)
