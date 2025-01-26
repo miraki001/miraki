@@ -36,7 +36,7 @@ st.markdown(
 
 #vnuri = st.session_state['vnuri']
 #st.session_state.vnuri = 0
-st.subheader("Novedades")
+st.subheader("Miraki - Novedades")
 
 
 
