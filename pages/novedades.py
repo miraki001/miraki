@@ -34,8 +34,8 @@ st.markdown(
 
 st.markdown(
         """
-        <h1 style="text-align: center; margin-top: 0;">
-            Your Title Here
+        <h1 style="text-align: left; margin-top: 0;">
+            Miraki 
         </h1>
         """,
         unsafe_allow_html=True
