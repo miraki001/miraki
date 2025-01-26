@@ -102,7 +102,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-
+st.subheader("Miraki - Plataforma")
 
 
 
@@ -127,7 +127,7 @@ if selected2=="Github":
 
 
 
-st.header("Miraki")
+#st.header("Miraki")
 
 st.write(
     """
