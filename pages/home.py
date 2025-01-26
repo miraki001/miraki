@@ -35,7 +35,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.subheader("Miraki - Plataforma")
+st.subheader("Miraki ")
 
 
 
