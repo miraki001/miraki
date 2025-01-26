@@ -13,38 +13,6 @@ stemmer = PorterStemmer()
 
 st.set_page_config(layout="wide",page_title="Miraki")
 
-hide_default_format = """
-       <style>
-       #MainMenu {visibility: hidden; }
-       footer {visibility: hidden;}
-       </style>
-       """
-st.markdown(hide_default_format, unsafe_allow_html=True)
-
-
-st.markdown("""
-<style>
-:root {
-  --header-height: 40px;
-  --header-height-padded: 40px;
-}
-
-[data-testid="stHeader"] {
-    background-image: url(ic_launcher44.png);
-    background-repeat: no-repeat;
-    background-size: 20px;
-    background-orgin: content-box;
-    background-color: grey;
-    padding-top: var(--header-height);
-}
-
-
-}
-</style>
-""", unsafe_allow_html=True)
-
-
-
 hide_streamlit_style = """
                 <style>
                 div[data-testid="stToolbar"] {
@@ -77,6 +45,45 @@ hide_streamlit_style = """
                 </style>
                 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+
+
+
+
+
+hide_default_format = """
+       <style>
+       #MainMenu {visibility: hidden; }
+       footer {visibility: hidden;}
+       </style>
+       """
+st.markdown(hide_default_format, unsafe_allow_html=True)
+
+
+st.markdown("""
+<style>
+:root {
+  --header-height: 40px;
+  --header-height-padded: 40px;
+}
+
+[data-testid="stHeader"] {
+    background-image: url(ic_launcher44.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-orgin: content-box;
+    background-color: grey;
+    padding-top: var(--header-height);
+}
+
+
+}
+</style>
+""", unsafe_allow_html=True)
+
+
+
+
 
 
 
