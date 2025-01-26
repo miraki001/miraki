@@ -18,6 +18,7 @@ st.markdown(
                 .stAppHeader {
                     background-color: rgba(255, 255, 255, 0.0);  /* Transparent background */
                     background-image: url(http://placekitten.com/200/200);
+                    background-position: 20px 20px;
                     visibility: visible;  /* Ensure the header is visible */
                 }
 
