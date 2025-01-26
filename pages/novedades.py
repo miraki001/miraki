@@ -17,6 +17,7 @@ st.markdown(
         <style>
                 .stAppHeader {
                     background-color: rgba(255, 255, 255, 0.0);  /* Transparent background */
+                    background-image: url(http://placekitten.com/200/200);
                     visibility: visible;  /* Ensure the header is visible */
                 }
 
@@ -35,7 +36,7 @@ st.markdown(
 st.markdown(
         """
         <h1 style="text-align: left; margin-top: 0;">
-            Miraki 
+            Miraki 🎶  
         </h1>
         """,
         unsafe_allow_html=True
