@@ -9,7 +9,6 @@ from nltk.stem.porter import *
 from gensim.models import word2vec 
 from sklearn.manifold import TSNE 
 from nltk.tokenize import word_tokenize
-from streamlit_navigation_bar import st_navbar
 stemmer = PorterStemmer()  
 
 st.set_page_config(layout="wide",page_title="Miraki")
