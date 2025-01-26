@@ -32,6 +32,14 @@ st.markdown(
 )
 
 
+st.markdown(
+        """
+        <h1 style="text-align: center; margin-top: 0;">
+            Your Title Here
+        </h1>
+        """,
+        unsafe_allow_html=True
+)
 #vnuri = st.session_state['vnuri']
 #st.session_state.vnuri = 0
 st.subheader("Novedades")
