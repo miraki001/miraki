@@ -4,6 +4,6 @@ fileWatcherType = "poll"
 hideTopBar = true
 [client]
 showSidebarNavigation = false
-toolbarMode = “minimal”
+toolbarMode = 'minimal'
 [theme] #
 backgroundColor = '#daeeed' 
