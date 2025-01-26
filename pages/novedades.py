@@ -11,12 +11,6 @@ st.set_page_config(initial_sidebar_state="collapsed",
 
 
 
-kavyajeetbora
-
-VirtuaPT
-Dec 2024
-Thanks very much for this. It perfectly works for me.
-Additionally you can add one more line to make the header transparant if required, helps while scrolling:
 
 st.markdown(
     """
