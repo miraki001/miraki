@@ -42,21 +42,23 @@ st.subheader("Miraki - Novedades")
 
 def seleccionar(df):
    new = 'S'
+   leido= 'S'
    nuri = st.session_state['vnuri1']
    trec = st.session_state['recno']
    df.sel[trec] = 'S'
    with conn.session as session: 
-      session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0 WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
+      session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = 0, leido = :leido WHERE nuri = :nuri"), {"val": new,"leido": leido, "nuri": nuri})
       session.commit()
    return df     
 
 def desmarcar(df):
    new = 'N'
+   leido= 'S'
    nuri = st.session_state['vnuri1']
    trec = st.session_state['recno']
    df.sel[trec] = 'N'
    with conn.session as session: 
-      session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = null WHERE nuri = :nuri"), {"val": new,"nuri": nuri})
+      session.execute(text("UPDATE novedades SET select_web = :val, nro_reporte = null,leido = :leido WHERE nuri = :nuri"), {"val": new,"leido": leido, "nuri": nuri})
       session.commit()
    return df
 
