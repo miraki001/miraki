@@ -26,9 +26,11 @@ def ingresar():
 tipo = st.session_state['vTipo'] 
 if tipo == 'Editar':
     teje = st.session_state['veje'] 
+    st.write(teje)
     conn = st.connection("postgresql", type="sql")
     df1 = conn.query('select nuri,sector from sectores ;', ttl="0"),
     df = df1[0]
+    st.write(df)
     pos = df[df['sector']==teje].index.item()
 
     
