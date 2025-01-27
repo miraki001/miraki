@@ -41,6 +41,8 @@ def borrar():
       actualiza = 'delete from ejestemas where nuri = ' +  tnuri
       session.execute(text(actualiza) )
       session.commit()
+      st.info("el eje ha sido borrado")
+
 
 selected41 = option_menu(None, ["Ejes", "Ingresar","Editar","Borrar","Volver"], 
       icons=['list-check', 'plus' ,'pencil-square','eraser','house'] , menu_icon="cast",orientation="horizontal", default_index=0,
