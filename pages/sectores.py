@@ -11,6 +11,7 @@ def borrar():
       actualiza = 'delete from sectores where nuri = ' +  tnuri
       session.execute(text(actualiza) )
       session.commit()
+    st.info("el sector ha sido borrado") 
 
 
 
