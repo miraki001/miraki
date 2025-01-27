@@ -45,7 +45,7 @@ def borrar():
 miindex = -1
 selected41 =''
 
-selected41 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ], 
+selected41 = option_menu(None, ["Home", "Ingresar","Editar","Borrar" ], 
       icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=miindex,
                 
       styles={
