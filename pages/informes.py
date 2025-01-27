@@ -5,6 +5,12 @@ from streamlit_option_menu import option_menu
 import psycopg2
 from sqlalchemy import text
 import numpy as np
+from streamlit_echarts import st_echarts
+from streamlit_echarts import JsCode
+from streamlit_echarts import st_pyecharts
+from pyecharts.charts import Bar
+from pyecharts import options as opts
+from pyecharts.charts import Line
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
