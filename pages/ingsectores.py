@@ -73,7 +73,7 @@ if tipo == 'Editar':
     tsector = st.session_state['vsector'] 
     tcolor = st.session_state['vcolor'] 
     tnuri = st.session_state['vnuri'] 
-    #tpro_nuri = st.session_state['vproyecto'] 
+    vproyecto = st.session_state['vproyecto'] 
     conn = st.connection("postgresql", type="sql")
     pos = df[df['proyecto']==vproyecto].index.item()  
     
