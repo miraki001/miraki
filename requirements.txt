@@ -9,4 +9,4 @@ nltk
 gensim 
 numpy 
 streamlit-echarts
-streamlit_wordcloud 
+scikit-learn
