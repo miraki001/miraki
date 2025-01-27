@@ -3,13 +3,6 @@ import psycopg2
 from sqlalchemy import text
 from streamlit_option_menu import option_menu
 
-def borrar():
-    tnuri = st.session_state['vnuri']
-    conn = st.connection("postgresql", type="sql")
-    with conn.session as session:
-      actualiza = 'delete from ejestemas where nuri = ' +  tnuri
-      session.execute(text(actualiza) )
-      session.commit()
 
 
 st.set_page_config(initial_sidebar_state="collapsed",
@@ -40,6 +33,15 @@ st.markdown(
 
 
 st.subheader("Miraki - Ejes")
+
+def borrar():
+    tnuri = st.session_state['vnuri']
+    conn = st.connection("postgresql", type="sql")
+    with conn.session as session:
+      actualiza = 'delete from ejestemas where nuri = ' +  tnuri
+      session.execute(text(actualiza) )
+      session.commit()
+
 
 
 selected41 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ], 
