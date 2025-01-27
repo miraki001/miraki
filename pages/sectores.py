@@ -87,7 +87,7 @@ if selected5=="Ingresar":
 if selected5=="Editar":
     st.session_state['vTipo'] = 'Editar'
     st.switch_page("./pages/ingsectores.py") 
-if selected5=="Editar":
+if selected5=="Borrar":
     st.session_state['vTipo'] = 'Borrar'
     borrar()
 
