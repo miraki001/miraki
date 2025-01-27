@@ -44,7 +44,7 @@ with tab1:
     st.header("Por Fuentes")
 with tab2:
     st.header("Tendencias")
-with tab1:
+with tab3:
     st.header("Relaciones")
 
 
