@@ -49,7 +49,7 @@ tab1, tab2, tab3 = st.tabs(["Por Fuentes", "Tendencias", "Relaciones"])
 with tab1:
     st.header("Por Fuentes")
     conn = st.connection("postgresql", type="sql")
-    df = conn.query('select periodo,sum(value) value from nov_por_anio group periodo ;', ttl="0")
+    df = conn.query('select periodo,sum(value) value from nov_por_anio group by periodo ;', ttl="0")
     df['anio'] = df['anio'].astype(str)
 
     newdf=df.set_index('anio',inplace=False).rename_axis(None)
