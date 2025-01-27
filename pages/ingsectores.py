@@ -40,6 +40,12 @@ st.subheader("Miraki - Sectores")
 
 def actualizar():
     conn = st.connection("postgresql", type="sql")
+    vpro = st.session_state['vpro']
+    #st.write(veje1)
+    vquery = "select nuri,proyecto from proyectos where proyecto = :proyecto  ;"
+    df2 = conn1.query(vquery, ttl="0",params={"proyecto": vpro}),
+    vpro_nuri = df2[0].to_string(columns=['nuri'], header=False, index=False)
+  
     with conn.session as session:
         actualiza = "UPDATE sectores SET proyecto_nuri = :pro_nuri"
         actualiza = actualiza + " ,sector = :sector "
