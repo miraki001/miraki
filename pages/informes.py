@@ -47,7 +47,7 @@ st.subheader("Miraki - Novedades")
 tab1, tab2, tab3 = st.tabs(["Por Fuentes", "Tendencias", "Relaciones"])
 
 with tab1:
-    st.header("Por Fuentes")
+    st.subheader("Cantidad de novedades por mes y año")
     conn = st.connection("postgresql", type="sql")
     df = conn.query('select periodo,sum(value) value from nov_por_anio group by periodo ;', ttl="0")
     df['periodo'] = df['periodo'].astype(str)
@@ -87,8 +87,10 @@ with tab1:
     st_echarts(
         options=option, height="400px" ,
     )
+    df1 = conn.query('select fuente,sum(value) value from nov_por_anio group by fuente ;', ttl="0")
+    #df['periodo'] = df['periodo'].astype(str)
 
-
+    st.bar_chart(df1, x="fuente", y="value",  horizontal=True)
 with tab2:
     st.header("Tendencias")
 with tab3:
