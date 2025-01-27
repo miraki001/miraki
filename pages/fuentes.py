@@ -37,6 +37,8 @@ def borrar():
       session.execute(text(actualiza) )
       session.commit()
 
+def duplicar():
+
 #vnuri = st.session_state['vnuri']
 #st.session_state.vnuri = 0
 st.subheader("Miraki - Fuentes")
