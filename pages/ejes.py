@@ -59,7 +59,7 @@ selected41 = option_menu(None, ["Ejes", "Ingresar","Editar","Borrar",'Volver' ],
 st.header(miindex)
 st.header(selected41)
 
-if selected41=="Home":
+if selected41=="Volver":
     st.switch_page("./pages/parametros.py") 
 if selected41=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
