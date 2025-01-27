@@ -40,8 +40,11 @@ def borrar():
     session.execute(text(actualiza), {"palabra": tpalabra})
     #session.execute(text(actualiza) )
     session.commit()
-  st.info("la palabra ha sido borrada") 
-  st.rerun()
+  #st.info("la palabra ha sido borrada") 
+  message = st.chat_message("assistant")
+  message.write("Hello human")
+  ppalabra = ''
+  #st.rerun()
 
 selected7 = option_menu(None, ["Palabras Claves", 'Ingresar','Editar','Borrar','Volver'], 
       icons=['alphabet', 'plus' ,'pencil-square','eraser','house'] , menu_icon="cast",orientation="horizontal", default_index=0,
