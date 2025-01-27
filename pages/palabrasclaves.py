@@ -44,6 +44,7 @@ def borrar():
   message = st.chat_message("assistant")
   message.write("la palabra ha sido borrada")
   ppalabra = ''
+  st.rerun()
   return ppalabra
   #st.rerun()
 
