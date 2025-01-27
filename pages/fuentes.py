@@ -36,6 +36,7 @@ def borrar():
       actualiza = 'delete from fuentes_py where nuri = ' +  tnuri
       session.execute(text(actualiza) )
       session.commit()
+      st.info("la fuente ha sido borrada")
 
 def duplicar():
   conn = st.connection("postgresql", type="sql")
@@ -46,6 +47,7 @@ def duplicar():
     actualiza = actualiza + " from fuentes_py where nuri = :nuri ;"
     session.execute(text(actualiza), {"nuri": tnuri})
     session.commit()  
+    st.info("la fuente ha sido duplicad")
 
 #vnuri = st.session_state['vnuri']
 #st.session_state.vnuri = 0
