@@ -49,7 +49,7 @@ tab1, tab2, tab3 = st.tabs(["Por Fuentes", "Tendencias", "Relaciones"])
 with tab1:
     st.header("Por Fuentes")
     conn = st.connection("postgresql", type="sql")
-    df = conn.query('select anio,fuente,value from nov_por_anio;', ttl="0")
+    df = conn.query('select anio,sum(value) value from nov_por_anio group by anio;', ttl="0")
     df['anio'] = df['anio'].astype(str)
 
     newdf=df.set_index('anio',inplace=False).rename_axis(None)
@@ -81,7 +81,7 @@ with tab1:
             "data": df['anio'].to_list(),
         },
         "yAxis": {"type": "value"},
-        "series": [{"data": df['value'].to_list(), "type": "line", "name": 'Litros'}
+        "series": [{"data": df['value'].to_list(), "type": "line", "name": 'Cnt Novedades'}
                    ]
     }
     st_echarts(
