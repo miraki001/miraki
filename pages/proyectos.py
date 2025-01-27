@@ -44,7 +44,7 @@ def borrar():
   
 
 
-selected6 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar'], 
+selected6 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar',''], 
       icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=-1,
                 
       styles={
