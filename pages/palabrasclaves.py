@@ -3,6 +3,34 @@ import psycopg2
 from sqlalchemy import text
 from streamlit_option_menu import option_menu
 
+st.set_page_config(initial_sidebar_state="collapsed",
+                  layout="wide",menu_items=None,page_title="Miraki")
+
+
+st.markdown(
+    """
+        <style>
+                .stAppHeader {
+                    background-color: rgba(255, 255, 255, 0.0);  /* Transparent background */
+                    background-image: url(http://placekitten.com/200/200);
+                    background-position: 20px 20px;
+                    visibility: visible;  /* Ensure the header is visible */
+                }
+
+               .block-container {
+                    padding-top: 0rem;
+                    padding-bottom: 0rem;
+                    padding-left: 2rem;
+                    padding-right: 2rem;
+                }
+        </style>
+        """,
+    unsafe_allow_html=True,
+)
+
+
+st.subheader("Miraki - Palabras claves")
+
 
 selected7 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ], 
       icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=-1,
@@ -14,7 +42,7 @@ selected7 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ],
         "nav-link-selected": {"background-color": "#604283"}
       }
 )
-st.subheader("Palabras Claves")
+#st.subheader("Palabras Claves")
 
 if selected7=="Home":
     st.switch_page("./pages/parametros.py") 
