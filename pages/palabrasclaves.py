@@ -42,8 +42,9 @@ def borrar():
     session.commit()
   #st.info("la palabra ha sido borrada") 
   message = st.chat_message("assistant")
-  message.write("Hello human")
+  message.write("la palabra ha sido borrada")
   ppalabra = ''
+  return ppalabra
   #st.rerun()
 
 selected7 = option_menu(None, ["Palabras Claves", 'Ingresar','Editar','Borrar','Volver'], 
