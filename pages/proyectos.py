@@ -41,6 +41,7 @@ def borrar():
     actualiza = 'delete from proyectos   where nuri = ' +  tnuri
     session.execute(text(actualiza) )
     session.commit()
+  st.info("el proyecto ha sido borrado") 
   
 
 
