@@ -109,6 +109,7 @@ config = {
     'nuri' : st.column_config.NumberColumn('nuri',),
     'sector_nuri' : st.column_config.NumberColumn('sector_nuri',),
     'sector' : st.column_config.TextColumn('sector',),
+    'Eje' : st.column_config.TextColumn('eje',),
 
 
     
