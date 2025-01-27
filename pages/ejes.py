@@ -48,7 +48,7 @@ vlink = ''
 vimagen = ''
 
 selected41 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ], 
-      icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=-1,
+      icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=-2,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
@@ -141,5 +141,6 @@ selection = dataframe_with_selections(df)
 cnt = len(selection)
 if cnt>0:
     vnuri = selection.to_string(columns=['sector'], header=False, index=False)
-    st.write(vnuri)
-    tnuri = vnuri
+    tnuri = selection.to_string(columns=['sector'], header=False, index=False)
+    #st.write(vnuri)
+    #tnuri = vnuri
