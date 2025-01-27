@@ -13,14 +13,29 @@ st.set_page_config(initial_sidebar_state="collapsed",
 
 st.markdown(
     """
-    <style>
-      [data-testid="collapsedControl"] {
-          display: none
-      }
-    </style>
-    """,
-  unsafe_allow_html=True,
+        <style>
+                .stAppHeader {
+                    background-color: rgba(255, 255, 255, 0.0);  /* Transparent background */
+                    background-image: url(http://placekitten.com/200/200);
+                    background-position: 20px 20px;
+                    visibility: visible;  /* Ensure the header is visible */
+                }
+
+               .block-container {
+                    padding-top: 0rem;
+                    padding-bottom: 0rem;
+                    padding-left: 2rem;
+                    padding-right: 2rem;
+                }
+        </style>
+        """,
+    unsafe_allow_html=True,
 )
+
+
+#vnuri = st.session_state['vnuri']
+#st.session_state.vnuri = 0
+st.subheader("Miraki - Fuentes")
 #eee
 selected4 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar' ], 
       icons=['house', 'plus' ,'pencil-square','eraser','files','play','activity'] , menu_icon="cast",orientation="horizontal", default_index=-1,
