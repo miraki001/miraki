@@ -31,6 +31,15 @@ st.markdown(
 
 st.subheader("Miraki - Palabras claves")
 
+def borrar():
+  conn = st.connection("postgresql", type="sql")
+  tpalabra = st.session_state['vpalabra']
+  with conn.session as session:
+    actualiza = 'delete from palabras_a_buscar   where palabra = ' +  tpalabra
+    session.execute(text(actualiza) )
+    session.commit()
+  st.info("la palabra ha sido borrada") 
+
 
 selected7 = option_menu(None, ["Palabras Claves", 'Ingresar','Editar','Borrar','Volver'], 
       icons=['alphabet', 'plus' ,'pencil-square','eraser','house'] , menu_icon="cast",orientation="horizontal", default_index=-1,
