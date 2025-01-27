@@ -16,6 +16,19 @@ def ingresar():
         session.execute(text(actualiza), {"fuente": vurl,"activa": activa,"tit": xpath_tit,"desc": vtitle, "pais": pais,"separador": separador,"atributo1": atributo1,"atributo2": atributo2, "det": xpath_det, "link": xpath_link,"image": xpath_image, "tipo": tipo,"busq": busqueda, "idioma": idioma,"cod": codigo,"tipo_busq" : tipobus ,"fuente_org": fuenteorg,"posjson": posjson, "urllink": urllink})
         
         session.commit()    
+def borrar():
+    tnuri = st.session_state['vnuri']
+    conn = st.connection("postgresql", type="sql")
+    with conn.session as session:
+      actualiza = 'delete from fuentes_py where nuri = ' +  tnuri
+      session.execute(text(actualiza) )
+      session.commit()
+def actualizar():
+    conn = st.connection("postgresql", type="sql")
+    with conn.session as session:
+      actualiza = 'delete from fuentes_py where nuri = ' +  tnuri
+      session.execute(text(actualiza) )
+      session.commit()
 
 #vtitulo = st.session_state['vtitulo']
 vtitulo1 = "eeeeee"
