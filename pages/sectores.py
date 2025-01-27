@@ -68,7 +68,7 @@ selected5 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ],
         "nav-link-selected": {"background-color": "#604283"}
       }
 )
-st.subheader("Sectores")
+
 
 if selected5=="Home":
     st.switch_page("./pages/parametros.py") 
