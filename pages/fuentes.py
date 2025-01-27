@@ -53,7 +53,7 @@ def duplicar():
 #st.session_state.vnuri = 0
 st.subheader("Miraki - Fuentes")
 #eee
-selected4 = option_menu(None, ["Fuentes", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar','Volver ], 
+selected4 = option_menu(None, ["Fuentes", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar','Volver' ], 
       icons=['filetype-html', 'plus' ,'pencil-square','eraser','files','play','activity','house'] , menu_icon="cast",orientation="horizontal", default_index=-1,
                 
       styles={
