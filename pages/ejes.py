@@ -55,6 +55,8 @@ selected41 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ],
       }
 )
 
+#st.header("Fuentes")
+
 if selected41=="Home":
     st.switch_page("./pages/parametros.py") 
 if selected41=="Ingresar":
