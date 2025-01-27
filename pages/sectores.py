@@ -153,4 +153,4 @@ if cnt>0:
     st.session_state['vpro_nuri'] = selection.to_string(columns=['proyecto_nuri'], header=False, index=False)
     st.session_state['vsector'] = selection.to_string(columns=['sector'], header=False, index=False)
     st.session_state['vcolor'] = selection.to_string(columns=['color'], header=False, index=False)
-    st.session_state['vpro'] = selection.to_string(columns=['proyecto'], header=False, index=False)
+    st.session_state['vproyecto'] = selection.to_string(columns=['proyecto'], header=False, index=False)
