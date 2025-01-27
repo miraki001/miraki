@@ -44,9 +44,7 @@ def borrar():
   message = st.chat_message("assistant")
   message.write("la palabra ha sido borrada")
   ppalabra = ''
-  st.rerun()
-  return ppalabra
-  #st.rerun()
+  st.switch_page("./pages/parametros.py")
 
 selected7 = option_menu(None, ["Palabras Claves", 'Ingresar','Editar','Borrar','Volver'], 
       icons=['alphabet', 'plus' ,'pencil-square','eraser','house'] , menu_icon="cast",orientation="horizontal", default_index=0,
