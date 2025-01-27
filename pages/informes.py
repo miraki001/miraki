@@ -102,7 +102,6 @@ with tab2:
       'text':'Company', 'value':'Mentions'
     }, per_word_coloring=False)
 """  
-    df['periodo'] = df['periodo'].astype(str)
 with tab3:
     st.header("Relaciones")
 
