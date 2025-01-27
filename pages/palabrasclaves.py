@@ -32,8 +32,8 @@ st.markdown(
 st.subheader("Miraki - Palabras claves")
 
 
-selected7 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ], 
-      icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=-1,
+selected7 = option_menu(None, ["Palabras Claves", 'Ingresar','Editar','Borrar','Volver'], 
+      icons=['alphabet', 'plus' ,'pencil-square','eraser','house'] , menu_icon="cast",orientation="horizontal", default_index=-1,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
@@ -44,7 +44,7 @@ selected7 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ],
 )
 #st.subheader("Palabras Claves")
 
-if selected7=="Home":
+if selected7=="Volver":
     st.switch_page("./pages/parametros.py") 
 if selected7=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
@@ -52,7 +52,8 @@ if selected7=="Ingresar":
 if selected7=="Editar":
     st.session_state['vTipo'] = 'Editar'
     st.switch_page("./pages/ingpalabraclaves.py") 
-
+if selected7=="Borrar":
+    st.session_state['vTipo'] = 'Borrar'
 
 tnuri = 0
 vtitulo= ''
