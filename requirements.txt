@@ -10,3 +10,4 @@ gensim
 scikit-learn
 streamlit-aggrid 
 numpy 
+streamlit-echarts
