@@ -69,7 +69,7 @@ st.markdown("""
             </style>""", unsafe_allow_html=True)
 
 selected5 = option_menu(None, ["Sectores", 'Ingresar','Editar','Borrar','Volver' ], 
-      icons=['diagram-3', 'plus' ,'gear','eraser','house'] , menu_icon="cast",orientation="horizontal", default_index=0,
+      icons=['diagram-3', 'plus' ,'pencil-square','eraser','house'] , menu_icon="cast",orientation="horizontal", default_index=0,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
