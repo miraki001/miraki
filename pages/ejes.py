@@ -140,7 +140,10 @@ selection = dataframe_with_selections(df)
 
 cnt = len(selection)
 if cnt>0:
-    vnuri = selection.to_string(columns=['sector'], header=False, index=False)
-    tnuri = selection.to_string(columns=['sector'], header=False, index=False)
+    vnuri = selection.to_string(columns=['nuri'], header=False, index=False)
+    tnuri = selection.to_string(columns=['nuri'], header=False, index=False)
+    veje = selection.to_string(columns=['eje'], header=False, index=False)
+    vsec_nuri = selection.to_string(columns=['sector_nuri'], header=False, index=False)
+    vcolor = selection.to_string(columns=['color'], header=False, index=False)
     #st.write(vnuri)
     #tnuri = vnuri
