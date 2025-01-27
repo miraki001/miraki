@@ -52,7 +52,7 @@ def duplicar():
 st.subheader("Miraki - Fuentes")
 #eee
 selected4 = option_menu(None, ["Fuentes", 'Ingresar','Editar','Borrar','Duplicar','Verificar','Analizar','Volver ], 
-      icons=['house', 'plus' ,'pencil-square','eraser','files','play','activity','house'] , menu_icon="cast",orientation="horizontal", default_index=-1,
+      icons=['filetype-html', 'plus' ,'pencil-square','eraser','files','play','activity','house'] , menu_icon="cast",orientation="horizontal", default_index=-1,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
@@ -65,7 +65,7 @@ selected4 = option_menu(None, ["Fuentes", 'Ingresar','Editar','Borrar','Duplicar
 
 #st.header("Fuentes")
 
-if selected4=="Home":
+if selected4=="Volver":
     st.switch_page("miraki.py") 
 if selected4=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
