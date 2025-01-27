@@ -79,8 +79,8 @@ vimagen = ''
 
 #aca
 
-selected241 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar' ], 
-      icons=['house', 'plus' ,'pencil-square','eraser','chek','patch-chek'] , menu_icon="cast",orientation="horizontal", default_index=-3,
+selected241 = option_menu(None, ["Novedades", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar','Volver' ], 
+      icons=['house', 'plus' ,'pencil-square','eraser','chek','patch-chek','house'] , menu_icon="cast",orientation="horizontal", default_index=0,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
@@ -91,7 +91,7 @@ selected241 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar','Seleccion
 )
 
 
-if selected241=="Home":
+if selected241=="Volver":
     st.switch_page("miraki.py") 
 if selected241=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
