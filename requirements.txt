@@ -8,7 +8,6 @@ wordcloud
 nltk
 gensim 
 scikit-learn
-streamlit-aggrid 
 numpy 
 streamlit-echarts
 streamlit_wordcloud 
