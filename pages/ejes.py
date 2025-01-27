@@ -142,5 +142,6 @@ if cnt>0:
     veje = selection.to_string(columns=['eje'], header=False, index=False)
     vsec_nuri = selection.to_string(columns=['sector_nuri'], header=False, index=False)
     vcolor = selection.to_string(columns=['color'], header=False, index=False)
-    #st.write(vnuri)
-    #tnuri = vnuri
+    st.session_state['vnuri'] = selection.to_string(columns=['nuri'], header=False, index=False)
+    st.session_state['vsec_nuri'] = selection.to_string(columns=['sector_nuri'], header=False, index=False)
+    st.session_state['veje'] = selection.to_string(columns=['eje'], header=False, index=False)
