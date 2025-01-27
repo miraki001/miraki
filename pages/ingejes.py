@@ -26,7 +26,7 @@ def ingresar():
 tipo = st.session_state['vTipo'] 
 if tipo == 'Editar':
     tsec = st.session_state['vsec'] 
-    st.write(teje)
+    st.write(tsec)
     conn = st.connection("postgresql", type="sql")
     df1 = conn.query('select nuri,sector from sectores ;', ttl="0"),
     df = df1[0]
