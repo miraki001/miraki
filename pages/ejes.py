@@ -42,10 +42,10 @@ def borrar():
       session.execute(text(actualiza) )
       session.commit()
 
-
+miindex = -1
 
 selected41 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ], 
-      icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=-1,
+      icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=miindex,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
@@ -55,7 +55,7 @@ selected41 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ],
       }
 )
 
-#st.header("Fuentes")
+st.header(miindex)
 
 if selected41=="Home":
     st.switch_page("./pages/parametros.py") 
