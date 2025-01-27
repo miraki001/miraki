@@ -145,4 +145,4 @@ if cnt>0:
     st.session_state['vnuri'] = selection.to_string(columns=['nuri'], header=False, index=False)
     st.session_state['vsec_nuri'] = selection.to_string(columns=['sector_nuri'], header=False, index=False)
     st.session_state['veje'] = selection.to_string(columns=['eje'], header=False, index=False)
-    st.session_state['tsec'] = selection.to_string(columns=['sector'], header=False, index=False)
+    st.session_state['vsec'] = selection.to_string(columns=['sector'], header=False, index=False)
