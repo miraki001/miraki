@@ -6,7 +6,7 @@ from sqlalchemy import text
 def actualizar():
     conn = st.connection("postgresql", type="sql")
     vsec1 = st.session_state['vsec1']
-    st.write(veje1)
+    #st.write(veje1)
     vquery = "select nuri,sector from sectores where sector = :sector  ;"
     df2 = conn1.query(vquery, ttl="0",params={"eje": veje1}),
     vsec_nuri = df2[0].to_string(columns=['nuri'], header=False, index=False)
@@ -50,6 +50,7 @@ if tipo == 'Ingresar':
     pos = 0
 
 vsector = st.selectbox('Sector ', df.sector ,index= pos)
+st.session_state['vsec1'] = vsector
 veje = st.text_input("Eje ", teje )
 
 
