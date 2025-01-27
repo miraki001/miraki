@@ -31,7 +31,13 @@ st.markdown(
         """,
     unsafe_allow_html=True,
 )
-
+def borrar():
+    tnuri = st.session_state['vnuri']
+    conn = st.connection("postgresql", type="sql")
+    with conn.session as session:
+      actualiza = 'delete from fuentes_py where nuri = ' +  tnuri
+      session.execute(text(actualiza) )
+      session.commit()
 
 #vnuri = st.session_state['vnuri']
 #st.session_state.vnuri = 0
@@ -59,6 +65,9 @@ if selected4=="Ingresar":
 if selected4=="Editar":
     st.session_state['vTipo'] = 'Editar'
     st.switch_page("./pages/editar_fuentes.py") 
+if selected4=="Borrar":
+    borrar()
+    
 tnuri = 0
 vtitulo= ''
 vdetalle = ''
