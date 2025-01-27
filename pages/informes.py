@@ -75,8 +75,8 @@ with tab1:
             "data": df['anio'].to_list(),
         },
         "yAxis": {"type": "value"},
-        "series": [{"data": df['litros'].to_list(), "type": "line", "name": 'Litros'}
-                   ,{"data": df['fob'].to_list(), "type": "line","name":'Fob'}]
+        "series": [{"data": df['value'].to_list(), "type": "line", "name": 'Litros'}
+                   ]
     }
     st_echarts(
         options=option, height="400px" ,
