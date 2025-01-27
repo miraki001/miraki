@@ -20,6 +20,11 @@ def ingresar():
         session.execute(text(actualiza), {"sec_nuri": vsec_nuri,"eje": veje})
         session.commit()
 
+conn = st.connection("postgresql", type="sql")
+df1 = conn.query('select nuri,sector from sectores ;', ttl="0"),
+df = df1[0]
+
+
 
 tipo = st.session_state['vTipo'] 
 if tipo == 'Editar':
