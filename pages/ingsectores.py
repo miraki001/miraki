@@ -63,6 +63,12 @@ def actualizar():
 
 def ingresar():
     conn = st.connection("postgresql", type="sql")
+    vpro = st.session_state['vpro']
+    #st.write(veje1)
+    vquery = "select nuri,proyecto from proyectos where proyecto = :proyecto  ;"
+    df2 = conn1.query(vquery, ttl="0",params={"proyecto": vpro}),
+    vpro_nuri = df2[0].to_string(columns=['nuri'], header=False, index=False)
+  
     with conn.session as session:
         actualiza = "insert into sectores (nuri,proyecto_nuri,sector,color)"
         actualiza = actualiza + " values (nextval('sectores_seq'),:proyecto_nuri,:sector,:color) ;"
