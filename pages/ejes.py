@@ -56,6 +56,7 @@ selected41 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ],
 )
 
 st.header(miindex)
+st.header(selected41)
 
 if selected41=="Home":
     st.switch_page("./pages/parametros.py") 
