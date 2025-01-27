@@ -10,4 +10,4 @@ gensim
 numpy 
 streamlit-echarts
 scikit-learn
-streamlit-wordcloud-updated
+
