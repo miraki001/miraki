@@ -26,6 +26,7 @@ def ingresar():
 tipo = st.session_state['vTipo'] 
 if tipo == 'Editar':
     tsec = st.session_state['vsec'] 
+    teje = st.session_state['veje'] 
     st.write(tsec)
     conn = st.connection("postgresql", type="sql")
     df1 = conn.query('select nuri,sector from sectores ;', ttl="0"),
@@ -43,7 +44,7 @@ if tipo == 'Ingresar':
     pos = 0
 
 vsector = st.selectbox('Sector ', df.sector ,index= pos)
-veje = st.text_input("Sector ", teje )
+veje = st.text_input("Eje ", teje )
 
 
 col1, col2, = st.columns(2)
