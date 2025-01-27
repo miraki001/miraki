@@ -50,7 +50,7 @@ def actualizar():
     vpro = st.session_state['vpro']
     #st.write(veje1)
     vquery = "select nuri,proyecto from proyectos where proyecto = :proyecto  ;"
-    df2 = conn1.query(vquery, ttl="0",params={"proyecto": vpro}),
+    df2 = conn.query(vquery, ttl="0",params={"proyecto": vpro}),
     vpro_nuri = df2[0].to_string(columns=['nuri'], header=False, index=False)
   
     with conn.session as session:
@@ -66,7 +66,7 @@ def ingresar():
     vpro = st.session_state['vpro']
     #st.write(veje1)
     vquery = "select nuri,proyecto from proyectos where proyecto = :proyecto  ;"
-    df2 = conn1.query(vquery, ttl="0",params={"proyecto": vpro}),
+    df2 = conn.query(vquery, ttl="0",params={"proyecto": vpro}),
     vpro_nuri = df2[0].to_string(columns=['nuri'], header=False, index=False)
   
     with conn.session as session:
