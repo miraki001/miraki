@@ -42,6 +42,47 @@ tab1, tab2, tab3 = st.tabs(["Por Fuentes", "Tendencias", "Relaciones"])
 
 with tab1:
     st.header("Por Fuentes")
+    conn = st.connection("postgresql", type="sql")
+    df = conn.query('select anio,fuente,value from nov_por_anio;', ttl="0")
+    df['anio'] = df['anio'].astype(str)
+
+    newdf=df.set_index('anio',inplace=False).rename_axis(None)
+
+    option = {
+        "dataZoom": [
+        {
+          "show": 'true',
+          "realtime": 'true',
+          "start": 30,
+          "end": 70,
+          "xAxisIndex": [0, 1]
+        },
+        {
+          "type": 'inside',
+          "realtime": 'true',
+          "start": 30,
+          "end": 70,
+          "xAxisIndex": [0, 1]
+        }
+        ],
+        "tooltip": {
+            "trigger": 'axis',
+            "axisPointer": { "type": 'cross' }
+        },
+        "legend": {},    
+        "xAxis": {
+            "type": "category",
+            "data": df['anio'].to_list(),
+        },
+        "yAxis": {"type": "value"},
+        "series": [{"data": df['litros'].to_list(), "type": "line", "name": 'Litros'}
+                   ,{"data": df['fob'].to_list(), "type": "line","name":'Fob'}]
+    }
+    st_echarts(
+        options=option, height="400px" ,
+    )
+
+
 with tab2:
     st.header("Tendencias")
 with tab3:
