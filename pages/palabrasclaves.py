@@ -34,10 +34,11 @@ st.subheader("Miraki - Palabras claves")
 def borrar():
   conn = st.connection("postgresql", type="sql")
   tpalabra = st.session_state['vpalabra']
+  st.write(tpalabra)
   with conn.session as session:
     actualiza = 'delete from palabras_a_buscar   where palabra = :palabra ;'
     session.execute(text(actualiza), {"palabra": tpalabra})
-    session.execute(text(actualiza) )
+    #session.execute(text(actualiza) )
     session.commit()
   st.info("la palabra ha sido borrada") 
 
