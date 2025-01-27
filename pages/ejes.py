@@ -3,6 +3,14 @@ import psycopg2
 from sqlalchemy import text
 from streamlit_option_menu import option_menu
 
+def borrar():
+    tnuri = st.session_state['vnuri']
+    conn = st.connection("postgresql", type="sql")
+    with conn.session as session:
+      actualiza = 'delete from ejestemas where nuri = ' +  tnuri
+      session.execute(text(actualiza) )
+      session.commit()
+
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
@@ -58,6 +66,8 @@ if selected41=="Ingresar":
 if selected41=="Editar":
     st.session_state['vTipo'] = 'Editar'
     st.switch_page("./pages/ingejes.py") 
+if selected41=="Borrar":
+    borrar()
 
 
 
