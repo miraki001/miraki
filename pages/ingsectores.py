@@ -66,10 +66,14 @@ def ingresar():
 tipo = st.session_state['vTipo'] 
 if tipo == 'Editar':
     tsector = st.session_state['vsector'] 
-    tpro_nuri = st.session_state['vpro_nuri'] 
     tcolor = st.session_state['vcolor'] 
     tnuri = st.session_state['vnuri'] 
-    tpro_nuri = int(tpro_nuri)
+    tpro_nuri = st.session_state['vproyecto'] 
+    conn = st.connection("postgresql", type="sql")
+    df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
+    df = df1[0]
+    pos = df[df['proyecto']==tsec].index.item()  
+    
 
 if tipo == 'Ingresar':
     tsector = ''
