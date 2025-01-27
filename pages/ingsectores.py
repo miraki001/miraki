@@ -76,7 +76,10 @@ if tipo == 'Ingresar':
     tcolor = ''
     tpro_nuri = 0
 
-vpro_nuri = st.number_input("Proyecto ", tpro_nuri)
+vpro = st.selectbox('Proyecto ', df.proyecto ,index= pos)
+st.session_state['vpro'] = vpro
+
+#vpro_nuri = st.number_input("Proyecto ", tpro_nuri)
 
 vsector = st.text_input("Sector ", tsector)
 vcolor  = st.text_input("Color ", tcolor)
