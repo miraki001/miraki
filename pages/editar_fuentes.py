@@ -134,7 +134,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-st.header(":blue[fuente]")
+#st.header(":blue[fuente]")
 
 vtitle = st.text_input("fuente", fuente)
 vurl = st.text_input("url ", url)
