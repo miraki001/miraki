@@ -42,9 +42,6 @@ def borrar():
       session.execute(text(actualiza) )
       session.commit()
 
-miindex = -1
-selected41 =''
-
 selected41 = option_menu(None, ["Ejes", "Ingresar","Editar","Borrar","Volver"], 
       icons=['list-check', 'plus' ,'pencil-square','eraser','house'] , menu_icon="cast",orientation="horizontal", default_index=0,
                 
