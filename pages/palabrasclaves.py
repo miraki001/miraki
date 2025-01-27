@@ -42,7 +42,7 @@ def borrar():
 
 
 selected7 = option_menu(None, ["Palabras Claves", 'Ingresar','Editar','Borrar','Volver'], 
-      icons=['alphabet', 'plus' ,'pencil-square','eraser','house'] , menu_icon="cast",orientation="horizontal", default_index=-1,
+      icons=['alphabet', 'plus' ,'pencil-square','eraser','house'] , menu_icon="cast",orientation="horizontal", default_index=0,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
