@@ -25,11 +25,13 @@ tipo = st.session_state['vTipo']
 if tipo == 'Editar':
     teje = st.session_state['veje'] 
     tsec_nuri = st.session_state['vsec_nuri'] 
+    tcolor = st.session_state['vcolor'] 
     tnuri = st.session_state['vnuri'] 
 
 if tipo == 'Ingresar':
     teje = ''
     tsec_nuri = 0
+    tcolor = ''
 
 
 veje = st.text_input("Sector ", teje )
