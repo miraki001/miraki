@@ -11,6 +11,7 @@ from streamlit_echarts import st_pyecharts
 from pyecharts.charts import Bar
 from pyecharts import options as opts
 from pyecharts.charts import Line
+import streamlit_wordcloud as wordcloud
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki🖼")
@@ -93,6 +94,14 @@ with tab1:
     st.bar_chart(df1, x="fuente", y="value",  horizontal=True)
 with tab2:
     st.header("Tendencias")
+    conn = st.connection("postgresql", type="sql")
+    df = conn.query('select palabra as text,cnt as value from tag_words ;', ttl="0")
+    df.to_dict('words')
+    return_obj = wordcloud.visualize(words, tooltip_data_fields={
+      'text':'Company', 'value':'Mentions'
+    }, per_word_coloring=False)
+  
+    df['periodo'] = df['periodo'].astype(str)
 with tab3:
     st.header("Relaciones")
 
