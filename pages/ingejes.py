@@ -32,7 +32,7 @@ if tipo == 'Ingresar':
     tsec_nuri = 0
 
 
-vsector = st.text_input("Sector ", tsector)
+veje = st.text_input("Sector ", teje )
 vcolor  = st.text_input("Color ", tcolor)
 
 
