@@ -63,6 +63,10 @@ def ingresar():
 def borrar():
     conn = st.connection("postgresql", type="sql")
     with conn.session as session:
+      actualiza = 'delete from novedades where nuri = ' +  tnuri
+      session.execute(text(actualiza) )
+      session.commit()
+
 
 st.markdown("""
 <style>
