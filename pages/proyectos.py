@@ -53,6 +53,9 @@ if selected6=="Ingresar":
 if selected6=="Editar":
     st.session_state['vTipo'] = 'Editar'
     st.switch_page("./pages/ingproyectos.py") 
+if selected6=="Borrar":
+    st.session_state['vTipo'] = 'Editar'
+    borrar()
 
 
 tnuri = 0
