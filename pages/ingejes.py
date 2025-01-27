@@ -42,7 +42,7 @@ if tipo == 'Ingresar':
     tcolor = ''
     pos = 0
 
-
+vsector = st.selectbox('Sector ', df.sector ,index= pos)
 veje = st.text_input("Sector ", teje )
 vcolor  = st.text_input("Color ", tcolor)
 
