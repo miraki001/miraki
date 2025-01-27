@@ -89,7 +89,7 @@ with tab1:
     )
     df1 = conn.query('select fuente,sum(value) value from nov_por_anio group by fuente ;', ttl="0")
     #df['periodo'] = df['periodo'].astype(str)
-
+    st.subheader("Cantidad de novedades según la fuente")
     st.bar_chart(df1, x="fuente", y="value",  horizontal=True)
 with tab2:
     st.header("Tendencias")
