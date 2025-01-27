@@ -35,6 +35,8 @@ st.markdown(
 #st.session_state.vnuri = 0
 st.subheader("Miraki - Sectores")
 
+
+conn = st.connection("postgresql", type="sql")
 df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
 df = df1[0]
 
