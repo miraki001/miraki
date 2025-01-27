@@ -11,7 +11,7 @@ from streamlit_echarts import st_pyecharts
 from pyecharts.charts import Bar
 from pyecharts import options as opts
 from pyecharts.charts import Line
-#import streamlit_wordcloud as wordcloud
+import streamlit_wordcloud as wordcloud
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki🖼")
