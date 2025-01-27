@@ -35,7 +35,7 @@ def borrar():
   conn = st.connection("postgresql", type="sql")
   tpalabra = st.session_state['vpalabra']
   with conn.session as session:
-    actualiza = 'delete from palabras_a_buscar   where palabra = ;tpalabra ;'
+    actualiza = 'delete from palabras_a_buscar   where palabra = tpalabra ;'
     session.execute(text(actualiza), {"palabra": tpalabra})
     session.execute(text(actualiza) )
     session.commit()
@@ -64,6 +64,7 @@ if selected7=="Editar":
     st.switch_page("./pages/ingpalabraclaves.py") 
 if selected7=="Borrar":
     st.session_state['vTipo'] = 'Borrar'
+    borrar()
 
 tnuri = 0
 vtitulo= ''
