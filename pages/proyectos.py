@@ -44,8 +44,8 @@ def borrar():
   
 
 
-selected6 = option_menu(None, ["Proyectos", 'Ingresar','Editar','Borrar'], 
-      icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=0,
+selected6 = option_menu(None, ["Proyectos", 'Ingresar','Editar','Borrar','Volver'], 
+      icons=['building-fill', 'plus' ,'pencil-square','eraser','house'] , menu_icon="cast",orientation="horizontal", default_index=0,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
@@ -55,7 +55,7 @@ selected6 = option_menu(None, ["Proyectos", 'Ingresar','Editar','Borrar'],
       }
 )
 
-if selected6=="Home":
+if selected6=="Volver":
     st.switch_page("./pages/parametros.py") 
 if selected6=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
