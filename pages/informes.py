@@ -15,7 +15,7 @@ from pyecharts.charts import Line
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki🖼")
 
-🖼
+
 
 
 st.markdown(
