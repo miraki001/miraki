@@ -60,6 +60,10 @@ def ingresar():
         session.commit()
 
 
+def borrar():
+    conn = st.connection("postgresql", type="sql")
+    with conn.session as session:
+
 st.markdown("""
 <style>
     .stTextInput input[aria-label="**Titulo**"] {
