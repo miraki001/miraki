@@ -42,7 +42,7 @@ def actualizar():
     vsec1 = st.session_state['vsec1']
     #st.write(veje1)
     vquery = "select nuri,sector from sectores where sector = :sector  ;"
-    df2 = conn1.query(vquery, ttl="0",params={"eje": veje1}),
+    df2 = conn.query(vquery, ttl="0",params={"eje": veje1}),
     vsec_nuri = df2[0].to_string(columns=['nuri'], header=False, index=False)
 
 
@@ -56,6 +56,10 @@ def actualizar():
 
 def ingresar():
     conn = st.connection("postgresql", type="sql")
+    vquery = "select nuri,sector from sectores where sector = :sector  ;"
+    df2 = conn.query(vquery, ttl="0",params={"eje": veje1}),
+    vsec_nuri = df2[0].to_string(columns=['nuri'], header=False, index=False)
+  
     with conn.session as session:
         actualiza = "insert into ejestemas (nuri,sector_nuri,eje)"
         actualiza = actualiza + " values (nextval('ejestemas_seq'),:sec_nuri,:eje) ;"
