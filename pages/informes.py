@@ -50,9 +50,9 @@ with tab1:
     st.header("Por Fuentes")
     conn = st.connection("postgresql", type="sql")
     df = conn.query('select periodo,sum(value) value from nov_por_anio group by periodo ;', ttl="0")
-    df['anio'] = df['anio'].astype(str)
+    df['periodo'] = df['periodo'].astype(str)
 
-    newdf=df.set_index('anio',inplace=False).rename_axis(None)
+    newdf=df.set_index('periodo',inplace=False).rename_axis(None)
 
     option = {
         "dataZoom": [
@@ -78,7 +78,7 @@ with tab1:
         "legend": {},    
         "xAxis": {
             "type": "category",
-            "data": df['anio'].to_list(),
+            "data": df['periodo'].to_list(),
         },
         "yAxis": {"type": "value"},
         "series": [{"data": df['value'].to_list(), "type": "line", "name": 'Cnt Novedades'}
