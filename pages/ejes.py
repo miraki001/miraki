@@ -38,14 +38,9 @@ st.markdown(
 )
 
 
-#vnuri = st.session_state['vnuri']
-#st.session_state.vnuri = 0
+
 st.subheader("Miraki - Ejes")
-tnuri = 0
-vtitulo= ''
-vdetalle = ''
-vlink = ''
-vimagen = ''
+
 
 selected41 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ], 
       icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=-1,
