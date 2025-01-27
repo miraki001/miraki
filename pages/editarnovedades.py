@@ -32,21 +32,12 @@ def actualizar():
     veje1 = st.session_state['veje']
     st.write(veje1)
     vquery = "select nuri,eje from ejestemas where eje = :eje  ;"
-    vquery = 'select * from fuentes limit 10  ;'
-    qq = 'select nuri,fuente as url,activa,fecha_act,descrip as fuente,pais,fuente_org,urllink,tipo_busq,posjson from fuentes_py where proyecto_nuri = 1  ;'
-
+    
   
     
     df2 = conn1.query(vquery, ttl="0",params={"eje": veje1}),
-    #df2 = conn1.query(qq, ttl="0"),
-    st.write(df2[0])
-    cnt = df2[0].to_string(columns=['nuri'], header=False, index=False)
-    st.write(cnt)
-    #df3 = st.dataframe(df2)
-    #st.write(df3)
-    
-    #ejenuri = df2['nuri']
-    #st.write(eje)
+    ejenuri = df2[0].to_string(columns=['nuri'], header=False, index=False)
+
   
     with conn.session as session:
         actualiza = "UPDATE novedades SET titulo = :titulo"
@@ -57,8 +48,8 @@ def actualizar():
         actualiza = actualiza + " ,imagen = :imagen "
         actualiza = actualiza + " ,ejenuri = :ejenuri "
         actualiza = actualiza + " WHERE nuri = :nuri ;"
-#        session.execute(text(actualiza), {"titulo": vtitle,"detalle": vdet,"titulo_es": vtitle_es,"detalle_es": vdet_es, "link": vlink,"imagen": vimg,"ejenrui": ejenuri, "nuri": tnuri})
-#        session.commit()
+        session.execute(text(actualiza), {"titulo": vtitle,"detalle": vdet,"titulo_es": vtitle_es,"detalle_es": vdet_es, "link": vlink,"imagen": vimg,"ejenrui": ejenuri, "nuri": tnuri})
+        session.commit()
 
 def ingresar():
     conn = st.connection("postgresql", type="sql")
