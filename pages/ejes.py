@@ -45,7 +45,7 @@ def borrar():
 
 
 selected41 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ], 
-      icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=-0,
+      icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=-1,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
@@ -56,16 +56,16 @@ selected41 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ],
 )
 
 if selected41=="Home":
-    #st.switch_page("./pages/parametros.py") 
+  st.switch_page("./pages/parametros.py") 
 if selected41=="Ingresar":
-    st.session_state['vTipo'] = 'Ingresar'
-    st.switch_page("./pages/ingejes.py")   
+  st.session_state['vTipo'] = 'Ingresar'
+  st.switch_page("./pages/ingejes.py")   
 if selected41=="Editar":
-    st.session_state['vTipo'] = 'Editar'
-    st.switch_page("./pages/ingejes.py") 
+  st.session_state['vTipo'] = 'Editar'
+  st.switch_page("./pages/ingejes.py") 
 if selected41=="Borrar":
-    st.session_state['vTipo'] = 'Borrar'
-    borrar()
+  st.session_state['vTipo'] = 'Borrar'
+  borrar()
 
 
 
