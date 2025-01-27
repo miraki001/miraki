@@ -35,6 +35,11 @@ st.markdown(
 #st.session_state.vnuri = 0
 st.subheader("Miraki - Sectores")
 
+df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
+df = df1[0]
+
+
+
 
 
 
@@ -68,17 +73,16 @@ if tipo == 'Editar':
     tsector = st.session_state['vsector'] 
     tcolor = st.session_state['vcolor'] 
     tnuri = st.session_state['vnuri'] 
-    tpro_nuri = st.session_state['vproyecto'] 
+    #tpro_nuri = st.session_state['vproyecto'] 
     conn = st.connection("postgresql", type="sql")
-    df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
-    df = df1[0]
-    pos = df[df['proyecto']==tsec].index.item()  
+    pos = df[df['proyecto']==vproyecto].index.item()  
     
 
 if tipo == 'Ingresar':
     tsector = ''
     tcolor = ''
     tpro_nuri = 0
+    pos = 0
 
 vpro = st.selectbox('Proyecto ', df.proyecto ,index= pos)
 st.session_state['vpro'] = vpro
