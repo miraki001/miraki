@@ -109,8 +109,9 @@ for i in data_v1.titulo:
     i = str(i)
     tokens = i.split()
     common_words += " ".join(tokens)+" "
-st.write(common_words)    
+ 
 wordcloud = wordcloud.WordCloud().generate(common_words)
+st.write(wordcloud)   
 fig, plt = plt.subplots(figsize = (8, 8))
 plt.imshow(wordcloud, interpolation='bilinear')
 #fig = plt.figure(figsize=(8,8))
