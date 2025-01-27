@@ -49,7 +49,6 @@ selected41 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar' ],
         "nav-link-selected": {"background-color": "#604283"}
       }
 )
-st.header("Ejes")
 
 if selected41=="Home":
     st.switch_page("./pages/parametros.py") 
