@@ -63,7 +63,7 @@ if selected41=="Ingresar":
 if selected41=="Editar":
     st.session_state['vTipo'] = 'Editar'
     st.switch_page("./pages/ingejes.py") 
-if selected41=="Borrar":
+if selected41=='Borrar':
     borrar()
 
 
