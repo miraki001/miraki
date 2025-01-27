@@ -97,7 +97,7 @@ if selected5=="Borrar":
 
 
 conn = st.connection("postgresql", type="sql")
-qq = 'select proyecto_nuri,nuri,sector,color from sectores  ;'
+qq = 'select s.nuri,s.sector,s.color,p.proyecto from sectores s,proyectos p where p.nuri = s.proyecto_nuri  ;'
 df1 = conn.query(qq, ttl="0"),
 df = df1[0]
 
@@ -153,3 +153,4 @@ if cnt>0:
     st.session_state['vpro_nuri'] = selection.to_string(columns=['proyecto_nuri'], header=False, index=False)
     st.session_state['vsector'] = selection.to_string(columns=['sector'], header=False, index=False)
     st.session_state['vcolor'] = selection.to_string(columns=['color'], header=False, index=False)
+    st.session_state['vpro'] = selection.to_string(columns=['proyecto'], header=False, index=False)
