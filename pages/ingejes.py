@@ -33,18 +33,15 @@ if tipo == 'Editar':
 
     
     tsec_nuri = st.session_state['vsec_nuri'] 
-    tcolor = st.session_state['vcolor'] 
     tnuri = st.session_state['vnuri'] 
 
 if tipo == 'Ingresar':
     teje = ''
     tsec_nuri = 0
-    tcolor = ''
     pos = 0
 
 vsector = st.selectbox('Sector ', df.sector ,index= pos)
 veje = st.text_input("Sector ", teje )
-vcolor  = st.text_input("Color ", tcolor)
 
 
 col1, col2, = st.columns(2)
