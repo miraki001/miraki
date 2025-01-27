@@ -79,7 +79,7 @@ selected5 = option_menu(None, ["Sectores", 'Ingresar','Editar','Borrar','Volver'
 )
 
 
-if selected5=="Home":
+if selected5=="Volver":
     st.switch_page("./pages/parametros.py") 
 if selected5=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
