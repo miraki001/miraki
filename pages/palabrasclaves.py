@@ -41,7 +41,7 @@ def borrar():
     #session.execute(text(actualiza) )
     session.commit()
   st.info("la palabra ha sido borrada") 
-
+  st.rerun()
 
 selected7 = option_menu(None, ["Palabras Claves", 'Ingresar','Editar','Borrar','Volver'], 
       icons=['alphabet', 'plus' ,'pencil-square','eraser','house'] , menu_icon="cast",orientation="horizontal", default_index=0,
