@@ -34,6 +34,16 @@ st.markdown(
 #st.session_state.vnuri = 0
 st.subheader("Miraki - Proyectos")
 
+def borrar():
+  conn = st.connection("postgresql", type="sql")
+  tnuri = st.session_state['vnuri']
+  with conn.session as session:
+    actualiza = 'delete from proyectos   where nuri = ' +  tnuri
+    session.execute(text(actualiza) )
+    session.commit()
+  
+
+
 selected6 = option_menu(None, ["Home", 'Ingresar','Editar','Borrar'], 
       icons=['house', 'plus' ,'pencil-square','eraser'] , menu_icon="cast",orientation="horizontal", default_index=-1,
                 
