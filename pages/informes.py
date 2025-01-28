@@ -12,6 +12,7 @@ from pyecharts.charts import Bar
 from pyecharts import options as opts
 from pyecharts.charts import Line
 #import streamlit-wordcloud as wordcloud
+from st_wordcloud import st_wordcloud
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki🖼")
@@ -116,6 +117,10 @@ with tab2:
     conn = st.connection("postgresql", type="sql")
     df = conn.query('select palabra as text,cnt as value from tag_words ;', ttl="0")
     df.to_dict('words')
+    words = [{"text": "Python", "value": 500, "topic": "lol"}, {"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80}]
+
+    st_wordcloud(words, width=800, height=600)
+
 """  
     return_obj = wordcloud.visualize(words, tooltip_data_fields={
       'text':'Company', 'value':'Mentions'
