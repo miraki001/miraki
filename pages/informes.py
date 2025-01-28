@@ -118,7 +118,7 @@ with tab2:
     st.header("Tendencias")
     conn = st.connection("postgresql", type="sql")
     df = conn.query('select palabra as text,cnt as value from tag_words() ;', ttl="0")
-    words = df.to_dict('series')
+    words = df.to_dict('records')
     st.write(words)
     #words = [{"text": "Python", "value": 500, "topic": "lol"}, {"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80}]
 
