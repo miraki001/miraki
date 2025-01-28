@@ -27,7 +27,7 @@ st.markdown(
         <style>
                 .stAppHeader {
                     background-color: rgba(255, 255, 255, 0.0);  /* Transparent background */
-                    background-image: url(http://placekitten.com/200/200);
+                    background-image: url(gs://miraki-7ca50.appspot.com/android-chrome-512x512.png);
                     background-position: 20px 20px;
                     visibility: visible;  /* Ensure the header is visible */
                 }
