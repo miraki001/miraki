@@ -27,7 +27,7 @@ st.markdown(
         <style>
                 .stAppHeader {
                     background-color: rgba(255, 255, 255, 0.0);  /* Transparent background */
-                    background-image: url(https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/android-chrome-512x512.png?alt=media&token=8494362c-08da-443a-8545-ed2ab5243284);
+                    background-image: url(https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/favicon.ico?alt=media&token=96f003e9-4b0d-4e7a-99d8-d9a3726533b5);
                     background-position: 20px 20px;
                     visibility: visible;  /* Ensure the header is visible */
                 }
