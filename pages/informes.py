@@ -19,14 +19,10 @@ st.set_page_config(initial_sidebar_state="collapsed",
 
 
 st.logo(
-    "https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/android-chrome-192x192.png?alt=media&token=e8d5f6ee-706a-4399-813d-fd82f8b35ec7?text=XD+Long",
-    icon_image="https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/android-chrome-192x192.png?alt=media&token=e8d5f6ee-706a-4399-813d-fd82f8b35ec7?text=XD",
+    "https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/android-chrome-192x192.png?alt=media&token=e8d5f6ee-706a-4399-813d-fd82f8b35ec7",
+    icon_image="https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/android-chrome-192x192.png?alt=media&token=e8d5f6ee-706a-4399-813d-fd82f8b35ec7",
 )
 
-st.logo(
-    "https://placehold.co/600x60?text=XD+Long+Logo",
-    icon_image="https://placehold.co/60x60?text=XD",
-)
 #https://github.com/drogbadvc/st-wordcloud
 #https://github.com/minimaxir/stylecloud/blob/master/README.md
 #https://ellibrodepython.com/dashboard-streamlit
@@ -42,7 +38,7 @@ st.markdown(
                .block-container {
                     padding-top: 0rem;
                     padding-bottom: 0rem;
-                    padding-left: 2rem;
+                    padding-left: 3rem;
                     padding-right: 2rem;
                 }
         </style>
