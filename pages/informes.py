@@ -18,7 +18,10 @@ st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki🖼")
 
 
-
+st.logo(
+    "https://placehold.co/600x60?text=XD+Long+Logo",
+    icon_image="https://placehold.co/60x60?text=XD",
+)
 #https://github.com/drogbadvc/st-wordcloud
 #https://github.com/minimaxir/stylecloud/blob/master/README.md
 #https://ellibrodepython.com/dashboard-streamlit
