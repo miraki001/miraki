@@ -21,6 +21,7 @@ st.set_page_config(initial_sidebar_state="collapsed",
 
 #https://github.com/drogbadvc/st-wordcloud
 #https://github.com/minimaxir/stylecloud/blob/master/README.md
+#https://ellibrodepython.com/dashboard-streamlit
 st.markdown(
     """
         <style>
