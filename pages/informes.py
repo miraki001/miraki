@@ -118,6 +118,7 @@ with tab1:
     st.subheader("Cantidad de novedades según la fuente")
     st.bar_chart(df1, x="fuente", y="value",  horizontal=True)
 
+  
     df2 = conn.query('select categoria,sum(value) value from nov_cat_anio group by categoria ;', ttl="0")
     #df['periodo'] = df['periodo'].astype(str)
     st.subheader("Cantidad de novedades según la Categoria")
