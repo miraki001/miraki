@@ -118,7 +118,7 @@ with tab2:
     st.header("Tendencias")
     conn = st.connection("postgresql", type="sql")
     df = conn.query('select palabra as text,cnt as value from tag_words() ;', ttl="0")
-    df.to_dict('words')
+    words = df.to_dict('series')
     #words = [{"text": "Python", "value": 500, "topic": "lol"}, {"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80}]
 
     st_wordcloud(words, width=800, height=600)
