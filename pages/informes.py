@@ -119,6 +119,7 @@ with tab2:
     conn = st.connection("postgresql", type="sql")
     df = conn.query('select palabra as text,cnt as value from tag_words() ;', ttl="0")
     words = df.to_dict('series')
+    st.write(words)
     #words = [{"text": "Python", "value": 500, "topic": "lol"}, {"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80}]
 
     st_wordcloud(words, width=800, height=600)
