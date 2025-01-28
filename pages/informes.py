@@ -22,6 +22,11 @@ st.logo(
     "https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/android-chrome-192x192.png?alt=media&token=e8d5f6ee-706a-4399-813d-fd82f8b35ec7?text=XD+Long",
     icon_image="https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/android-chrome-192x192.png?alt=media&token=e8d5f6ee-706a-4399-813d-fd82f8b35ec7?text=XD",
 )
+
+st.logo(
+    "https://placehold.co/600x60?text=XD+Long+Logo",
+    icon_image="https://placehold.co/60x60?text=XD",
+)
 #https://github.com/drogbadvc/st-wordcloud
 #https://github.com/minimaxir/stylecloud/blob/master/README.md
 #https://ellibrodepython.com/dashboard-streamlit
