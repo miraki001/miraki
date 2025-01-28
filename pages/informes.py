@@ -19,8 +19,8 @@ st.set_page_config(initial_sidebar_state="collapsed",
 
 
 st.logo(
-    "https://https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/favicon.ico?alt=media&token=96f003e9-4b0d-4e7a-99d8-d9a3726533b5?text=XD+Long+Logo",
-    icon_image="https://https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/favicon.ico?alt=media&token=96f003e9-4b0d-4e7a-99d8-d9a3726533b5?text=XD",
+    "https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/android-chrome-192x192.png?alt=media&token=e8d5f6ee-706a-4399-813d-fd82f8b35ec7?text=XD+Long",
+    icon_image="https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/android-chrome-192x192.png?alt=media&token=e8d5f6ee-706a-4399-813d-fd82f8b35ec7?text=XD",
 )
 #https://github.com/drogbadvc/st-wordcloud
 #https://github.com/minimaxir/stylecloud/blob/master/README.md
