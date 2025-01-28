@@ -17,7 +17,7 @@ from st_wordcloud import st_wordcloud
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki🖼")
 
-st.image("./pages/favicon-32x32.png")
+
 
 #https://github.com/drogbadvc/st-wordcloud
 #https://github.com/minimaxir/stylecloud/blob/master/README.md
@@ -43,7 +43,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-
+st.image("./pages/favicon-32x32.png")
 #vnuri = st.session_state['vnuri']
 #st.session_state.vnuri = 0
 st.subheader("Miraki - Novedades")
