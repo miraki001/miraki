@@ -43,7 +43,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.image("./pages/favicon-32x32.png")
+#st.image("./pages/favicon-32x32.png")
 #vnuri = st.session_state['vnuri']
 #st.session_state.vnuri = 0
 st.subheader("Miraki - Novedades")
