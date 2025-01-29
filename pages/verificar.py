@@ -78,7 +78,7 @@ if tipobusq== 'json':
     #st.write(ojson)
     for product in ojson:
         st.write('Titulo  :  '  + product[xtitulo])
-        st.write('Detalle :  'product[xdetalle])
+        st.write('Detalle :  ' + product[xdetalle])
 
     
 
