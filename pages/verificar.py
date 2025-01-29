@@ -8,7 +8,6 @@ from bs4 import BeautifulSoup
 from lxml import html
 import psycopg2
 import json
-import requests
 import pandas as pd
 from sqlalchemy import text
 
@@ -78,7 +77,7 @@ if tipobusq== 'json':
     ojson = json.loads(pp.string)
     #st.write(ojson)
     for product in ojson:
-        st.write(product[xtitulo])
+        st.write('Titulo'  + product[xtitulo])
         st.write(product[xdetalle])
 
     
