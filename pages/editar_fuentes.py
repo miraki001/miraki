@@ -170,6 +170,7 @@ with col[0]:
     atributo1 = st.text_input("Atributo 1", atributo1)
 
 with col[1]:
+    atributo2 = st.text_input("Atributo 2", atributo2)
     xpath_tit = st.text_input("xpath titulo", xpath_tit)
     xpath_det = st.text_input("xpath detalle", xpath_det)
     xpath_link = st.text_input("xpath link", xpath_link)
