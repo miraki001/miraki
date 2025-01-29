@@ -24,7 +24,7 @@ if col2.button("Fuentes"):
 separador = st.session_state['vsepa'] 
 vatrib1 = st.session_state['vatributo1'] 
 vatrib2 = st.session_state['vatributo2'] 
-#st.write(separador)
+st.write(separador)
 xtitulo = st.session_state['vtit'] 
 xlink = st.session_state['vlink'] 
 ximage = st.session_state['vimagen'] 
@@ -92,6 +92,7 @@ if tipobusq != 'json':
         noticias = soup.find_all(separador,newv)
     if vatrib1 == '':    
         noticias = soup.find_all(separador)
+    st.write(noticias)    
     for p in noticias:
         title = p.find(xlink)
         href = title.get("href")
