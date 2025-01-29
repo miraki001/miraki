@@ -109,7 +109,7 @@ if tipo == 'Editar':
     urllink = st.session_state['vurllink']
     pais =  st.session_state['vpais']
     activa = st.session_state['vactiva']
-    tipo = st.session_state['vtipo']
+    #tipo = st.session_state['vtipo']
     busqueda = st.session_state['vbus']
     idioma = st.session_state['vidioma']
     codigo = st.session_state['vcod']
@@ -135,7 +135,7 @@ if tipo == 'Ingresar':
     urllink = ''
     pais =  ''
     activa = ''
-    tipo = ''
+    #tipo = ''
     busqueda = ''
     idioma = ''
     codigo = ''
