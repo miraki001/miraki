@@ -11,4 +11,5 @@ numpy
 streamlit-echarts
 scikit-learn
 st_wordcloud
+requests
 
