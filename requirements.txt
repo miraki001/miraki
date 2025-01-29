@@ -13,3 +13,4 @@ scikit-learn
 st_wordcloud
 requests
 psutil
+selenium
