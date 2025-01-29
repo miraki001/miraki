@@ -48,8 +48,8 @@ def duplicar():
   conn = st.connection("postgresql", type="sql")
   tnuri = st.session_state['vnuri']
   with conn.session as session:
-    actualiza = "INSERT INTO fuentes_py( nuri, fuente, fecha_act, activa, tipo, descrip, proyecto_nuri, limite, tema, busqueda_pers, pais, idioma, separador, xpath_titulo, xpath_detalle, xpath_autores, sep_autores, cnt_noticias, utfdecode, xpath_publica, act_url_fecha, urlencode, cnt_encontradas, baja_def, observa, cod_pais, xpath_link, xpath_image, atributo1, atributo2, tipo_busq, fuente_org, urllink, posjson)"
-    actualiza = actualiza  + " select nextval('fuentes_py_seq')  , fuente, fecha_act, activa, tipo, descrip, proyecto_nuri, limite, tema, busqueda_pers, pais, idioma, separador, xpath_titulo, xpath_detalle, xpath_autores, sep_autores, cnt_noticias, utfdecode, xpath_publica, act_url_fecha, urlencode, cnt_encontradas, baja_def, observa, cod_pais, xpath_link, xpath_image, atributo1, atributo2, tipo_busq, fuente_org, urllink, posjson  " 
+    actualiza = "INSERT INTO fuentes_py( nuri, fuente, fecha_act, activa, tipo, descrip, proyecto_nuri, limite, tema, busqueda_pers, pais, idioma, separador, xpath_titulo, xpath_detalle, xpath_autores, sep_autores, cnt_noticias, utfdecode, xpath_publica, act_url_fecha, urlencode, cnt_encontradas, baja_def, observa, cod_pais, xpath_link, xpath_image, atributo1, atributo2, tipo_busq, fuente_org, urllink, posjson,tipo_img)"
+    actualiza = actualiza  + " select nextval('fuentes_py_seq')  , fuente, fecha_act, activa, tipo, descrip, proyecto_nuri, limite, tema, busqueda_pers, pais, idioma, separador, xpath_titulo, xpath_detalle, xpath_autores, sep_autores, cnt_noticias, utfdecode, xpath_publica, act_url_fecha, urlencode, cnt_encontradas, baja_def, observa, cod_pais, xpath_link, xpath_image, atributo1, atributo2, tipo_busq, fuente_org, urllink, posjson,tipo_img  " 
     actualiza = actualiza + " from fuentes_py where nuri = :nuri ;"
     session.execute(text(actualiza), {"nuri": tnuri})
     session.commit()  
@@ -97,7 +97,7 @@ vimagen = ''
    
   
 conn = st.connection("postgresql", type="sql")
-qq = 'select nuri,fuente as url,activa,fecha_act,descrip as fuente,pais,fuente_org,urllink,tipo_busq,posjson from fuentes_py where proyecto_nuri = 1  ;'
+qq = 'select nuri,fuente as url,activa,fecha_act,descrip as fuente,pais,fuente_org,urllink,tipo_busq,posjson,tipo_img from fuentes_py where proyecto_nuri = 1  ;'
 df1 = conn.query(qq, ttl="0"),
 df = df1[0]
 
@@ -172,6 +172,7 @@ if cnt>0:
   st.session_state['vfuenteorg'] = df3.to_string(columns=['fuente_org'], header=False, index=False)
   st.session_state['vurllink'] = df3.to_string(columns=['urllink'], header=False, index=False)
   st.session_state['vposjson'] = df3.to_string(columns=['posjson'], header=False, index=False)
+  st.session_state['vtipoimg'] = df3.to_string(columns=['tipo_img'], header=False, index=False)
 
 
   st.session_state['vfuente'] = selection.to_string(columns=['url'], header=False, index=False)
