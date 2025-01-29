@@ -100,7 +100,8 @@ if tipobusq != 'json':
         title = p.find(xtitulo).get_text()
         det = p.find(xdetalle).get_text()
         if ximage !='none':
-            img = p.find(ximage).get('data-src')
+            #img = p.find(ximage).get('data-src')
+            img = p.find(ximage).get('src')
             st.write(img)
         st.write('Link : ' + href)
         st.write('Titulo :  ' + title)
