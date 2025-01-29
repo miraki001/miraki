@@ -76,10 +76,10 @@ selected4 = option_menu(None, ["Fuentes", 'Ingresar','Editar','Borrar','Duplicar
 if selected4=="Volver":
     st.switch_page("miraki.py") 
 if selected4=="Ingresar":
-    st.session_state['vTipo'] = 'Ingresar'
+    st.session_state['vTipoe'] = 'Ingresar'
     st.switch_page("./pages/editar_fuentes.py")   
 if selected4=="Editar":
-    st.session_state['vTipo'] = 'Editar'
+    st.session_state['vTipoe'] = 'Editar'
     st.switch_page("./pages/editar_fuentes.py") 
 if selected4=="Borrar":
     borrar()
