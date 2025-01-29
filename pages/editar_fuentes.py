@@ -157,7 +157,7 @@ st.markdown("""
 #st.header(":blue[fuente]")
 
 #col = st.columns((6.0, 5.0, 4.0,2), gap='small')
-col = st.columns([0.4, 0.4, 0.2), gap='small')
+col = st.columns([0.4, 0.4, 0.2], gap='small')
 
 
 with col[0]:
