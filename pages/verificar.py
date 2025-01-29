@@ -84,6 +84,7 @@ if tipobusq== 'json':
 
 if tipobusq != 'json':
     url = vurl
+    st.write(separador)
     response = requests.get(url)
     html_content = response.content
     tree = html.fromstring(html_content)
