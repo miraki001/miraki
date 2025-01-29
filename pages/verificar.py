@@ -100,6 +100,6 @@ if tipobusq != 'json':
         if ximage !='none':
             img = p.find(ximage).get('data-src')
             st.write(img)
-        st.write(href)
-        st.write(title)
-        st.write(det)
+        st.write('Link : ' + href)
+        st.write('Titulo :  ' + title)
+        st.write('Detalle :  ' + det)
