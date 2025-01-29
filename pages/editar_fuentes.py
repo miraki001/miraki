@@ -156,10 +156,6 @@ st.markdown("""
 
 #st.header(":blue[fuente]")
 
-vtitle = st.text_input("fuente", fuente)
-vurl = st.text_input("url ", url)
-observa = st.text_input("Observaciones ",  observa)
-
 col = st.columns((6.0, 5.0, 4), gap='medium')
 
 
