@@ -167,20 +167,17 @@ with col[0]:
     tipobus = st.text_input("Tipo de Busqueda", tipobus )
     posjson = st.number_input("Posición del Json",min_value=0,max_value=100,value=vpos)
     separador = st.text_input("Separador", separador)
+with col[1]:
     atributo1 = st.text_input("Atributo 1", atributo1)
     atributo2 = st.text_input("Atributo 2", atributo2)
-    #xpath_tit = st.text_input("xpath titulo", xpath_tit)
-    #xpath_det = st.text_input("xpath detalle", xpath_det)
-    #xpath_link = st.text_input("xpath link", xpath_link)
-    #xpath_image = st.text_input("xpath imagen", xpath_image)
-with col[1]:
-    fuenteorg = st.text_input("Fuente Original", fuenteorg)
-    urllink = st.text_input("Url Link", urllink)
-with col[2]:
     xpath_tit = st.text_input("xpath titulo", xpath_tit)
     xpath_det = st.text_input("xpath detalle", xpath_det)
     xpath_link = st.text_input("xpath link", xpath_link)
     xpath_image = st.text_input("xpath imagen", xpath_image)
+
+with col[2]:
+    fuenteorg = st.text_input("Fuente Original", fuenteorg)
+    urllink = st.text_input("Url Link", urllink)
     pais =  st.text_input("pais", pais)
     activa = st.text_input("Activa", activa)
     tipo =  st.text_input("Tipo", tipo)
