@@ -88,7 +88,7 @@ def actualizar():
 vtitulo1 = "eeeeee"
 
 tipoe = st.session_state['vTipoe'] 
-st.write(tipoe)
+
 if tipoe == 'Editar':
     fuente = st.session_state['vdescrip'] 
     pais = st.session_state['vpais'] 
