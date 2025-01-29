@@ -14,3 +14,5 @@ st_wordcloud
 requests
 psutil
 selenium
+webdriver-manager
+streamlit_extras
