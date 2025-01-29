@@ -189,6 +189,8 @@ with col[2]:
 
 col10, col20 = st.columns(2)
 if col10.button(":red[**Grabar**]"):
+
+    st.write(tipo)
     if tipo == 'Editar':
         with conn.session as session:
             actualiza = "UPDATE fuentes_py SET fuente = :url, activa = :activa,"
@@ -214,6 +216,7 @@ if col10.button(":red[**Grabar**]"):
                         
             session.commit()
             st.success("Data sent")
+            st.switch_page("./pages/fuentes.py")
     if tipo == 'Ingresar':
         ingresar()
         st.switch_page("./pages/fuentes.py")
