@@ -160,10 +160,13 @@ vtitle = st.text_input("fuente", fuente)
 vurl = st.text_input("url ", url)
 observa = st.text_input("Observaciones ",  observa)
 
-col = st.columns((6.5, 4.5, 2), gap='medium')
+col = st.columns((6.0, 5.0, 4), gap='medium')
 
 
 with col[0]:
+    vtitle = st.text_input("fuente", fuente)
+    vurl = st.text_input("url ", url)
+    observa = st.text_input("Observaciones ",  observa)
     tipobus = st.text_input("Tipo de Busqueda", tipobus )
     posjson = st.number_input("Posición del Json",min_value=0,max_value=100,value=vpos)
     separador = st.text_input("Separador", separador)
@@ -176,13 +179,17 @@ with col[0]:
 with col[1]:
     fuenteorg = st.text_input("Fuente Original", fuenteorg)
     urllink = st.text_input("Url Link", urllink)
+with col[2]:
+    xpath_tit = st.text_input("xpath titulo", xpath_tit)
+    xpath_det = st.text_input("xpath detalle", xpath_det)
+    xpath_link = st.text_input("xpath link", xpath_link)
+    xpath_image = st.text_input("xpath imagen", xpath_image)
     pais =  st.text_input("pais", pais)
     activa = st.text_input("Activa", activa)
     tipo =  st.text_input("Tipo", tipo)
     busqueda = st.text_input("Busequeda Personalizada", busqueda)
     idioma = st.text_input("Idioma", idioma)
     codigo = st.text_input("Código de Pais", codigo)
-
 
 
 col10, col20 = st.columns(2)
