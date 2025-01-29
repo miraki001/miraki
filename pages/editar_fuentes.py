@@ -175,9 +175,9 @@ with col[1]:
     xpath_link = st.text_input("xpath link", xpath_link)
     xpath_image = st.text_input("xpath imagen", xpath_image)
     urllink = st.text_input("Url Link", urllink)
+    fuenteorg = st.text_input("Fuente Original", fuenteorg)
 
 with col[2]:
-    fuenteorg = st.text_input("Fuente Original", fuenteorg)
     pais =  st.text_input("pais", pais)
     activa = st.text_input("Activa", activa)
     tipo =  st.text_input("Tipo", tipo)
