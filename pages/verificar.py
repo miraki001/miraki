@@ -99,7 +99,7 @@ if tipobusq != 'json':
         title = p.find(xlink)
         href = title.get("href")
         title = p.find(xtitulo).get_text()
-        det = p.find(xdetalle).get_text()
+        #det = p.find(xdetalle).get_text()
         # tipo de imagen puede ser src,data-src',data-breeze
         if ximage !='none':
             #img = p.find(ximage).get('data-src')
@@ -107,4 +107,4 @@ if tipobusq != 'json':
             st.write('Imagen : ' + img)
         st.write('Link : ' + href)
         st.write('Titulo :  ' + title)
-        st.write('Detalle :  ' + det)
+        #st.write('Detalle :  ' + det)
