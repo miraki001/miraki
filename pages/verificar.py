@@ -82,7 +82,7 @@ if tipobusq== 'json':
 
     
 
-if tipobus != 'json':
+if tipobusq != 'json':
     url = vurl
     response = requests.get(url)
     html_content = response.content
