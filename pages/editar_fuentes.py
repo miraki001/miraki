@@ -38,7 +38,24 @@ st.logo(
 #st.session_state.vnuri = 0
 st.subheader("Miraki - Fuentes")
 
+selected2 = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Parametros','Github' ], 
+        icons=['house', 'newspaper' , 'filetype-html','globe-americas','gear','github'] , menu_icon="cast",orientation="horizontal", default_index=0,
+        styles={
+        "container": {"padding": "0!important", "background-color": "#604283"},
+        "icon": {"color": "orange", "font-size": "14px"}, 
+        "nav-link": {"color": "white",  "font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#B3D3F0"},
+        "nav-link-selected": {"background-color": "#604283"}
+        }
+  )
 
+if selected2=="Fuentes":
+  st.switch_page("./pages/fuentes.py")
+if selected2=="Novedades":
+  st.switch_page("./pages/novedades.py")       
+if selected2=="Parametros":
+  st.switch_page("./pages/parametros.py")        
+if selected2=="Informes":
+  st.switch_page("./pages/informes.py")    
 
 
 conn = st.connection("postgresql", type="sql")
