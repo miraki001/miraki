@@ -41,10 +41,10 @@ vpos = int(posjson)
 tnuri = st.session_state['vnuri']
 vurl = st.session_state['vfuente']
 st.write(vurl)
-st.write(xtitulo)
-st.write(xdetalle)
+#st.write(xtitulo)
+#st.write(xdetalle)
 newv = {vatrib1:vatrib2}
-st.write(newv)
+#st.write(newv)
         
 if tipobusq== 'json':
     my_url = vurl
@@ -77,8 +77,8 @@ if tipobusq== 'json':
     ojson = json.loads(pp.string)
     #st.write(ojson)
     for product in ojson:
-        st.write('Titulo'  + product[xtitulo])
-        st.write(product[xdetalle])
+        st.write('Titulo  :  '  + product[xtitulo])
+        st.write('Detalle :  'product[xdetalle])
 
     
 
