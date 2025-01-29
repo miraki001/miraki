@@ -96,6 +96,7 @@ if tipoe == 'Editar':
     tnuri = st.session_state['vnuri']
     url = st.session_state['vfuente']
     vpos = st.session_state['vposjson']    
+    tipoimg = st.session_state['vtipoimg']    
     vpos = int(vpos)
     tipobus = st.session_state['vtipobus']
     separador = st.session_state['vsepa']
@@ -140,6 +141,7 @@ if tipo == 'Ingresar':
     idioma = ''
     codigo = ''
     observa = ''
+    tipoimg = ''
 
 st.markdown("""
 <style>
@@ -177,9 +179,10 @@ with col[1]:
     xpath_link = st.text_input("xpath link", xpath_link)
     xpath_image = st.text_input("xpath imagen", xpath_image)
     urllink = st.text_input("Url Link", urllink)
-    fuenteorg = st.text_input("Fuente Original", fuenteorg)
+    tipoimg = st.text_input("Tipo de Img", tipoimg)
 
 with col[2]:
+    fuenteorg = st.text_input("Fuente Original", fuenteorg)
     pais =  st.text_input("pais", pais)
     activa = st.text_input("Activa", activa)
     tipo =  st.text_input("Tipo", tipo)
@@ -212,8 +215,9 @@ if col10.button(":red[**Grabar**]"):
             actualiza = actualiza + "fuente_org = :fuente_org, "
             actualiza = actualiza + "posjson = :posjson, "
             actualiza = actualiza + "urllink = :urllink  "
+            actualiza = actualiza + "tipo_img = :tipoimg  "
             actualiza = actualiza + " WHERE nuri= :nuri"        
-            session.execute(text(actualiza), {"url": vurl,"activa": activa,"tit": xpath_tit,"desc": vtitle, "pais": pais,"separador": separador,"atributo1": atributo1,"atributo2": atributo2, "det": xpath_det, "link": xpath_link,"image": xpath_image, "tipo": tipo,"busq": busqueda, "idioma": idioma,"cod": codigo,"tipo_busq" : tipobus ,"fuente_org": fuenteorg,"posjson": posjson, "urllink": urllink,  "nuri": tnuri})
+            session.execute(text(actualiza), {"url": vurl,"activa": activa,"tit": xpath_tit,"desc": vtitle, "pais": pais,"separador": separador,"atributo1": atributo1,"atributo2": atributo2, "det": xpath_det, "link": xpath_link,"image": xpath_image, "tipo": tipo,"busq": busqueda, "idioma": idioma,"cod": codigo,"tipo_busq" : tipobus ,"fuente_org": fuenteorg,"posjson": posjson, "urllink": urllink,"tipoimg" : tipoimg  "nuri": tnuri})
                         
             session.commit()
             st.success("Data sent")
