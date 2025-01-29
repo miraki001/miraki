@@ -24,7 +24,7 @@ if col2.button("Fuentes"):
 separador = st.session_state['vsepa'] 
 vatrib1 = st.session_state['vatributo1'] 
 vatrib2 = st.session_state['vatributo2'] 
-st.write(separador)
+#st.write(separador)
 xtitulo = st.session_state['vtit'] 
 xlink = st.session_state['vlink'] 
 ximage = st.session_state['vimagen'] 
