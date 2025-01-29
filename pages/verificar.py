@@ -101,7 +101,7 @@ if tipobusq != 'json':
         det = p.find(xdetalle).get_text()
         if ximage !='none':
             #img = p.find(ximage).get('data-src')
-            img = p.find(ximage).get('src')
+            img = p.find(ximage).get('data-breeze')
             st.write(img)
         st.write('Link : ' + href)
         st.write('Titulo :  ' + title)
