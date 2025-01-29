@@ -87,9 +87,9 @@ def actualizar():
 #vtitulo = st.session_state['vtitulo']
 vtitulo1 = "eeeeee"
 
-tipo = st.session_state['vTipo'] 
-st.write(tipo)
-if tipo == 'Editar':
+tipoe = st.session_state['vTipoe'] 
+st.write(tipoe)
+if tipoe == 'Editar':
     fuente = st.session_state['vdescrip'] 
     pais = st.session_state['vpais'] 
     activa = st.session_state['vactiva'] 
@@ -109,7 +109,7 @@ if tipo == 'Editar':
     urllink = st.session_state['vurllink']
     pais =  st.session_state['vpais']
     activa = st.session_state['vactiva']
-    #tipo = st.session_state['vtipo']
+    tipo = st.session_state['vtipo']
     busqueda = st.session_state['vbus']
     idioma = st.session_state['vidioma']
     codigo = st.session_state['vcod']
@@ -135,7 +135,7 @@ if tipo == 'Ingresar':
     urllink = ''
     pais =  ''
     activa = ''
-    #tipo = ''
+    tipo = ''
     busqueda = ''
     idioma = ''
     codigo = ''
@@ -191,8 +191,8 @@ with col[2]:
 col10, col20 = st.columns(2)
 if col10.button(":red[**Grabar**]"):
 
-    st.write(tipo)
-    if tipo == 'Editar':
+    st.write(tipoe)
+    if tipoe == 'Editar':
         with conn.session as session:
             actualiza = "UPDATE fuentes_py SET fuente = :url, activa = :activa,"
             actualiza = actualiza + "xpath_titulo = :tit, "
@@ -218,7 +218,7 @@ if col10.button(":red[**Grabar**]"):
             session.commit()
             st.success("Data sent")
             st.switch_page("./pages/fuentes.py")
-    if tipo == 'Ingresar':
+    if tipoe == 'Ingresar':
         ingresar()
         st.switch_page("./pages/fuentes.py")
 
