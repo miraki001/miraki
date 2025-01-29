@@ -35,6 +35,7 @@ fuenteorg = st.session_state['vfuenteorg']
 urllink = st.session_state['vurllink'] 
 posjson = st.session_state['vposjson'] 
 vpos = int(posjson)
+ptipoimg =  st.session_state['vtipoimg'] 
 
 
 
@@ -99,9 +100,10 @@ if tipobusq != 'json':
         href = title.get("href")
         title = p.find(xtitulo).get_text()
         det = p.find(xdetalle).get_text()
+        # tipo de imagen puede ser src,data-src',data-breeze
         if ximage !='none':
             #img = p.find(ximage).get('data-src')
-            img = p.find(ximage).get('data-breeze')
+            img = p.find(ximage).get(ptipoimg)
             st.write('Imagen : ' + img)
         st.write('Link : ' + href)
         st.write('Titulo :  ' + title)
