@@ -103,9 +103,10 @@ if tipobusq != 'json':
         # tipo de imagen puede ser src,data-src',data-breeze
         if ximage !='none':
             #img = p.find(ximage).get('data-src')
-            img_list = p.select('div.seperator > a > img')
-            st.write(img_list)
-            img = p.find(ximage).get(ptipoimg)
+            try:
+                img = p.find(ximage).get(ptipoimg)
+            except ValueError:
+                img = ''
             #file_name = p.search(".*/(.*png|.*jpg)$", img_url)
             st.write('Imagen : ' + img)
         st.write('Link : ' + href)
