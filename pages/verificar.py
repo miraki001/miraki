@@ -12,6 +12,10 @@ import pandas as pd
 from sqlalchemy import text
 from urllib.request import urljoin
 
+
+def find_a_string(value):
+    return lambda text: value in text
+
 col1, col2 = st.columns(2)
 
 
