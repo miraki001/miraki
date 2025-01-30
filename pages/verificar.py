@@ -122,43 +122,40 @@ if tipobusq != 'json':
     #st.write(noticias)    
     for p in noticias:
         title = p.find(xlink)
-        st.write(title)
-        if title==None:
-            href = p.get("href") 
-        else:
+        if title !=None:
             href = title.get("href")
-        if titulodict == 'S':
-            title = p.find(sep,dictitu ).text     
-        else:                
-            try:
-                title = p.find(xtitulo).get_text()
-                st.write(title)
+            if titulodict == 'S':
+                title = p.find(sep,dictitu ).text     
+            else:                
+                try:
+                    title = p.find(xtitulo).get_text()
+                    st.write(title)
+                except ValueError:
+                    title = p.find(xtitulo).text
+            st.write(title)        
+            try:    
+                #det = p.find(xdetalle).text
+                det = p.find(xdetalle).get_text()
             except ValueError:
-                title = p.find(xtitulo).text
-        st.write(title)        
-        try:    
-            #det = p.find(xdetalle).text
-            det = p.find(xdetalle).get_text()
-        except ValueError:
-            det = p.find(xdetalle).text
-        # tipo de imagen puede ser src,data-src',data-breeze
-        if ximage !='none':
-            #img = p.find(ximage).get('data-src')
-            img = ''
-            try:
-                img = p.find(ximage).get(ptipoimg)
-                if img== None:
-                    img = p.find(ximage).get('src')
-                
-                st.write(img)
-            except ValueError:
+                det = p.find(xdetalle).text
+            # tipo de imagen puede ser src,data-src',data-breeze
+            if ximage !='none':
+                #img = p.find(ximage).get('data-src')
                 img = ''
+                try:
+                    img = p.find(ximage).get(ptipoimg)
+                    if img== None:
+                        img = p.find(ximage).get('src')
+                
+                    st.write(img)
+                except ValueError:
+                    img = ''
 
             
-            #file_name = p.search(".*/(.*png|.*jpg)$", img_url)
-            #st.write('Imagen : ' + img)
-        if not href.startswith('http'):
-            href = urljoin(vurl, href)
-        st.write('Link : ' + href)
-        st.write('Titulo :  ' + title)
-        st.write('Detalle :  ' + det)
+                #file_name = p.search(".*/(.*png|.*jpg)$", img_url)
+                #st.write('Imagen : ' + img)
+            if not href.startswith('http'):
+                href = urljoin(vurl, href)
+            st.write('Link : ' + href)
+            st.write('Titulo :  ' + title)
+            st.write('Detalle :  ' + det)
