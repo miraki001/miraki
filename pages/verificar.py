@@ -116,12 +116,14 @@ if tipobusq != 'json':
     for p in noticias:
         title = p.find(xlink)
         href = title.get("href")
-        try:
-            title = p.find(xtitulo).get_text()
-            #title = p.find("div", {"class":"article-title"}).text
-            st.write(title)
-        except ValueError:
-            title = p.find(xtitulo).text
+        if titulodict == 'S':
+            title = p.find(sep,dictitu ).text     
+        else:                
+            try:
+                title = p.find(xtitulo).get_text()
+                st.write(title)
+            except ValueError:
+                title = p.find(xtitulo).text
         try:    
             det = p.find(xdetalle).text
             #det = p.find(xdetalle).get_text()
