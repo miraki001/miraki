@@ -49,8 +49,10 @@ if p != 0:
     p = resto.find(":")
     atr1 = resto[:p]
     atr1 = atr1[1:100]
+    atr1 =atr1.replace('"','')
     st.write(atr1)
     atr2 = resto[p+1:len(resto)-1]
+    atr2 =atr2.replace('"','')
     st.write(atr2)
     dictitu = {atr1:atr2}
     st.write(dictitu)
