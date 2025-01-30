@@ -106,7 +106,7 @@ if tipobusq != 'json':
             img = ''
             try:
                 img = p.find(ximage).get(ptipoimg)
-                st.write('Imagen : ' + img)
+                st.write(img)
             except ValueError:
                 img = ''
             #file_name = p.search(".*/(.*png|.*jpg)$", img_url)
