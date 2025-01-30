@@ -103,6 +103,7 @@ if tipobusq != 'json':
         # tipo de imagen puede ser src,data-src',data-breeze
         if ximage !='none':
             #img = p.find(ximage).get('data-src')
+            img = ''
             try:
                 img = p.find(ximage).get(ptipoimg)
             except ValueError:
