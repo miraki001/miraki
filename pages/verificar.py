@@ -116,7 +116,7 @@ if tipobusq != 'json':
     html_content = response.content
     tree = html.fromstring(html_content)
     soup = BeautifulSoup(html_content, 'lxml')
-    noticias = soup.find(string=re.compile("dg_news_hl_news_"))
+    noticias = soup.find_all(string=re.compile("dg_news_hl_news_"))
     st.write(noticias)
     if vatrib1 != '':
         noticias = soup.find_all(separador,newv)
