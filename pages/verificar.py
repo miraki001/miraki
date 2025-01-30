@@ -100,9 +100,12 @@ if tipobusq != 'json':
         href = title.get("href")
         try:
             title = p.find(xtitulo).get_text()
-        except:
+        except ValueError:
             title = p.find(xtitulo).text
-        det = p.find(xdetalle).get_text()
+        try:    
+            det = p.find(xdetalle).get_text()
+        except ValueError:
+            det = p.find(xdetalle).text
         # tipo de imagen puede ser src,data-src',data-breeze
         if ximage !='none':
             #img = p.find(ximage).get('data-src')
