@@ -41,7 +41,7 @@ p = xtitulo.find("{")
 #   esto es para el caso del titulo que debe ser un diccionario
 if p != 0:
     sep = xtitulo[:p-2]
-    titulodict = 'N'
+    titulodict = 'S'
     st.write(sep)
     resto = xtitulo[p:100]
     st.write(resto)
@@ -51,10 +51,9 @@ if p != 0:
     st.write(atr1)
     atr2 = resto[p+1:len(resto)-1]
     st.write(atr2)
+    dictitu = {atr1:atr2}
+    st.write(dictitu)
 
-a = xtitulo.strip("{}")
-b = dict(item.split(": ") for item in a.split(", "))
-st.write(b)
 
 
 
