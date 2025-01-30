@@ -98,7 +98,10 @@ if tipobusq != 'json':
     for p in noticias:
         title = p.find(xlink)
         href = title.get("href")
-        title = p.find(xtitulo).get_text()
+        try:
+            title = p.find(xtitulo).get_text()
+        except:
+            title = p.find(xtitulo).text
         det = p.find(xdetalle).get_text()
         # tipo de imagen puede ser src,data-src',data-breeze
         if ximage !='none':
