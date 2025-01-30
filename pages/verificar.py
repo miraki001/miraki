@@ -42,7 +42,7 @@ p = xtitulo.find("{")
 if p != 0:
     sep = xtitulo[:p-2]
     st.write(sep)
-    resto = titulo[p:100]
+    resto = xtitulo[p:100]
     st.write(resto)
     p = resto.find(":")
     st.write(p)
