@@ -113,7 +113,7 @@ if tipobusq != 'json':
     tree = html.fromstring(html_content)
     soup = BeautifulSoup(html_content, 'lxml')
     if vatrib1 != '':
-        noticias = soup.find_all(separador,newv)
+        noticias = soup.find_all(separador,newv, exact: false)
     if vatrib1 == '':    
         noticias = soup.find_all(separador)
 
