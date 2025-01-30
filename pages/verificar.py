@@ -66,7 +66,7 @@ vurl = st.session_state['vfuente']
 st.write('Fuente a Verificar :  ' + vurl)
 #st.write(xtitulo)
 #st.write(xdetalle)
-newv = {vatrib1*:vatrib2}
+newv = {vatrib1:vatrib2}
 #st.write(newv)
         
 if tipobusq== 'json':
