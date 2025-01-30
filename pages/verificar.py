@@ -131,6 +131,9 @@ if tipobusq != 'json':
         title = p.find(xlink)
         if title==None:
             title= p.get("href")
+            href = title.get("href")
+        else:
+            href = title.get("href") 
         st.write(title)
         #href = title.get("href")
         if titulodict == 'S':
