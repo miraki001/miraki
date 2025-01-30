@@ -131,6 +131,7 @@ if tipobusq != 'json':
                 st.write(title)
             except ValueError:
                 title = p.find(xtitulo).text
+        st.write(title)        
         try:    
             #det = p.find(xdetalle).text
             det = p.find(xdetalle).get_text()
