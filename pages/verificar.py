@@ -38,7 +38,7 @@ vpos = int(posjson)
 ptipoimg =  st.session_state['vtipoimg'] 
 st.write(xtitulo)
 a = xtitulo.strip("{}")
-b = dict(item.split(": ") for item in xtitulo.split(", "))
+b = dict(item.split(": ") for item in a.split(", "))
 st.write(b)
 
 
