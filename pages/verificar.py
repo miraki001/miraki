@@ -46,7 +46,8 @@ if p != 0:
     resto = xtitulo[p:100]
     st.write(resto)
     p = resto.find(":")
-    atr1 = resto[:p-1]
+    atr1 = resto[:p]
+    atr1 = atr1[1:100]
     st.write(atr1)
 
 
