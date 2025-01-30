@@ -24,7 +24,7 @@ titulodict = 'N'
 separador = st.session_state['vsepa'] 
 vatrib1 = st.session_state['vatributo1'] 
 vatrib2 = st.session_state['vatributo2'] 
-st.write(separador)
+#st.write(separador)
 xtitulo = st.session_state['vtit'] 
 xlink = st.session_state['vlink'] 
 ximage = st.session_state['vimagen'] 
@@ -36,26 +36,26 @@ urllink = st.session_state['vurllink']
 posjson = st.session_state['vposjson'] 
 vpos = int(posjson)
 ptipoimg =  st.session_state['vtipoimg'] 
-st.write(xtitulo)
+#st.write(xtitulo)
 p = xtitulo.find("{")
 #   esto es para el caso del titulo que debe ser un diccionario
 if p != 0:
     sep = xtitulo[:p-2]
     titulodict = 'S'
     sep =sep.replace('"','')
-    st.write(sep)
+    #st.write(sep)
     resto = xtitulo[p:100]
-    st.write(resto)
+    #st.write(resto)
     p = resto.find(":")
     atr1 = resto[:p]
     atr1 = atr1[1:100]
     atr1 =atr1.replace('"','')
-    st.write(atr1)
+    #st.write(atr1)
     atr2 = resto[p+1:len(resto)-1]
     atr2 =atr2.replace('"','')
-    st.write(atr2)
+    #st.write(atr2)
     dictitu = {atr1:atr2}
-    st.write(dictitu)
+    #st.write(dictitu)
 
 
 
@@ -106,7 +106,7 @@ if tipobusq== 'json':
 
 if tipobusq != 'json':
     url = vurl
-    st.write(separador)
+    #st.write(separador)
     response = requests.get(url)
     html_content = response.content
     tree = html.fromstring(html_content)
@@ -115,7 +115,10 @@ if tipobusq != 'json':
         noticias = soup.find_all(separador,newv)
     if vatrib1 == '':    
         noticias = soup.find_all(separador)
-    st.write(noticias)    
+
+    if st.checkbox('Ver contenido extraido'):
+        st.write(noticias)
+    #st.write(noticias)    
     for p in noticias:
         title = p.find(xlink)
         href = title.get("href")
