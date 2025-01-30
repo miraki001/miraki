@@ -106,7 +106,7 @@ if tipobusq != 'json':
             img = ''
             try:
                 img = p.find(ximage).get(ptipoimg)
-                if img== 'None:
+                if img== None:
                     img = p.find(ximage).get('src')
                 
                 st.write(img)
