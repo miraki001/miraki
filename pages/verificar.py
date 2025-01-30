@@ -39,7 +39,7 @@ ptipoimg =  st.session_state['vtipoimg']
 st.write(xtitulo)
 p = xtitulo.find("{")
 if p != 0:
-    sep = xtitulo[:p-1]
+    sep = xtitulo[:p-2]
     st.write(sep)
 
 
