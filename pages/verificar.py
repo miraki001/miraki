@@ -106,9 +106,14 @@ if tipobusq != 'json':
             img = ''
             try:
                 img = p.find(ximage).get(ptipoimg)
+                if img== 'None:
+                    img = p.find(ximage).get('src')
+                
                 st.write(img)
             except ValueError:
                 img = ''
+
+            
             #file_name = p.search(".*/(.*png|.*jpg)$", img_url)
             #st.write('Imagen : ' + img)
         st.write('Link : ' + href)
