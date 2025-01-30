@@ -122,7 +122,7 @@ if tipobusq != 'json':
     #st.write(noticias)    
     for p in noticias:
         title = p.find(xlink)
-        sw.write(title)
+        st.write(title)
         if title==None:
             href = p.get("href") 
         else:
