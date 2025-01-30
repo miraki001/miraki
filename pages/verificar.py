@@ -132,7 +132,7 @@ if tipobusq != 'json':
             title = p.find(sep,dictitu ).text     
         else:                
             try:
-                title = p.find(xtitulo).get_text()
+                title = p.find(xtitulo)[1].get_text()
                 st.write(title)
             except ValueError:
                 title = p.find(xtitulo).text
