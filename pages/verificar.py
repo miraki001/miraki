@@ -94,17 +94,20 @@ if tipobusq != 'json':
         noticias = soup.find_all(separador,newv)
     if vatrib1 == '':    
         noticias = soup.find_all(separador)
-    st.write(noticias)    
+    #st.write(noticias)    
     for p in noticias:
         title = p.find(xlink)
         href = title.get("href")
         title = p.find(xtitulo).get_text()
-        #det = p.find(xdetalle).get_text()
+        det = p.find(xdetalle).get_text()
         # tipo de imagen puede ser src,data-src',data-breeze
         if ximage !='none':
             #img = p.find(ximage).get('data-src')
+            file_name = p.search(".*/(.*png|.*jpg)$", img_url)
+            st.write(file_name)
             img = p.find(ximage).get(ptipoimg)
+            #file_name = p.search(".*/(.*png|.*jpg)$", img_url)
             st.write('Imagen : ' + img)
         st.write('Link : ' + href)
         st.write('Titulo :  ' + title)
-        #st.write('Detalle :  ' + det)
+        st.write('Detalle :  ' + det)
