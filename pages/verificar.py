@@ -49,7 +49,7 @@ if p != 0:
     atr1 = resto[:p]
     atr1 = atr1[1:100]
     st.write(atr1)
-    atr2 = resto[p+1:100]
+    atr2 = resto[p+1:len(atr2)-|]
     st.write(atr2)
 
 a = xtitulo.strip("{}")
