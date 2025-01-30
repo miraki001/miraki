@@ -151,6 +151,9 @@ if tipobusq != 'json':
             
             #file_name = p.search(".*/(.*png|.*jpg)$", img_url)
             #st.write('Imagen : ' + img)
+        if not href.startswith('http'):
+            href = urljoin(vurl, href)
+        
         st.write('Link : ' + href)
         st.write('Titulo :  ' + title)
         st.write('Detalle :  ' + det)
