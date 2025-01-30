@@ -129,9 +129,10 @@ if tipobusq != 'json':
     #st.write(noticias)    
     for p in noticias:
         title = p.find(xlink)
-        title= p.get("href")
+        if title==None:
+            title= p.get("href")
         st.write(title)
-        href = title.get("href")
+        #href = title.get("href")
         if titulodict == 'S':
             title = p.find(sep,dictitu ).text     
         else:                
