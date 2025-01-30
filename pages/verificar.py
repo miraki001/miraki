@@ -99,8 +99,8 @@ if tipobusq != 'json':
         title = p.find(xlink)
         href = title.get("href")
         try:
-            #title = p.find(xtitulo).get_text()
-            title = p.find("div", {"class":"article-title"}).text
+            title = p.find(xtitulo).get_text()
+            #title = p.find("div", {"class":"article-title"}).text
             st.write(title)
         except ValueError:
             title = p.find(xtitulo).text
