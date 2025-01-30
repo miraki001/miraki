@@ -70,7 +70,7 @@ vurl = st.session_state['vfuente']
 st.write('Fuente a Verificar :  ' + vurl)
 #st.write(xtitulo)
 #st.write(xdetalle)
-pattern = re.compile(atrib2 +".*")
+pattern = re.compile(vatrib2 +".*")
 newv = {vatrib1:pattern}
 st.write(newv)
         
