@@ -153,7 +153,7 @@ if tipobusq != 'json':
             #st.write('Imagen : ' + img)
         if not href.startswith('http'):
             href = urljoin(vurl, href)
-        
+        st.write(vurls) 
         st.write('Link : ' + href)
         st.write('Titulo :  ' + title)
         st.write('Detalle :  ' + det)
