@@ -20,7 +20,7 @@ if col1.button("Home"):
 if col2.button("Fuentes"):
     st.switch_page("./pages/fuentes.py")
 
-
+titulodict = 'N'
 separador = st.session_state['vsepa'] 
 vatrib1 = st.session_state['vatributo1'] 
 vatrib2 = st.session_state['vatributo2'] 
@@ -41,11 +41,13 @@ p = xtitulo.find("{")
 #   esto es para el caso del titulo que debe ser un diccionario
 if p != 0:
     sep = xtitulo[:p-2]
+    titulodict = 'N'
     st.write(sep)
     resto = xtitulo[p:100]
     st.write(resto)
     p = resto.find(":")
-    st.write(p)
+    atr1 = resto[:p-1]
+    st.write(atr1)
 
 
 a = xtitulo.strip("{}")
