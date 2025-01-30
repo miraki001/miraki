@@ -103,7 +103,8 @@ if tipobusq != 'json':
         except ValueError:
             title = p.find(xtitulo).text
         try:    
-            det = p.find(xdetalle).get_text()
+            det = p.find(xdetalle).text
+            #det = p.find(xdetalle).get_text()
         except ValueError:
             det = p.find(xdetalle).text
         # tipo de imagen puede ser src,data-src',data-breeze
