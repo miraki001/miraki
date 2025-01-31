@@ -279,7 +279,7 @@ if tipobusq != 'json':
           st.write('Imagen :  ' +  img)
           eje_nuri = 0
           eje_nuri = buscareje(df1[0],title)
-          eje_nuri = st.session_state['vejenuri'] 
+          #eje_nuri = st.session_state['vejenuri'] 
           st.write('Eje')
           st.write(eje_nuri)
           st.session_state['vejenuri'] = 0
