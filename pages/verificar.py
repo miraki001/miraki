@@ -242,10 +242,14 @@ if tipobusq != 'json':
 
         col1, col2 = st.columns(2)
       
-        col1:
+        with col1:
           st.write('Link : ' + href)
           st.write('Titulo :  ' + title)
           st.write('Detalle :  ' + det)
-        col2:
+          st.write(img)
+        with col2:
           if img != '':
-            st.image(img)
+                st.image(
+                  vimg,
+                  width=600, # Manually Adjust the width of the image as per requirement
+                 )
