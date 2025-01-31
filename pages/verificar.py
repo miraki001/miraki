@@ -60,7 +60,7 @@ if p != 0:
     atr2 =atr2.replace('"','')
     #st.write(atr2)
     dictitu = {atr1:atr2}
-    st.write(dictitu)
+    #st.write(dictitu)
 
 
 
@@ -134,13 +134,13 @@ if tipobusq != 'json':
             href = title
         else:
             href = title.get("href") 
-        st.write(title)
+        #st.write(title)
         #href = title.get("href")
         if titulodict == 'S':
             title = p.find(sep,dictitu ).text     
         else:                
             try:
-                title = p.find(xtitulo)[2].get_text()
+                title = p.find(xtitulo).get_text()
                 st.write(title)
             except ValueError:
                 title = p.find(xtitulo).text
