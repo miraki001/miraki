@@ -69,7 +69,10 @@ if selected27=="Informes":
 
 col1, col2 = st.columns(2)
 
-
+conn = st.connection("postgresql", type="sql")
+qq = 'select eje_nuri,palabra_es,palabra_en from palabrasclaves  ;'
+df1 = conn.query(qq, ttl="0"),
+st.write(df1)
 
 
 titulodict = 'N'
