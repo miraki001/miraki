@@ -189,7 +189,8 @@ st.write('Fuente a Verificar :  ' + vurl)
 #st.write(xdetalle)
 pattern = re.compile(vatrib2 +".*")
 newv = {vatrib1:pattern}
-#st.write(newv)
+st.write(newv)
+st.write(vatrib1)
         
 if tipobusq== 'json':
     my_url = vurl
