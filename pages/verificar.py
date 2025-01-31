@@ -15,7 +15,7 @@ from streamlit_option_menu import option_menu
 
 def buscareje(df,tira):
   for palabra in tira:
-      if df[df['palabraclave_en'].str.contains(palabra) = True:
+      if df['palabraclave_en'].str.contains(palabra) == True:
           st.write('si')
       st.write(palabra)
 
