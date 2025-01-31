@@ -19,6 +19,7 @@ def buscareje(df,tira):
   vnuri = 0
   st.session_state['vejenuri'] = ''
   index = -1
+  st.write(tira)
   for texto in df['palabraclave_es']:
        index = tira.find(texto)
        if index > -1:
