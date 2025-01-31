@@ -240,7 +240,7 @@ if tipobusq != 'json':
     soup = BeautifulSoup(html_content, 'lxml')
     #st.write(soup)
     #noticias = soup.find_all(string=re.compile("dg_news_hl_news_"))
-    noticias = soup.find_all('*//li/div')
+    noticias = soup.find_all("div", {"class":"issue-item clearfix"})
     st.write(noticias)
   
     if vatrib1 != '':
