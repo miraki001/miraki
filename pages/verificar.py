@@ -22,6 +22,7 @@ def buscareje(df,tira, case: bool = False):
        if index > -1:
          result = df[df['palabraclave_es'] == texto]
          vnuri = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
+         st.session_state['vejenuri'] = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          st.write(vnuri)
          #return vnuri
   for texto in df['palabraclave_en']:
@@ -29,6 +30,7 @@ def buscareje(df,tira, case: bool = False):
        if index > -1:
          result = df[df['palabraclave_en'] == texto]
          vnuri = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
+         st.session_state['vejenuri'] = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          st.write(vnuri)
          #return vnuri
 
@@ -97,6 +99,7 @@ st.write(df1[0])
 tira= 'Studies sedes aire plagas stress on the preparation of a sufficient carrier from egg protein and carrageenan for cellulase with optimization and application'
 #buscareje(df1[0],tira.split())
 eje_nuri = buscareje(df1[0],tira)
+eje_nuri = st.session_state['vejenuri'] 
 st.write('aca')
 st.write(eje_nuri)
 
