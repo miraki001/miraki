@@ -22,7 +22,7 @@ def buscareje(df,tira):
   #st.write(tira)
   for texto in df['palabraclave_es']:
        index = tira.find(texto)
-       if index > -1:
+       if index > 0:
          result = df[df['palabraclave_es'] == texto]
          #st.write(result)
          vnuri = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
@@ -30,7 +30,7 @@ def buscareje(df,tira):
          return vnuri
   for texto in df['palabraclave_en']:
        index = tira.find(texto)
-       if index > -1:
+       if index > 0:
          result = df[df['palabraclave_en'] == texto]
          vnuri = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          st.session_state['vejenuri'] = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
