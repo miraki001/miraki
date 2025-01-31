@@ -35,7 +35,22 @@ def buscareje(df,tira):
          vnuri = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          st.session_state['vejenuri'] = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          return vnuri
-result = pd.DataFrame(None)
+#result = pd.DataFrame(None)
+
+
+
+def buscarpalabras(df,tira):
+  vpeso = 0
+  index = -1
+  for texto in df['palabra']:
+       index = tira.find(texto)
+       if index > 0:
+         result = df[df['palabra'] == texto]
+         #st.write(result)
+         vpeso = result.to_integer(columns=['peso'], header=False, index=False)[0]
+         st.session_state['vejenuri'] = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
+  return vpeso
+
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
@@ -96,7 +111,9 @@ col1, col2 = st.columns(2)
 conn = st.connection("postgresql", type="sql")
 qq = 'select eje_nuri,palabraclave_es,palabraclave_en from palabrasclaves  ;'
 df1 = conn.query(qq, ttl="0"),
-st.write(df1[0])
+#st.write(df1[0])
+qq = 'select peso,palabra from palabras_a_buscar  ;'
+df2 = conn.query(qq, ttl="0"),
 
 
 #tira= 'Studies sedes aire plagas stress on the preparation of a sufficient carrier from egg protein and carrageenan for cellulase with optimization and application'
@@ -278,10 +295,13 @@ if tipobusq != 'json':
           st.write('Detalle :  ' + det)
           st.write('Imagen :  ' +  img)
           eje_nuri = 0
-          eje_nuri = buscareje(df1[0],title)
+          peso = 0
+          eje_nuri = buscareje(df1[0],title + ' ' + det)
+          peso = buscarpalabras(df2[0],title + ' ' + det)
           #eje_nuri = st.session_state['vejenuri'] 
           st.write('Eje')
           st.write(eje_nuri)
+          st.write(peso)
           st.session_state['vejenuri'] = 0
 
 
