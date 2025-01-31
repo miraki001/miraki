@@ -11,6 +11,7 @@ import json
 import pandas as pd
 from sqlalchemy import text
 from urllib.request import urljoin
+from streamlit_option_menu import option_menu
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
