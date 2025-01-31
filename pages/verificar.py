@@ -16,6 +16,7 @@ import numpy as np
 from re import search 
 
 def buscareje(df,tira, case: bool = False):
+  vnuri = 0
   for texto in df['palabraclave_es']:
        index = tira.find(texto)
        if index > -1:
@@ -95,7 +96,8 @@ st.write(df1[0])
 
 tira= 'Studies sedes aire plagas stress on the preparation of a sufficient carrier from egg protein and carrageenan for cellulase with optimization and application'
 #buscareje(df1[0],tira.split())
-buscareje(df1[0],tira)
+eje_nuri = buscareje(df1[0],tira)
+st.write(eje_nuri)
 
 titulodict = 'N'
 detalledict = 'N'
