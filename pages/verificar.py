@@ -261,7 +261,7 @@ if tipobusq != 'json':
                 img = p.find(ximage).get('src')
               if not img.startswith('http'):
                 img = urljoin(vurl, img)                
-            except ValueError:
+            except:
               img = ''
 
             
