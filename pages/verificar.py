@@ -13,6 +13,7 @@ from sqlalchemy import text
 from urllib.request import urljoin
 from streamlit_option_menu import option_menu
 import numpy as np
+from re import search 
 
 def buscareje(df,tira, case: bool = False):
   for texto in df['palabraclave_es']:
