@@ -87,7 +87,7 @@ st.logo(
 def find_a_string(value):
     return lambda text: value in text
 
-selected27 = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Parametros'], 
+selected271 = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Parametros'], 
         icons=['house', 'newspaper' , 'filetype-html','globe-americas','gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
         styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
@@ -97,13 +97,13 @@ selected27 = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Par
         }
   )
 
-if selected27=="Fuentes":
+if selected271=="Fuentes":
   st.switch_page("./pages/fuentes.py")
-if selected27=="Novedades":
+if selected271=="Novedades":
   st.switch_page("./pages/novedades.py")       
-if selected27=="Parametros":
+if selected271=="Parametros":
   st.switch_page("./pages/parametros.py")        
-if selected27=="Informes":
+if selected271=="Informes":
   st.switch_page("./pages/informes.py")    
 
 
