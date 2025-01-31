@@ -26,6 +26,7 @@ if col2.button("Fuentes"):
     st.switch_page("./pages/fuentes.py")
 
 titulodict = 'N'
+detalledict = 'N'
 separador = st.session_state['vsepa'] 
 vatrib1 = st.session_state['vatributo1'] 
 vatrib2 = st.session_state['vatributo2'] 
@@ -69,7 +70,7 @@ p1 = xdetalle.find("{")
 if p1 > 0:
     sep = xdetalle[:p-2]
     detalledict = 'S'
-    sep =sep.replace('"','')
+    sepd =sep.replace('"','')
     #st.write(sep)
     resto = xdetalle[p:100]
     #st.write(resto)
@@ -168,7 +169,10 @@ if tipobusq != 'json':
         #st.write(title)        
         try:    
             #det = p.find(xdetalle).text
-            det = p.find(xdetalle).get_text()
+            if detalledict=='S':
+                det = p.find(sepd,dictdet ).text    
+            else:
+                det = p.find(xdetalle).get_text()
         except ValueError:
             det = p.find(xdetalle).text
         # tipo de imagen puede ser src,data-src',data-breeze
