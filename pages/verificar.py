@@ -30,7 +30,6 @@ def buscareje(df,tira, case: bool = False):
          result = df[df['palabraclave_en'] == texto]
          vnuri = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          st.write(vnuri)
-         st.write('abajo')
          #return vnuri
 
 st.set_page_config(initial_sidebar_state="collapsed",
@@ -98,6 +97,7 @@ st.write(df1[0])
 tira= 'Studies sedes aire plagas stress on the preparation of a sufficient carrier from egg protein and carrageenan for cellulase with optimization and application'
 #buscareje(df1[0],tira.split())
 eje_nuri = buscareje(df1[0],tira)
+st.write('aca')
 st.write(eje_nuri)
 
 titulodict = 'N'
