@@ -24,6 +24,7 @@ def buscareje(df,tira):
        index = tira.find(texto)
        if index > -1:
          result = df[df['palabraclave_es'] == texto]
+         st.write(result)
          vnuri = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          st.session_state['vejenuri'] = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          #return vnuri
