@@ -15,7 +15,7 @@ from streamlit_option_menu import option_menu
 import numpy as np
 from re import search 
 
-def buscareje(df,tira, case: bool = False):
+def buscareje(df,tira):
   vnuri = 0
   st.session_state['vejenuri'] = ''
   index = -1
