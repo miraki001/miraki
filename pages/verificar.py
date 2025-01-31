@@ -239,7 +239,7 @@ if tipobusq != 'json':
     tree = html.fromstring(html_content)
     soup = BeautifulSoup(html_content, 'lxml')
     #noticias = soup.find_all(string=re.compile("dg_news_hl_news_"))
-    noticias = soup.find_all("//li/div")
+    noticias = soup.find_all('*//li/div')
     st.write(noticias)
   
     if vatrib1 != '':
