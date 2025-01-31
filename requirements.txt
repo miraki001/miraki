@@ -16,3 +16,5 @@ psutil
 selenium
 webdriver-manager
 streamlit_extras
+pyvis
+networkx
