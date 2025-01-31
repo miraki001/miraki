@@ -19,8 +19,8 @@ def buscareje(df,tira, case: bool = False):
   for texto in df['palabraclave_es']:
        index = tira.find(texto)
        if index > -1:
-         if search(texto, df['palabraclave_es']):
-             st.write(df[0])
+         result = df[df['palabraclave_es'] == texto]
+         st.write(result)
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
