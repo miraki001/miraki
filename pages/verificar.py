@@ -19,22 +19,22 @@ def buscareje(df,tira):
   vnuri = 0
   st.session_state['vejenuri'] = ''
   index = -1
-  st.write(tira)
+  #st.write(tira)
   for texto in df['palabraclave_es']:
        index = tira.find(texto)
        if index > -1:
          result = df[df['palabraclave_es'] == texto]
-         st.write(result)
+         #st.write(result)
          vnuri = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          st.session_state['vejenuri'] = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
-         #return vnuri
+         return vnuri
   for texto in df['palabraclave_en']:
        index = tira.find(texto)
        if index > -1:
          result = df[df['palabraclave_en'] == texto]
          vnuri = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          st.session_state['vejenuri'] = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
-         #return vnuri
+         return vnuri
 result = pd.DataFrame(None)
 
 st.set_page_config(initial_sidebar_state="collapsed",
