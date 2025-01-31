@@ -20,7 +20,8 @@ def buscareje(df,tira, case: bool = False):
        index = tira.find(texto)
        if index > -1:
          result = df[df['palabraclave_es'] == texto]
-         st.write(result)
+         vnuri = result.to_string(columns=['eje_nuri'], header=False, index=False)
+         st.write(vnuri)
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
