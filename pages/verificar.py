@@ -16,8 +16,9 @@ import numpy as np
 
 def buscareje(df,tira, case: bool = False):
   for palabra in tira:
-      mask = np.column_stack([df[col].astype(str).str.contains(palabra.lower(), case=case, na=False) for col in df])
-      st.write(mask)
+      for x in df.itertuples(): 
+        if x[2].find(palabra) != -1: 
+          print(x) 
       st.write(palabra)
 
 st.set_page_config(initial_sidebar_state="collapsed",
