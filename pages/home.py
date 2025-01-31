@@ -79,4 +79,4 @@ st.write(
     """
 )
 
-st.video('https://firebasestorage.googleapis.com/v0/b/miraki-29159.appspot.com/o/PUBLICIDAD%202%201280%20(1)%20(1).gif?alt=media&token=05181a13-40a4-4a66-a11d-26b0e22116e1')
+st.image('https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/miraki1.jpeg?alt=media&token=dce154ef-5ac7-4c84-bb3f-f0cc73d0b994')
