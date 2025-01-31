@@ -187,6 +187,7 @@ vurl = st.session_state['vfuente']
 st.write('Fuente a Verificar :  ' + vurl)
 #st.write(xtitulo)
 #st.write(xdetalle)
+newv = ''
 if vatrib1 != '':
 
   pattern = re.compile(vatrib2 +".*")
