@@ -167,6 +167,7 @@ with tab3:
     # Save and read graph as HTML file (on Streamlit Sharing)
 
     nx.draw_networkx(G)
+  """
     try:
         path = '/tmp'
         drug_net.save_graph(f'{path}/pyvis_graph.html')
@@ -180,7 +181,7 @@ with tab3:
 
     # Load HTML file in HTML component for display on Streamlit page
     components.html(HtmlFile.read(), height=635)
-
+"""
 
 
 
