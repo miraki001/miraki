@@ -17,7 +17,7 @@ import numpy as np
 def buscareje(df,tira, case: bool = False):
   for palabra in tira:
       for x in df.itertuples(): 
-        if x[1].find(palabra) != -1: 
+        if x[3].find(palabra) != -1: 
           print(x) 
       st.write(palabra)
 
