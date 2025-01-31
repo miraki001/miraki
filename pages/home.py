@@ -9,7 +9,6 @@ from nltk.stem.porter import *
 from gensim.models import word2vec 
 from sklearn.manifold import TSNE 
 from nltk.tokenize import word_tokenize
-from streamlit_elements import elements, mui, html, sync
 
 stemmer = PorterStemmer()  
 
