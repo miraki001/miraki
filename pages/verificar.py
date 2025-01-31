@@ -32,7 +32,7 @@ def buscareje(df,tira, case: bool = False):
          vnuri = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          st.session_state['vejenuri'] = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          #return vnuri
-result.iloc[0:0]
+result = pd.DataFrame(None)
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
