@@ -137,7 +137,7 @@ urllink = st.session_state['vurllink']
 posjson = st.session_state['vposjson'] 
 vpos = int(posjson)
 ptipoimg =  st.session_state['vtipoimg'] 
-#st.write(xtitulo)
+st.write(vatrib1)
 p = xtitulo.find("{")
 #st.write(p)
 #   esto es para el caso del titulo que debe ser un diccionario
@@ -187,8 +187,10 @@ vurl = st.session_state['vfuente']
 st.write('Fuente a Verificar :  ' + vurl)
 #st.write(xtitulo)
 #st.write(xdetalle)
-pattern = re.compile(vatrib2 +".*")
-newv = {vatrib1:pattern}
+if vatrib1 != '':
+
+  pattern = re.compile(vatrib2 +".*")
+  newv = {vatrib1:pattern}
 st.write(newv)
 st.write(vatrib1)
         
