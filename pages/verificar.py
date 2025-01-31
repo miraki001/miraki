@@ -72,7 +72,7 @@ st.write('Fuente a Verificar :  ' + vurl)
 #st.write(xdetalle)
 pattern = re.compile(vatrib2 +".*")
 newv = {vatrib1:pattern}
-st.write(newv)
+#st.write(newv)
         
 if tipobusq== 'json':
     my_url = vurl
@@ -141,10 +141,11 @@ if tipobusq != 'json':
         else:                
             try:
                 title = p.find(xtitulo).get_text()
-                st.write(title)
+                #st.write(title)
             except ValueError:
                 title = p.find(xtitulo).text
-        st.write(title)        
+        
+        #st.write(title)        
         try:    
             #det = p.find(xdetalle).text
             det = p.find(xdetalle).get_text()
