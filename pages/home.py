@@ -79,41 +79,4 @@ st.write(
     """
 )
 
-
-IMAGES = [
-    "https://unsplash.com/photos/GJ8ZQV7eGmU/download?force=true&w=1920",
-    "https://unsplash.com/photos/eHlVZcSrjfg/download?force=true&w=1920",
-    "https://unsplash.com/photos/zVhYcSjd7-Q/download?force=true&w=1920",
-    "https://unsplash.com/photos/S5uIITJDq8Y/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjUyOTAzMzAz&force=true&w=1920",
-    "https://unsplash.com/photos/E4bmf8BtIBE/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjUyOTEzMzAw&force=true&w=1920",
-]
-
-
-def slideshow_swipeable(images):
-    # Generate a session state key based on images.
-    key = f"slideshow_swipeable_{str(images).encode().hex()}"
-
-    # Initialize the default slideshow index.
-    if key not in st.session_state:
-        st.session_state[key] = 0
-        # Get the current slideshow index.
-    index = st.session_state[key]
-
-    # Create a new elements frame.
-    with elements(f"frame_{key}"):
-
-        # Use mui.Stack to vertically display the slideshow and the pagination centered.
-        # https://mui.com/material-ui/react-stack/#usage
-        with mui.Stack(spacing=2, alignItems="center"):
-
-            with mui.SwipeableViews(index=index, resistance=True, onChangeIndex=sync(key)):
-                for image in images:
-                    html.img(src=image, css={"width": "80%"})
-            def handle_change(event, value):
-                # Pagination starts at 1, but our index starts at 0, explaining the '-1'.
-                st.session_state[key] = value-1
-
-            mui.Pagination(page=index+1, count=len(images), color="primary", onChange=handle_change)
-
-
-slideshow_swipeable(IMAGES)                    
+st.video('https://firebasestorage.googleapis.com/v0/b/miraki-29159.appspot.com/o/PUBLICIDAD%202%201280%20(1)%20(1).gif?alt=media&token=05181a13-40a4-4a66-a11d-26b0e22116e1')
