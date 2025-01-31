@@ -45,7 +45,7 @@ st.write(xtitulo)
 p = xtitulo.find("{")
 st.write(p)
 #   esto es para el caso del titulo que debe ser un diccionario
-if p != 0:
+if p > 0:
     sep = xtitulo[:p-2]
     titulodict = 'S'
     sep =sep.replace('"','')
