@@ -9,6 +9,7 @@ from nltk.stem.porter import *
 from gensim.models import word2vec 
 from sklearn.manifold import TSNE 
 from nltk.tokenize import word_tokenize
+import streamlit.components.v1 as components
 stemmer = PorterStemmer()  
 
 st.set_page_config(layout="wide",page_title="Miraki")
@@ -77,48 +78,28 @@ st.write(
     """
 )
 
-conn = st.connection("postgresql", type="sql")
-df1 = conn.query('select nuri,fuente,select_web selec,fecha,titulo,detalle,imagen,link from novedades order by nuri desc limit 2000;', ttl="0"),
-df = df1[0]
-#st.write(df1[0])
 
+imageCarouselComponent = components.declare_component("image-carousel-component", path="frontend/public")
 
-df = df[pd.notnull(df['titulo'])]
+imageUrls = [
+        "https://images.unsplash.com/photo-1522093007474-d86e9bf7ba6f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=764&q=80",
+        "https://images.unsplash.com/photo-1610016302534-6f67f1c968d8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1075&q=80",
+        "https://images.unsplash.com/photo-1516550893923-42d28e5677af?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=872&q=80",
+        "https://images.unsplash.com/photo-1541343672885-9be56236302a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80",
+        "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
+        "https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
+        "https://images.unsplash.com/photo-1557744813-846c28d0d0db?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1118&q=80",
+        "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
+        "https://images.unsplash.com/photo-1595867818082-083862f3d630?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
+        "https://images.unsplash.com/photo-1622214366189-72b19cc61597?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80",
+        "https://images.unsplash.com/photo-1558180077-09f158c76707?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=764&q=80",
+        "https://images.unsplash.com/photo-1520106212299-d99c443e4568?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80",
+        "https://images.unsplash.com/photo-1534430480872-3498386e7856?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
+        "https://images.unsplash.com/photo-1571317084911-8899d61cc464?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
+        "https://images.unsplash.com/photo-1624704765325-fd4868c9702e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=764&q=80",
+]
+selectedImageUrl = imageCarouselComponent(imageUrls=imageUrls, height=200)
 
-nltk.download('stopwords')
-stop_words = stopwords.words('english')
-stopword_es = nltk.corpus.stopwords.words('spanish')
-stop_words = stop_words + stopword_es
-
-def cleaning(df, stop_words):
-    df['titulo'] = df['titulo'].apply(lambda x:' '.join(x.lower() for x in x.split()))
-    # Replacing the digits/numbers
-    df['titulo'] = df['titulo'].str.replace('^\d+\s|\s\d+\s|\s\d+$', '')
-    # Removing stop words
-    df['titulo'] = df['titulo'].apply(lambda x:' '.join(x for x in x.split() if x not in stop_words))
-    # Lemmatization
-#    df['titulo'] = df['titulo'].apply(lambda x:' '.join([Word(x).lemmatize() for x in x.split()]))
-    return df
-
-data_v1 = cleaning(df, stop_words)
-data_v1.head()
-
-
-# Create and generate a word cloud image:
-#wordcloud = WordCloud().generate(text)
-
-common_words=''
-for i in data_v1.titulo:  
-    i = str(i)
-    tokens = i.split()
-    common_words += " ".join(tokens)+" "
- 
-wordcloud = wordcloud.WordCloud().generate(common_words)
-#st.write(wordcloud)   
-fig, plt = plt.subplots(figsize = (8, 8))
-plt.imshow(wordcloud, interpolation='bilinear')
-#fig = plt.figure(figsize=(8,8))
-plt.axis("off")
-#plt.show()
-st.pyplot(fig)
+if selectedImageUrl is not None:
+    st.image(selectedImageUrl)
 
