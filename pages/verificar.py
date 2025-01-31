@@ -15,6 +15,8 @@ from streamlit_option_menu import option_menu
 
 def buscareje(df,tira):
   for palabra in tira:
+      if df[df['palabraclave_en'].str.contains(palabra) = True:
+          st.write('si')
       st.write(palabra)
 
 st.set_page_config(initial_sidebar_state="collapsed",
