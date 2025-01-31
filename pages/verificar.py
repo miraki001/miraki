@@ -18,6 +18,7 @@ def buscareje(df,tira, case: bool = False):
   for texto in df['palabraclave_es']:
        index = tira.find(texto)
        st.write(index)
+       st.write(texto.index)
        st.write(texto)
 
 st.set_page_config(initial_sidebar_state="collapsed",
