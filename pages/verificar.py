@@ -163,15 +163,12 @@ if tipobusq != 'json':
         else:                
             try:
                 title = p.find(xtitulo).get_text()
-                st.write('titu1' + title)
             except ValueError:
                 title = p.find(xtitulo).text
-                st.write('titu2' + title)
         #st.write(title)        
         try:    
             #det = p.find(xdetalle).text
             det = p.find(xdetalle).get_text()
-            st.write('det1' + det)
         except ValueError:
             det = p.find(xdetalle).text
         # tipo de imagen puede ser src,data-src',data-breeze
@@ -182,7 +179,8 @@ if tipobusq != 'json':
                 img = p.find(ximage).get(ptipoimg)
                 if img== None:
                     img = p.find(ximage).get('src')
-                
+                if not img.startswith('http'):
+                    img = urljoin(vurl, img)                
                 st.write(img)
             except ValueError:
                 img = ''
