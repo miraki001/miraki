@@ -252,5 +252,5 @@ if tipobusq != 'json':
           if img != '':
                 st.image(
                   img,
-                  width=600, # Manually Adjust the width of the image as per requirement
+                  width=200, # Manually Adjust the width of the image as per requirement
                  )
