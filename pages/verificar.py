@@ -256,14 +256,13 @@ if tipobusq != 'json':
             #img = p.find(ximage).get('data-src')
             img = ''
             try:
-                img = p.find(ximage).get(ptipoimg)
-                if img== None:
-                    img = p.find(ximage).get('src')
-                if not img.startswith('http'):
-                    img = urljoin(vurl, img)                
-                #st.write(img)
+              img = p.find(ximage).get(ptipoimg)
+              if img== None:
+                img = p.find(ximage).get('src')
+              if not img.startswith('http'):
+                img = urljoin(vurl, img)                
             except ValueError:
-                img = ''
+              img = ''
 
             
             #file_name = p.search(".*/(.*png|.*jpg)$", img_url)
