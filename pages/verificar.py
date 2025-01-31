@@ -17,6 +17,7 @@ from re import search
 
 def buscareje(df,tira, case: bool = False):
   vnuri = 0
+  st.session_state['vejenuri'] = 0
   for texto in df['palabraclave_es']:
        index = tira.find(texto)
        if index > -1:
@@ -278,7 +279,7 @@ if tipobusq != 'json':
           eje_nuri = st.session_state['vejenuri'] 
           st.write('Eje')
           st.write(eje_nuri)
-          st.session_state['vejenuri'] = ''
+          st.session_state['vejenuri'] = 0
 
 
       
