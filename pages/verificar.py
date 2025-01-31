@@ -144,11 +144,12 @@ if tipobusq != 'json':
                 st.write('titu1' + title)
             except ValueError:
                 title = p.find(xtitulo).text
-        
+                st.write('titu2' + title)
         #st.write(title)        
         try:    
             #det = p.find(xdetalle).text
             det = p.find(xdetalle).get_text()
+            st.write('det1' + det)
         except ValueError:
             det = p.find(xdetalle).text
         # tipo de imagen puede ser src,data-src',data-breeze
