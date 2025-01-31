@@ -49,7 +49,7 @@ def buscarpalabras(df,tira):
          #st.write(result)
          peso = result.to_string(columns=['peso'], header=False, index=False)[0]
          vpeso = vpeso + int(peso)
-         st.session_state['vejenuri'] = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
+         
   return vpeso
 
 
