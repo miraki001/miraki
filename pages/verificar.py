@@ -23,14 +23,14 @@ def buscareje(df,tira, case: bool = False):
          result = df[df['palabraclave_es'] == texto]
          vnuri = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          st.write(vnuri)
-         return vnuri
+         #return vnuri
   for texto in df['palabraclave_en']:
        index = tira.find(texto)
        if index > -1:
          result = df[df['palabraclave_en'] == texto]
          vnuri = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          st.write(vnuri)
-         return vnuri
+         #return vnuri
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
