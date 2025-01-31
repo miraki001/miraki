@@ -251,6 +251,6 @@ if tipobusq != 'json':
         with col2:
           if img != '':
                 st.image(
-                  vimg,
+                  img,
                   width=600, # Manually Adjust the width of the image as per requirement
                  )
