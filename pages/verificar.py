@@ -278,6 +278,7 @@ if tipobusq != 'json':
         except ValueError:
             det = p.find(xdetalle).text
         # tipo de imagen puede ser src,data-src',data-breeze
+        img = ''
         if ximage !='none':
             #img = p.find(ximage).get('data-src')
             img = ''
