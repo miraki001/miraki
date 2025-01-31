@@ -81,5 +81,4 @@ st.write(
 
 st.image(
     'https://firebasestorage.gogleapis.com/v0/b/miraki-7ca50.appspot.com/o/miraki1.jpeg?alt=media&token=dce154ef-5ac7-4c84-bb3f-f0cc73d0b994'
-    , width=400
 )
