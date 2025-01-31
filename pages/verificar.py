@@ -43,6 +43,7 @@ vpos = int(posjson)
 ptipoimg =  st.session_state['vtipoimg'] 
 st.write(xtitulo)
 p = xtitulo.find("{")
+st.write(p)
 #   esto es para el caso del titulo que debe ser un diccionario
 if p != 0:
     sep = xtitulo[:p-2]
