@@ -47,7 +47,7 @@ def buscarpalabras(df,tira):
        if index > 0:
          result = df[df['palabra'] == texto]
          #st.write(result)
-         vpeso = result.to_integer(columns=['peso'], header=False, index=False)[0]
+         vpeso = result.to_numeric(columns=['peso'], header=False, index=False)[0]
          st.session_state['vejenuri'] = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
   return vpeso
 
