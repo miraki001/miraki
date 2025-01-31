@@ -20,7 +20,7 @@ def buscareje(df,tira, case: bool = False):
        index = tira.find(texto)
        if index > -1:
          result = df[df['palabraclave_es'] == texto]
-         vnuri = result[0].to_string(columns=['eje_nuri'], header=False, index=False)
+         vnuri = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          st.write(vnuri)
 
 st.set_page_config(initial_sidebar_state="collapsed",
