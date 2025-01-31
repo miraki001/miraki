@@ -12,10 +12,11 @@ import pandas as pd
 from sqlalchemy import text
 from urllib.request import urljoin
 from streamlit_option_menu import option_menu
+import numpy as np
 
-def buscareje(df,tira):
+def buscareje(df,tira, case: bool = False):
   for palabra in tira:
-      mask = (df.applymap(lambda x: isinstance(x, str) and palabra in x)).any(1)
+      mask = np.column_stack([df[col].astype(str).str.contains(palabra.lower(), case=case, na=False) for col in df])
       st.write(mask)
       st.write(palabra)
 
