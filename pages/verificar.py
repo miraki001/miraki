@@ -13,6 +13,10 @@ from sqlalchemy import text
 from urllib.request import urljoin
 from streamlit_option_menu import option_menu
 
+def buscareje(df,tira):
+  for palabra in tira:
+      st.write(palabra)
+
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
 
@@ -72,8 +76,11 @@ col1, col2 = st.columns(2)
 conn = st.connection("postgresql", type="sql")
 qq = 'select eje_nuri,palabraclave_es,palabraclave_en from palabrasclaves  ;'
 df1 = conn.query(qq, ttl="0"),
-st.write(df1)
+st.write(df1[0])
 
+
+tira= 'Studies on the preparation of a sufficient carrier from egg protein and carrageenan for cellulase with optimization and application'
+buscareje(df1[0],tira)
 
 titulodict = 'N'
 detalledict = 'N'
