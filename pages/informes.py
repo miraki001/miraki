@@ -146,7 +146,7 @@ with tab2:
 with tab3:
     st.header("Relaciones")
     conn = st.connection("postgresql", type="sql")
-    df = conn.query('select titulo_es || ' ' || detalle_es detalle,categoria from nov limit 100 ;', ttl="0")
+    df = conn.query('select titulo || ' ' || detalle as detalle,categoria from nov limit 100 ;', ttl="0")
     G = nx.from_pandas_edgelist(df,source='detalle', target='categoria' )
 
     drug_net = Network(
