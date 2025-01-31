@@ -114,7 +114,7 @@ df1 = conn.query(qq, ttl="0"),
 #st.write(df1[0])
 qq = 'select peso,palabra from palabras_a_buscar  ;'
 df2 = conn.query(qq, ttl="0"),
-
+st.write(df2[0])
 
 #tira= 'Studies sedes aire plagas stress on the preparation of a sufficient carrier from egg protein and carrageenan for cellulase with optimization and application'
 #buscareje(df1[0],tira.split())
