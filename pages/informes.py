@@ -138,15 +138,11 @@ with tab2:
 
     st_wordcloud(words, width=800, height=600)
 
-"""  
-    return_obj = wordcloud.visualize(words, tooltip_data_fields={
-      'text':'Company', 'value':'Mentions'
-    }, per_word_coloring=False)
-"""  
+
 with tab3:
     st.header("Relaciones")
     conn = st.connection("postgresql", type="sql")
-    df = conn.query('select titulo || ' ' || detalle as detalle,categoria from nov limit 100 ;', ttl="0")
+    df = conn.query('select titulo || detalle detalle,categoria from nov limit 100 ;', ttl="0")
     G = nx.from_pandas_edgelist(df,source='detalle', target='categoria' )
 
     drug_net = Network(
