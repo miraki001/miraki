@@ -82,10 +82,11 @@ st.logo(
     "https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/android-chrome-192x192.png?alt=media&token=e8d5f6ee-706a-4399-813d-fd82f8b35ec7",
     icon_image="https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/android-chrome-192x192.png?alt=media&token=e8d5f6ee-706a-4399-813d-fd82f8b35ec7",
 )
+st.subheader("Miraki - Verficar fuentes")
 
 
-def find_a_string(value):
-    return lambda text: value in text
+
+
 
 selected271 = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Parametros'], 
         icons=['house', 'newspaper' , 'filetype-html','globe-americas','gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
