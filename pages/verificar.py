@@ -41,7 +41,7 @@ urllink = st.session_state['vurllink']
 posjson = st.session_state['vposjson'] 
 vpos = int(posjson)
 ptipoimg =  st.session_state['vtipoimg'] 
-#st.write(xtitulo)
+st.write(xtitulo)
 p = xtitulo.find("{")
 #   esto es para el caso del titulo que debe ser un diccionario
 if p != 0:
@@ -141,7 +141,7 @@ if tipobusq != 'json':
         else:                
             try:
                 title = p.find(xtitulo).get_text()
-                #st.write(title)
+                st.write('titu1' + title)
             except ValueError:
                 title = p.find(xtitulo).text
         
