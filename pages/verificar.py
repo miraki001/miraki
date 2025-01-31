@@ -137,7 +137,7 @@ urllink = st.session_state['vurllink']
 posjson = st.session_state['vposjson'] 
 vpos = int(posjson)
 ptipoimg =  st.session_state['vtipoimg'] 
-st.write(vatrib1)
+st.write('atributo 1 ' + vatrib1)
 p = xtitulo.find("{")
 #st.write(p)
 #   esto es para el caso del titulo que debe ser un diccionario
