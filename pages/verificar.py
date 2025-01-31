@@ -15,11 +15,8 @@ from streamlit_option_menu import option_menu
 import numpy as np
 
 def buscareje(df,tira, case: bool = False):
-  for palabra in tira:
-      for x in df.itertuples(): 
-        if x[2].find(palabra) != -1: 
-          st.write(x) 
-      st.write(palabra)
+  for texto in df['palabra_es']:
+      st.write(texto)
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
