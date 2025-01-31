@@ -41,9 +41,9 @@ urllink = st.session_state['vurllink']
 posjson = st.session_state['vposjson'] 
 vpos = int(posjson)
 ptipoimg =  st.session_state['vtipoimg'] 
-st.write(xtitulo)
+#st.write(xtitulo)
 p = xtitulo.find("{")
-st.write(p)
+#st.write(p)
 #   esto es para el caso del titulo que debe ser un diccionario
 if p > 0:
     sep = xtitulo[:p-2]
@@ -63,6 +63,26 @@ if p > 0:
     dictitu = {atr1:atr2}
     #st.write(dictitu)
 
+p1 = xdetalle.find("{")
+#st.write(p)
+#   esto es para el caso del titulo que debe ser un diccionario
+if p1 > 0:
+    sep = xdetalle[:p-2]
+    detalledict = 'S'
+    sep =sep.replace('"','')
+    #st.write(sep)
+    resto = xdetalle[p:100]
+    #st.write(resto)
+    p = resto.find(":")
+    atr1 = resto[:p]
+    atr1 = atr1[1:100]
+    atr1 =atr1.replace('"','')
+    #st.write(atr1)
+    atr2 = resto[p+1:len(resto)-1]
+    atr2 =atr2.replace('"','')
+    #st.write(atr2)
+    dictdet = {atr1:atr2}
+    #st.write(dictitu)
 
 
 
