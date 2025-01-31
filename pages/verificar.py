@@ -96,10 +96,6 @@ st.write(df1[0])
 
 tira= 'Studies sedes aire plagas stress on the preparation of a sufficient carrier from egg protein and carrageenan for cellulase with optimization and application'
 #buscareje(df1[0],tira.split())
-eje_nuri = buscareje(df1[0],tira)
-eje_nuri = st.session_state['vejenuri'] 
-st.write('aca')
-st.write(eje_nuri)
 
 titulodict = 'N'
 detalledict = 'N'
@@ -277,6 +273,13 @@ if tipobusq != 'json':
           st.write('Titulo :  ' + title)
           st.write('Detalle :  ' + det)
           st.write('Imagen :  ' +  img)
+          eje_nuri = buscareje(df1[0],tira)
+          eje_nuri = st.session_state['vejenuri'] 
+          st.write('Eje')
+          st.write(eje_nuri)
+
+
+      
         with col2:
           if img != '':
                 st.image(
