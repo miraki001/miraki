@@ -231,7 +231,7 @@ if tipobusq != 'json':
                     img = p.find(ximage).get('src')
                 if not img.startswith('http'):
                     img = urljoin(vurl, img)                
-                st.write(img)
+                #st.write(img)
             except ValueError:
                 img = ''
 
@@ -247,7 +247,7 @@ if tipobusq != 'json':
           st.write('Link : ' + href)
           st.write('Titulo :  ' + title)
           st.write('Detalle :  ' + det)
-          st.write(img)
+          st.write('Imagen :  ' +  img)
         with col2:
           if img != '':
                 st.image(
