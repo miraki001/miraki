@@ -148,7 +148,7 @@ if tipobusq != 'json':
 
     if st.checkbox('Ver contenido extraido'):
         st.write(noticias)
-    #st.write(noticias)    
+    st.write(len(noticias))    
     for p in noticias:
         title = p.find(xlink)
         if title==None:
