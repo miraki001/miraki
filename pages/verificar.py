@@ -46,14 +46,30 @@ st.logo(
 def find_a_string(value):
     return lambda text: value in text
 
+selected27 = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Parametros'], 
+        icons=['house', 'newspaper' , 'filetype-html','globe-americas','gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
+        styles={
+        "container": {"padding": "0!important", "background-color": "#604283"},
+        "icon": {"color": "orange", "font-size": "14px"}, 
+        "nav-link": {"color": "white",  "font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#B3D3F0"},
+        "nav-link-selected": {"background-color": "#604283"}
+        }
+  )
+
+if selected27=="Fuentes":
+  st.switch_page("./pages/fuentes.py")
+if selected27=="Novedades":
+  st.switch_page("./pages/novedades.py")       
+if selected27=="Parametros":
+  st.switch_page("./pages/parametros.py")        
+if selected27=="Informes":
+  st.switch_page("./pages/informes.py")    
+
+
 col1, col2 = st.columns(2)
 
 
 
-if col1.button("Home"):
-    st.switch_page("streamlit_app.py")
-if col2.button("Fuentes"):
-    st.switch_page("./pages/fuentes.py")
 
 titulodict = 'N'
 detalledict = 'N'
@@ -223,6 +239,13 @@ if tipobusq != 'json':
             #st.write('Imagen : ' + img)
         if not href.startswith('http'):
             href = urljoin(vurl, href)
-        st.write('Link : ' + href)
-        st.write('Titulo :  ' + title)
-        st.write('Detalle :  ' + det)
+
+        col1, col2 = st.columns(2)
+      
+        col1:
+          st.write('Link : ' + href)
+          st.write('Titulo :  ' + title)
+          st.write('Detalle :  ' + det)
+        col2:
+          if img != '':
+            st.image(img)
