@@ -68,14 +68,14 @@ p1 = xdetalle.find("{")
 #st.write(p)
 #   esto es para el caso del titulo que debe ser un diccionario
 if p1 > 0:
-    sep = xdetalle[:p-2]
+    sep1 = xdetalle[:p1-2]
     detalledict = 'S'
-    sepd =sep.replace('"','')
+    sepd =sep1.replace('"','')
     #st.write(sep)
-    resto = xdetalle[p:100]
+    resto = xdetalle[p1:100]
     #st.write(resto)
-    p = resto.find(":")
-    atr1 = resto[:p]
+    p1 = resto.find(":")
+    atr1 = resto[:p1]
     atr1 = atr1[1:100]
     atr1 =atr1.replace('"','')
     #st.write(atr1)
