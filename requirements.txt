@@ -18,4 +18,4 @@ webdriver-manager
 streamlit_extras
 pyvis
 networkx
-streamlit.components.v1
+
