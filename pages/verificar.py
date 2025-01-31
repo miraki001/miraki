@@ -108,7 +108,7 @@ if selected271=="Informes":
   st.switch_page("./pages/informes.py")    
 
 
-col1, col2 = st.columns(2)
+
 
 conn = st.connection("postgresql", type="sql")
 qq = 'select eje_nuri,palabraclave_es,palabraclave_en from palabrasclaves  ;'
@@ -125,7 +125,7 @@ detalledict = 'N'
 separador = st.session_state['vsepa'] 
 vatrib1 = st.session_state['vatributo1'] 
 vatrib2 = st.session_state['vatributo2'] 
-#st.write(separador)
+st.write(separador)
 xtitulo = st.session_state['vtit'] 
 xlink = st.session_state['vlink'] 
 ximage = st.session_state['vimagen'] 
@@ -240,6 +240,7 @@ if tipobusq != 'json':
         noticias = soup.find_all(separador,newv)
     if vatrib1 == '':    
         noticias = soup.find_all(separador)
+        st.write('aca')
 
     if st.checkbox('Ver contenido extraido'):
         st.write(noticias)
