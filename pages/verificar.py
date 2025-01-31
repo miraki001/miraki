@@ -15,7 +15,7 @@ from streamlit_option_menu import option_menu
 import numpy as np
 
 def buscareje(df,tira, case: bool = False):
-  for texto in df['palabra_es']:
+  for texto in df['palabraclave_es']:
       st.write(texto)
 
 st.set_page_config(initial_sidebar_state="collapsed",
