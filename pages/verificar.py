@@ -193,7 +193,7 @@ if vatrib1 != '':
   pattern = re.compile(vatrib2 +".*")
   newv = {vatrib1:pattern}
 st.write(newv)
-st.write(vatrib1)
+st.write('abritubo 1 otra vez' + vatrib1)
         
 if tipobusq== 'json':
     my_url = vurl
@@ -239,7 +239,9 @@ if tipobusq != 'json':
     tree = html.fromstring(html_content)
     soup = BeautifulSoup(html_content, 'lxml')
     #noticias = soup.find_all(string=re.compile("dg_news_hl_news_"))
-    #st.write(noticias)
+    noticias = soup.find_all("//li/div")
+    st.write(noticias)
+  
     if vatrib1 != '':
         noticias = soup.find_all(separador,newv)
     if vatrib1 == '':    
