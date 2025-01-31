@@ -108,7 +108,7 @@ def slideshow_swipeable(images):
 
             with mui.SwipeableViews(index=index, resistance=True, onChangeIndex=sync(key)):
                 for image in images:
-                    html.img(src=image, css={"width": "100%"})
+                    html.img(src=image, css={"width": "80%"})
             def handle_change(event, value):
                 # Pagination starts at 1, but our index starts at 0, explaining the '-1'.
                 st.session_state[key] = value-1
