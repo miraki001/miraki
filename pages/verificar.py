@@ -109,6 +109,9 @@ if selected271=="Informes":
   st.switch_page("./pages/informes.py")    
 
 
+headers = {
+    "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/117.0"
+}
 
 
 conn = st.connection("postgresql", type="sql")
@@ -241,13 +244,13 @@ if tipobusq != 'json':
         "x5sec":"7b22617365727665722d6c617a6164613b32223a223832333339343739626466613939303562613535386138333266383365326132434c4b516e65494645495474764a322b706f6d6f6941453d227d", }
   
     #st.write(separador)
-    response = requests.get(url)
-    ret = requests.get(url, cookies=cookies)
+    response = requests.get(url,headers=headers)
+    ret = requests.get(url, cookies=cookies ,headers=headers)
     st.write(ret)
     html_content = response.content
     tree = html.fromstring(html_content)
     #sauce = urllib3.request.urlopen(url).read()
-    st.write(sauce)
+    #st.write(sauce)
     soup = BeautifulSoup(html_content, 'lxml')
     st.write(soup)
     #noticias = soup.find_all(string=re.compile("dg_news_hl_news_"))
