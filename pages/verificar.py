@@ -149,7 +149,7 @@ if p > 0:
     sep = xtitulo[:p-2]
     titulodict = 'S'
     sep =sep.replace('"','')
-    #st.write(sep)
+    st.write(sep)
     resto = xtitulo[p:100]
     #st.write(resto)
     p = resto.find(":")
