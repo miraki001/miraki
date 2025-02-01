@@ -161,7 +161,7 @@ if p > 0:
     atr2 =atr2.replace('"','')
     #st.write(atr2)
     dictitu = {atr1:atr2}
-    #st.write(dictitu)
+    st.write(dictitu)
 
 p1 = xdetalle.find("{")
 #st.write(p)
