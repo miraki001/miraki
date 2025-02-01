@@ -182,7 +182,7 @@ if p1 > 0:
     atr2 =atr2.replace('"','')
     #st.write(atr2)
     dictdet = {atr1:atr2}
-    #st.write(dictitu)
+    st.write(dictdet)
 
 
 
@@ -285,14 +285,15 @@ if tipobusq != 'json':
                 title = p.find(xtitulo).get_text()
             except:
                 title = p.find(xtitulo).text
-        #st.write(title)        
-        try:    
-            #det = p.find(xdetalle).text
-            if detalledict=='S':
-                det = p.find(sepd,dictdet ).text    
-            else:
-                det = p.find(xdetalle).get_text()
-        except:
+        if detalledict=='S':
+          try:
+            det = p.find(sepd,dictdet ).text    
+          except:
+            det = 'no'
+        else:
+          try:
+            det = p.find(xdetalle).get_text()
+          except:           
             det = p.find(xdetalle).text
         # tipo de imagen puede ser src,data-src',data-breeze
         img = ''
