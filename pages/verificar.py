@@ -14,7 +14,7 @@ from urllib.request import urljoin
 from streamlit_option_menu import option_menu
 import numpy as np
 from re import search 
-import urllib.request
+import urllib3
 
 def buscareje(df,tira):
   vnuri = 0
