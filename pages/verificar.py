@@ -276,7 +276,7 @@ if tipobusq != 'json':
         #st.write(title)
         #href = title.get("href")
         if titulodict == 'S':
-            title = p.find(sep,dictitu ).get_text()     
+            title = p.find(sep,dictitu ).text    
         else:                
             try:
                 title = p.find(xtitulo).get_text()
