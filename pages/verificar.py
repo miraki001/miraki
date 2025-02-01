@@ -242,7 +242,7 @@ if tipobusq != 'json':
   
     #st.write(separador)
     response = requests.get(url)
-    ret = requests.get(my_url, cookies=cookies)
+    ret = requests.get(url, cookies=cookies)
     st.write(ret)
     html_content = response.content
     tree = html.fromstring(html_content)
