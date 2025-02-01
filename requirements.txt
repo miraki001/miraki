@@ -19,5 +19,5 @@ streamlit_extras
 pyvis
 networkx
 streamlit_elements
-urllib
+urllib3
 
