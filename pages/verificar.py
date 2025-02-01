@@ -5,8 +5,7 @@ import sys
 import psutil
 import requests
 from bs4 import BeautifulSoup
-from lxml 
-import html
+from lxml import html
 import psycopg2
 import json
 import pandas as pd
