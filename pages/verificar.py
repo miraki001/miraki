@@ -235,11 +235,18 @@ if tipobusq== 'json':
 
 if tipobusq != 'json':
     url = vurl
+    cookies = {
+        "Hm_lpvt_7cd4710f721b473263eed1f0840391b4": "1548175412",
+        "Hm_lvt_7cd4710f721b473263eed1f0840391b4": "1548140525",
+        "x5sec":"7b22617365727665722d6c617a6164613b32223a223832333339343739626466613939303562613535386138333266383365326132434c4b516e65494645495474764a322b706f6d6f6941453d227d", }
+  
     #st.write(separador)
     response = requests.get(url)
+    ret = requests.get(my_url, cookies=cookies)
+    st.write(ret)
     html_content = response.content
     tree = html.fromstring(html_content)
-    sauce = urllib3.request.urlopen(url).read()
+    #sauce = urllib3.request.urlopen(url).read()
     st.write(sauce)
     soup = BeautifulSoup(html_content, 'lxml')
     st.write(soup)
