@@ -239,7 +239,7 @@ if tipobusq != 'json':
     response = requests.get(url)
     html_content = response.content
     tree = html.fromstring(html_content)
-    sauce = urllib.request.urlopen(url).read()
+    sauce = urllib3.request.urlopen(url).read()
     st.write(sauce)
     soup = BeautifulSoup(html_content, 'lxml')
     st.write(soup)
