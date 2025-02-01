@@ -276,11 +276,14 @@ if tipobusq != 'json':
         #st.write(title)
         #href = title.get("href")
         if titulodict == 'S':
-            title = p.find(sep,dictitu ).text    
+            try:
+              title = p.find(sep,dictitu ).text    
+            except:
+              title ='no lo encontro'
         else:                
             try:
                 title = p.find(xtitulo).get_text()
-            except ValueError:
+            except:
                 title = p.find(xtitulo).text
         #st.write(title)        
         try:    
@@ -289,7 +292,7 @@ if tipobusq != 'json':
                 det = p.find(sepd,dictdet ).text    
             else:
                 det = p.find(xdetalle).get_text()
-        except ValueError:
+        except:
             det = p.find(xdetalle).text
         # tipo de imagen puede ser src,data-src',data-breeze
         img = ''
