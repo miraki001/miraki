@@ -238,7 +238,8 @@ if tipobusq != 'json':
     response = requests.get(url)
     html_content = response.content
     tree = html.fromstring(html_content)
-    st.write(tree)
+    sauce = urllib.request.urlopen(url).read()
+    st.write(sauce)
     soup = BeautifulSoup(html_content, 'lxml')
     st.write(soup)
     #noticias = soup.find_all(string=re.compile("dg_news_hl_news_"))
