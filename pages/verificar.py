@@ -319,10 +319,11 @@ if tipobusq != 'json':
         col1, col2 = st.columns(2)
       
         with col1:
-          st.write('Link : ' + href)
-          st.write('Titulo :  ' + title)
-          st.write('Detalle :  ' + det)
-          st.write('Imagen :  ' +  img)
+          if href != None
+            st.write('Link : ' + href)
+            st.write('Titulo :  ' + title)
+            st.write('Detalle :  ' + det)
+            st.write('Imagen :  ' +  img)
           eje_nuri = 0
           peso = 0
           eje_nuri = buscareje(df1[0],title + ' ' + det)
