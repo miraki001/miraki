@@ -197,8 +197,8 @@ if vatrib1 != '':
   pattern = re.compile(vatrib2 +".*")
   newv = {vatrib1:pattern}
   newv = {vatrib1:vatrib2}
-st.write(newv)
-st.write('abritubo 1 otra vez' + vatrib1)
+#st.write(newv)
+#st.write('abritubo 1 otra vez' + vatrib1)
         
 if tipobusq== 'json':
     my_url = vurl
@@ -246,16 +246,16 @@ if tipobusq != 'json':
     #st.write(separador)
     response = requests.get(url,headers=headers)
     ret = requests.get(url, cookies=cookies ,headers=headers)
-    st.write(ret)
+    #st.write(ret)
     html_content = response.content
     tree = html.fromstring(html_content)
     #sauce = urllib3.request.urlopen(url).read()
     #st.write(sauce)
     soup = BeautifulSoup(html_content, 'lxml')
-    st.write(soup)
+    #st.write(soup)
     #noticias = soup.find_all(string=re.compile("dg_news_hl_news_"))
     noticias = soup.find_all("div", {"class":"issue-item clearfix"})
-    st.write(noticias)
+    #st.write(noticias)
   
     if vatrib1 != '':
         noticias = soup.find_all(separador,newv)
