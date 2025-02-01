@@ -5,8 +5,7 @@ import sys
 import psutil
 import requests
 from bs4 import BeautifulSoup
-from lxml import html
-import psycopg2
+from lxml import htmlimport psycopg2
 import json
 import pandas as pd
 from sqlalchemy import text
@@ -319,7 +318,7 @@ if tipobusq != 'json':
         col1, col2 = st.columns(2)
       
         with col1:
-          if href != None
+          if href != None:
             st.write('Link : ' + href)
             st.write('Titulo :  ' + title)
             st.write('Detalle :  ' + det)
