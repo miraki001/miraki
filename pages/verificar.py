@@ -292,7 +292,7 @@ if tipobusq != 'json':
             det = 'no'
         else:
           try:
-            det = p.find(xdetalle).get_text()[1]
+            det = p.find(xdetalle).get_text(1)
           except:           
             det = p.find(xdetalle).text
         # tipo de imagen puede ser src,data-src',data-breeze
