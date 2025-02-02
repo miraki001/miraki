@@ -248,7 +248,7 @@ if tipobusq != 'json':
     ret = requests.get(url, cookies=cookies ,headers=headers)
     #st.write(ret)
     html_content = response.content
-    tree = html.fromstring(html_content)
+    #tree = html.fromstring(html_content)
     #sauce = urllib3.request.urlopen(url).read()
     #st.write(sauce)
     soup = BeautifulSoup(html_content, 'lxml')
