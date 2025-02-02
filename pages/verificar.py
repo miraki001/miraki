@@ -277,12 +277,12 @@ if tipobusq != 'json':
         #href = title.get("href")
         if titulodict == 'S':
             try:
-              title = p.find(sep,dictitu ).text    
+              title = p.find(sep,dictitu ).get_text()    
             except:
               title ='no lo encontro'
         else:                
             try:
-                title = p.find(xtitulo).text
+                title = p.find(xtitulo).get_text()
             except:
                 title = p.find(xtitulo).text
         if detalledict=='S':
