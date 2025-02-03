@@ -42,7 +42,8 @@ def get_driver():
 #    options.add_argument(f"--user-agent={my_user_agent}")
     
     service = Service()
-    driver = webdriver.Chrome(service=service, options=options)
+    #driver = webdriver.Chrome(service=service, options=options)
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     
     return webdriver.Chrome(service=service, options=options)
 
