@@ -218,12 +218,9 @@ if tipobusq== 'json':
     soup1 = BeautifulSoup(r.content, 'html.parser')
     #pp = soup1.find_all('script')[14].text.strip()[48:-1]
     #pp = soup1.find_all('script')[14].text.strip()
-    pp = page_soup.findAll('script', {'type':'application/ld+json'})[2]
+    pp = page_soup.findAll('script', {"type":"application/ld+json"})[2]
     st.write(pp)
-    data = [
-      json.loads(x.string) for x in soup1.find_all("script", type="application/ld+json")
-    ]
-  
+
     #pp = soup1.find_all(separador,"type:'application/ld+json'")
     st.write(pp)
     #st.write('fffffff')
