@@ -20,4 +20,5 @@ pyvis
 networkx
 streamlit_elements
 urllib3
+selenium
 
