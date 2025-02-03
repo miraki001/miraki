@@ -326,7 +326,7 @@ if tipobusq != 'json' and tipobusq != 'rss' :
         options.add_argument('--log-level=3')
         driver = get_driver()
         driver.implicitly_wait(10)
-        driver.get(url)
+        driver.get('https://www.mendozapost.com/')
         #driver.implicitly_wait(40)
         wait = WebDriverWait(driver, 170)
         #wait.until(EC.url_contains("code="))
