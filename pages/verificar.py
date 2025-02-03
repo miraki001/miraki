@@ -228,13 +228,14 @@ if tipobusq== 'json':
     #data = page_soup.select("[type='application/json']")[vpos]
     if vatrib1 =='':
       pp = page_soup.select(separador)[vpos]
+      ojson = json.loads(pp.string)
     else:
       st.write(newv)
       #data = page_soup.select(separador,newv)[vpos]
       data = page_soup.select("[type='application/ld+json']")[2]
       st.write(data)
-      pp = json.loads(data.string)["itemListElement"]
-      st.write(pp)
+      ojson = json.loads(data.string)["itemListElement"]
+      st.write(ojson)
       #pp = data
       
     #json.parse(data)
@@ -246,7 +247,7 @@ if tipobusq== 'json':
     #pos2 = data.find(']')
     #st.write(pos2)
 
-    ojson = json.loads(pp.string)
+    #ojson = json.loads(pp.string)
     #st.write(ojson)
     for product in ojson:
         try:
