@@ -65,9 +65,9 @@ conn = st.connection("postgresql", type="sql")
 def ingresar():
     conn = st.connection("postgresql", type="sql")
     with conn.session as session:
-        actualiza = "insert into fuentes_py (nuri, fuente,, activa, xpath_titulo, descrip, proyecto_nuri,pais,separador,atributo1,atributo2,xpath_detalle,xpath_link,xpath_image,tipo,busqueda_pers,idioma,cod_pais,tipo_busq,fuente_org,posjson,urllink )"
-        actualiza = actualiza + " values (nextval('fuente_py_seq'),:fuente, :activa, :xpath_titulo , :descrip, 1,:pais,:separador,:atributo1,:atributo2,:xpath_detalle,:xpath_link,:xpath_image,:tipo,busqueda_pers,:idioma,:cod_pais,:tipo_busq,:fuente_org,:posjson,:urllink  );"
-        session.execute(text(actualiza), {"fuente": vurl,"activa": activa,"tit": xpath_tit,"desc": vtitle, "pais": pais,"separador": separador,"atributo1": atributo1,"atributo2": atributo2, "det": xpath_det, "link": xpath_link,"image": xpath_image, "tipo": tipo,"busq": busqueda, "idioma": idioma,"cod": codigo,"tipo_busq" : tipobus ,"fuente_org": fuenteorg,"posjson": posjson, "urllink": urllink})
+        actualiza = "insert into fuentes_py (nuri, fuente,, activa, xpath_titulo, descrip, proyecto_nuri,pais,separador,atributo1,atributo2,xpath_detalle,xpath_link,xpath_image,tipo,busqueda_pers,idioma,cod_pais,tipo_busq,fuente_org,posjson,urllink,postit,posdet )"
+        actualiza = actualiza + " values (nextval('fuente_py_seq'),:fuente, :activa, :xpath_titulo , :descrip, 1,:pais,:separador,:atributo1,:atributo2,:xpath_detalle,:xpath_link,:xpath_image,:tipo,busqueda_pers,:idioma,:cod_pais,:tipo_busq,:fuente_org,:posjson,:urllink,:postit,:posdet  );"
+        session.execute(text(actualiza), {"fuente": vurl,"activa": activa,"tit": xpath_tit,"desc": vtitle, "pais": pais,"separador": separador,"atributo1": atributo1,"atributo2": atributo2, "det": xpath_det, "link": xpath_link,"image": xpath_image, "tipo": tipo,"busq": busqueda, "idioma": idioma,"cod": codigo,"tipo_busq" : tipobus ,"fuente_org": fuenteorg,"posjson": posjson, "urllink": urllink,"postit" : postit,"posdet" :posdet})
         
         session.commit()    
 def borrar():
@@ -115,6 +115,10 @@ if tipoe == 'Editar':
     idioma = st.session_state['vidioma']
     codigo = st.session_state['vcod']
     observa = st.session_state['vobserva']
+    vpostit = st.session_state['vpostit']
+    vposdet = st.session_state['vposdet']  
+    vpostit = int(vpostit)
+    vposdet = int(vposdet)
 
 if tipo == 'Ingresar':
     fuente = ''
@@ -142,6 +146,8 @@ if tipo == 'Ingresar':
     codigo = ''
     observa = ''
     tipoimg = ''
+    vpostit= 0
+    vposdet= 0
 
 st.markdown("""
 <style>
@@ -160,7 +166,7 @@ st.markdown("""
 #st.header(":blue[fuente]")
 
 #col = st.columns((6.0, 5.0, 4.0,2), gap='small')
-col = st.columns([0.4, 0.4, 0.2], gap='small')
+col = st.columns([0.25, 0.25, 0.25,0.25], gap='small')
 
 
 with col[0]:
@@ -169,27 +175,30 @@ with col[0]:
     observa = st.text_input("Observaciones ",  observa)
     tipobus = st.text_input("Tipo de Busqueda", tipobus )
     posjson = st.number_input("Posición del Json",min_value=0,max_value=100,value=vpos)
-    separador = st.text_input("Separador", separador)
-    atributo1 = st.text_input("Atributo 1", atributo1)
 
 with col[1]:
+    separador = st.text_input("Separador", separador)
+    atributo1 = st.text_input("Atributo 1", atributo1)  
     atributo2 = st.text_input("Atributo 2", atributo2)
     xpath_tit = st.text_input("xpath titulo", xpath_tit)
+    postit = st.number_input("Posición del titulo",min_value=0,max_value=100,value=vpostit)
     xpath_det = st.text_input("xpath detalle", xpath_det)
+    posdet = st.number_input("Posición del detalle",min_value=0,max_value=100,value=vposdet)
+    xpath_link = st.text_input("xpath link", xpath_link)
+
+with col[2]:
     xpath_link = st.text_input("xpath link", xpath_link)
     xpath_image = st.text_input("xpath imagen", xpath_image)
     urllink = st.text_input("Url Link", urllink)
     tipoimg = st.text_input("Tipo de Img", tipoimg)
-
-with col[2]:
     fuenteorg = st.text_input("Fuente Original", fuenteorg)
     pais =  st.text_input("pais", pais)
+with col[3]:
     activa = st.text_input("Activa", activa)
     tipo =  st.text_input("Tipo", tipo)
     busqueda = st.text_input("Busequeda Personalizada", busqueda)
     idioma = st.text_input("Idioma", idioma)
     codigo = st.text_input("Código de Pais", codigo)
-
 
 col10, col20 = st.columns(2)
 if col10.button(":red[**Grabar**]"):
