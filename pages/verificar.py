@@ -321,6 +321,7 @@ if tipobusq != 'json' and tipobusq != 'rss' :
         driver.implicitly_wait(4)
         driver.get(url)
         driver.implicitly_wait(4)
+        st.write(driver.page_source)
         soup = BeautifulSoup(driver.page_source, 'lxml')
     else:
         response = requests.get(url,headers=headers)
