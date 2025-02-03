@@ -318,10 +318,12 @@ if tipobusq != 'json' and tipobusq != 'rss' :
         options = Options()
 #        options.add_argument('--disable-gpu')
         options.add_argument('--headless')
+        options.add_argument('--log-level=3')
         driver = get_driver()
         driver.implicitly_wait(10)
         driver.get(url)
         driver.implicitly_wait(40)
+        WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "id_of_element_present_in_all_situation")))
         st.write(driver.page_source)
         soup = BeautifulSoup(driver.page_source, 'lxml')
     else:
