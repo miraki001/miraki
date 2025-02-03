@@ -208,7 +208,7 @@ st.write(newv)
 if tipobusq == 'rss':
   resp = requests.get(vurl)
   soup = BeautifulSoup(resp.text, 'html.parser')
-  for entry in soup.find_all(separado):
+  for entry in soup.find_all(separador):
     tit = entry.find(xtitulo).text
     det =  entry.find(xdetalle).text
     link =  entry.find(xlink)['href']
