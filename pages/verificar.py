@@ -282,9 +282,9 @@ if tipobusq != 'json':
               title ='no lo encontro'
         else:                
             try:
-                title = p.find_all(xtitulo).get_text()
+                title = p.find(xtitulo).get_text()
             except:
-                title = p.find_all(xtitulo).text
+                title = p.find(xtitulo).text
         if detalledict=='S':
           try:
             det = p.find(sepd,dictdet ).text    
@@ -292,7 +292,7 @@ if tipobusq != 'json':
             det = 'no'
         else:
           try:
-            det = p.find(xdetalle, xdetalle).get_text()
+            det = p.find_all(xdetalle).get_text()
           except:           
             det = p.find(xdetalle).text
         # tipo de imagen puede ser src,data-src',data-breeze
