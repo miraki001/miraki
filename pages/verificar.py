@@ -261,7 +261,7 @@ if tipobusq== 'json':
         if det == None:
           det = ''
         link = str(product[xlink]) 
-        img = ==
+        img = ''
         if ximage != 'none':
           vimg = product[ximage]
         #st.write(xlink)
