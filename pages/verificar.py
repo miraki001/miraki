@@ -196,7 +196,7 @@ if vatrib1 != '':
 
   pattern = re.compile(vatrib2 +".*")
   newv = {vatrib1:pattern}
-  #newv = {vatrib1:vatrib2}
+  newv = {vatrib1:vatrib2}
 st.write(newv)
 #st.write('abritubo 1 otra vez' + vatrib1)
         
