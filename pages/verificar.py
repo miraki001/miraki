@@ -259,10 +259,8 @@ if tipobusq != 'json':
   
     if vatrib1 != '':
         noticias = soup.find_all(separador,newv)
-        st.write('aca1')
     if vatrib1 == '':    
         noticias = soup.find_all(separador)
-        st.write('aca')
 
     if st.checkbox('Ver contenido extraido'):
         st.write(noticias)
