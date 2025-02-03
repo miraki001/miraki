@@ -20,5 +20,5 @@ pyvis
 networkx
 streamlit_elements
 urllib3
-selenium
+selenium==4.28.1
 
