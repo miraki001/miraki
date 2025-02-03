@@ -211,10 +211,10 @@ if tipobusq == 'rss':
   for entry in soup.find_all(separador):
     tit = entry.find(xtitulo).text
     det =  entry.find(xdetalle).text
-    link =  entry.find(xlink)['href']
+    #link =  entry.find(xlink)['href']
     st.write(tit)
     st.write(det)
-    st.write(link)
+    #st.write(link)
         
 if tipobusq== 'json':
     my_url = vurl
