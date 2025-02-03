@@ -221,7 +221,7 @@ if tipobusq== 'json':
     #pp = page_soup.findAll('script', {"type":"application/ld+json"})[2]
     #st.write(pp)
 
-    pp = soup1.find_all(separador,"type":"application/ld+json")
+    pp = soup1.find_all(separador,"type:'application/ld+json'")
     st.write(pp)
     #st.write('fffffff')
     #data = page_soup.select("[type='application/json']")[vpos]
