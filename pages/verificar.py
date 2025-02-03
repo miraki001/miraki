@@ -291,6 +291,7 @@ if tipobusq != 'json':
         det = p.find_all(xdetalle)
         #st.write(det)
         #st.write(det[1].text)
+        st.write(vposdet)
         if detalledict=='S':
           try:
             det = p.find(sepd,dictdet ).text    
@@ -301,7 +302,8 @@ if tipobusq != 'json':
             vdet = p.find_all(xdetalle)
             det = vdet[vposdet].text
           except:           
-            det = p.find(xdetalle).text
+            vdet = p.find(xdetalle)
+            det = vdet[vposdet].text
         # tipo de imagen puede ser src,data-src',data-breeze
         img = ''
         if ximage !='none':
