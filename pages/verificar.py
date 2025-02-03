@@ -285,6 +285,8 @@ if tipobusq != 'json':
                 title = p.find(xtitulo).get_text()
             except:
                 title = p.find(xtitulo).text
+        det = p.find_all(xdetalle).text
+        st.write(det)
         if detalledict=='S':
           try:
             det = p.find(sepd,dictdet ).text    
