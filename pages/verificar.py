@@ -214,7 +214,7 @@ if tipobusq == 'rss':
   for entry in soup.find_all(separador):
     tit = entry.find(xtitulo).text
     det =  entry.find(xdetalle).text
-    link =  entry.find('link/').text
+    link =  entry.find('link').text
     st.write(tit)
     st.write(det)
     st.write(link)
