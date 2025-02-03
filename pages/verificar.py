@@ -225,7 +225,7 @@ if tipobusq== 'json':
     #st.write(pp)
     #st.write('fffffff')
     #data = page_soup.select("[type='application/json']")[vpos]
-    if atrib1 =='':
+    if vatrib1 =='':
       pp = page_soup.select(separador)[vpos]
     else:
       pp = page_soup.select(separador,newv)[vpos]
