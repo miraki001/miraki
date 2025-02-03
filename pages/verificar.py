@@ -219,7 +219,7 @@ if tipobusq== 'json':
     #pp = soup1.find_all('script')[14].text.strip()[48:-1]
     #pp = soup1.find_all('script')[14].text.strip()
     pp = soup1.find_all(separador)[vpos]
-    st.write(pp)
+    #st.write(pp)
     #st.write('fffffff')
     #data = page_soup.select("[type='application/json']")[vpos]
     #data = page_soup.select(separador,newv)[vpos]
@@ -235,8 +235,16 @@ if tipobusq== 'json':
     ojson = json.loads(pp.string)
     #st.write(ojson)
     for product in ojson:
-        st.write('Titulo  :  '  + product[xtitulo])
-        st.write('Detalle :  ' + product[xdetalle])
+        try:
+          titu = product[xtitulo]
+        except:
+          titu = ''
+        try:
+          det =  product[xdetalle]
+        except:
+          det = ''
+        st.write('Titulo  :  '  + titu)
+        st.write('Detalle :  ' +  det )
 
     
 
