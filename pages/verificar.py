@@ -252,7 +252,7 @@ if tipobusq != 'json':
     #sauce = urllib3.request.urlopen(url).read()
     #st.write(sauce)
     soup = BeautifulSoup(html_content, 'lxml')
-    #st.write(soup)
+    st.write(soup)
     #noticias = soup.find_all(string=re.compile("dg_news_hl_news_"))
     #noticias = soup.find_all("div", {"class":"issue-item clearfix"})
     #st.write(noticias)
