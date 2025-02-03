@@ -38,7 +38,7 @@ def get_driver():
     options.add_argument("--window-size=1920x1080")
     options.add_argument("--disable-features=VizDisplayCompositor")
     options.add_argument('--ignore-certificate-errors')    
-#    options.add_argument("--enable-javascript")
+    options.add_argument("--enable-javascript")
     
 #     options.add_argument(f"--window-size={width}x{height}")
 #    options.add_argument(f"--user-agent={my_user_agent}")
