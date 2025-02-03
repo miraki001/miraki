@@ -232,7 +232,8 @@ if tipobusq== 'json':
     else:
       st.write(newv)
       #data = page_soup.select(separador,newv)[vpos]
-      data = page_soup.select("[type='application/ld+json']")[2]
+      #data = page_soup.select("[type='application/ld+json']")[2]
+      data = page_soup.select(separador)[vpos]
       #st.write(data)
       ojson = json.loads(data.string)["itemListElement"]
       #st.write(ojson)
