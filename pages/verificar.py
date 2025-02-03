@@ -243,7 +243,7 @@ if tipobusq== 'json':
           det =  product[xdetalle]
         except:
           det = ''
-        if det == None
+        if det == None:
           det = ''
         st.write('Titulo  :  '  + titu)
         st.write('Detalle :  ' +  det )
