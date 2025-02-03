@@ -197,7 +197,7 @@ if vatrib1 != '':
   pattern = re.compile(vatrib2 +".*")
   newv = {vatrib1:pattern}
   #newv = {vatrib1:vatrib2}
-#st.write(newv)
+st.write(newv)
 #st.write('abritubo 1 otra vez' + vatrib1)
         
 if tipobusq== 'json':
@@ -253,12 +253,13 @@ if tipobusq != 'json':
     #st.write(sauce)
     soup = BeautifulSoup(html_content, 'lxml')
     #st.write(soup)
-    noticias = soup.find_all(string=re.compile("dg_news_hl_news_"))
+    #noticias = soup.find_all(string=re.compile("dg_news_hl_news_"))
     #noticias = soup.find_all("div", {"class":"issue-item clearfix"})
     #st.write(noticias)
   
     if vatrib1 != '':
         noticias = soup.find_all(separador,newv)
+        st.write('aca1')
     if vatrib1 == '':    
         noticias = soup.find_all(separador)
         st.write('aca')
