@@ -139,7 +139,11 @@ tipobusq = st.session_state['vtipobus']
 fuenteorg = st.session_state['vfuenteorg'] 
 urllink = st.session_state['vurllink'] 
 posjson = st.session_state['vposjson'] 
+postit = st.session_state['vpostit']
+posdet = st.session_state['vposdet']
 vpos = int(posjson)
+vpostit = int(vpostit)
+vposdet = int(vposdet)
 ptipoimg =  st.session_state['vtipoimg'] 
 st.write('atributo 1 ' + vatrib1)
 p = xtitulo.find("{")
@@ -294,7 +298,8 @@ if tipobusq != 'json':
             det = 'no'
         else:
           try:
-            det = p.find(xdetalle).get_text()
+            vdet = p.find_all(xdetalle)
+            det = vdet[vposdet].text
           except:           
             det = p.find(xdetalle).text
         # tipo de imagen puede ser src,data-src',data-breeze
