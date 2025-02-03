@@ -208,7 +208,7 @@ st.write(newv)
 if tipobusq == 'rss':
   resp = requests.get(vurl)
   #soup = BeautifulSoup(resp.text, 'html.parser')
-  soup = BeautifulSoup(resp.text, 'lxml')
+  soup = BeautifulSoup(resp.text, 'xml')
   pp = soup.find_all(separador)
   st.write(pp)
   for entry in soup.find_all(separador):
