@@ -184,7 +184,6 @@ with col[1]:
     postit = st.number_input("Posición del titulo",min_value=0,max_value=100,value=vpostit)
     xpath_det = st.text_input("xpath detalle", xpath_det)
     posdet = st.number_input("Posición del detalle",min_value=0,max_value=100,value=vposdet)
-    xpath_link = st.text_input("xpath link", xpath_link)
 
 with col[2]:
     xpath_link = st.text_input("xpath link", xpath_link)
