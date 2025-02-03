@@ -285,13 +285,13 @@ if tipobusq != 'json':
               title ='no lo encontro'
         else:                
             try:
-                title = p.find(xtitulo).get_text()
+                vtitle = p.find_all(xtitulo)
+                title = vtitle[vpostit].text
             except:
                 title = p.find(xtitulo).text
         det = p.find_all(xdetalle)
         #st.write(det)
         #st.write(det[1].text)
-        st.write(vposdet)
         if detalledict=='S':
           try:
             det = p.find(sepd,dictdet ).text    
