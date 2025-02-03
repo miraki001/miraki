@@ -260,7 +260,7 @@ if tipobusq== 'json':
           det = ''
         if det == None:
           det = ''
-        link = producto[xlink]  
+        link = product[xlink]  
         st.write('Titulo  :  '  + titu)
         st.write('Detalle :  ' +  det )
         st.write('link :  ' +  link )
