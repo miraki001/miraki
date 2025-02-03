@@ -25,7 +25,7 @@ my_user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (K
 def get_driver():
     options = webdriver.ChromeOptions()
     
-    options.add_argument('--disable-gpu')
+#    options.add_argument('--disable-gpu')
     options.add_argument('--headless')
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
@@ -315,10 +315,10 @@ if tipobusq != 'json' and tipobusq != 'rss' :
     if tipobusq == 'sele':
 
         options = Options()
-        options.add_argument('--disable-gpu')
+#        options.add_argument('--disable-gpu')
         options.add_argument('--headless')
         driver = get_driver()
-        driver.implicitly_wait(4)
+        driver.implicitly_wait(10)
         driver.get(url)
         driver.implicitly_wait(4)
         st.write(driver.page_source)
