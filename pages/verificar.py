@@ -262,7 +262,7 @@ if tipobusq== 'json':
           det = ''
         link = str(product[xlink]) 
         st.write(ximage)
-        vimg = product['imgUrl']
+        vimg = product["imgDesc"]
         #st.write(xlink)
         st.write('Titulo  :  '  + titu)
         st.write('Detalle :  ' +  det )
