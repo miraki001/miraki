@@ -222,7 +222,7 @@ if tipobusq== 'json':
     #st.write(pp)
     data = page_soup.select("[type='application/ld+json']")[2]
     st.write(data)
-    pp = soup1.find_all(separador,"type:'application/ld+json'")
+    #pp = soup1.find_all(separador,"type:'application/ld+json'")
     st.write(pp)
     #st.write('fffffff')
     #data = page_soup.select("[type='application/json']")[vpos]
@@ -230,7 +230,8 @@ if tipobusq== 'json':
       pp = page_soup.select(separador)[vpos]
     else:
       st.write(newv)
-      data = page_soup.select(separador,newv)[vpos]
+      #data = page_soup.select(separador,newv)[vpos]
+      data = page_soup.select("[type='application/ld+json']")[2]
       st.write(data)
       pp = json.loads(data.text)["ItemList"]
       
