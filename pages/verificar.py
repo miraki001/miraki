@@ -203,6 +203,18 @@ if vatrib1 != '':
   newv = {vatrib1:vatrib2}
 st.write(newv)
 #st.write('abritubo 1 otra vez' + vatrib1)
+
+
+if tipobusq == 'rss':
+  resp = requests.get(url)
+  soup = BeautifulSoup(resp.text, 'html.parser')
+  for entry in soup.find_all(separado):
+    tit = entry.find(xtitulo).text
+    det =  entry.find(xdetalle).text
+    link =  entry.find(xlink)['href']
+    st.write(tit)
+    st.write(det)
+    st.write(link)
         
 if tipobusq== 'json':
     my_url = vurl
@@ -216,16 +228,6 @@ if tipobusq== 'json':
     page_soup = BeautifulSoup(ret.text, 'lxml')
     r = requests.get(my_url)
     soup1 = BeautifulSoup(r.content, 'html.parser')
-    #pp = soup1.find_all('script')[14].text.strip()[48:-1]
-    #pp = soup1.find_all('script')[14].text.strip()
-    #pp = page_soup.findAll('script', {"type":"application/ld+json"})[2]
-    #st.write(pp)
-    #data = page_soup.select("[type='application/ld+json']")[2]
-    #st.write(data)
-    #pp = soup1.find_all(separador,"type:'application/ld+json'")
-    #st.write(pp)
-    #st.write('fffffff')
-    #data = page_soup.select("[type='application/json']")[vpos]
     if vatrib1 =='':
       pp = page_soup.select(separador)[vpos]
       ojson = json.loads(pp.string)
