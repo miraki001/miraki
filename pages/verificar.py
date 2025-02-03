@@ -206,7 +206,7 @@ st.write(newv)
 
 
 if tipobusq == 'rss':
-  resp = requests.get(url)
+  resp = requests.get(vurl)
   soup = BeautifulSoup(resp.text, 'html.parser')
   for entry in soup.find_all(separado):
     tit = entry.find(xtitulo).text
