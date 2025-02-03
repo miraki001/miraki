@@ -247,7 +247,7 @@ if tipobusq != 'json':
     response = requests.get(url,headers=headers)
     ret = requests.get(url, cookies=cookies ,headers=headers)
     st.write(response)
-    html_content = response.content
+    html_content = response.text
     #tree = html.fromstring(html_content)
     #sauce = urllib3.request.urlopen(url).read()
     #st.write(sauce)
