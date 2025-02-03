@@ -246,7 +246,7 @@ if tipobusq != 'json':
     #st.write(separador)
     response = requests.get(url,headers=headers)
     ret = requests.get(url, cookies=cookies ,headers=headers)
-    #st.write(ret)
+    st.write(response)
     html_content = response.content
     #tree = html.fromstring(html_content)
     #sauce = urllib3.request.urlopen(url).read()
@@ -295,9 +295,9 @@ if tipobusq != 'json':
             det = 'no'
         else:
           try:
-            det = p.find_all(xdetalle).get_text()
+            det = p.find(xdetalle).get_text()
           except:           
-            det = p.find_all(xdetalle).text
+            det = p.find(xdetalle).text
         # tipo de imagen puede ser src,data-src',data-breeze
         img = ''
         if ximage !='none':
