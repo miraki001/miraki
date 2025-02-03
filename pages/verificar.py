@@ -282,7 +282,7 @@ if tipobusq != 'json':
               title ='no lo encontro'
         else:                
             try:
-                title = p.find(xtitulo).get_text()
+                title = p.find_all(xtitulo).get_text()
             except:
                 title = p.find(xtitulo).text
         if detalledict=='S':
