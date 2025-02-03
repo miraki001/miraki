@@ -261,13 +261,14 @@ if tipobusq== 'json':
         if det == None:
           det = ''
         link = str(product[xlink]) 
-        st.write(ximage)
-        vimg = product["title"]
+        img = ==
+        if ximage != 'none':
+          vimg = product[ximage]
         #st.write(xlink)
         st.write('Titulo  :  '  + titu)
         st.write('Detalle :  ' +  det )
-        st.write('linkg' +  link )
-        st.write( vimg )
+        st.write('link' +  link )
+        st.write( img )
 
     
 
