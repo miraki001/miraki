@@ -43,8 +43,8 @@ def get_driver():
 #    options.add_argument(f"--user-agent={my_user_agent}")
     
     service = Service()
-    #driver = webdriver.Chrome(service=service, options=options)
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    driver = webdriver.Chrome(service=service, options=options)
+    #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     
     return webdriver.Chrome(service=service, options=options)
 
@@ -327,7 +327,9 @@ if tipobusq != 'json' and tipobusq != 'rss' :
         driver = get_driver()
         driver.implicitly_wait(10)
         driver.get(url)
-        driver.implicitly_wait(40)
+        #driver.implicitly_wait(40)
+        wait = WebDriverWait(driver, 170)
+        wait.until(EC.url_contains("code="))
         #WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "id_of_element_present_in_all_situation")))
         st.write(driver.page_source)
         soup = BeautifulSoup(driver.page_source, 'lxml')
