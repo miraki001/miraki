@@ -313,6 +313,10 @@ if tipobusq != 'json' and tipobusq != 'rss' :
   
     #st.write(separador)
     if tipobusq == 'sele':
+
+        options = Options()
+        options.add_argument('--disable-gpu')
+        options.add_argument('--headless')
         driver = get_driver()
         driver.implicitly_wait(4)
         driver.get(url)
