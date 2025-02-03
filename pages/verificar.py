@@ -147,7 +147,7 @@ vposdet = int(vposdet)
 ptipoimg =  st.session_state['vtipoimg'] 
 st.write('atributo 1 ' + vatrib1)
 p = xtitulo.find("{")
-#st.write(p)
+st.write(vpos)
 #   esto es para el caso del titulo que debe ser un diccionario
 if p > 0:
     sep = xtitulo[:p-2]
