@@ -229,6 +229,7 @@ if tipobusq== 'json':
       pp = page_soup.select(separador)[vpos]
     else:
       pp = page_soup.select(separador,newv)[vpos]
+      pp = json.loads(pp.text)["itemListElement"]
       
     #json.parse(data)
     #data = page_soup.select(separador)[vpos]
