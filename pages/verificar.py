@@ -214,7 +214,7 @@ if p1 > 0:
     sep1 = xdetalle[:p1-2]
     detalledict = 'S'
     sepd =sep1.replace('"','')
-    #st.write(sep)
+    st.write(sepd)
     resto = xdetalle[p1:100]
     #st.write(resto)
     p1 = resto.find(":")
