@@ -257,7 +257,7 @@ if tipobusq == 'rss':
         det =  entry.find(xdetalle).text
     except:
         det = 'No'
-    link =  entry.find('link').text
+    link =  entry.find(xlink).text
     st.write(tit)
     st.write(det)
     st.write(link)
