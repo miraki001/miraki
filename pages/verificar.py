@@ -13,6 +13,7 @@ from sqlalchemy import text
 from urllib.request import urljoin
 from streamlit_option_menu import option_menu
 import numpy as np
+import time
 from re import search 
 import urllib3
 from selenium import webdriver
@@ -344,13 +345,15 @@ if tipobusq != 'json' and tipobusq != 'rss' :
         options.add_argument('--log-level=3')
         driver = get_driver()
         driver.implicitly_wait(10)
-        driver.get('https://cals.cornell.edu/viticulture-enology/news-events')
+        driver.get('https://pubs.acs.org/action/doSearch?field1=AllField&target=default&targetTab=std&text1=grape&startPage=&sortBy=Earliest')
         #driver.implicitly_wait(40)
-        wait = WebDriverWait(driver, 10)
+        #wait = WebDriverWait(driver, 10)
         #wait.until(EC.url_contains("code="))
+        time.sleep(1)        
         #WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "id_of_element_present_in_all_situation")))
-        st.write(driver.page_source)
+        #st.write(driver.page_source)
         soup = BeautifulSoup(driver.page_source, 'lxml')
+        st.write(soup)
     else:
         response = requests.get(url,headers=headers)
         ret = requests.get(url, cookies=cookies ,headers=headers)
