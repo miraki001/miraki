@@ -347,6 +347,8 @@ if tipobusq != 'json' and tipobusq != 'rss' :
         st.write(response)
         html_content = response.text
         soup = BeautifulSoup(html_content, 'lxml')
+        data = response.json()
+        st.write(data)
     #st.write(soup)
     #noticias = soup.find_all(string=re.compile("dg_news_hl_news_"))
     #noticias = soup.find_all("div", {"class":"issue-item clearfix"})
