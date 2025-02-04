@@ -371,7 +371,8 @@ if tipobusq != 'json' and tipobusq != 'rss' :
         #href = title.get("href")
         if titulodict == 'S':
             try:
-              title = p.find(sep,dictitu ).get_text()    
+              vtitle = p.find_all(sep,dictitu )  
+              title = vtitle[vpostit].text
             except:
               title ='no lo encontro'
         else:                
