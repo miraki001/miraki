@@ -256,7 +256,7 @@ if tipobusq == 'rss':
     tit = entry.find(xtitulo).text
     ll = entry.find(re.compile("^link") )
     
-    st.write(ll.text)
+    st.write(ll.["href"])
     st.write(xxlink)
     try:  
         det =  entry.find(xdetalle).text
