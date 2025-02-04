@@ -337,8 +337,6 @@ if tipobusq != 'json' and tipobusq != 'rss' :
         driver.get('https://cals.cornell.edu/viticulture-enology/news-events')
         #driver.implicitly_wait(40)
         wait = WebDriverWait(driver, 10)
-        data = response.json()
-        st.write(data)
         #wait.until(EC.url_contains("code="))
         #WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "id_of_element_present_in_all_situation")))
         st.write(driver.page_source)
@@ -349,8 +347,6 @@ if tipobusq != 'json' and tipobusq != 'rss' :
         st.write(response)
         html_content = response.text
         soup = BeautifulSoup(html_content, 'lxml')
-        data = response.json()
-        st.write(data)
     #st.write(soup)
     #noticias = soup.find_all(string=re.compile("dg_news_hl_news_"))
     #noticias = soup.find_all("div", {"class":"issue-item clearfix"})
