@@ -250,10 +250,13 @@ if tipobusq == 'rss':
   #soup = BeautifulSoup(resp.text, 'html.parser')
   soup = BeautifulSoup(resp.text, 'xml')
   pp = soup.find_all(separador)
-  st.write(pp)
+  #st.write(pp)
   for entry in soup.find_all(separador):
     tit = entry.find(xtitulo).text
-    det =  entry.find(xdetalle).text
+    try:  
+        det =  entry.find(xdetalle).text
+    except:
+        det = 'No'
     link =  entry.find('link').text
     st.write(tit)
     st.write(det)
