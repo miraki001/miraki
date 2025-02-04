@@ -244,6 +244,7 @@ if vatrib1 != '':
 st.write(newv)
 #st.write('abritubo 1 otra vez' + vatrib1)
 
+xxlink = re.compile(xlink +".*")
 
 if tipobusq == 'rss':
   resp = requests.get(vurl)
@@ -257,7 +258,7 @@ if tipobusq == 'rss':
         det =  entry.find(xdetalle).text
     except:
         det = 'No'
-    link =  entry.find(xlink).text
+    link =  entry.find(xxlink).text
     st.write(tit)
     st.write(det)
     st.write(link)
