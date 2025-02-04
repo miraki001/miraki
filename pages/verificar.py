@@ -254,6 +254,7 @@ if tipobusq == 'rss':
   #st.write(pp)
   for entry in soup.find_all(separador):
     tit = entry.find(xtitulo).text
+    st.write(entry.link.text)
     st.write(xxlink)
     try:  
         det =  entry.find(xdetalle).text
