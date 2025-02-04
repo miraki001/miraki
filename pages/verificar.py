@@ -249,7 +249,7 @@ xxlink = re.compile(xlink +".*")
 if tipobusq == 'rss':
   resp = requests.get(vurl)
   #soup = BeautifulSoup(resp.text, 'html.parser')
-  soup = BeautifulSoup(resp.text, 'xml')
+  soup = BeautifulSoup(resp.text, 'lxml')
   pp = soup.find_all(separador)
   #st.write(pp)
   for entry in soup.find_all(separador):
