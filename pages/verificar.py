@@ -221,8 +221,8 @@ if p1 > 0:
     atr1 = resto[:p1]
     atr1 = atr1[1:100]
     atr1 =atr1.replace('"','')
-    #st.write(atr1)
-    atr2 = resto[p+1:len(resto)-1]
+    st.write(atr1)
+    atr2 = resto[p1+1:len(resto)-1]
     atr2 =atr2.replace('"','')
     #st.write(atr2)
     dictdet = {atr1:atr2}
