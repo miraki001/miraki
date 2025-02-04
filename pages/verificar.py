@@ -254,15 +254,16 @@ if tipobusq == 'rss':
   #st.write(pp)
   for entry in soup.find_all(separador):
     tit = entry.find(xtitulo).text
-    ll = entry.find(re.compile("^link") )
-    
-    st.write(ll['href'])
-    st.write(xxlink)
+    pref = pos('href',xlink)
+    if pref > 0 :
+        ll = entry.find(re.compile("^link") )    
+        link =  ll['href']
+    else:
+        link =  entry.find(xlink).text
     try:  
         det =  entry.find(xdetalle).text
     except:
         det = 'No'
-    link =  entry.find(xlink).text
     st.write(tit)
     st.write(det)
     st.write(link)
