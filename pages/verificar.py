@@ -393,7 +393,7 @@ if tipobusq != 'json' and tipobusq != 'rss' :
             vdet = p.find_all(xdetalle)
             det = vdet[vposdet].text
           except:           
-            vdet = p.find(xdetalle)
+            vdet = p.find_all(xdetalle)
             det = vdet[vposdet].text
         # tipo de imagen puede ser src,data-src',data-breeze
         img = ''
