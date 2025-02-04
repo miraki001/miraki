@@ -234,7 +234,7 @@ tnuri = st.session_state['vnuri']
 vurl = st.session_state['vfuente']
 st.write('Fuente a Verificar :  ' + vurl)
 #st.write(xtitulo)
-#st.write(xdetalle)
+st.write(sepd)
 newv = ''
 if vatrib1 != '':
 
