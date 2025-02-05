@@ -266,7 +266,7 @@ if tipobusq == 'rss':
         det = 'No'
     pref = ximage.find('url')
     if pref > 0 :
-        sep = ximage[:pref-2]
+        sep = ximage[:pref-1]
         st.write(sep)
         ll = entry.find(re.compile("^" + sep) )    
         img =  ll['url']
