@@ -264,7 +264,7 @@ if tipobusq == 'rss':
         det =  entry.find(xdetalle).text
     except:
         det = 'No'
-    img =  entry.find(re.compile("^guid")).text       
+    img =  entry.find(re.compile("^enclosure ")).text       
     st.write(tit)
     st.write(det)
     st.write(link)
