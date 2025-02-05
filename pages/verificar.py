@@ -264,9 +264,11 @@ if tipobusq == 'rss':
         det =  entry.find(xdetalle).text
     except:
         det = 'No'
+    img =  entry.find(re.compile("^guid")).text       
     st.write(tit)
     st.write(det)
     st.write(link)
+    st.write(img)
         
 if tipobusq== 'json':
     my_url = vurl
