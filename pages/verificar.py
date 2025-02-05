@@ -264,8 +264,18 @@ if tipobusq == 'rss':
         det =  entry.find(xdetalle).text
     except:
         det = 'No'
-    vimg =  entry.find(re.compile("^enclosure")) 
-    img =  vimg['url']  
+    pref = ximage.find('url')
+    if pref > 0 :
+        sep = ximage[:pref-2]
+        st.write(sep)
+        ll = entry.find(re.compile("^" + sep) )    
+        img =  ll['url']
+    else:
+        img =  entry.find(ximage).text
+
+      
+    #vimg =  entry.find(re.compile("^enclosure")) 
+    #img =  vimg['url']  
     st.write(tit)
     st.write(det)
     st.write(link)
