@@ -39,8 +39,8 @@ st.markdown(
 st.subheader("Miraki ")
 
 st.logo(
-    "https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/android-chrome-192x192.png?alt=media&token=e8d5f6ee-706a-4399-813d-fd82f8b35ec7",
-    icon_image="https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/android-chrome-192x192.png?alt=media&token=e8d5f6ee-706a-4399-813d-fd82f8b35ec7",
+    "https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/MARCA%20HV%20PNG.png?alt=media&token=0b19a069-ae2a-4c1b-894d-6d79aa6524c1",
+    icon_image="https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/MARCA%20HV%20PNG.png?alt=media&token=0b19a069-ae2a-4c1b-894d-6d79aa6524c1",
 )
 
 selected2 = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Parametros','Github' ], 
