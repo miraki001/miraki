@@ -41,7 +41,7 @@ st.subheader("Miraki ")
 st.logo(
     "https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/MARCA%20HV%20PNG.png?alt=media&token=0b19a069-ae2a-4c1b-894d-6d79aa6524c1",
     icon_image="https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/MARCA%20HV%20PNG.png?alt=media&token=0b19a069-ae2a-4c1b-894d-6d79aa6524c1",
-    size="medium",
+    size="large",
 )
 
 selected2 = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Parametros','Github' ], 
