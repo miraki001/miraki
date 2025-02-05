@@ -245,12 +245,11 @@ if vatrib1 != '':
 st.write(newv)
 #st.write('abritubo 1 otra vez' + vatrib1)
 
-xxlink = re.compile(xlink +".*")
 
 if tipobusq == 'rss':
   resp = requests.get(vurl)
   #soup = BeautifulSoup(resp.text, 'html.parser')
-  soup = BeautifulSoup(resp.text, 'lxml')
+  soup = BeautifulSoup(resp.text, 'xml')
   pp = soup.find_all(separador)
   #st.write(pp)
   for entry in soup.find_all(separador):
