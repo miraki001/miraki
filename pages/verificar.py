@@ -264,11 +264,11 @@ if tipobusq == 'rss':
         det =  entry.find(xdetalle).text
     except:
         det = 'No'
-    img =  entry.find(re.compile("^enclosure")).text       
+    vimg =  entry.find(re.compile("^enclosure"))       
     st.write(tit)
     st.write(det)
     st.write(link)
-    st.write(img)
+    st.write(vimg)
         
 if tipobusq== 'json':
     my_url = vurl
