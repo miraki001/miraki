@@ -62,6 +62,9 @@ if selected3=="Proyectos":
     st.switch_page("./pages/proyectos.py")
 
 #pfuente = st.text_input("ingrese el nombre de la fuente")
+
+st.write('<p style="font-size:26px; color:red;">Parametros</p>',
+unsafe_allow_html=True)
 st.write(
     """
         
