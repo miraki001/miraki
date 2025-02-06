@@ -61,5 +61,17 @@ if selected3=="Palabras por Sector":
 if selected3=="Proyectos":
     st.switch_page("./pages/proyectos.py")
 
-pfuente = st.text_input("ingrese el nombre de la fuente")
+#pfuente = st.text_input("ingrese el nombre de la fuente")
+st.write(
+    """
+        
+        
+        Parametros.
+
+        Palabras claves : Son usadas en las busqueda individuales de las paginas, en el caso que la novedades no
+        estemos seguros que cumplen todas las condiciones de los temas que queremos ubicar.
+        Por ejemplo en las busquedas de noticias en los diarios.
+        
+    """
+)
 
