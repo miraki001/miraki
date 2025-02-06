@@ -63,12 +63,12 @@ if selected3=="Proyectos":
 
 #pfuente = st.text_input("ingrese el nombre de la fuente")
 
-st.write('<p style="font-size:26px; color:red;">Parametros</p>',
+st.write('<p style="font-size:22px; color:red;">Parametros</p>',
 unsafe_allow_html=True)
 
 
 
-st.write('<p style="font-size:18px; color:black;">Palabras claves : </p>',
+st.write('<p style="font-size:16px; color:black;">Palabras claves : </p>',
 unsafe_allow_html=True)
 st.write(
     """
