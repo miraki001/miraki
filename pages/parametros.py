@@ -68,53 +68,23 @@ unsafe_allow_html=True)
 
 
 
-st.write('<p style="font-size:16px; color:black;">Palabras claves : </p>',
-unsafe_allow_html=True)
 st.write(
     """
-        Son usadas en las busqueda individuales de las paginas, en el caso que la novedades no
+        **Palabras claves : **Son usadas en las busqueda individuales de las paginas, en el caso que la novedades no
         estemos seguros que cumplen todas las condiciones de los temas que queremos ubicar.
         Por ejemplo en las busquedas de noticias en los diarios.
-    """
-)
-st.write('<p style="font-size:18px; color:black;">Palabras excluidas : </p>',
-unsafe_allow_html=True)
-st.write(
-    """
-        son aquellas palabras o frases que hacen excluir la novedad por completo.
+        
+        Palabras excluidas :  son aquellas palabras o frases que hacen excluir la novedad por completo.
 
-    """
-)
-st.write('<p style="font-size:18px; color:black;">Sectores : </p>',
-unsafe_allow_html=True)
+        Sectores : se deben definir los sectores a vigilar.
 
-st.write(
-    """
-       se deben definir los sectores a vigilar.
+        Ejes : Categorias dentro de los sectores que forman parte del árbol de busqueda o árbol tecnólogico.
 
-    """
-)
-st.write('<p style="font-size:18px; color:black;">Ejes : </p>',
-unsafe_allow_html=True)
-st.write(
-    """
-       Categorias dentro de los sectores que forman parte del árbol de busqueda o árbol tecnólogico.
-    """
-)
-st.write('<p style="font-size:18px; color:black;">Palabras por sector : </p>',
-unsafe_allow_html=True)
-st.write(
-    """
-        Se deben defini las palabras claves por eje y por sectores que nos ayudan a clasificar las 
+        Palabras por sector :  Se deben defini las palabras claves por eje y por sectores que nos ayudan a clasificar las 
         novedades según a la categoria que represetan.
         Se deben definir en todos los idiomas en los que se vayan a realizar las busquedas.
-    """
-)
-st.write('<p style="font-size:18px; color:black;">Proyectos : </p>',
-unsafe_allow_html=True)
-st.write(
-    """
-        se pueden definir tanto proyectos u objetos de analisis como se desen.
+
+        Proyectos :  se pueden definir tanto proyectos u objetos de analisis como se desen.
         
         
     """
