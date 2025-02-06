@@ -73,8 +73,7 @@ unsafe_allow_html=True)
 st.write(         
     """
         **Palabras claves :** Son usadas en las busqueda individuales de las paginas, en el caso que la novedades no
-        estemos seguros que cumplen todas las condiciones de los temas que queremos ubicar.
-        
+        estemos seguros que cumplen todas las condiciones de los temas que queremos ubicar.          
         Por ejemplo en las busquedas de noticias en los diarios.
         
         **Palabras excluidas :**  son aquellas palabras o frases que hacen excluir la novedad por completo.
@@ -84,7 +83,7 @@ st.write(
         **Ejes :** Categorias dentro de los sectores que forman parte del árbol de busqueda o árbol tecnólogico.
 
         **Palabras por sector :**  Se deben defini las palabras claves por eje y por sectores que nos ayudan a clasificar las 
-        novedades según a la categoria que represetan.
+        novedades según a la categoria que represetan.  
         Se deben definir en todos los idiomas en los que se vayan a realizar las busquedas.
 
         **Proyectos :**  se pueden definir tanto proyectos u objetos de analisis como se desen.
