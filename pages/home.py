@@ -14,15 +14,16 @@ from nltk.tokenize import word_tokenize
 stemmer = PorterStemmer()  
 
 
-fontuse = """
-@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+streamlit_style = """
+			<style>
+			@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
-body {
-    font-family: 'Tangerine', sans-serif;
-}
-"""
-
-st.markdown(f'<style>{fontuse}</style>', unsafe_allow_html=True )
+			html, body, [class*="css"]  {
+			font-family: 'Roboto', sans-serif;
+			}
+			</style>
+			"""
+st.markdown(streamlit_style, unsafe_allow_html=True)
 
 
 
@@ -36,7 +37,6 @@ st.markdown(
                     background-color: rgba(255, 255, 255, 0.0);  /* Transparent background */
                     background-image: url(http://placekitten.com/200/200);
                     background-position: 80px 80px;
-                    font-family: 'Roboto Condensed', sans-serif;
                     visibility: visible;  /* Ensure the header is visible */
                 }
 
