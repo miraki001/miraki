@@ -53,7 +53,7 @@ st.markdown(
 #st.image("./pages/favicon-32x32.png")
 #vnuri = st.session_state['vnuri']
 #st.session_state.vnuri = 0
-st.subheader("Miraki - Informes")
+st.subheader("Informes")
 
 selected2 = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Parametros','Github' ], 
         icons=['house', 'newspaper' , 'filetype-html','globe-americas','gear','github'] , menu_icon="cast",orientation="horizontal", default_index=0,
