@@ -7,4 +7,3 @@ showSidebarNavigation = false
 toolbarMode = 'minimal'
 [theme] #
 backgroundColor = '#daeeed' 
-font="monospace"
