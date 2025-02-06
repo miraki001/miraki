@@ -9,7 +9,7 @@ from nltk.stem.porter import *
 from gensim.models import word2vec 
 from sklearn.manifold import TSNE 
 from nltk.tokenize import word_tokenize
-from PIL import Image
+
 
 stemmer = PorterStemmer()  
 
@@ -22,7 +22,7 @@ st.markdown(
                 .stAppHeader {
                     background-color: rgba(255, 255, 255, 0.0);  /* Transparent background */
                     background-image: url(http://placekitten.com/200/200);
-                    background-position: 20px 20px;
+                    background-position: 80px 80px;
                     visibility: visible;  /* Ensure the header is visible */
                 }
 
@@ -38,24 +38,16 @@ st.markdown(
 )
 
 st.subheader("Miraki ")
-"""
+
 st.logo(
     "https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/MARCA%20ARRIBA%20PNG.png?alt=media&token=46705f1e-7f86-4d2b-b2ab-a7188a30b379",
     icon_image="https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/MARCA%20ARRIBA%20PNG.png?alt=media&token=46705f1e-7f86-4d2b-b2ab-a7188a30b379",
     size="large",
 )
-"""
 
 
 
-def add_logo(logo_path, width, height):
-    """Read and return a resized logo"""
-    logo = Image.open(logo_path)
-    modified_logo = logo.resize((width, height))
-    return modified_logo
 
-my_logo = add_logo(logo_path="./pages/miraki.png", width=50, height=60)
-st.sidebar.image(my_logo)
 selected2 = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Parametros','Github' ], 
         icons=['house', 'newspaper' , 'filetype-html','globe-americas','gear','github'] , menu_icon="cast",orientation="horizontal", default_index=0,
         styles={
