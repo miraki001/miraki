@@ -36,6 +36,7 @@ st.markdown(
                     background-color: rgba(255, 255, 255, 0.0);  /* Transparent background */
                     background-image: url(http://placekitten.com/200/200);
                     background-position: 80px 80px;
+                    font-family: 'Roboto Condensed', sans-serif;
                     visibility: visible;  /* Ensure the header is visible */
                 }
 
