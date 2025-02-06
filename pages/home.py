@@ -50,7 +50,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.subheader("Miraki ")
+st.subheader(" Vigilancia Tecnologica e Inteligencia Competitiva ")
 
 st.logo(
     "https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/MARCA%20ARRIBA%20PNG.png?alt=media&token=46705f1e-7f86-4d2b-b2ab-a7188a30b379",
@@ -85,15 +85,5 @@ if selected2=="Github":
 
 
 
-#st.header("Miraki")
-
-st.write(
-    """
-        
-        
-        Plataforma de Vigilancia Tecnologica e Inteligencia Competitiva.
-        
-    """
-)
 
 st.image('https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/miraki1.jpeg?alt=media&token=dce154ef-5ac7-4c84-bb3f-f0cc73d0b994')
