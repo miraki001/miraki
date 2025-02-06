@@ -14,6 +14,17 @@ from nltk.tokenize import word_tokenize
 stemmer = PorterStemmer()  
 
 
+fontuse = """
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+"""
+
+st.markdown(f'<style>{fontuse}</style>', unsafe_allow_html=True )
+
+
 
 st.set_page_config(layout="wide",page_title="Miraki")
 
