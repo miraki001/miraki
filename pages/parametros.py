@@ -77,17 +77,17 @@ st.write(
         
         Por ejemplo en las busquedas de noticias en los diarios.
         
-        Palabras excluidas :  son aquellas palabras o frases que hacen excluir la novedad por completo.
+        **Palabras excluidas :**  son aquellas palabras o frases que hacen excluir la novedad por completo.
 
-        Sectores : se deben definir los sectores a vigilar.
+        **Sectores :** se deben definir los sectores a vigilar.
 
-        Ejes : Categorias dentro de los sectores que forman parte del árbol de busqueda o árbol tecnólogico.
+        **Ejes :** Categorias dentro de los sectores que forman parte del árbol de busqueda o árbol tecnólogico.
 
-        Palabras por sector :  Se deben defini las palabras claves por eje y por sectores que nos ayudan a clasificar las 
+        **Palabras por sector :**  Se deben defini las palabras claves por eje y por sectores que nos ayudan a clasificar las 
         novedades según a la categoria que represetan.
         Se deben definir en todos los idiomas en los que se vayan a realizar las busquedas.
 
-        Proyectos :  se pueden definir tanto proyectos u objetos de analisis como se desen.
+        **Proyectos :**  se pueden definir tanto proyectos u objetos de analisis como se desen.
         
         
     """
