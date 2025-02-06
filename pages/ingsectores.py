@@ -22,7 +22,7 @@ st.markdown(
                .block-container {
                     padding-top: 0rem;
                     padding-bottom: 0rem;
-                    padding-left: 2rem;
+                    padding-left: 5rem;
                     padding-right: 2rem;
                 }
         </style>
@@ -30,10 +30,16 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+st.logo(
+    "https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/MARCA%20ARRIBA%20PNG.png?alt=media&token=46705f1e-7f86-4d2b-b2ab-a7188a30b379",
+    icon_image="https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/MARCA%20ARRIBA%20PNG.png?alt=media&token=46705f1e-7f86-4d2b-b2ab-a7188a30b379",
+  size='large',
+)
+
 
 #vnuri = st.session_state['vnuri']
 #st.session_state.vnuri = 0
-st.subheader("Miraki - Sectores")
+st.subheader("Sectores")
 
 
 conn = st.connection("postgresql", type="sql")
