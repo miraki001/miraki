@@ -22,7 +22,7 @@ st.markdown(
                .block-container {
                     padding-top: 0rem;
                     padding-bottom: 0rem;
-                    padding-left: 4rem;
+                    padding-left: 5rem;
                     padding-right: 2rem;
                 }
         </style>
@@ -33,10 +33,11 @@ st.markdown(
 st.logo(
     "https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/android-chrome-192x192.png?alt=media&token=e8d5f6ee-706a-4399-813d-fd82f8b35ec7",
     icon_image="https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/android-chrome-192x192.png?alt=media&token=e8d5f6ee-706a-4399-813d-fd82f8b35ec7",
+    size='large'
 )
 #vnuri = st.session_state['vnuri']
 #st.session_state.vnuri = 0
-st.subheader("Miraki - Fuentes")
+st.subheader("Fuentes")
 
 selected2 = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Parametros','Github' ], 
         icons=['house', 'newspaper' , 'filetype-html','globe-americas','gear','github'] , menu_icon="cast",orientation="horizontal", default_index=0,
