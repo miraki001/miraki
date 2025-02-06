@@ -68,7 +68,7 @@ unsafe_allow_html=True)
 st.write('##')
 
 
-st.write('** Palabras claves : ** Son usadas en las busqueda individuales de las paginas, en el caso que la novedades no estemos seguros que cumplen todas las condiciones de los temas que queremos ubicar. '
+st.write('**Palabras claves :** Son usadas en las busqueda individuales de las paginas, en el caso que la novedades no estemos seguros que cumplen todas las condiciones de los temas que queremos ubicar. '
     """
         ** Palabras claves : ** Son usadas en las busqueda individuales de las paginas, en el caso que la novedades no
         estemos seguros que cumplen todas las condiciones de los temas que queremos ubicar.
