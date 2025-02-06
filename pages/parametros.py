@@ -18,7 +18,7 @@ st.markdown(
                .block-container {
                     padding-top: 0rem;
                     padding-bottom: 0rem;
-                    padding-left: 5rem;
+                    padding-left: 4rem;
                     padding-right: 2rem;
                 }
         </style>
@@ -34,7 +34,7 @@ st.logo(
 
 #vnuri = st.session_state['vnuri']
 #st.session_state.vnuri = 0
-st.subheader("Parametros")
+st.subheader("    Parametros")
 
 selected3 = option_menu(None, ["Home", "Palabras Claves","Excluidas","Sectores","Ejes","PalabrasporSector","Proyectos" ], 
       icons=['house', 'alphabet' ,'x-circle','diagram-3','list-check','alphabet-uppercase','building-fill' ] , menu_icon="cast",orientation="horizontal", default_index = -2,
