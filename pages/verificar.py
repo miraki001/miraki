@@ -271,6 +271,7 @@ if tipobusq == 'rss':
         sep = ximage[:pref-1]
         st.write(sep)
         ll = entry.find(re.compile("^" + sep) )    
+        ll = entry.find(re.compile("^enclosure") )    
         img =  ll['url']
     else:
         if ximage != 'none':
