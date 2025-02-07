@@ -87,4 +87,4 @@ if selected2=="Github":
 
 
 
-st.image('https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/versionq.jpg?alt=media&token=88977418-b0a7-482d-8d1d-b13d49997b78')
+st.image('https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/version2jpg.jpg?alt=media&token=ce85388b-fb0a-4bae-9ecd-cc3645b3055c')
