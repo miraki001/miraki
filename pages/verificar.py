@@ -266,13 +266,15 @@ if tipobusq == 'rss':
     except:
         det = 'No'
     pref = ximage.find('url')
+    img = ''
     if pref > 0 :
         sep = ximage[:pref-1]
         st.write(sep)
         ll = entry.find(re.compile("^" + sep) )    
         img =  ll['url']
     else:
-        img =  entry.find(ximage).text
+        if ximage != 'none':
+            img =  entry.find(ximage).text
 
       
     #vimg =  entry.find(re.compile("^enclosure")) 
