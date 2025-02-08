@@ -416,7 +416,7 @@ if tipobusq != 'json' and tipobusq != 'rss' :
         if detalledict=='S':
           try:
             vdet = p.find_all(sepd,dictdet )    
-            st.write(vdet)  
+            #st.write(vdet)  
             det = vdet[vposdet].text  
           except:
             det = 'no'
@@ -460,7 +460,7 @@ if tipobusq != 'json' and tipobusq != 'rss' :
           eje_nuri = buscareje(df1[0],title + ' ' + det)
           peso = buscarpalabras(df2[0],title + ' ' + det)
           #eje_nuri = st.session_state['vejenuri'] 
-          st.write('Eje')
+          #st.write('Eje')
           st.write(eje_nuri)
           st.write(peso)
           st.session_state['vejenuri'] = 0
