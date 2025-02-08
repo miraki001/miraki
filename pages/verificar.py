@@ -227,7 +227,9 @@ if p1 > 0:
     atr2 = resto[p1+1:len(resto)-1]
     atr2 =atr2.replace('"','')
     #st.write(atr2)
-    dictdet = {atr1:atr2}
+    pattern = re.compile(vatrib2 +".*")
+    #dictdet = {atr1:atr2}
+    dictdet = {atr1:pattern}
     #st.write(dictdet)
 
 
