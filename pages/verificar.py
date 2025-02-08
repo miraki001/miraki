@@ -23,6 +23,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
+CLEANR = re.compile('<.*?>') 
 
 
 def get_driver():
@@ -282,6 +283,7 @@ if tipobusq == 'rss':
       
     #vimg =  entry.find(re.compile("^enclosure")) 
     #img =  vimg['url']  
+    det = re.sub(CLEANR, '', det)
     st.write(tit)
     st.write(det)
     st.write(link)
