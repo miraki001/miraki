@@ -416,12 +416,12 @@ if tipobusq != 'json' and tipobusq != 'rss' :
         det = p.find_all(xdetalle)
         #st.write(det)
         #st.write(det[1].text)
-        st.write(detalledict)
-        st.write(dictdet)
+        #st.write(detalledict)
+        #st.write(dictdet)
         if detalledict=='S':
           try:
             vdet = p.find_all(sepd,dictdet )    
-            st.write(vdet)  
+            #st.write(vdet)  
             det = vdet[vposdet].text  
           except:
             det = 'no'
