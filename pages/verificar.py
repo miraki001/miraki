@@ -360,7 +360,7 @@ if tipobusq != 'json' and tipobusq != 'rss' :
         options.add_argument('--log-level=3')
         driver = get_driver()
         driver.implicitly_wait(10)
-        driver.get('https://pubs.acs.org/action/doSearch?field1=AllField&target=default&targetTab=std&text1=grape&startPage=&sortBy=Earliest')
+        driver.get(url)
         #driver.implicitly_wait(40)
         #wait = WebDriverWait(driver, 10)
         #wait.until(EC.url_contains("code="))
