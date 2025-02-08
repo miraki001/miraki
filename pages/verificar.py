@@ -171,7 +171,7 @@ detalledict = 'N'
 separador = st.session_state['vsepa'] 
 vatrib1 = st.session_state['vatributo1'] 
 vatrib2 = st.session_state['vatributo2'] 
-st.write(separador)
+#st.write(separador)
 xtitulo = st.session_state['vtit'] 
 xlink = st.session_state['vlink'] 
 ximage = st.session_state['vimagen'] 
@@ -187,9 +187,9 @@ vpos = int(posjson)
 vpostit = int(vpostit)
 vposdet = int(vposdet)
 ptipoimg =  st.session_state['vtipoimg'] 
-st.write('atributo 1 ' + vatrib1)
+#st.write('atributo 1 ' + vatrib1)
 p = xtitulo.find("{")
-st.write(vpos)
+#st.write(vpos)
 #   esto es para el caso del titulo que debe ser un diccionario
 if p > 0:
     sep = xtitulo[:p-2]
@@ -207,7 +207,7 @@ if p > 0:
     atr2 =atr2.replace('"','')
     #st.write(atr2)
     dictitu = {atr1:atr2}
-    st.write(dictitu)
+    #st.write(dictitu)
 
 p1 = xdetalle.find("{")
 #st.write(p)
@@ -216,19 +216,19 @@ if p1 > 0:
     sep1 = xdetalle[:p1-2]
     detalledict = 'S'
     sepd =sep1.replace('"','')
-    st.write(sepd)
+    #st.write(sepd)
     resto = xdetalle[p1:100]
     #st.write(resto)
     p1 = resto.find(":")
     atr1 = resto[:p1]
     atr1 = atr1[1:100]
     atr1 =atr1.replace('"','')
-    st.write(atr1)
+    #st.write(atr1)
     atr2 = resto[p1+1:len(resto)-1]
     atr2 =atr2.replace('"','')
     #st.write(atr2)
     dictdet = {atr1:atr2}
-    st.write(dictdet)
+    #st.write(dictdet)
 
 
 
@@ -243,7 +243,7 @@ if vatrib1 != '':
   pattern = re.compile(vatrib2 +".*")
   newv = {vatrib1:pattern}
   #newv = {vatrib1:vatrib2}
-st.write(newv)
+#st.write(newv)
 #st.write('abritubo 1 otra vez' + vatrib1)
 
 
@@ -373,7 +373,7 @@ if tipobusq != 'json' and tipobusq != 'rss' :
     else:
         response = requests.get(url,headers=headers)
         ret = requests.get(url, cookies=cookies ,headers=headers)
-        st.write(response)
+        #st.write(response)
         html_content = response.text
         soup = BeautifulSoup(html_content, 'lxml')
     #st.write(soup)
