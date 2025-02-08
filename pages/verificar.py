@@ -417,6 +417,7 @@ if tipobusq != 'json' and tipobusq != 'rss' :
         #st.write(det)
         #st.write(det[1].text)
         st.write(detalledict)
+        st.write(dictdet)
         if detalledict=='S':
           try:
             vdet = p.find_all(sepd,dictdet )    
