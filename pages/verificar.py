@@ -414,7 +414,7 @@ if tipobusq != 'json' and tipobusq != 'rss' :
             except:
                 title = p.find(xtitulo).text
         det = p.find_all(xdetalle)
-        #st.write(det)
+        st.write(det)
         #st.write(det[1].text)
         #st.write(detalledict)
         #st.write(dictdet)
