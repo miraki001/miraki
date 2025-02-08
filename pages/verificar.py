@@ -367,7 +367,7 @@ if tipobusq != 'json' and tipobusq != 'rss' :
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
         time.sleep(1)        
         #WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "id_of_element_present_in_all_situation")))
-        #st.write(driver.page_source)
+        st.write(driver.page_source)
         soup = BeautifulSoup(driver.page_source, 'lxml')
         st.write(soup)
     else:
