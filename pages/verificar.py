@@ -285,7 +285,7 @@ if tipobusq == 'rss':
     #img =  vimg['url']  
     det = re.sub(CLEANR, '', det)
     
-    det =  det.encode('latin-1')
+    #det =  det.encode('latin-1')
     st.write(tit)
     st.write(det)
     st.write(link)
