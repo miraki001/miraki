@@ -228,8 +228,8 @@ if p1 > 0:
     atr2 =atr2.replace('"','')
     #st.write(atr2)
     pattern = re.compile(atr2 +".*")
-    #dictdet = {atr1:atr2}
-    dictdet = {atr1:pattern}
+    dictdet = {atr1:atr2}
+    #dictdet = {atr1:pattern}
     #st.write(dictdet)
 
 
