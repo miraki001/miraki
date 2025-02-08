@@ -403,6 +403,7 @@ if tipobusq != 'json' and tipobusq != 'rss' :
         if titulodict == 'S':
             try:
               vtitle = p.find_all(sep,dictitu )  
+              st.write(vtitle)  
               title = vtitle[vpostit].text
             except:
               title ='no lo encontro'
@@ -413,12 +414,12 @@ if tipobusq != 'json' and tipobusq != 'rss' :
             except:
                 title = p.find(xtitulo).text
         det = p.find_all(xdetalle)
-        #st.write(det)
+        st.write(det)
         #st.write(det[1].text)
         if detalledict=='S':
           try:
             vdet = p.find_all(sepd,dictdet )    
-            #st.write(vdet)  
+            st.write(vdet)  
             det = vdet[vposdet].text  
           except:
             det = 'no'
