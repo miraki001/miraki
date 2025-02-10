@@ -67,7 +67,7 @@ def ingresar():
     conn = st.connection("postgresql", type="sql")
     with conn.session as session:
         actualiza = "insert into fuentes_py (nuri, fuente, activa, xpath_titulo, descrip, proyecto_nuri,pais,separador,atributo1,atributo2,xpath_detalle,xpath_link,xpath_image,tipo,busqueda_pers,idioma,cod_pais,tipo_busq,fuente_org,posjson,urllink,postit,posdet )"
-        actualiza = actualiza + " values (  nextval('fuente_py_seq'),:fuente, :activa, :xpath_titulo ,:desc, 1,:pais,:separador,:atributo1,:atributo2,:xpath_detalle,:xpath_link,:xpath_image,:tipo,:busqueda_pers,:idioma,:cod_pais,:tipo_busq,:fuente_org,:posjson,:urllink,:postit,:posdet  );"
+        actualiza = actualiza + " values (  nextval('fuentes_py_seq'),:fuente, :activa, :xpath_titulo ,:desc, 1,:pais,:separador,:atributo1,:atributo2,:xpath_detalle,:xpath_link,:xpath_image,:tipo,:busqueda_pers,:idioma,:cod_pais,:tipo_busq,:fuente_org,:posjson,:urllink,:postit,:posdet  );"
         session.execute(text(actualiza), {"fuente": vurl,"activa" :activa,"xpath_titulo" :xpath_tit,"desc" :vtitle,"pais" :pais,"separador" :separador,"atributo1" :atributo1,"atributo2" :atributo2,"xpath_detalle" :xpath_det, "xpath_link" :xpath_link,"xpath_image" :xpath_image,"tipo" :tipo,"busqueda_pers" :busqueda, "idioma" :idioma,"cod_pais" :codigo ,"tipo_busq" :tipobus ,"fuente_org" :fuenteorg,"posjson" :posjson, "urllink" :urllink,"postit" :postit,"posdet" :posdet})
       
         session.commit()    
