@@ -418,7 +418,10 @@ if tipobusq != 'json' and tipobusq != 'rss' :
                 vtitle = p.find_all(xtitulo)
                 title = vtitle[vpostit].text
             except:
-                title = p.find(xtitulo).text
+                try:
+                    title = p.find(xtitulo).text
+                except:
+                    title = ''
         det = p.find_all(xdetalle)
         #st.write(det)
         #st.write(det[1].text)
