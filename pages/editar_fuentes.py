@@ -121,7 +121,7 @@ if tipoe == 'Editar':
     vpostit = int(vpostit)
     vposdet = int(vposdet)
 
-if tipo == 'Ingresar':
+if tipoe == 'Ingresar':
     fuente = ''
     pais = ''
     activa = ''
