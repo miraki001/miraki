@@ -285,7 +285,7 @@ if tipobusq == 'rss':
       
     #vimg =  entry.find(re.compile("^enclosure")) 
     #img =  vimg['url']  
-    det = re.sub(CLEANR, '', det)
+    #det = re.sub(CLEANR, '', det)
     
     #det =  det.encode('latin-1')
     st.write(tit)
