@@ -379,7 +379,7 @@ if tipobusq != 'json' and tipobusq != 'rss' :
     else:
         response = requests.get(url,headers=headers)
         ret = requests.get(url, cookies=cookies ,headers=headers)
-        #st.write(response)
+        st.write(response)
         html_content = response.text
         soup = BeautifulSoup(html_content, 'lxml')
     #st.write(soup)
