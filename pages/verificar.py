@@ -302,6 +302,32 @@ if tipobusq== 'json':
         "Hm_lvt_7cd4710f721b473263eed1f0840391b4": "1548140525",
         "x5sec":"7b22617365727665722d6c617a6164613b32223a223832333339343739626466613939303562613535386138333266383365326132434c4b516e65494645495474764a322b706f6d6f6941453d227d", }
 
+
+    url = vurl
+    cookies = {
+        "Hm_lpvt_7cd4710f721b473263eed1f0840391b4": "1548175412",
+        "Hm_lvt_7cd4710f721b473263eed1f0840391b4": "1548140525",
+        "x5sec":"7b22617365727665722d6c617a6164613b32223a223832333339343739626466613939303562613535386138333266383365326132434c4b516e65494645495474764a322b706f6d6f6941453d227d", }
+  
+    options = Options()
+    options.add_argument('--headless')
+    options.add_argument('--log-level=3')
+    driver = get_driver()
+    driver.implicitly_wait(10)
+    driver.get(url)
+        #driver.implicitly_wait(40)
+        #wait = WebDriverWait(driver, 10)
+        #wait.until(EC.url_contains("code="))
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
+    time.sleep(1)        
+        #WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "id_of_element_present_in_all_situation")))
+    st.write(driver.page_source)
+    soup = BeautifulSoup(driver.page_source, 'lxml')
+    st.write(soup)
+
+    
+
+    
     ret = requests.get(my_url, cookies=cookies)
     page_soup = BeautifulSoup(ret.text, 'lxml')
     r = requests.get(my_url)
