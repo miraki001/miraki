@@ -254,6 +254,7 @@ if vatrib1 != '':
 
 if tipobusq == 'rss':
   resp = requests.get(vurl)
+  st.write(resp)  
   #soup = BeautifulSoup(resp.text, 'html.parser')
   soup = BeautifulSoup(resp.text, 'xml')
   pp = soup.find_all(separador)
