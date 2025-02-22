@@ -63,15 +63,15 @@ selected71 = option_menu(None, ["Palabras Claves por Sector", 'Ingresar','Editar
 )
 #st.subheader("Palabras Claves")
 
-if selected7=="Volver":
+if selected71=="Volver":
     st.switch_page("./pages/parametros.py") 
-if selected7=="Ingresar":
+if selected71=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
     st.switch_page("./pages/ingpalabraclavesSec.py")   
-if selected7=="Editar":
+if selected71=="Editar":
     st.session_state['vTipo'] = 'Editar'
     st.switch_page("./pages/ingpalabraclavesSec.py") 
-if selected7=="Borrar":
+if selected71=="Borrar":
     st.session_state['vTipo'] = 'Borrar'
     borrar()
 
