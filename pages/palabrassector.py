@@ -51,7 +51,7 @@ def borrar():
   ppalabra = ''
   st.switch_page("./pages/parametros.py")
 
-selected71 = option_menu(None, ["Palabras Claves por Sector", 'Ingresar','Editar','Borrar','Volver'], 
+selected71 = option_menu(None, ["Pal. Claves por Sector", 'Ingresar','Editar','Borrar','Volver'], 
       icons=['alphabet', 'plus' ,'pencil-square','eraser','house'] , menu_icon="cast",orientation="horizontal", default_index=0,
                 
       styles={
