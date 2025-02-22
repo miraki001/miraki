@@ -35,3 +35,48 @@ st.logo(
 )
 
 st.subheader("Palabras claves por Sector")
+
+def borrar():
+  conn = st.connection("postgresql", type="sql")
+  tpalabra = st.session_state['vpalabra']
+  st.write(tpalabra)
+  with conn.session as session:
+    actualiza = 'delete from palabras_a_buscar   where palabra = :palabra ;'
+    session.execute(text(actualiza), {"palabra": tpalabra})
+    #session.execute(text(actualiza) )
+    session.commit()
+  #st.info("la palabra ha sido borrada") 
+  message = st.chat_message("assistant")
+  message.write("la palabra ha sido borrada")
+  ppalabra = ''
+  st.switch_page("./pages/parametros.py")
+
+selected71 = option_menu(None, ["Palabras Claves por Sector", 'Ingresar','Editar','Borrar','Volver'], 
+      icons=['alphabet', 'plus' ,'pencil-square','eraser','house'] , menu_icon="cast",orientation="horizontal", default_index=0,
+                
+      styles={
+        "container": {"padding": "0!important", "background-color": "#604283"},
+        "icon": {"color": "orange", "font-size": "14px"}, 
+        "nav-link": {"color": "white", "font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#B3D3F0"},
+        "nav-link-selected": {"background-color": "#604283"}
+      }
+)
+#st.subheader("Palabras Claves")
+
+if selected7=="Volver":
+    st.switch_page("./pages/parametros.py") 
+if selected7=="Ingresar":
+    st.session_state['vTipo'] = 'Ingresar'
+    st.switch_page("./pages/ingpalabraclavesSec.py")   
+if selected7=="Editar":
+    st.session_state['vTipo'] = 'Editar'
+    st.switch_page("./pages/ingpalabraclavesSec.py") 
+if selected7=="Borrar":
+    st.session_state['vTipo'] = 'Borrar'
+    borrar()
+
+tnuri = 0
+vtitulo= ''
+vdetalle = ''
+vlink = ''
+vimagen = ''
