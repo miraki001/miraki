@@ -80,3 +80,57 @@ vtitulo= ''
 vdetalle = ''
 vlink = ''
 vimagen = ''
+
+conn = st.connection("postgresql", type="sql")
+qq = 'select p.*,e.eje,s.sector from palabrasclaves p,ejestemas e,sectores s where e.nuri = p.eje_nuri and   s.nuri = e.sector_nuri and   s.proyecto_nuri = 1  ;'
+df1 = conn.query(qq, ttl="0"),
+df = df1[0]
+
+
+
+ppalabra = st.text_input("ingrese el nombre de la palabra")
+
+if ppalabra:
+    mask = df.applymap(lambda x: ppalabra in str(x).lower()).any(axis=1)
+    df = df[mask]
+
+
+
+colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+config = {
+    'sector' : st.column_config.TextColumn('Sector', required=True),
+    'eje' : st.column_config.TextColumn('Eje', required=True),
+    'palabra_es' : st.column_config.TextColumn('palabra en es', required=True),
+    'palabra_en' : st.column_config.TextColumn('palabra en en', required=True),
+
+    
+}
+#result = st.data_editor(df, column_config = config, num_rows='dynamic')
+def dataframe_with_selections(df):
+                    df_with_selections = df.copy()
+                    df_with_selections.insert(0, "Selec", False)
+                    # Get dataframe row-selections from user with st.data_editor
+                    edited_df = st.data_editor(
+                        df_with_selections,
+                        hide_index=True,
+                        column_config=
+                        {"Select": st.column_config.CheckboxColumn(required=True),
+                        'url' : st.column_config.LinkColumn('palabra_es'),      
+                        },
+                        disabled=df.columns,
+#                        num_rows="dynamic",
+                    )
+
+                    # Filter the dataframe using the temporary column, then drop the column
+                    selected_rows = edited_df[edited_df.Selec]
+                    return selected_rows.drop('Selec', axis=1)
+                  
+selection = dataframe_with_selections(df)
+
+cnt = len(selection)
+if cnt > 0:
+            vpalabra = selection.to_string(columns=['palabra'], header=False, index=False)
+            vpeso = selection.to_string(columns=['peso'], header=False, index=False)
+            st.write(vpalabra)
+            st.session_state['vpalabra'] = selection.to_string(columns=['palabra'], header=False, index=False)
+            st.session_state['vpeso'] = vpeso
