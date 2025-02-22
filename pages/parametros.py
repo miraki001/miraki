@@ -58,7 +58,7 @@ if selected3=="Sectores":
 if selected3=="Ejes":
     st.switch_page("./pages/ejes.py")
 if selected3=="Palabras por Sector":
-    st.switch_page("./pages/ejes.py")
+    st.switch_page("./pages/palabrassector.py")
 if selected3=="Proyectos":
     st.switch_page("./pages/proyectos.py")
 
