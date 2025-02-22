@@ -34,4 +34,4 @@ st.logo(
   size='large',
 )
 
-st.subheader("Palabras claves")
+st.subheader("Palabras claves por Sector")
