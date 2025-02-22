@@ -36,7 +36,7 @@ st.logo(
 #st.session_state.vnuri = 0
 st.subheader("    Parametros")
 
-selected3 = option_menu(None, ["Home", "Palabras Claves","Excluidas","Sectores","Ejes","Palabras por Sector","Proyectos" ], 
+selected3 = option_menu(None, ["Parametros", "Palabras Claves","Excluidas","Sectores","Ejes","Palabras por Sector","Proyectos" ], 
       icons=['house', 'alphabet' ,'x-circle','diagram-3','list-check','alphabet-uppercase','building-fill' ] , menu_icon="cast",orientation="horizontal", default_index = 0,
                 
       styles={
