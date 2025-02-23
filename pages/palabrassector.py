@@ -38,11 +38,11 @@ st.subheader("Palabras claves por Sector")
 
 def borrar():
   conn = st.connection("postgresql", type="sql")
-  tpalabra = st.session_state['vpalabra']
+  tnuri = st.session_state['vnuri']
   st.write(tpalabra)
   with conn.session as session:
-    actualiza = 'delete from palabras_a_buscar   where palabra = :palabra ;'
-    session.execute(text(actualiza), {"palabra": tpalabra})
+    actualiza = 'delete from palabrasclaves   where nuri = :nuri ;'
+    session.execute(text(actualiza), {"nuri": tnuri})
     #session.execute(text(actualiza) )
     session.commit()
   #st.info("la palabra ha sido borrada") 
@@ -82,7 +82,7 @@ vlink = ''
 vimagen = ''
 
 conn = st.connection("postgresql", type="sql")
-qq = 'select p.*,e.eje,s.sector from palabrasclaves p,ejestemas e,sectores s where e.nuri = p.eje_nuri and   s.nuri = e.sector_nuri and   s.proyecto_nuri = 1  ;'
+qq = 'select e.eje,s.sector,p.* from palabrasclaves p,ejestemas e,sectores s where e.nuri = p.eje_nuri and   s.nuri = e.sector_nuri and   s.proyecto_nuri = 1  ;'
 df1 = conn.query(qq, ttl="0"),
 df = df1[0]
 
@@ -132,5 +132,5 @@ if cnt > 0:
             vpalabra = selection.to_string(columns=['palabra'], header=False, index=False)
             vpeso = selection.to_string(columns=['peso'], header=False, index=False)
             st.write(vpalabra)
-            st.session_state['vpalabra'] = selection.to_string(columns=['palabra'], header=False, index=False)
+            st.session_state['vnuri'] = selection.to_string(columns=['nuri'], header=False, index=False)
             st.session_state['vpeso'] = vpeso
