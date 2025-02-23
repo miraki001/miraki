@@ -103,7 +103,7 @@ config = {
     'palabra_es' : st.column_config.TextColumn('palabra en es', required=True),
     'palabra_en' : st.column_config.TextColumn('palabra en en', required=True),
     'eje_nuri': None,
-    'nuri'=None,
+    'nuri':None,
 
     
 }
