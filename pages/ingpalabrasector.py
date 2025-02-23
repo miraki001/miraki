@@ -87,6 +87,6 @@ if col1.button("Grabar" ,  type='primary'):
         actualizar()
     if tipo == 'Ingresar':
         ingresar()
-    st.switch_page("./pages/palabrasclaves.py")
+    st.switch_page("./pages/palabrassector.py")
 if col2.button("Cancelar"):
-    st.switch_page("./pages/palabrasclaves.py")
+    st.switch_page("./pages/palabrassector.py")
