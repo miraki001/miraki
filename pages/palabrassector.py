@@ -67,10 +67,10 @@ if selected71=="Volver":
     st.switch_page("./pages/parametros.py") 
 if selected71=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
-    st.switch_page("./pages/ingpalabraclavesSec.py")   
+    st.switch_page("./pages/ingpalabrasector.py")   
 if selected71=="Editar":
     st.session_state['vTipo'] = 'Editar'
-    st.switch_page("./pages/ingpalabraclavesSec.py") 
+    st.switch_page("./pages/ingpalabrasector.py") 
 if selected71=="Borrar":
     st.session_state['vTipo'] = 'Borrar'
     borrar()
