@@ -131,7 +131,7 @@ selection = dataframe_with_selections(df)
 
 cnt = len(selection)
 if cnt > 0:
-            vpalabra = selection.to_string(columns=['palabra'], header=False, index=False)
+            vpalabra = selection.to_string(columns=['palabra_es'], header=False, index=False)
             vpeso = selection.to_string(columns=['peso'], header=False, index=False)
             st.write(vpalabra)
             st.session_state['vnuri'] = selection.to_string(columns=['nuri'], header=False, index=False)
