@@ -66,12 +66,12 @@ tipo = st.session_state['vTipo']
 if tipo == 'Editar':
     tpalabraes = st.session_state['vpalabraes'] 
     tpalabraen = st.session_state['vpalabraen'] 
-    tpeso = int(tpeso)
+   
 
 if tipo == 'Ingresar':
     tpalabraes = ''
     tpalabraen = ''
-    tpeso = 0
+   
 
 
 vpalabraes = st.text_input("Palabra en Español", tpalabraes)
