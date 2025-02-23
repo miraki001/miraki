@@ -64,18 +64,20 @@ def ingresar():
 
 tipo = st.session_state['vTipo'] 
 if tipo == 'Editar':
-    tpalabra = st.session_state['vpalabra'] 
-    tpeso = st.session_state['vpeso'] 
+    tpalabraes = st.session_state['vpalabraes'] 
+    tpalabraen = st.session_state['vpalabraen'] 
     tpeso = int(tpeso)
 
 if tipo == 'Ingresar':
-    tpalabra = ''
+    tpalabraes = ''
+    tpalabraen = ''
     tpeso = 0
 
 
-vpalabra = st.text_input("Palabra", tpalabra)
+vpalabraes = st.text_input("Palabra en Español", tpalabraes)
+vpalabraen = st.text_input("Palabra en Ingles", tpalabraen)
 
-vpeso = st.number_input("Peso", tpeso)
+
 
 
 
