@@ -100,8 +100,8 @@ colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 config = {
     'sector' : st.column_config.TextColumn('Sector', required=True),
     'eje' : st.column_config.TextColumn('Eje', required=True),
-    'palabra_es' : st.column_config.TextColumn('palabra en es', required=True),
-    'palabra_en' : st.column_config.TextColumn('palabra en en', required=True),
+    'palabraclave_es' : st.column_config.TextColumn('palabra en es', required=True),
+    'palabraclave_en' : st.column_config.TextColumn('palabra en en', required=True),
     'eje_nuri' : None,
     'nuri' : None,
 
@@ -131,9 +131,9 @@ selection = dataframe_with_selections(df)
 
 cnt = len(selection)
 if cnt > 0:
-            vpalabra = selection.to_string(columns=['palabra_es'], header=False, index=False)
+            vpalabra = selection.to_string(columns=['palabraclave_es'], header=False, index=False)
             vpeso = selection.to_string(columns=['peso'], header=False, index=False)
             st.write(vpalabra)
             st.session_state['vnuri'] = selection.to_string(columns=['nuri'], header=False, index=False)
-            st.session_state['vpalabraes'] = selection.to_string(columns=['palabra_es'], header=False, index=False)
-            st.session_state['vpalabraen'] = selection.to_string(columns=['palabra_en'], header=False, index=False)
+            st.session_state['vpalabraes'] = selection.to_string(columns=['palabraclave_es'], header=False, index=False)
+            st.session_state['vpalabraen'] = selection.to_string(columns=['palabraclave_en'], header=False, index=False)
