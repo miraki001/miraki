@@ -102,7 +102,7 @@ with col[0]:
   
 with col[1]:
   
-  veje = st.selectbox('Categoria ', df.eje ,index= pos)
+  veje = st.selectbox('Categoria ', df.eje ,index= 0)
   st.session_state['veje'] = veje
   st.write('')
   st.write('')
