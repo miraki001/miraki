@@ -99,7 +99,7 @@ if selected241=="Volver":
     st.switch_page("miraki.py") 
 if selected241=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
-    st.switch_page("./pages/editarnovedades.py")   
+    st.switch_page("./pages/ingnovedades.py")   
 if selected241=="Editar":
     st.session_state['vTipo'] = 'Editar'
     st.switch_page("./pages/editarnovedades.py") 
