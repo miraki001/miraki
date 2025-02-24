@@ -66,7 +66,7 @@ ttitulo = ''
 def ingresar():
 
     eje =  st.session_state['veje'] 
-    fuente =  st.session_state['vfuente'] =
+    fuente =  st.session_state['vfuente'] 
     vquery = "select nuri from ejestemas where eje = :eje  ;"
     df4 = conn.query(vquery, ttl="0",params={"eje": veje}),
     veje_nuri = df4[0].to_string(columns=['nuri'], header=False, index=False)
