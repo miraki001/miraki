@@ -64,11 +64,14 @@ ttitulo = ''
 
 
 def ingresar():
+    eje = st.session_state['veje_nuri']
+    fuente_nuri = st.session_state['vfuente_nuri']
     conn = st.connection("postgresql", type="sql")
+    fuente = st.session_state['vfuente']
     with conn.session as session:
         actualiza = "insert into novedades (nuri,proyecto_nuri,fuente,titulo,detalle,titulo_es,detalle_es,link,imagem,fecha,nro_reporte,eje_nuri,fuente_nuri)"
         actualiza = actualiza + " values (nextval('novedades_seq'),1,:fuente,:titulo,:detalle,:titulo_es,:detalle_es,:link,:imagem,current_date,0,:eje_nuri,:fuente_nuri) ;"
-        session.execute(text(actualiza), {"proyecto_nuri": vpro_nuri,"sector": vsector,"color": vcolor})
+        session.execute(text(actualiza), {"fuente": fuente,"titulo": vtitle_es,"detalle": vdet_es,"titulo_es":vtitle_es,"detalle_es":vdet_es,"link": vlink,"imagen": vimg,"eje_nuri" : eje,"fuente_nuri" : fuente_nuri  })
         session.commit()
 
 
