@@ -55,10 +55,11 @@ df1 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
 df = df1[0]
 
 
-#pos = df[df['eje']==veje1].index.item()
-#st.write(pos)
+df11 = conn.query('select nuri,descrip from fuentes_py ;', ttl="0"),
+df2 = df12[0]
+
+
 tnuri = 0
-#st.write(tnuri)
 ttitulo = ''
 
 
@@ -66,8 +67,8 @@ ttitulo = ''
 def ingresar():
     conn = st.connection("postgresql", type="sql")
     with conn.session as session:
-        actualiza = "insert into novedades (nuri,proyecto_nuri,sector,color)"
-        actualiza = actualiza + " values (nextval('sectores_seq'),:proyecto_nuri,:sector,:color) ;"
+        actualiza = "insert into novedades (nuri,proyecto_nuri,fuente,titulo,detalle,titulo_es,detalle_es,link,imagem,fecha,nro_reporte,eje_nuri,fuente_nuri)"
+        actualiza = actualiza + " values (nextval('novedades_seq'),1,:fuente,:titulo,:detalle,:titulo_es,:detalle_es,:link,:imagem,current_date,0,:eje_nuri,:fuente_nuri) ;"
         session.execute(text(actualiza), {"proyecto_nuri": vpro_nuri,"sector": vsector,"color": vcolor})
         session.commit()
 
@@ -104,6 +105,10 @@ with col[1]:
   
   veje = st.selectbox('Categoria ', df.eje ,index= 0)
   st.session_state['veje'] = veje
+
+  vfuente = st.selectbox('Fuente ', df2.descrip ,index= 0)
+  st.session_state['vfuente'] = veje
+
   st.write('')
   st.write('')
   #st.write(veje)
