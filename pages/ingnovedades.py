@@ -56,8 +56,7 @@ df = df1[0]
 
 
 df11 = conn.query('select nuri,descrip from fuentes_py ;', ttl="0"),
-df2 = df11[0].unique()
-
+df2 = df11[0]
 
 tnuri = 0
 ttitulo = ''
@@ -106,7 +105,7 @@ with col[1]:
   veje = st.selectbox('Categoria ', df.eje ,index= 0)
   st.session_state['veje'] = veje
 
-  vfuente = st.selectbox('Fuente ', df2.descrip ,index= 0)
+  vfuente = st.selectbox('Fuente ', df2['descrip'].unique() ,index= 0)
   st.session_state['vfuente'] = veje
 
   st.write('')
