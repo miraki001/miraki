@@ -64,8 +64,18 @@ ttitulo = ''
 
 
 def ingresar():
-    eje = st.session_state['veje_nuri']
-    fuente_nuri = st.session_state['vfuente_nuri']
+
+    eje =  st.session_state['veje'] 
+    fuente =  st.session_state['vfuente'] =
+    vquery = "select nuri from ejestemas where eje = :eje  ;"
+    df4 = conn.query(vquery, ttl="0",params={"eje": veje}),
+    veje_nuri = df4[0].to_string(columns=['nuri'], header=False, index=False)
+
+    vquery = "select nuri from fuentes_py where descrip = : fuente  ;"
+    df44 = conn.query(vquery, ttl="0",params={"fuente": vfuente}),
+    vfuente_nuri = df44[0].to_string(columns=['nuri'], header=False, index=False)
+
+  
     conn = st.connection("postgresql", type="sql")
     fuente = st.session_state['vfuente']
     with conn.session as session:
@@ -112,15 +122,6 @@ with col[1]:
   st.session_state['vfuente'] = vfuente
 
 
-  vquery = "select nuri from ejestemas where eje = :eje  ;"
-  df4 = conn.query(vquery, ttl="0",params={"eje": veje}),
-  veje_nuri = df4[0].to_string(columns=['nuri'], header=False, index=False)
-  st.session_state['veje_nuri'] = veje_nuri
-
-  vquery = "select nuri from fuentes_py where descrip = : fuente  ;"
-  df44 = conn.query(vquery, ttl="0",params={"fuente": vfuente}),
-  vfuente_nuri = df44[0].to_string(columns=['nuri'], header=False, index=False)
-  st.session_state['vfuente_nuri'] = vfuente_nuri
 
 
   st.write('')
