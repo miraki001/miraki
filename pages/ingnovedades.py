@@ -118,8 +118,8 @@ with col[1]:
   st.session_state['veje_nuri'] = veje_nuri
 
   vquery = "select nuri from fuentes_py where descrip = : fuente  ;"
-  df4 = conn.query(vquery, ttl="0",params={"fuente": vfuente}),
-  vfuente_nuri = df4[0].to_string(columns=['nuri'], header=False, index=False)
+  df44 = conn.query(vquery, ttl="0",params={"fuente": vfuente}),
+  vfuente_nuri = df44[0].to_string(columns=['nuri'], header=False, index=False)
   st.session_state['vfuente_nuri'] = vfuente_nuri
 
 
