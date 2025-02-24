@@ -41,9 +41,9 @@ st.logo(
 st.subheader("Novedades")
 
 
-vtitulo = st.session_state['vtitulo']
-veje1 = st.session_state['veje']
-votro_nuri = st.session_state['vnuri1']
+vtitulo = ''
+veje1 = ''
+votro_nuri =0
 #st.write(veje1)
 #st.write(votro_nuri)
 conn = st.connection("postgresql", type="sql")
@@ -57,33 +57,11 @@ df = df1[0]
 
 pos = df[df['eje']==veje1].index.item()
 #st.write(pos)
-tnuri = st.session_state['vnuri1']
+tnuri = 0
 #st.write(tnuri)
-ttitulo = st.session_state['vtitulo']
+ttitulo = ''
 
-def actualizar():
-    conn1 = st.connection("postgresql", type="sql")
-    veje1 = st.session_state['veje']
-    st.write(veje1)
-    vquery = "select nuri,eje from ejestemas where eje = :eje  ;"
-    
-  
-    
-    df2 = conn1.query(vquery, ttl="0",params={"eje": veje1}),
-    ejenuri = df2[0].to_string(columns=['nuri'], header=False, index=False)
 
-  
-    with conn.session as session:
-        actualiza = "UPDATE novedades SET titulo = :titulo"
-        actualiza = actualiza + " ,detalle = :detalle "
-        actualiza = actualiza + " ,link = :link "
-        actualiza = actualiza + " ,titulo_es = :titulo_es "
-        actualiza = actualiza + " ,detalle_es = :detalle_es "
-        actualiza = actualiza + " ,imagen = :imagen "
-        actualiza = actualiza + " ,ejenuri = :ejenuri "
-        actualiza = actualiza + " WHERE nuri = :nuri ;"
-        session.execute(text(actualiza), {"titulo": vtitle,"detalle": vdet,"titulo_es": vtitle_es,"detalle_es": vdet_es, "link": vlink,"imagen": vimg,"ejenrui": ejenuri, "nuri": tnuri})
-        session.commit()
 
 def ingresar():
     conn = st.connection("postgresql", type="sql")
@@ -93,13 +71,6 @@ def ingresar():
         session.execute(text(actualiza), {"proyecto_nuri": vpro_nuri,"sector": vsector,"color": vcolor})
         session.commit()
 
-
-def borrar():
-    conn = st.connection("postgresql", type="sql")
-    with conn.session as session:
-      actualiza = 'delete from novedades where nuri = ' +  tnuri
-      session.execute(text(actualiza) )
-      session.commit()
 
 
 st.markdown("""
@@ -119,18 +90,18 @@ col = st.columns((14.5, 4.5, 2), gap='medium')
 
 
 with col[0]:
-  vtitle = st.text_input("**Titulo**", ttitulo)
-  vtitle_es = st.text_input("**Titulo en Castellano** ", st.session_state['vtitulo_es'])
+  
+  vtitle_es = st.text_input("**Titulo en Castellano** ", '')
 
-  vdet= st.text_input("**Detalle**", st.session_state['vdetalle'])
-  vdet_es = st.text_input(":red[Detalle en Castellano] ", st.session_state['vdetalle_es'])
+  
+  vdet_es = st.text_input(":red[Detalle en Castellano] ", '')
 
-  vlink = st.text_input("**Link** ", st.session_state['vlink'])
-  vimg = st.text_input("**Imagen** ", st.session_state['vimagen'])
+  vlink = st.text_input("**Link** ", '')
+  vimg = st.text_input("**Imagen** ",'')
 
   
 with col[1]:
-  #veje = st.selectbox('Categoria ', df.eje , df.columns.tolist().index('nuri'),placeholder="Enoturismo")
+  
   veje = st.selectbox('Categoria ', df.eje ,index= pos)
   st.session_state['veje'] = veje
   st.write('')
