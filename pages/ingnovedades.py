@@ -56,7 +56,7 @@ df = df1[0]
 
 
 df11 = conn.query('select nuri,descrip from fuentes_py ;', ttl="0"),
-df2 = df12[0]
+df2 = df11[0]
 
 
 tnuri = 0
