@@ -53,10 +53,11 @@ st.subheader("Palabras Claves")
 def actualizar():
     conn = st.connection("postgresql", type="sql")
     with conn.session as session:
-        actualiza = "UPDATE palabras_a_buscar SET palabra = :palabra"
-        actualiza = actualiza + " ,peso = :peso "
-        actualiza = actualiza + " WHERE palabra= :palabra ;"
-        session.execute(text(actualiza), {"palabra": vpalabra,"peso": vpeso})
+        actualiza = "UPDATE palabrasclaves SET eje_nuri = :eje_nuri"
+        actualiza = actualiza + " ,palabraclave_es = :palabraes "
+        actualiza = actualiza + " ,palabraclave_esn= :palabraen "
+        actualiza = actualiza + " WHERE nuri = :nuri ;"
+        session.execute(text(actualiza), {"eje_nuri": veje_nuri,"palabraes": vpalabraes,"palabraen" : vpalabraen , "nuri" : vnuri})
         session.commit()
 
 def ingresar():
@@ -72,6 +73,7 @@ tipo = st.session_state['vTipo']
 if tipo == 'Editar':
     tpalabraes = st.session_state['vpalabraes'] 
     tpalabraen = st.session_state['vpalabraen'] 
+    vnuri =  st.session_state['vpalabraen'] 
    
 
 if tipo == 'Ingresar':
