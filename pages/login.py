@@ -44,6 +44,12 @@ vclave = st.text_input("ingrese su Contraseña")
 col1, col2, = st.columns(2)
 
 if col1.button("Ingresar" ,  type='primary'):
+    conn = st.connection("postgresql", type="sql")
+    df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
+    df = df1[0]
+
+
+  
     st.switch_page("./pages/palabrassector.py")
 if col2.button("Salir"):
     st.switch_page("./pages/palabrassector.py")
