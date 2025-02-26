@@ -63,7 +63,7 @@ def actualizar():
 def ingresar():
     conn = st.connection("postgresql", type="sql")
     with conn.session as session:
-        actualiza = "insert into palabras_a_buscar (palabra,peso)"
+        actualiza = "insert into palabrasclaves (nuri,eje_nuri,palabraclave_es,palabraclave_en)"
         actualiza = actualiza + " values (:palabra,:peso) ;"
         session.execute(text(actualiza), {"palabra": vpalabra,"peso": vpeso})
         session.commit()
@@ -73,7 +73,7 @@ tipo = st.session_state['vTipo']
 if tipo == 'Editar':
     tpalabraes = st.session_state['vpalabraes'] 
     tpalabraen = st.session_state['vpalabraen'] 
-    vnuri =  st.session_state['vpalabraen'] 
+    vnuri =  st.session_state['vnuri'] 
    
 
 if tipo == 'Ingresar':
