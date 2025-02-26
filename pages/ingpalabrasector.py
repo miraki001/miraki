@@ -38,6 +38,7 @@ st.logo(
 
 veje1 = st.session_state['veje']
 
+conn = st.connection("postgresql", type="sql")
 df1 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
 df = df1[0]
 pos = df[df['eje']==veje1].index.item()
