@@ -62,7 +62,7 @@ def actualizar():
     with conn.session as session:
         actualiza = "UPDATE palabrasclaves SET eje_nuri = :eje_nuri"
         actualiza = actualiza + " ,palabraclave_es = :palabraes "
-        actualiza = actualiza + " ,palabraclave_esn= :palabraen "
+        actualiza = actualiza + " ,palabraclave_en= :palabraen "
         actualiza = actualiza + " WHERE nuri = :nuri ;"
         session.execute(text(actualiza), {"eje_nuri": ejenuri,"palabraes": vpalabraes,"palabraen" : vpalabraen , "nuri" : vnuri})
         session.commit()
