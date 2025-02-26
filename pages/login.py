@@ -36,9 +36,12 @@ st.logo(
     size='large'
 )
 
+col = st.columns((14.5, 4.5, 2), gap='medium')
 
-vusuario = st.text_input("Ingreseo su nombre de usuario")
-vclave = st.text_input("ingrese su Contraseña")
+
+with col[0]:
+  vusuario = st.text_input("Ingreseo su nombre de usuario")
+  vclave = st.text_input("ingrese su Contraseña")
 
 
 col1, col2, = st.columns(2)
