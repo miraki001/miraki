@@ -39,3 +39,11 @@ st.logo(
 
 vusuario = st.text_input("Ingreseo su nombre de usuario")
 vclave = st.text_input("ingrese su Contraseña")
+
+
+col1, col2, = st.columns(2)
+
+if col1.button("Ingresar" ,  type='primary'):
+    st.switch_page("./pages/palabrassector.py")
+if col2.button("Salir"):
+    st.switch_page("./pages/palabrassector.py")
