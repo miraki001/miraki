@@ -35,6 +35,9 @@ st.logo(
   size='large',
 )
 
+
+veje1 = st.session_state['veje']
+
 df1 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
 df = df1[0]
 pos = df[df['eje']==veje1].index.item()
