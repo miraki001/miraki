@@ -36,6 +36,8 @@ st.logo(
     size='large'
 )
 
+st.subheader("Login")
+
 col = st.columns((14.5, 4.5, 2), gap='medium')
 
 
