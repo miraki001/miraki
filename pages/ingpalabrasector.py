@@ -51,13 +51,20 @@ st.subheader("Palabras Claves")
 
 
 def actualizar():
+
+    conn1 = st.connection("postgresql", type="sql")
+    veje1 = st.session_state['veje']
+    vquery = "select nuri,eje from ejestemas where eje = :eje  ;"
+    df2 = conn1.query(vquery, ttl="0",params={"eje": veje1}),
+    ejenuri = df2[0].to_string(columns=['nuri'], header=False, index=False)
+  
     conn = st.connection("postgresql", type="sql")
     with conn.session as session:
         actualiza = "UPDATE palabrasclaves SET eje_nuri = :eje_nuri"
         actualiza = actualiza + " ,palabraclave_es = :palabraes "
         actualiza = actualiza + " ,palabraclave_esn= :palabraen "
         actualiza = actualiza + " WHERE nuri = :nuri ;"
-        session.execute(text(actualiza), {"eje_nuri": veje_nuri,"palabraes": vpalabraes,"palabraen" : vpalabraen , "nuri" : vnuri})
+        session.execute(text(actualiza), {"eje_nuri": ejenuri,"palabraes": vpalabraes,"palabraen" : vpalabraen , "nuri" : vnuri})
         session.commit()
 
 def ingresar():
