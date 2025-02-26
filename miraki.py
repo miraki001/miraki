@@ -6,6 +6,11 @@ import streamlit as st
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None)
 
+tusuario = st.session_state['usuario']
+
+if tusuario == '':
+  st.switch_page("./pages/login.py")  
+
 
 hide_default_format = """
        <style>
