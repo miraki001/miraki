@@ -58,6 +58,13 @@ if col1.button("Ingresar" ,  type='primary'):
     if nuri == 0:
       st.write('Usuario no existe o clave incorrecta')
     if nuri != 0:
+
+      vquery = "select administador, proyecto_nuri  from usuarios where usuario = :usuario and clave = :clave  ;"
+      df2 = conn.query(vquery, ttl="0",params={"usuario": vusuario, "clave" :vclave }),
+      admin = df2[0].to_string(columns=['administador'], header=False, index=False)
+      proy_nuri = df2[0].to_string(columns=['proyecto_nuri'], header=False, index=False)
+      st.write(admin)
+      
       conn = st.connection("postgresql", type="sql")
       df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
       df = df1[0]
@@ -67,6 +74,6 @@ if col1.button("Ingresar" ,  type='primary'):
 
 
   
-    st.switch_page("./pages/home.py")
+    #st.switch_page("./pages/home.py")
 if col2.button("Salir"):
     st.switch_page("./pages/palabrassector.py")
