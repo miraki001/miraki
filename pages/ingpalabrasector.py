@@ -68,11 +68,17 @@ def actualizar():
         session.commit()
 
 def ingresar():
+    conn1 = st.connection("postgresql", type="sql")
+    veje1 = st.session_state['veje']
+    vquery = "select nuri,eje from ejestemas where eje = :eje  ;"
+    df2 = conn1.query(vquery, ttl="0",params={"eje": veje1}),
+    ejenuri = df2[0].to_string(columns=['nuri'], header=False, index=False)
+  
     conn = st.connection("postgresql", type="sql")
     with conn.session as session:
         actualiza = "insert into palabrasclaves (nuri,eje_nuri,palabraclave_es,palabraclave_en)"
         actualiza = actualiza + " values (nextval('palabrasclaves_seq') :eje_nuri,:palabraes, :palabraen) ;"
-        session.execute(text(actualiza), {"eje_nuri" :veje_nuri, "palabraes": vpalabraes,"palabraen": vpalabraen})
+        session.execute(text(actualiza), {"eje_nuri" :ejenuri, "palabraes": vpalabraes,"palabraen": vpalabraen})
         session.commit()
 
 
