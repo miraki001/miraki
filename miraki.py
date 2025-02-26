@@ -6,7 +6,10 @@ import streamlit as st
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None)
 
-tusuario = st.session_state['usuario']
+try:
+  tusuario = st.session_state['usuario']
+except:
+  tusuario =''
 
 if tusuario == '':
   st.switch_page("./pages/login.py")  
