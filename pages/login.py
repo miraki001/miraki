@@ -55,15 +55,18 @@ if col1.button("Ingresar" ,  type='primary'):
     df2 = conn.query(vquery, ttl="0",params={"usuario": vusuario, "clave" :vclave }),
     nuri = df2[0].to_string(columns=['cnt'], header=False, index=False)
     st.write(nuri)
-    conn = st.connection("postgresql", type="sql")
-    df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
-    df = df1[0]
-    vpro = st.selectbox(' Ingrese en el Proyecto que va trabajar ', df.proyecto )
-    st.session_state['vpro'] = vpro
+    if nuri == 0:
+      st.write('Usuario no existe o clave incorrecta')
+    if nuri != 0:
+      conn = st.connection("postgresql", type="sql")
+      df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
+      df = df1[0]
+      vpro = st.selectbox(' Ingrese en el Proyecto que va trabajar ', df.proyecto )
+      st.session_state['vpro'] = vpro
 
 
 
   
-    st.switch_page("./pages/palabrassector.py")
+    st.switch_page("./pages/home.py")
 if col2.button("Salir"):
     st.switch_page("./pages/palabrassector.py")
