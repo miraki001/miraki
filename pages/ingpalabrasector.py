@@ -74,7 +74,8 @@ if tipo == 'Ingresar':
     tpalabraes = ''
     tpalabraen = ''
    
-
+veje = st.selectbox('Categoria ', df.eje ,index= 0)
+st.session_state['veje'] = veje
 
 vpalabraes = st.text_input("Palabra en Español", tpalabraes)
 vpalabraen = st.text_input("Palabra en Ingles", tpalabraen)
