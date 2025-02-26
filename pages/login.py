@@ -50,7 +50,7 @@ col1, col2, = st.columns(2)
 
 if col1.button("Ingresar" ,  type='primary'):
 
-
+    conn = st.connection("postgresql", type="sql")
     vquery = "select count(0) cnt from usuarios where usuario = :usuario and clave = :clave  ;"
     df2 = conn1.query(vquery, ttl="0",params={"usuario": vusuario, "clave" :vclave }),
     nuri = df2[0].to_string(columns=['cnt'], header=False, index=False)
