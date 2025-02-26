@@ -59,7 +59,7 @@ if col1.button("Ingresar" ,  type='primary'):
       st.write('Usuario no existe o clave incorrecta')
     if nuri != 0:
 
-      vquery = "select administador, proyecto_nuri  from usuarios where usuario = :usuario and clave = :clave  ;"
+      vquery = "select administrador, proyecto_nuri  from usuarios where usuario = :usuario and clave = :clave  ;"
       df2 = conn.query(vquery, ttl="0",params={"usuario": vusuario, "clave" :vclave }),
       admin = df2[0].to_string(columns=['administador'], header=False, index=False)
       proy_nuri = df2[0].to_string(columns=['proyecto_nuri'], header=False, index=False)
