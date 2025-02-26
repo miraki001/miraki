@@ -135,5 +135,6 @@ if cnt > 0:
             
             st.write(vpalabra)
             st.session_state['vnuri'] = selection.to_string(columns=['nuri'], header=False, index=False)
+            st.session_state['veje'] = selection.to_string(columns=['eje'], header=False, index=False)
             st.session_state['vpalabraes'] = selection.to_string(columns=['palabraclave_es'], header=False, index=False)
             st.session_state['vpalabraen'] = selection.to_string(columns=['palabraclave_en'], header=False, index=False)
