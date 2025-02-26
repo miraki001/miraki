@@ -35,6 +35,8 @@ st.logo(
   size='large',
 )
 
+df1 = conn.query('select nuri,eje from ejestemas ;', ttl="0"),
+df = df1[0]
 
 #vnuri = st.session_state['vnuri']
 #st.session_state.vnuri = 0
