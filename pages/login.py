@@ -53,6 +53,8 @@ if col1.button("Ingresar" ,  type='primary'):
 
     vquery = "select count(0) cnt from usuarios where usuario = :usuario and clave = :clave  ;"
     df2 = conn1.query(vquery, ttl="0",params={"usuario": vusuario, "clave" :vclave }),
+    nuri = df2[0].to_string(columns=['cnt'], header=False, index=False)
+    st.write(nuri)
     conn = st.connection("postgresql", type="sql")
     df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
     df = df1[0]
