@@ -70,10 +70,11 @@ if col1.button("Ingresar" ,  type='primary'):
       df = df1[0]
       vpro = st.selectbox(' Ingrese en el Proyecto que va trabajar ', df.proyecto )
       st.session_state['vpro'] = vpro
+      st.write(vpro)
 
       if admin == 'N':
         st.switch_page("./pages/novedadessola.py")
-      if admin == 'N':
+      if admin == 'S':
         st.switch_page("./pages/home.py")
         
 
