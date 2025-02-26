@@ -64,8 +64,8 @@ def ingresar():
     conn = st.connection("postgresql", type="sql")
     with conn.session as session:
         actualiza = "insert into palabrasclaves (nuri,eje_nuri,palabraclave_es,palabraclave_en)"
-        actualiza = actualiza + " values (:palabra,:peso) ;"
-        session.execute(text(actualiza), {"palabra": vpalabra,"peso": vpeso})
+        actualiza = actualiza + " values (nextval('palabrasclaves_seq') :eje_nuri,:palabraes, :palabraen) ;"
+        session.execute(text(actualiza), {"eje_nuri" :veje_nuri, "palabraes": vpalabraes,"palabraen": vpalabraen})
         session.commit()
 
 
