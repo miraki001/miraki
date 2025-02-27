@@ -46,9 +46,9 @@ with col[0]:
   vclave = st.text_input("ingrese su Contraseña")
 
 
-col1, col2, = st.columns(2)
+  col1, col2, = st.columns(2)
 
-if col1.button("login" ,  type='primary'):
+  if col1.button("login" ,  type='primary'):
 
     conn = st.connection("postgresql", type="sql")
     vquery = "select count(0) cnt from usuarios where usuario = :usuario and clave = :clave  ;"
