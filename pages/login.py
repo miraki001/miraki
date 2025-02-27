@@ -68,8 +68,8 @@ with col[0]:
         conn = st.connection("postgresql", type="sql")
         df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
         df = df1[0]
-        vpro = st.selectbox(' Ingrese en el Proyecto que va trabajar ', df.proyecto )
-        st.session_state['vpro'] = vpro
+        #vpro = st.selectbox(' Ingrese en el Proyecto que va trabajar ', df.proyecto )
+        #st.session_state['vpro'] = vpro
         st.session_state['usuario'] = vusuario
         st.write(vpro)
         if st.button("Ingresar"):
