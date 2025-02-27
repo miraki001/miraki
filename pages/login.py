@@ -48,7 +48,7 @@ with col[0]:
 
 col1, col2, = st.columns(2)
 
-if col1.button("Ingresar" ,  type='primary'):
+if col1.button("login" ,  type='primary'):
 
     conn = st.connection("postgresql", type="sql")
     vquery = "select count(0) cnt from usuarios where usuario = :usuario and clave = :clave  ;"
@@ -70,12 +70,17 @@ if col1.button("Ingresar" ,  type='primary'):
       df = df1[0]
       vpro = st.selectbox(' Ingrese en el Proyecto que va trabajar ', df.proyecto )
       st.session_state['vpro'] = vpro
+      st.session_state['usuario'] = vusuario
       st.write(vpro)
 
-      if admin == 'N':
-        st.switch_page("./pages/novedadessola.py")
-      if admin == 'S':
-        st.switch_page("./pages/home.py")
+      col11, col12, = st.columns(2)
+
+      if col11.button("ingresar" ,  type='primary'):
+      
+        if admin == 'N':
+          st.switch_page("./pages/novedadessola.py")
+        if admin == 'S':
+          st.switch_page("./pages/home.py")
         
 
   
