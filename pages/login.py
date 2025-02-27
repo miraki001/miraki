@@ -75,7 +75,7 @@ with col[0]:
 
         col11, col12, = st.columns(2)
 
-        if col11.button("ingresar" ,  type='primary'):
+        if col11.button("ingresar"):
       
           if admin == 'N':
             st.switch_page("./pages/novedadessola.py")
