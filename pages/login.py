@@ -49,14 +49,8 @@ def ingresar(vadmin):
 
 col = st.columns((6.5, 4.5, 2), gap='medium')
 
-admin = ''
+
 with col[0]:
-
-
-  with st.form(key="my-form2"):
-          
-          ing_btn = st.form_submit_button("ingresar",  on_click=ingresar(admin))
-  
   vusuario = st.text_input("Ingreseo su nombre de usuario")
   vclave = st.text_input("ingrese su Contraseña")
 
@@ -89,4 +83,10 @@ with col[0]:
 
         #with st.form(key="my-form2"):
           #ing_btn = st.form_submit_button("ingresar",  on_click=ingresar(admin))
-            
+
+
+        col10, col20 = st.columns(2)
+        if col10.button(":red[**Grabar**]"):
+          st.switch_page("./pages/novedades.py")
+        if col20.button(":red[**Cancelar**]"):
+          st.switch_page("./pages/novedades.py")
