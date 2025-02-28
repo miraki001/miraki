@@ -56,6 +56,8 @@ with col[0]:
     click = st.form_submit_button("Login")
     
   if click:
+    placeholder.empty()
+    st.session_state
     conn = st.connection("postgresql", type="sql")
     vquery = "select count(0) cnt from usuarios where usuario = :usuario and clave = :clave  ;"
     df2 = conn.query(vquery, ttl="0",params={"usuario": vusuario, "clave" :vclave }),
