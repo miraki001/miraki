@@ -51,6 +51,11 @@ col = st.columns((6.5, 4.5, 2), gap='medium')
 
 
 with col[0]:
+
+
+  with st.form(key="my-form2"):
+          ing_btn = st.form_submit_button("ingresar",  on_click=ingresar(admin))
+  
   vusuario = st.text_input("Ingreseo su nombre de usuario")
   vclave = st.text_input("ingrese su Contraseña")
 
@@ -81,6 +86,6 @@ with col[0]:
 
         #st.button('Ingresar', on_click=ingresar(admin))
 
-        with st.form(key="my-form2"):
-          ing_btn = st.form_submit_button("ingresar",  on_click=ingresar(admin))
+        #with st.form(key="my-form2"):
+          #ing_btn = st.form_submit_button("ingresar",  on_click=ingresar(admin))
             
