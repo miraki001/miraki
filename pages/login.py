@@ -54,8 +54,9 @@ with col[0]:
   vusuario = st.text_input("Ingreseo su nombre de usuario")
   vclave = st.text_input("ingrese su Contraseña")
 
-  
-  if vusuario !='' and vclave != '':
+
+  col10, col20 = st.columns(2)
+  if col10.button(":red[**Login**]"):
     conn = st.connection("postgresql", type="sql")
     vquery = "select count(0) cnt from usuarios where usuario = :usuario and clave = :clave  ;"
     df2 = conn.query(vquery, ttl="0",params={"usuario": vusuario, "clave" :vclave }),
@@ -77,8 +78,7 @@ with col[0]:
         st.session_state['usuario'] = vusuario
 
 
-  col10, col20 = st.columns(2)
-  if col10.button(":red[**Login**]"):
+    
     if nuri != 0:
         ingresar(admin)
   
