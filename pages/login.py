@@ -72,6 +72,14 @@ with col[0]:
         #st.session_state['vpro'] = vpro
         st.session_state['usuario'] = vusuario
         #st.write(vpro)
+
+        col10, col20 = st.columns(2)
+        if col10.button(":red[**Ingresar**]"):
+          st.write('aca')
+       
+        if col20.button(":red[**Cancelar**]"):
+          st.write('aca  no')
+      
         if 'clicked' not in st.session_state:
           st.session_state.clicked = False
 
