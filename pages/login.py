@@ -101,6 +101,10 @@ with col[0]:
         st.session_state['vpro'] = vpro
         st.session_state['usuario'] = vusuario
         st.write(vpro)
-      
+
+        col21, col22 = st.columns(2)
+        if col21.button(":red[**Ingresar**]"):
+          st.write('otro')
+          st.write(vpro)
   if col20.button(":red[**Cancelar**]"):
           st.switch_page("./pages/novedades.py")
