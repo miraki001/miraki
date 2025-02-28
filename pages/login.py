@@ -79,8 +79,8 @@ with col[0]:
         #st.write(vpro)
 
         with st.form(key="my-form2"):
+          login_btn = st.form_submit_button("2. Enabled Button", disabled=True)
           ingt_btn = st.form_submit_button("1. Enabled Button", disabled=False)
-
     
         if ingt_btn:
           st.write('aca')
