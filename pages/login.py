@@ -39,7 +39,13 @@ st.logo(
 st.subheader("Login")
 
 
+def ingresar(vadmin):
+  if vadmin == 'N':
+    st.switch_page("./pages/novedadessola.py")
+  if vadmin == 'S':
+    st.switch_page("./pages/home.py")
 
+  
 
 col = st.columns((6.5, 4.5, 2), gap='medium')
 
@@ -80,17 +86,7 @@ with col[0]:
 
         with st.form(key="my-form2"):
           #login_btn = st.form_submit_button("2. Enabled Button", disabled=True)
-          ing_btn = st.form_submit_button("ingresar", disabled=False)
-    
-        if ing_btn:
-          st.write('aca')
-          st.write(admin)
-          if admin == 'N':
-              st.switch_page("./pages/novedadessola.py")
-          if admin == 'S':
-              st.switch_page("./pages/home.py")
-          else:
-            st.write('No')
+          ing_btn = st.form_submit_button("ingresar",  on_click=ingresar(admin))
             
 #if col2.button("Salir"):
     #st.switch_page("./pages/palabrassector.py")
