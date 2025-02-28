@@ -39,40 +39,6 @@ st.logo(
 st.subheader("Login")
 
 
-with st.form(key="my-form"):
-    st.write("1 Disabled button, 1 Enabled button")
-    text_input = st.text_input("Text input")
-    disabled_btn = st.form_submit_button("Disabled Button", disabled=True)
-
-    enabled_btn = st.form_submit_button("Enabled Button", disabled=False)
-
-
-if disabled_btn:
-    st.write("Disabled button clicked")
-    st.write(text_input)
-
-if enabled_btn:
-    st.write("Enabled button clicked")
-    st.write(text_input)
-
-
-
-with st.form(key="my-form2"):
-    st.write("2 Enabled buttons")
-    text_input = st.text_input("Text input")
-    first_btn = st.form_submit_button("1. Enabled Button", disabled=False)
-
-    second_btn = st.form_submit_button("2. Enabled Button", disabled=False)
-
-
-if first_btn:
-    st.write("Disabled button clicked")
-    st.write(text_input)
-
-
-if second_btn:
-    st.write("Enabled button clicked")
-    st.write(text_input)
 
 
 col = st.columns((6.5, 4.5, 2), gap='medium')
@@ -83,15 +49,12 @@ with col[0]:
   vclave = st.text_input("ingrese su Contraseña")
 
 
-  placeholder = st.empty()
+  with st.form(key="my-form"):
+    login_btn = st.form_submit_button("login", disabled=True)
 
-
-  with placeholder.form("Lgon form"):
-    click = st.form_submit_button("Login")
     
-  if click:
-    placeholder.empty()
-    #st.session_state
+  if login_btn:
+    st.write('login')
     conn = st.connection("postgresql", type="sql")
     vquery = "select count(0) cnt from usuarios where usuario = :usuario and clave = :clave  ;"
     df2 = conn.query(vquery, ttl="0",params={"usuario": vusuario, "clave" :vclave }),
@@ -115,12 +78,11 @@ with col[0]:
         st.session_state['usuario'] = vusuario
         #st.write(vpro)
 
-        with placeholder.form("ingn form"):
-          click1 = st.form_submit_button("Ingresar")
+        with st.form(key="my-form2"):
+          ingt_btn = st.form_submit_button("1. Enabled Button", disabled=False)
+
     
-        if click1:
-          #placeholder.empty()
-          st.session_state
+        if ingt_btn:
           st.write('aca')
           st.write(admin)
           if admin == 'N':
