@@ -86,5 +86,8 @@ with col[0]:
               st.switch_page("./pages/novedadessola.py")
             if admin == 'S':
               st.switch_page("./pages/home.py")
+          else:
+            st.write('No')
+            
 if col2.button("Salir"):
     st.switch_page("./pages/palabrassector.py")
