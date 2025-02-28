@@ -50,7 +50,7 @@ with col[0]:
 
 
   with st.form(key="my-form"):
-    login_btn = st.form_submit_button("login", disabled=false)
+    login_btn = st.form_submit_button("login", disabled=False)
 
     
   if login_btn:
