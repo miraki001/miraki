@@ -81,26 +81,17 @@ with col[0]:
         st.session_state['usuario'] = vusuario
         #st.write(vpro)
 
-        col10, col20 = st.columns(2)
-        if col10.button(":red[**Ingresar**]"):
+        with placeholder.form("ingn form"):
+          click1 = st.form_submit_button("Ingresar")
+    
+        if click1:
+          placeholder.empty()
+          st.session_state
           st.write('aca')
-          st.switch_page("./pages/novedadessola.py")
-        if col20.button(":red[**Cancelar**]"):
-          st.write('aca  no')
-      
-        if 'clicked' not in st.session_state:
-          st.session_state.clicked = False
-
-        def click_button():
-          st.session_state.clicked = True
-          
-        if st.button("Ingresar", on_click=click_button):
-          if st.session_state.clicked:
-            st.write('aca')
-            st.write(admin)
-            if admin == 'N':
+          st.write(admin)
+          if admin == 'N':
               st.switch_page("./pages/novedadessola.py")
-            if admin == 'S':
+          if admin == 'S':
               st.switch_page("./pages/home.py")
           else:
             st.write('No')
