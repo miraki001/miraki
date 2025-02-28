@@ -85,7 +85,7 @@ with col[0]:
           #ing_btn = st.form_submit_button("ingresar",  on_click=ingresar(admin))
 
 
-  col10, col20 = st.columns(2)
+  col10 = st.columns(1)
   if col10.button(":red[**Login**]"):
 
         vquery = "select administrador, proyecto_nuri  from usuarios where usuario = :usuario and clave = :clave  ;"
@@ -102,9 +102,8 @@ with col[0]:
         st.session_state['usuario'] = vusuario
         st.write(vpro)
 
-        col21, col22 = st.columns(2)
-        if col21.button(":red[**Ingresar**]"):
-          st.write('otro')
-          st.write(vpro)
-  if col20.button(":red[**Cancelar**]"):
-          st.switch_page("./pages/novedades.py")
+    col21, col22 = st.columns(2)
+    if col21.button(":red[**Ingresar**]"):
+        st.write('otro')
+        st.write(vpro)
+  
