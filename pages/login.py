@@ -72,12 +72,19 @@ with col[0]:
         #st.session_state['vpro'] = vpro
         st.session_state['usuario'] = vusuario
         #st.write(vpro)
-        if st.button("Ingresar"):
-          st.write('aca')
-          st.write(admin)
-          if admin == 'N':
+        if 'clicked' not in st.session_state:
+          st.session_state.clicked = False
+
+        def click_button():
+          st.session_state.clicked = True
+          
+        if st.button("Ingresar", on_click=click_button):
+          if st.session_state.clicked:
+            st.write('aca')
+            st.write(admin)
+            if admin == 'N':
               st.switch_page("./pages/novedadessola.py")
-          if admin == 'S':
+            if admin == 'S':
               st.switch_page("./pages/home.py")
 if col2.button("Salir"):
     st.switch_page("./pages/palabrassector.py")
