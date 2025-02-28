@@ -73,16 +73,16 @@ with col[0]:
         conn = st.connection("postgresql", type="sql")
         df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
         df = df1[0]
-        #vpro = st.selectbox(' Ingrese en el Proyecto que va trabajar ', df.proyecto )
-        #st.session_state['vpro'] = vpro
+        vpro = st.selectbox(' Ingrese en el Proyecto que va trabajar ', df.proyecto )
+        st.session_state['vpro'] = vpro
         st.session_state['usuario'] = vusuario
-        #st.write(vpro)
+        st.write(vpro)
 
         with st.form(key="my-form2"):
-          login_btn = st.form_submit_button("2. Enabled Button", disabled=True)
-          ingt_btn = st.form_submit_button("1. Enabled Button", disabled=False)
+          #login_btn = st.form_submit_button("2. Enabled Button", disabled=True)
+          ing_btn = st.form_submit_button("ingresar", disabled=False)
     
-        if ingt_btn:
+        if ing_btn:
           st.write('aca')
           st.write(admin)
           if admin == 'N':
