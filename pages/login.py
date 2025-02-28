@@ -57,6 +57,7 @@ with col[0]:
 
   col10, col20 = st.columns(2)
   if col10.button(":red[**Login**]"):
+    nuri = 0
     conn = st.connection("postgresql", type="sql")
     vquery = "select count(0) cnt from usuarios where usuario = :usuario and clave = :clave  ;"
     df2 = conn.query(vquery, ttl="0",params={"usuario": vusuario, "clave" :vclave }),
