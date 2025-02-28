@@ -76,41 +76,7 @@ with col[0]:
         st.session_state['vpro'] = vpro
         st.session_state['usuario'] = vusuario
         st.write(vpro)
-    
-
-
-  with st.form(key="my-form"):
-    login_btn = st.form_submit_button("login", disabled=False)
-
-    
-  if login_btn:
-    st.write('login')
-    conn = st.connection("postgresql", type="sql")
-    vquery = "select count(0) cnt from usuarios where usuario = :usuario and clave = :clave  ;"
-    df2 = conn.query(vquery, ttl="0",params={"usuario": vusuario, "clave" :vclave }),
-    nuri = df2[0].to_string(columns=['cnt'], header=False, index=False)
-    st.write(nuri)
-    if nuri == 0:
-      st.write('Usuario no existe o clave incorrecta')
-    if nuri != 0:
-
-        vquery = "select administrador, proyecto_nuri  from usuarios where usuario = :usuario and clave = :clave  ;"
-        df2 = conn.query(vquery, ttl="0",params={"usuario": vusuario, "clave" :vclave }),
-        admin = df2[0].to_string(columns=['administrador'], header=False, index=False)
-        proy_nuri = df2[0].to_string(columns=['proyecto_nuri'], header=False, index=False)
-        st.write(admin)
-      
-        conn = st.connection("postgresql", type="sql")
-        df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
-        df = df1[0]
-        vpro = st.selectbox(' Ingrese en el Proyecto que va trabajar ', df.proyecto )
-        st.session_state['vpro'] = vpro
-        st.session_state['usuario'] = vusuario
-        st.write(vpro)
-
+        
         with st.form(key="my-form2"):
-          #login_btn = st.form_submit_button("2. Enabled Button", disabled=True)
           ing_btn = st.form_submit_button("ingresar",  on_click=ingresar(admin))
             
-#if col2.button("Salir"):
-    #st.switch_page("./pages/palabrassector.py")
