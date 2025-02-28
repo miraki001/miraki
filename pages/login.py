@@ -63,7 +63,8 @@ with col[0]:
     df2 = conn.query(vquery, ttl="0",params={"usuario": vusuario, "clave" :vclave }),
     nuri = df2[0].to_string(columns=['cnt'], header=False, index=False)
     st.write(nuri)
-    if nuri == 0:
+    
+    if nuri == '0':
       st.write('Usuario no existe o clave incorrecta')
     if nuri == '':
       st.write('Usuario no existe o clave incorrecta')
