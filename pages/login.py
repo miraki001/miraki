@@ -87,3 +87,5 @@ with col[0]:
         ingresar(admin)
     if nuri =='':
         st.write('Usuario no existe o clave incorrecta')
+    if nuri == 0:
+        st.write('Usuario no existe o clave incorrecta')
