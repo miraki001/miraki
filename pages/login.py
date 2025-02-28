@@ -73,6 +73,8 @@ with col[0]:
         st.session_state['usuario'] = vusuario
         #st.write(vpro)
         if st.button("Ingresar"):
+          st.write('aca')
+          st.write(admin)
           if admin == 'N':
               st.switch_page("./pages/novedadessola.py")
           if admin == 'S':
