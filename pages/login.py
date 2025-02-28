@@ -53,6 +53,8 @@ col = st.columns((6.5, 4.5, 2), gap='medium')
 with col[0]:
   vusuario = st.text_input("Ingreseo su nombre de usuario")
   vclave = st.text_input("ingrese su Contraseña")
+
+  
   if vusuario !='' and vclave != '':
     conn = st.connection("postgresql", type="sql")
     vquery = "select count(0) cnt from usuarios where usuario = :usuario and clave = :clave  ;"
@@ -76,7 +78,9 @@ with col[0]:
         st.session_state['vpro'] = vpro
         st.session_state['usuario'] = vusuario
         st.write(vpro)
-        
-        with st.form(key="my-form2"):
-          ing_btn = st.form_submit_button("ingresar",  on_click=ingresar(admin))
+
+        st.button('Ingresar', on_click=ingresar(admin))
+
+        #with st.form(key="my-form2"):
+          #ing_btn = st.form_submit_button("ingresar",  on_click=ingresar(admin))
             
