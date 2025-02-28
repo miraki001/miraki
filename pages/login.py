@@ -90,4 +90,5 @@ with col[0]:
 
         st.write('otro')
         st.write(vpro)
+        ingresar(admin)
   
