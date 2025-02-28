@@ -79,8 +79,8 @@ with col[0]:
         st.session_state['usuario'] = vusuario
         st.write(vpro)
 
-        st.button('Ingresar', on_click=ingresar(admin))
+        #st.button('Ingresar', on_click=ingresar(admin))
 
-        #with st.form(key="my-form2"):
-          #ing_btn = st.form_submit_button("ingresar",  on_click=ingresar(admin))
+        with st.form(key="my-form2"):
+          ing_btn = st.form_submit_button("ingresar",  on_click=ingresar(admin))
             
