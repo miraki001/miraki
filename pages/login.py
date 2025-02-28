@@ -65,6 +65,9 @@ with col[0]:
     #st.write(nuri)
     if nuri == 0:
       st.write('Usuario no existe o clave incorrecta')
+    if nuri == '':
+      st.write('Usuario no existe o clave incorrecta')
+      
     if nuri != 0:
 
         vquery = "select administrador, proyecto_nuri  from usuarios where usuario = :usuario and clave = :clave  ;"
@@ -74,7 +77,7 @@ with col[0]:
         conn = st.connection("postgresql", type="sql")
         df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
         df = df1[0]
-        vpro = st.selectbox(' Ingrese en el Proyecto que va trabajar ', df.proyecto )
+        #vpro = st.selectbox(' Ingrese en el Proyecto que va trabajar ', df.proyecto )
         st.session_state['vpro'] = vpro
         st.session_state['usuario'] = vusuario
 
@@ -82,4 +85,5 @@ with col[0]:
     
     if nuri != 0:
         ingresar(admin)
-  
+    if nuri =='':
+        st.write('Usuario no existe o clave incorrecta')
