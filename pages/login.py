@@ -38,6 +38,43 @@ st.logo(
 
 st.subheader("Login")
 
+
+with st.form(key="my-form"):
+    st.write("1 Disabled button, 1 Enabled button")
+    text_input = st.text_input("Text input")
+    disabled_btn = st.form_submit_button("Disabled Button", disabled=True)
+
+    enabled_btn = st.form_submit_button("Enabled Button", disabled=False)
+
+
+if disabled_btn:
+    st.write("Disabled button clicked")
+    st.write(text_input)
+
+if enabled_btn:
+    st.write("Enabled button clicked")
+    st.write(text_input)
+
+
+
+with st.form(key="my-form2"):
+    st.write("2 Enabled buttons")
+    text_input = st.text_input("Text input")
+    first_btn = st.form_submit_button("1. Enabled Button", disabled=False)
+
+    second_btn = st.form_submit_button("2. Enabled Button", disabled=False)
+
+
+if first_btn:
+    st.write("Disabled button clicked")
+    st.write(text_input)
+
+
+if second_btn:
+    st.write("Enabled button clicked")
+    st.write(text_input)
+
+
 col = st.columns((6.5, 4.5, 2), gap='medium')
 
 
