@@ -76,7 +76,7 @@ with col[0]:
         col10, col20 = st.columns(2)
         if col10.button(":red[**Ingresar**]"):
           st.write('aca')
-       
+          st.switch_page("./pages/novedadessola.py")
         if col20.button(":red[**Cancelar**]"):
           st.write('aca  no')
       
