@@ -60,7 +60,7 @@ with col[0]:
     vquery = "select count(0) cnt from usuarios where usuario = :usuario and clave = :clave  ;"
     df2 = conn.query(vquery, ttl="0",params={"usuario": vusuario, "clave" :vclave }),
     nuri = df2[0].to_string(columns=['cnt'], header=False, index=False)
-    st.write(nuri)
+    #st.write(nuri)
     if nuri == 0:
       st.write('Usuario no existe o clave incorrecta')
     if nuri != 0:
