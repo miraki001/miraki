@@ -46,10 +46,11 @@ with col[0]:
   vclave = st.text_input("ingrese su Contraseña")
 
 
-  col1, col2, = st.columns(2)
+  #col1, col2, = st.columns(2)
 
-  if col1.button("login" ,  type='primary'):
-
+  #if col1.button("login" ,  type='primary'):
+  click = st.form_submit_button("Login")
+  if click:
     conn = st.connection("postgresql", type="sql")
     vquery = "select count(0) cnt from usuarios where usuario = :usuario and clave = :clave  ;"
     df2 = conn.query(vquery, ttl="0",params={"usuario": vusuario, "clave" :vclave }),
@@ -97,5 +98,5 @@ with col[0]:
           else:
             st.write('No')
             
-if col2.button("Salir"):
-    st.switch_page("./pages/palabrassector.py")
+#if col2.button("Salir"):
+    #st.switch_page("./pages/palabrassector.py")
