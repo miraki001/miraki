@@ -49,7 +49,12 @@ with col[0]:
   #col1, col2, = st.columns(2)
 
   #if col1.button("login" ,  type='primary'):
-  click = st.form_submit_button("Login")
+  placeholder = st.empty()
+
+
+  with placeholder.form("Lgon form"):
+    click = st.form_submit_button("Login")
+    
   if click:
     conn = st.connection("postgresql", type="sql")
     vquery = "select count(0) cnt from usuarios where usuario = :usuario and clave = :clave  ;"
