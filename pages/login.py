@@ -46,9 +46,6 @@ with col[0]:
   vclave = st.text_input("ingrese su Contraseña")
 
 
-  #col1, col2, = st.columns(2)
-
-  #if col1.button("login" ,  type='primary'):
   placeholder = st.empty()
 
 
@@ -57,7 +54,7 @@ with col[0]:
     
   if click:
     placeholder.empty()
-    st.session_state
+    #st.session_state
     conn = st.connection("postgresql", type="sql")
     vquery = "select count(0) cnt from usuarios where usuario = :usuario and clave = :clave  ;"
     df2 = conn.query(vquery, ttl="0",params={"usuario": vusuario, "clave" :vclave }),
@@ -85,7 +82,7 @@ with col[0]:
           click1 = st.form_submit_button("Ingresar")
     
         if click1:
-          placeholder.empty()
+          #placeholder.empty()
           st.session_state
           st.write('aca')
           st.write(admin)
