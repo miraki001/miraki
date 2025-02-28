@@ -85,7 +85,7 @@ with col[0]:
           #ing_btn = st.form_submit_button("ingresar",  on_click=ingresar(admin))
 
 
-  col10 = st.columns(1)
+  col10, col20 = st.columns(2)
   if col10.button(":red[**Login**]"):
 
         st.write('otro')
