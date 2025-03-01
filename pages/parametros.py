@@ -36,8 +36,8 @@ st.logo(
 #st.session_state.vnuri = 0
 st.subheader("    Parametros")
 
-selected3 = option_menu(None, ["Parametros", "Palabras Claves","Excluidas","Sectores","Ejes","Palabras por Sector","Proyectos" ,"Home"], 
-      icons=['house', 'alphabet' ,'x-circle','diagram-3','list-check','alphabet-uppercase','building-fill' ] , menu_icon="cast",orientation="horizontal", default_index = 0,
+selected3 = option_menu(None, ["Parametros", "Palabras Claves","Excluidas","Sectores","Ejes","Palabras por Sector","Proyectos" ,'Usuarios' ,"Home"], 
+      icons=['house', 'alphabet' ,'x-circle','diagram-3','list-check','alphabet-uppercase','building-fill','People fill','Home' ] , menu_icon="cast",orientation="horizontal", default_index = 0,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
