@@ -101,7 +101,7 @@ st.markdown("""
 
 
 conn = st.connection("postgresql", type="sql")
-qq = 'select usuario,clave,administrado,proyecto_nuri from usuarios  ;'
+qq = 'select usuario,clave,administrador,proyecto_nuri from usuarios  ;'
 df1 = conn.query(qq, ttl="0"),
 df = df1[0]
 
