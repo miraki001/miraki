@@ -37,7 +37,7 @@ st.logo(
 st.subheader("    Parametros")
 
 selected3 = option_menu(None, ["Parametros", "Palabras Claves","Excluidas","Sectores","Ejes","Palabras por Sector","Proyectos" ,'Usuarios' ,"Home"], 
-      icons=['house', 'alphabet' ,'x-circle','diagram-3','list-check','alphabet-uppercase','building-fill','People-fill','house' ] , menu_icon="cast",orientation="horizontal", default_index = 0,
+      icons=['house', 'alphabet' ,'x-circle','diagram-3','list-check','alphabet-uppercase','building-fill','people-fill','house' ] , menu_icon="cast",orientation="horizontal", default_index = 0,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
