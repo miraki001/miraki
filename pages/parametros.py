@@ -61,6 +61,8 @@ if selected3=="Palabras por Sector":
     st.switch_page("./pages/palabrassector.py")
 if selected3=="Proyectos":
     st.switch_page("./pages/proyectos.py")
+if selected3=="Usuarios":
+    st.switch_page("./pages/usuarios.py")
 
 #pfuente = st.text_input("ingrese el nombre de la fuente")
 
