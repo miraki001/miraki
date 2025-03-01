@@ -83,8 +83,8 @@ vimagen = ''
 
 #aca
 
-selected241 = option_menu(None, ["Novedades", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar' ], 
-      icons=['newspaper', 'plus' ,'pencil-square','eraser','chek','patch-chek'] , menu_icon="cast",orientation="horizontal", default_index=0,
+selected241 = option_menu(None, ["Novedades", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar','Proyecto' ], 
+      icons=['newspaper', 'plus' ,'pencil-square','eraser','chek','patch-chek','building-fill' ] , menu_icon="cast",orientation="horizontal", default_index=0,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#604283"},
