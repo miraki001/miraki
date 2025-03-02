@@ -38,7 +38,7 @@ st.logo(
 
 #vnuri = st.session_state['vnuri']
 #st.session_state.vnuri = 0
-st.subheader("Sectores")
+st.subheader("Usuarios")
 
 
 conn = st.connection("postgresql", type="sql")
@@ -59,11 +59,11 @@ def actualizar():
     vpro_nuri = df2[0].to_string(columns=['nuri'], header=False, index=False)
   
     with conn.session as session:
-        actualiza = "UPDATE sectores SET proyecto_nuri = :pro_nuri"
-        actualiza = actualiza + " ,sector = :sector "
-        actualiza = actualiza + " ,color = :color "
-        actualiza = actualiza + " WHERE nuri = :nuri ;"
-        session.execute(text(actualiza), {"pro_nuri": vpro_nuri,"sector": vsector,"color": vcolor,"nuri": tnuri})
+        actualiza = "UPDATE usuarios SET proyecto_nuri = :pro_nuri"
+        actualiza = actualiza + " ,clave = :clave "
+        actualiza = actualiza + " ,administrador = :admin "
+        actualiza = actualiza + " WHERE usuario = :usuario ;"
+        session.execute(text(actualiza), {"pro_nuri": vpro_nuri,"clave": vclave,"admin": vadmin,"usuario": tusuario})
         session.commit()
 
 def ingresar():
@@ -75,35 +75,37 @@ def ingresar():
     vpro_nuri = df2[0].to_string(columns=['nuri'], header=False, index=False)
   
     with conn.session as session:
-        actualiza = "insert into sectores (nuri,proyecto_nuri,sector,color)"
-        actualiza = actualiza + " values (nextval('sectores_seq'),:proyecto_nuri,:sector,:color) ;"
-        session.execute(text(actualiza), {"proyecto_nuri": vpro_nuri,"sector": vsector,"color": vcolor})
+        actualiza = "insert into usuarios (usuario,proyecto_nuri,clave,adminstrados)"
+        actualiza = actualiza + " values (:usuario,:proyecto_nuri,:clave,:admin) ;"
+        session.execute(text(actualiza), {"usuario": tusuario,"proyecto_nuri": vpro_nuri,"clave": vclave,"admin": vadmin})
         session.commit()
 
 
 tipo = st.session_state['vTipo'] 
 if tipo == 'Editar':
-    tsector = st.session_state['vsector'] 
-    tcolor = st.session_state['vcolor'] 
-    tnuri = st.session_state['vnuri'] 
+    tclave = st.session_state['vclave'] 
+    tusuario = st.session_state['vusuario'] 
+    tadmin = st.session_state['vadmin'] 
     vproyecto = st.session_state['vproyecto'] 
     conn = st.connection("postgresql", type="sql")
     pos = df[df['proyecto']==vproyecto].index.item()  
     
 
 if tipo == 'Ingresar':
-    tsector = ''
-    tcolor = ''
+    tclave = ''
+    tusuario = ''
+    tadmin = ''
     tpro_nuri = 0
     pos = 0
 
-vpro = st.selectbox('Proyecto ', df.proyecto ,index= pos)
+vpro = st.selectbox('Proyecto por defecto', df.proyecto ,index= pos)
 st.session_state['vpro'] = vpro
 
 #vpro_nuri = st.number_input("Proyecto ", tpro_nuri)
 
-vsector = st.text_input("Sector ", tsector)
-vcolor  = st.text_input("Color ", tcolor)
+vusuario = st.text_input("Sector ", tusuario)
+vclave  = st.text_input("Color ", tclave, type="password")
+vclave  = st.text_input("Es Administrador ", tadmin)
 
 
 col1, col2, = st.columns(2)
@@ -112,6 +114,6 @@ if col1.button("Grabar" ,  type='primary'):
         actualizar()
     if tipo == 'Ingresar':
         ingresar()
-    st.switch_page("./pages/sectores.py")
+    st.switch_page("./pages/usuarios.py")
 if col2.button("Cancelar"):
-    st.switch_page("./pages/sectores.py")
+    st.switch_page("./pages/usuarios.py")
