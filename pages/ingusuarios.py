@@ -103,8 +103,8 @@ st.session_state['vpro'] = vpro
 
 #vpro_nuri = st.number_input("Proyecto ", tpro_nuri)
 
-vusuario = st.text_input("Sector ", tusuario)
-vclave  = st.text_input("Color ", tclave, type="password")
+vusuario = st.text_input("Usuario ", tusuario)
+vclave  = st.text_input("clave ", tclave, type="password")
 vclave  = st.text_input("Es Administrador ", tadmin)
 
 
