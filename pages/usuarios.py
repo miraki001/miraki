@@ -101,7 +101,7 @@ st.markdown("""
 
 
 conn = st.connection("postgresql", type="sql")
-qq = 'select usuario,clave,administrador,proyecto_nuri from usuarios  ;'
+qq = 'select u.usuario,u.clave,u.administrador,u.proyecto_nuri,p.proyecto from usuarios u, proyectos p where p.nuri = u.proyecto_nuri ;'
 df1 = conn.query(qq, ttl="0"),
 df = df1[0]
 
@@ -155,4 +155,4 @@ if cnt > 0:
             st.session_state['vusuario'] = selection.to_string(columns=['usuario'], header=False, index=False)
             st.session_state['vclave'] =  selection.to_string(columns=['clave'], header=False, index=False)
             st.session_state['vadmin'] =  selection.to_string(columns=['administrador'], header=False, index=False)
-            st.session_state['vproyecto'] =  selection.to_string(columns=['proyecto_nuri'], header=False, index=False)
+            st.session_state['vproyecto'] =  selection.to_string(columns=['proyecto'], header=False, index=False)
