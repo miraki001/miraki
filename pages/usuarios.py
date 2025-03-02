@@ -65,10 +65,10 @@ if selected7=="Volver":
     st.switch_page("./pages/parametros.py") 
 if selected7=="Ingresar":
     st.session_state['vTipo'] = 'Ingresar'
-    st.switch_page("./pages/ingusuarioss.py")   
+    st.switch_page("./pages/ingusuarios.py")   
 if selected7=="Editar":
     st.session_state['vTipo'] = 'Editar'
-    st.switch_page("./pages/ingusuarioss.py") 
+    st.switch_page("./pages/ingusuarios.py") 
 if selected7=="Borrar":
     st.session_state['vTipo'] = 'Borrar'
     borrar()
@@ -119,7 +119,7 @@ colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 config = {
     'usuario' : st.column_config.TextColumn('usuario', required=True),
     'clave' : st.column_config.TextColumn('clave',),
-    'administrador' : st.column_config.TextColumn('clave',),
+    'administrador' : st.column_config.TextColumn('adminstrador',),
     'proyecto_nuri' : st.column_config.NumberColumn('proyecto_nuri',),
 
 
