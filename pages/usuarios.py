@@ -154,5 +154,5 @@ if cnt > 0:
             st.write(vusuario)
             st.session_state['vusuario'] = selection.to_string(columns=['usuario'], header=False, index=False)
             st.session_state['vclave'] =  selection.to_string(columns=['clave'], header=False, index=False)
-            st.session_state['vadministrador'] =  selection.to_string(columns=['administrador'], header=False, index=False)
+            st.session_state['vadmin'] =  selection.to_string(columns=['administrador'], header=False, index=False)
             st.session_state['vproyecto'] =  selection.to_string(columns=['proyecto_nuri'], header=False, index=False)
