@@ -88,7 +88,6 @@ if tipo == 'Editar':
     tadmin = st.session_state['vadmin'] 
     vproyecto = st.session_state['vproyecto'] 
     st.write(vproyecto)
-    conn = st.connection("postgresql", type="sql")
     pos = df[df['proyecto']==vproyecto].index.item()  
     
 
