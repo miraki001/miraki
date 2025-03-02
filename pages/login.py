@@ -52,7 +52,7 @@ nuri = 0
 
 with col[0]:
   vusuario = st.text_input("Ingreseo su nombre de usuario")
-  vclave = st.text_input("ingrese su Contraseña")
+  vclave = st.text_input("ingrese su Contraseña", type="password")
 
 
   col10, col20 = st.columns(2)
