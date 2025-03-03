@@ -118,7 +118,8 @@ if ppalabra:
 colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 config = {
     'usuario' : st.column_config.TextColumn('usuario', required=True),
-    'clave' : st.column_config.TextColumn('clave',disabled = True),
+    #'clave' : st.column_config.TextColumn('clave',disabled = True),
+    'clave' : None,
     'administrador' : st.column_config.TextColumn('adminstrador',),
     'proyecto_nuri' : st.column_config.NumberColumn('proyecto_nuri',),
 
