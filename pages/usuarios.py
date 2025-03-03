@@ -126,7 +126,7 @@ config = {
 
     
 }
-df = df.style.hide(["clave"], axis="columns")
+
 #result = st.data_editor(df, column_config = config, num_rows='dynamic')
 def dataframe_with_selections(df):
                     df_with_selections = df.copy()
