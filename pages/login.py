@@ -76,7 +76,7 @@ with col[0]:
         conn = st.connection("postgresql", type="sql")
         #df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
         #df = df1[0]
-        vquery = "select nuri,proyecto from proyectos where proyecto = :proyecto  ;"
+        vquery = "select nuri,proyecto from proyectos where nuri = :proyecto  ;"
         pnuri = int(proy_nuri)
         st.write(pnuri)
         df3 = conn.query(vquery, ttl="0",params={"proyecto": pnuri}),
