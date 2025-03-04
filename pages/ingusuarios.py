@@ -75,7 +75,7 @@ def ingresar():
     vpro_nuri = df2[0].to_string(columns=['nuri'], header=False, index=False)
   
     with conn.session as session:
-        actualiza = "insert into usuarios (usuario,proyecto_nuri,clave,adminstrador)"
+        actualiza = "insert into usuarios (usuario,proyecto_nuri,clave,administrador)"
         actualiza = actualiza + " values (:usuario,:proyecto_nuri,:clave,:admin) ;"
         session.execute(text(actualiza), {"usuario": vusuario,"proyecto_nuri": vpro_nuri,"clave": vclave,"admin": vadmin})
         session.commit()
