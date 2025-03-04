@@ -38,7 +38,7 @@ st.logo(
 
 #vnuri = st.session_state['vnuri']
 #st.session_state.vnuri = 0
-st.subheader("Usuarios")
+st.subheader("Seleccionar Proyecto")
 
 
 conn = st.connection("postgresql", type="sql")
@@ -50,70 +50,14 @@ df = df1[0]
 
 
 
-def actualizar():
-    conn = st.connection("postgresql", type="sql")
-    vpro = st.session_state['vpro']
-    #st.write(veje1)
-    vquery = "select nuri,proyecto from proyectos where proyecto = :proyecto  ;"
-    df2 = conn.query(vquery, ttl="0",params={"proyecto": vpro}),
-    vpro_nuri = df2[0].to_string(columns=['nuri'], header=False, index=False)
-  
-    with conn.session as session:
-        actualiza = "UPDATE usuarios SET proyecto_nuri = :pro_nuri"
-        actualiza = actualiza + " ,clave = :clave "
-        actualiza = actualiza + " ,administrador = :admin "
-        actualiza = actualiza + " WHERE usuario = :usuario ;"
-        session.execute(text(actualiza), {"pro_nuri": vpro_nuri,"clave": vclave,"admin": vadmin,"usuario": tusuario})
-        session.commit()
-
-def ingresar():
-    conn = st.connection("postgresql", type="sql")
-    vpro = st.session_state['vpro']
-    #st.write(veje1)
-    vquery = "select nuri,proyecto from proyectos where proyecto = :proyecto  ;"
-    df2 = conn.query(vquery, ttl="0",params={"proyecto": vpro}),
-    vpro_nuri = df2[0].to_string(columns=['nuri'], header=False, index=False)
-  
-    with conn.session as session:
-        actualiza = "insert into usuarios (usuario,proyecto_nuri,clave,administrador)"
-        actualiza = actualiza + " values (:usuario,:proyecto_nuri,:clave,:admin) ;"
-        session.execute(text(actualiza), {"usuario": vusuario,"proyecto_nuri": vpro_nuri,"clave": vclave,"admin": vadmin})
-        session.commit()
 
 
-tipo = st.session_state['vTipo'] 
-if tipo == 'Editar':
-    tclave = st.session_state['vclave'] 
-    tusuario = st.session_state['vusuario'] 
-    tadmin = st.session_state['vadmin'] 
-    vproyecto = st.session_state['vproyecto'] 
-    st.write(vproyecto)
-    pos = df[df['proyecto']==vproyecto].index.item()  
-    
-
-if tipo == 'Ingresar':
-    tclave = ''
-    tusuario = ''
-    tadmin = ''
-    tpro_nuri = 0
-    pos = 0
-
-vpro = st.selectbox('Proyecto por defecto', df.proyecto ,index= pos)
+vpro = st.selectbox('Proyecto en el que desea trabajar', df.proyecto ,index= pos)
 st.session_state['vpro'] = vpro
 
 #vpro_nuri = st.number_input("Proyecto ", tpro_nuri)
 
-vusuario = st.text_input("Usuario ", tusuario)
-vclave  = st.text_input("clave ", tclave, type="password")
-vadmin  = st.text_input("Es Administrador ", tadmin)
 
-
-col1, col2, = st.columns(2)
-if col1.button("Grabar" ,  type='primary'):
-    if tipo == 'Editar':
-        actualizar()
-    if tipo == 'Ingresar':
-        ingresar()
     st.switch_page("./pages/usuarios.py")
 if col2.button("Cancelar"):
     st.switch_page("./pages/usuarios.py")
