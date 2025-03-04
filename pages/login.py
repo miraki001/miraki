@@ -74,11 +74,16 @@ with col[0]:
         admin = df2[0].to_string(columns=['administrador'], header=False, index=False)
         proy_nuri = df2[0].to_string(columns=['proyecto_nuri'], header=False, index=False)     
         conn = st.connection("postgresql", type="sql")
-        df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
-        df = df1[0]
+        #df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
+        #df = df1[0]
+        vquery = "select nuri,proyecto from proyectos where proyecto = :proyecto  ;"
+        df3 = conn.query(vquery, ttl="0",params={"proyecto": proy_nuri}),
+        vproyecto = df2[0].to_string(columns=['proyecto'], header=False, index=False)
+
+      
         #vpro = st.selectbox(' Ingrese en el Proyecto que va trabajar ', df.proyecto )
         st.session_state['vpro'] = proy_nuri
-        st.session_state['vproyecto'] = proy_nuri
+        st.session_state['vproyecto'] = vproyecto
         st.session_state['usuario'] = vusuario
         st.session_state['vadmin'] = admin
 
