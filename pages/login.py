@@ -78,7 +78,7 @@ with col[0]:
         #df = df1[0]
         vquery = "select nuri,proyecto from proyectos where proyecto = :proyecto  ;"
         df3 = conn.query(vquery, ttl="0",params={"proyecto": proy_nuri}),
-        vproyecto = df2[0].to_string(columns=['proyecto'], header=False, index=False)
+        vproyecto = df3[0].to_string(columns=['proyecto'], header=False, index=False)
 
       
         #vpro = st.selectbox(' Ingrese en el Proyecto que va trabajar ', df.proyecto )
