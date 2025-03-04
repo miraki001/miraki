@@ -46,6 +46,7 @@ df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
 df = df1[0]
 
 vproyecto = st.session_state['vproyecto'] 
+st.write(df)
 st.write(vproyecto)
 pos = df[df['proyecto']==vproyecto].index.item()
 
