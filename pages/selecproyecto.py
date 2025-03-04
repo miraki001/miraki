@@ -40,6 +40,7 @@ admin = st.session_state['vadmin']
 #st.session_state.vnuri = 0
 st.subheader("Seleccionar Proyecto")
 st.write(st.session_state['vproyecto'])
+st.write(st.session_state['vproy'])
 
 
 conn = st.connection("postgresql", type="sql")
