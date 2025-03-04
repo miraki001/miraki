@@ -105,7 +105,7 @@ st.session_state['vpro'] = vpro
 
 vusuario = st.text_input("Usuario ", tusuario)
 vclave  = st.text_input("clave ", tclave, type="password")
-vclave  = st.text_input("Es Administrador ", tadmin)
+vadmin  = st.text_input("Es Administrador ", tadmin)
 
 
 col1, col2, = st.columns(2)
