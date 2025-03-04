@@ -36,7 +36,7 @@ st.logo(
 )
 
 
-#vnuri = st.session_state['vnuri']
+admin = st.session_state['vadmin']
 #st.session_state.vnuri = 0
 st.subheader("Seleccionar Proyecto")
 
@@ -57,7 +57,7 @@ st.session_state['vpro'] = vpro
 
 #vpro_nuri = st.number_input("Proyecto ", tpro_nuri)
 
-
-    st.switch_page("./pages/usuarios.py")
-if col2.button("Cancelar"):
-    st.switch_page("./pages/usuarios.py")
+if admin=='S':
+    st.switch_page("./pages/novedades.py")
+if admin !='S':
+    st.switch_page("./pages/novedadessola.py")
