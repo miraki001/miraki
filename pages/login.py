@@ -89,7 +89,7 @@ with col[0]:
         st.session_state['vproyecto'] = df3[0].to_string(columns=['proyecto'], header=False, index=False)
         st.session_state['usuario'] = vusuario
         st.session_state['vadmin'] = admin
-        time.sleep(20)
+        #time.sleep(20)
 
     
     if nuri != '0':
