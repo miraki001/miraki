@@ -77,7 +77,7 @@ def ingresar():
     with conn.session as session:
         actualiza = "insert into usuarios (usuario,proyecto_nuri,clave,adminstrador)"
         actualiza = actualiza + " values (:usuario,:proyecto_nuri,:clave,:admin) ;"
-        session.execute(text(actualiza), {"usuario": tusuario,"proyecto_nuri": vpro_nuri,"clave": vclave,"admin": vadmin})
+        session.execute(text(actualiza), {"usuario": vusuario,"proyecto_nuri": vpro_nuri,"clave": vclave,"admin": vadmin})
         session.commit()
 
 
