@@ -79,6 +79,7 @@ with col[0]:
         #vpro = st.selectbox(' Ingrese en el Proyecto que va trabajar ', df.proyecto )
         st.session_state['vpro'] = proy_nuri
         st.session_state['usuario'] = vusuario
+        st.session_state['vadmin'] = admin
 
 
     
