@@ -78,11 +78,11 @@ with col[0]:
         #df = df1[0]
         vquery = "select nuri,proyecto from proyectos where nuri = :proyecto  ;"
         pnuri = int(proy_nuri)
-        st.write(pnuri)
+        #st.write(pnuri)
         df3 = conn.query(vquery, ttl="0",params={"proyecto": pnuri}),
-        st.write(df3[0])
+        #st.write(df3[0])
         vproyecto = df3[0].to_string(columns=['proyecto'], header=False, index=False)
-        st.write(vproyecto)
+        #st.write(vproyecto)
       
         #vpro = st.selectbox(' Ingrese en el Proyecto que va trabajar ', df.proyecto )
         st.session_state['vpro'] = proy_nuri
