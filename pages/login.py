@@ -77,6 +77,7 @@ with col[0]:
         #df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
         #df = df1[0]
         vquery = "select nuri,proyecto from proyectos where proyecto = :proyecto  ;"
+        st.write(proy_nuri)
         df3 = conn.query(vquery, ttl="0",params={"proyecto": proy_nuri}),
         st.write(df3[0])
         vproyecto = df3[0].to_string(columns=['proyecto'], header=False, index=False)
