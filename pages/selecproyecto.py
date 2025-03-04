@@ -45,7 +45,8 @@ conn = st.connection("postgresql", type="sql")
 df1 = conn.query('select nuri,proyecto from proyectos ;', ttl="0"),
 df = df1[0]
 
-
+vproyecto = st.session_state['vproyecto'] 
+pos = df[df['proyecto']==vproyecto].index.item()
 
 
 
