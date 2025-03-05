@@ -71,7 +71,10 @@ def desmarcar(df):
 
 
 conn = st.connection("postgresql", type="sql")
-df1 = conn.query('select nuri,fuente,leido,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje from nov_web limit 50;', ttl="0"),
+
+vquery = "select  nuri,fuente,leido,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje  from nov_web where proyecto_nuri = :proyecto  limit 200 ;"
+df1 = conn.query(vquery, ttl="0",params={"proyecto": proy_nuri}),
+#df1 = conn.query('select nuri,fuente,leido,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje from nov_web limit 50;', ttl="0"),
 df = df1[0]
 
 
