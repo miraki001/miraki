@@ -58,13 +58,14 @@ pos = df[df['proyecto']==vproyecto].index.item()
 
 
 vpro = st.selectbox('Proyecto en el que desea trabajar', df.proyecto ,index= pos)
-st.session_state['vpro'] = vpro
+st.session_state['vproyecto'] = vpro
 
 #vpro_nuri = st.number_input("Proyecto ", tpro_nuri)
 
 col10, col20 = st.columns(2)
 if col10.button(":red[**Aceptar**]"):
-
+  st.session_state['vproyecto'] = vpro
+  st.session_state['vpro'] = proy_nuri
   if admin=='S':
     st.switch_page("./pages/novedades.py")
   if admin !='S':
