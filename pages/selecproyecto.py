@@ -69,7 +69,7 @@ if col10.button(":red[**Aceptar**]"):
   vquery = "select nuri,proyecto from proyectos where proyecto = :proyecto  ;"
   df3 = conn.query(vquery, ttl="0",params={"proyecto": vpro}),
   #st.write(df3[0])
-  vpro_nuri = df3[0].to_string(columns=['nuri'], header=False, index=False)
+  vproy_nuri = df3[0].to_string(columns=['nuri'], header=False, index=False)
   pnuri = int(vproy_nuri)
   st.session_state['vproyecto'] = vpro
   st.session_state['vpro'] = pnuri
