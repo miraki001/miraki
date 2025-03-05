@@ -64,6 +64,10 @@ st.session_state['vproyecto'] = vpro
 
 col10, col20 = st.columns(2)
 if col10.button(":red[**Aceptar**]"):
+
+  conn = st.connection("postgresql", type="sql")
+  vquery = "select nuri,proyecto from proyectos where nuri = :proyecto  ;"
+  pnuri = int(proy_nuri)
   st.session_state['vproyecto'] = vpro
   st.session_state['vpro'] = proy_nuri
   if admin=='S':
