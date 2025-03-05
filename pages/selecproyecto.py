@@ -66,7 +66,7 @@ col10, col20 = st.columns(2)
 if col10.button(":red[**Aceptar**]"):
 
   conn = st.connection("postgresql", type="sql")
-  vquery = "select nuri,proyecto from proyectos where proeycto = :proyecto  ;"
+  vquery = "select nuri,proyecto from proyectos where proyecto = :proyecto  ;"
   df3 = conn.query(vquery, ttl="0",params={"proyecto": vpro}),
   #st.write(df3[0])
   vpro_nuri = df3[0].to_string(columns=['nuri'], header=False, index=False)
