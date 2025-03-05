@@ -41,7 +41,7 @@ st.logo(
 #vnuri = st.session_state['vnuri']
 #st.session_state.vnuri = 0
 st.subheader("Novedades")
-
+proy_nuri = int(st.session_state['vpro'])
 
 
 def seleccionar(df):
