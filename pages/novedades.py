@@ -10,7 +10,8 @@ st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki")
 
 
-
+#c1b1d3
+#604283
 
 st.markdown(
     """
@@ -93,7 +94,7 @@ selected241 = option_menu(None, ["Novedades", 'Ingresar','Editar','Borrar','Sele
         "container": {"padding": "0!important", "background-color": "#604283"},
         "icon": {"color": "orange", "font-size": "14px"}, 
         "nav-link": {"color": "white", "font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#B3D3F0"},
-        "nav-link-selected": {"background-color": "#604283"}
+        "nav-link-selected": {"background-color": "#c1b1d3"}
       }
 )
 
