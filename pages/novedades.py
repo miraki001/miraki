@@ -91,7 +91,7 @@ selected241 = option_menu(None, ["Novedades", 'Ingresar','Editar','Borrar','Sele
       icons=['newspaper', 'plus' ,'pencil-square','eraser','chek','patch-chek','building-fill'  ,'house'] , menu_icon="cast",orientation="horizontal", default_index=0,
                 
       styles={
-        "container": {"padding": "0!important", "background-color": "#c1b1d3"},
+        "container": {"padding": "0!important", "background-color": "#ba8bee"},
         "icon": {"color": "orange", "font-size": "14px"}, 
         "nav-link": {"color": "white", "font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#B3D3F0"},
         "nav-link-selected": {"background-color": "#c1b1d3"}
