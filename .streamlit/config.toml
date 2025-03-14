@@ -6,4 +6,4 @@ hideTopBar = true
 showSidebarNavigation = false
 toolbarMode = 'minimal'
 [theme] #
-backgroundColor = '#daeeed' 
+backgroundColor = '#f5eeed' 
