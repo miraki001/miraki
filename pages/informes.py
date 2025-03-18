@@ -16,6 +16,7 @@ from st_wordcloud import st_wordcloud
 import networkx as nx
 from pyvis.network import Network
 import streamlit.components.v1 as components
+from pyBibX import SimilarityAnalyzer
 
 st.set_page_config(initial_sidebar_state="collapsed",
                   layout="wide",menu_items=None,page_title="Miraki🖼")
@@ -74,7 +75,7 @@ if selected2=="Parametros":
 if selected2=="Informes":
   st.s
 
-tab1, tab2, tab3 = st.tabs(["Por Fuentes", "Tendencias", "Relaciones"])
+tab1, tab2, tab3 = st.tabs(["Por Fuentes", "Tendencias", "Relaciones","Otros"])
 
 with tab1:
     st.subheader("Cantidad de novedades por mes y año")
@@ -181,5 +182,20 @@ with tab3:
     # Load HTML file in HTML component for display on Streamlit page
     components.html(HtmlFile.read(), height=635)
 
+with tab4:
+    st.header("Otros")
+    conn = st.connection("postgresql", type="sql")
+    df = conn.query('select palabra as text,cnt as value from tag_words() ;', ttl="0")
+    analyzer = SimilarityAnalyzer(df)
+
+    similarity_results = analyzer.analyze_similarity()
+
+    st.write(similarity_results)
+  
+    words = df.to_dict('records')
+    #st.write(words)
+    #words = [{"text": "Python", "value": 500, "topic": "lol"}, {"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80},{"text": "Streamlit", "value": 80}]
+
+    st_wordcloud(words, width=800, height=600)
 
 
