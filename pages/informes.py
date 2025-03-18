@@ -75,7 +75,7 @@ if selected2=="Parametros":
 if selected2=="Informes":
   st.s
 
-tab1, tab2, tab3 = st.tabs(["Por Fuentes", "Tendencias", "Relaciones","Otros"])
+tab1, tab2, tab3,tab4 = st.tabs(["Por Fuentes", "Tendencias", "Relaciones","Otros"])
 
 with tab1:
     st.subheader("Cantidad de novedades por mes y año")
