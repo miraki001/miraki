@@ -208,6 +208,8 @@ with tab4:
                         damping=0.95
                        )
 
+    drug_net.toggle_physics(False)
+  
     # Save and read graph as HTML file (on Streamlit Sharing)
 
     try:
