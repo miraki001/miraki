@@ -186,7 +186,7 @@ with tab4:
     st.header("Relaciones")
     conn = st.connection("postgresql", type="sql")
     df = conn.query('select titulo || detalle detalle,categoria from nov limit 100 ;', ttl="0")
-    G = nx.from_pandas_edgelist(df,source='detalle', target='categoria' )
+    G = nx.from_pandas_edgelist(df,source='categoria', target='detalle' )
 
     drug_net = Network(
                        select_menu = False,
