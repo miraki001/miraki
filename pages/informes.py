@@ -189,7 +189,7 @@ with tab4:
     G = nx.from_pandas_edgelist(df,source='detalle', target='categoria' )
 
     drug_net = Network(
-                       select_menu = true,
+                       select_menu = True,
                        height='800px',
                        width='100%',
                        bgcolor='#222222',
