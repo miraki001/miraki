@@ -321,7 +321,6 @@ def scrapping():
         st.write('link' +  link )
         st.write( img )
         dres = dresf.append({'tit': titu, 'det': det, 'link': link,'img': img}, ignore_index=True)
-return dres      
 
     
 
@@ -463,3 +462,4 @@ return dres
                   width=200, # Manually Adjust the width of the image as per requirement
                  )
 
+  return dres      
