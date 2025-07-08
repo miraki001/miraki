@@ -27,7 +27,7 @@ CLEANR = re.compile('<.*?>')
 
 
 def scrapping():
-  dres = pd.DataFrame(columns=['tit','det','link','img','sel'], index=[0])
+  dres = pd.DataFrame(columns=['tit','det','link','img','sel','eje','peso'], index=[0])
   def get_driver():
     options = webdriver.ChromeOptions()
 
@@ -91,7 +91,6 @@ def scrapping():
        index = tira.find(texto)
        if index > 0:
          result = df[df['palabra'] == texto]
-         #st.write(result)
          peso = result.to_string(columns=['peso'], header=False, index=False)[0]
          vpeso = vpeso + int(peso)
          
@@ -158,7 +157,6 @@ def scrapping():
     #st.write(dictitu)
 
   p1 = xdetalle.find("{")
-  #st.write(p)
   #   esto es para el caso del titulo que debe ser un diccionario
   if p1 > 0:
     sep1 = xdetalle[:p1-2]
@@ -166,7 +164,6 @@ def scrapping():
     sepd =sep1.replace('"','')
     #st.write(sepd)
     resto = xdetalle[p1:100]
-    #st.write(resto)
     p1 = resto.find(":")
     atr1 = resto[:p1]
     atr1 = atr1[1:100]
@@ -232,12 +229,9 @@ def scrapping():
       #det = re.sub(CLEANR, '', det)
     
       #det =  det.encode('latin-1')
-      dres = dresf.append({'tit': tit, 'det': det, 'link': link,'img': img}, ignore_index=True)
-      st.write(tit)
-      st.write(det)
-      st.write(link)
-      st.write(img)
-        
+      ap = pd.DataFrame([{'tit': tit, 'det': det, 'link': link,'img': img}])
+      dres = pd.concat([dres,ap])            
+      
   if tipobusq== 'json':
     my_url = vurl
 
@@ -289,17 +283,6 @@ def scrapping():
       #st.write(ojson)
       #pp = data
       
-    #json.parse(data)
-    #data = page_soup.select(separador)[vpos]
-    #st.write(data)
-    #pos1 = data.str.find('[')
-    #st.write('pos1')
-    #st.write(pos1)
-    #pos2 = data.find(']')
-    #st.write(pos2)
-
-    #ojson = json.loads(pp.string)
-    #st.write(ojson)
     for product in ojson:
         try:
           titu = product[xtitulo]
@@ -315,12 +298,13 @@ def scrapping():
         img = ''
         if ximage != 'none':
           vimg = product[ximage]
-        #st.write(xlink)
         st.write('Titulo  :  '  + titu)
         st.write('Detalle :  ' +  det )
         st.write('link' +  link )
         st.write( img )
-        dres = dresf.append({'tit': titu, 'det': det, 'link': link,'img': img}, ignore_index=True)
+        ap = pd.DataFrame([{'tit': titu, 'det': det, 'link': link,'img': img}])
+        dres = pd.concat([dres,ap])            
+      
 
     
 
@@ -331,11 +315,9 @@ def scrapping():
         "Hm_lvt_7cd4710f721b473263eed1f0840391b4": "1548140525",
         "x5sec":"7b22617365727665722d6c617a6164613b32223a223832333339343739626466613939303562613535386138333266383365326132434c4b516e65494645495474764a322b706f6d6f6941453d227d", }
   
-    #st.write(separador)
     if tipobusq == 'sele':
 
         options = Options()
-  #        options.add_argument('--disable-gpu')
         options.add_argument('--headless')
         options.add_argument('--log-level=3')
         driver = get_driver()
@@ -356,19 +338,12 @@ def scrapping():
         #st.write(response)
         html_content = response.text
         soup = BeautifulSoup(html_content, 'lxml')
-    #st.write(soup)
-    #noticias = soup.find_all(string=re.compile("dg_news_hl_news_"))
-    #noticias = soup.find_all("div", {"class":"issue-item clearfix"})
-    #st.write(noticias)
   
     if vatrib1 != '':
         noticias = soup.find_all(separador,newv)
     if vatrib1 == '':    
         noticias = soup.find_all(separador)
 
-    if st.checkbox('Ver contenido extraido'):
-        st.write(noticias)
-    st.write('Cantidad de Novedades encontradas : '  + str(len(noticias)))    
     for p in noticias:
         title = p.find(xlink)
         if title==None:
@@ -376,8 +351,6 @@ def scrapping():
             href = title
         else:
             href = title.get("href") 
-        #st.write(title)
-        #href = title.get("href")
         if titulodict == 'S':
             try:
               vtitle = p.find_all(sep,dictitu )  
@@ -395,10 +368,6 @@ def scrapping():
                 except:
                     title = ''
         det = p.find_all(xdetalle)
-        #st.write(det)
-        #st.write(det[1].text)
-        #st.write(detalledict)
-        #st.write(dictdet)
         if detalledict=='S':
           try:
             vdet = p.find_all(sepd,dictdet )    
@@ -427,41 +396,19 @@ def scrapping():
               img = ''
 
             
-            #file_name = p.search(".*/(.*png|.*jpg)$", img_url)
-            #st.write('Imagen : ' + img)
         if href != None:
           if not href.startswith('http'):
               href = urljoin(vurl, href)
 
         col1, col2 = st.columns(2)
+        eje_nuri = 0
+        peso = 0
+        eje_nuri = buscareje(df1[0],title + ' ' + det)
+        peso = buscarpalabras(df2[0],title + ' ' + det)
       
-        with col1:
-          if href != None:
-            st.write('Link : ' + href)
-            st.write('Titulo :  ' + title)
-            st.write('Detalle :  ' + det)
-            st.write('Imagen :  ' +  img)
-            ap = pd.DataFrame([{'tit': title, 'det': det, 'link': href,'img': img}])
-            dres = pd.concat([dres,ap])            
-            #dres = dres.append({'tit': title, 'det': det, 'link': href,'img': img}, ignore_index=True)
-            
-          eje_nuri = 0
-          peso = 0
-          eje_nuri = buscareje(df1[0],title + ' ' + det)
-          peso = buscarpalabras(df2[0],title + ' ' + det)
-          #eje_nuri = st.session_state['vejenuri'] 
-          #st.write('Eje')
-          #st.write(eje_nuri)
-          #st.write(peso)
-          st.session_state['vejenuri'] = 0
+        ap = pd.DataFrame([{'tit': title, 'det': det, 'link': href,'img': img,'eje': eje_nuri,'peso': peso}])
+        dres = pd.concat([dres,ap])            
+                  
 
-
-      
-        with col2:
-          if img != '':
-                st.image(
-                  img,
-                  width=200, # Manually Adjust the width of the image as per requirement
-                 )
 
   return dres      
