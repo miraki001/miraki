@@ -26,7 +26,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 CLEANR = re.compile('<.*?>') 
 
 
-def_scrapping():
+def scrapping():
   dres = pd.DataFrame(columns=['tit','det','link','img','sel'], index=[0])
   def get_driver():
     options = webdriver.ChromeOptions()
