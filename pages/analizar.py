@@ -10,5 +10,6 @@ qq = 'select nuri,fuente as url,activa,fecha_act,descrip as fuente,pais,fuente_o
 df1 = conn.query(qq, ttl="0"),
 df = df1[0]
 st.write(df)
+df["activa"] = df["activa"].astype(str)
 df = df[df['activa'].isin(activa)]
 st.write(df.len)
