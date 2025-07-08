@@ -43,10 +43,12 @@ for index in range(len(df)) :
    st.session_state['vactiva'] = df['activa'].iloc[index]
 
    tnuri = st.session_state['vnuri']
+   vcnt = 1
+   vcnt1 = 1
 
    with conn.session as session:
       actualiza = "UPDATE fuentes_py SET  fecha_act = current_date,cnt_noticias = :cnt, cnt_encontradas = :cnt1"
       actualiza = actualiza + " WHERE nuri= :nuri"  
-      session.execute(text(actualiza), {"cnt": 1,"cnt1": 1, "nuri": tnuri})
+      session.execute(text(actualiza), {"cnt": vcnt,"cnt1": vcnt1, "nuri": tnuri})
      
    st.write("Listo")
