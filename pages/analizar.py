@@ -11,5 +11,6 @@ df1 = conn.query(qq, ttl="0"),
 df = df1[0]
 st.write(df)
 df["activa"] = df["activa"].astype(str)
-df = df[df['activa'].isin(activa)]
+df = df[df['activa'] == 'S']
+#df = df[df['activa'] 
 st.write(df.len)
