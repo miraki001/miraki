@@ -50,5 +50,6 @@ for index in range(len(df)) :
       actualiza = "UPDATE fuentes_py SET  fecha_act = current_date,cnt_noticias = :cnt, cnt_encontradas = :cnt1"
       actualiza = actualiza + " WHERE nuri= :nuri"  
       session.execute(text(actualiza), {"cnt": vcnt,"cnt1": vcnt1, "nuri": str(fnuri)} )
+      session.commit()
      
 st.write("Listo")
