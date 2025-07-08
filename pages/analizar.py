@@ -19,6 +19,7 @@ for index in range(len(df)) :
    vquery = 'select * from fuentes_py where nuri = ' + str(fnuri) + ';'
    df2 = conn.query(vquery, ttl="0"),
    df3 = df2[0]
+   st.write(df3)
    st.session_state['vsepa'] = df3.to_string(columns=['separador'], header=False, index=False)
    st.session_state['vtit'] = df3.to_string(columns=['xpath_titulo'], header=False, index=False)
    st.session_state['vdet'] = df3.to_string(columns=['xpath_detalle'], header=False, index=False)
@@ -41,7 +42,7 @@ for index in range(len(df)) :
    st.session_state['vposdet'] = df3.to_string(columns=['posdet'], header=False, index=False)
    st.session_state['vfuente'] = df3.to_string(columns=['url'], header=False, index=False)
    st.session_state['vdescrip'] = df3.to_string(columns=['fuente'], header=False, index=False)
-   st.session_state['vnuri'] = df3.to_string(columns=['nuri'], header=False, index=False)
+   st.session_state['vnuri'] =  df3.to_string(columns=['nuri'], header=False, index=False)
    st.session_state['vpais'] = df3.to_string(columns=['pais'], header=False, index=False)
    st.session_state['vactiva'] = df3.to_string(columns=['activa'], header=False, index=False)
 
