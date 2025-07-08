@@ -441,7 +441,7 @@ def scrapping():
             st.write('Titulo :  ' + title)
             st.write('Detalle :  ' + det)
             st.write('Imagen :  ' +  img)
-            dres = dresf.append({'tit': title, 'det': det, 'link': href,'img': img}, ignore_index=True)
+            dres = dres.append({'tit': title, 'det': det, 'link': href,'img': img}, ignore_index=True)
             
           eje_nuri = 0
           peso = 0
