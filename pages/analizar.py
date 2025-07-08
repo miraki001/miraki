@@ -3,7 +3,7 @@ import psycopg2
 import os
 from sqlalchemy import text
 from streamlit_option_menu import option_menu
-import scrapping
+from scrapp import scrapping
 
 conn = st.connection("postgresql", type="sql")
 activa = "S"
