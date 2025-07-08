@@ -51,4 +51,4 @@ for index in range(len(df)) :
       actualiza = actualiza + " WHERE nuri= :nuri"  
       session.execute(text(actualiza), {"cnt": vcnt,"cnt1": vcnt1, "nuri": str(tnuri)} )
      
-   st.write("Listo")
+st.write("Listo")
