@@ -13,4 +13,4 @@ st.write(df)
 df["activa"] = df["activa"].astype(str)
 df = df[df['activa'] == 'S']
 #df = df[df['activa'] 
-st.write(df.len)
+st.write(len(df))
