@@ -16,7 +16,7 @@ df = df[df['activa'] == 'S']
 st.write(len(df))
 for index in range(len(df)) :
    fnuri = df['nuri'].iloc[index]
-   vquery = 'select * from fuentes_py where nuri = ' + fnuri + ';'
+   vquery = 'select * from fuentes_py where nuri = ' + str(fnuri) + ';'
    df2 = conn.query(vquery, ttl="0"),
    df3 = df2[0]
    st.session_state['vsepa'] = df3.to_string(columns=['separador'], header=False, index=False)
