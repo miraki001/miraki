@@ -18,7 +18,7 @@ for index in range(len(df)) :
    fnuri = df['nuri'].iloc[index]
    st.session_state['vsepa'] = df['separador'].iloc[index]
    st.session_state['vtit'] = df['xpath_titulo'].iloc[index]
-   st.session_state['vdet'] = df.['xpath_detalle'].iloc[index]
+   st.session_state['vdet'] = df['xpath_detalle'].iloc[index]
    st.session_state['vlink'] = df['xpath_link'].iloc[index]
    st.session_state['vtipo'] = df['tipo'].iloc[index]
    st.session_state['vbus'] = df['busqueda_pers'].iloc[index]
