@@ -3,10 +3,11 @@ import psycopg2
 import os
 from sqlalchemy import text
 from streamlit_option_menu import option_menu
+from scrapping import scrapping
 
 conn = st.connection("postgresql", type="sql")
 activa = "S"
-qq = 'select * from fuentes_py where proyecto_nuri = 1 ;'
+qq = 'select * from fuentes_py where proyecto_nuri = 1 and nuri = 6073 ;'
 df1 = conn.query(qq, ttl="0"),
 df = df1[0]
 st.write(df)
@@ -51,5 +52,6 @@ for index in range(len(df)) :
       actualiza = actualiza + " WHERE nuri= :nuri"  
       session.execute(text(actualiza), {"cnt": vcnt,"cnt1": vcnt1, "nuri": str(fnuri)} )
       session.commit()
-     
+      dres = scrapping.scrapping()  
+      st.write(dres)
 st.write("Listo")
