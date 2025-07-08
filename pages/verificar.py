@@ -322,9 +322,9 @@ if tipobusq== 'json':
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
     time.sleep(1)        
         #WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "id_of_element_present_in_all_situation")))
-    st.write(driver.page_source)
+    #st.write(driver.page_source)
     soup = BeautifulSoup(driver.page_source, 'lxml')
-    st.write(soup)
+    #st.write(soup)
 
     
 
@@ -337,7 +337,7 @@ if tipobusq== 'json':
       pp = page_soup.select(separador)[vpos]
       ojson = json.loads(pp.string)
     else:
-      st.write(newv)
+      #st.write(newv)
       #data = page_soup.select(separador,newv)[vpos]
       #data = page_soup.select("[type='application/ld+json']")[2]
       data = page_soup.select(separador)[vpos]
