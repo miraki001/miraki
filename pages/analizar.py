@@ -39,11 +39,11 @@ for index in range(len(df)) :
    st.session_state['vtipoimg'] = df3.to_string(columns=['tipo_img'], header=False, index=False)
    st.session_state['vpostit'] = df3.to_string(columns=['postit'], header=False, index=False)
    st.session_state['vposdet'] = df3.to_string(columns=['posdet'], header=False, index=False)
-   st.session_state['vfuente'] = selection.to_string(columns=['url'], header=False, index=False)
-   st.session_state['vdescrip'] = selection.to_string(columns=['fuente'], header=False, index=False)
-   st.session_state['vnuri'] = selection.to_string(columns=['nuri'], header=False, index=False)
-   st.session_state['vpais'] = selection.to_string(columns=['pais'], header=False, index=False)
-   st.session_state['vactiva'] = selection.to_string(columns=['activa'], header=False, index=False)
+   st.session_state['vfuente'] = df3.to_string(columns=['url'], header=False, index=False
+   st.session_state['vdescrip'] = df3.to_string(columns=['fuente'], header=False, index=False
+   st.session_state['vnuri'] = df3.to_string(columns=['nuri'], header=False, index=False
+   st.session_state['vpais'] = df3.to_string(columns=['pais'], header=False, index=False
+   st.session_state['vactiva'] = df3.to_string(columns=['activa'], header=False, index=False
 
    tnuri = st.session_state['vnuri']
 
