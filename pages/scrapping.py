@@ -27,7 +27,7 @@ CLEANR = re.compile('<.*?>')
 
 
 def_scrapping():
-
+  dres = pd.DataFrame(columns=['tit','det','link','img','sel'], index=[0])
   def get_driver():
     options = webdriver.ChromeOptions()
 
@@ -232,6 +232,7 @@ def_scrapping():
       #det = re.sub(CLEANR, '', det)
     
       #det =  det.encode('latin-1')
+      dres = dresf.append({'tit': tit, 'det': det, 'link': link,'img': img}, ignore_index=True)
       st.write(tit)
       st.write(det)
       st.write(link)
@@ -319,6 +320,8 @@ def_scrapping():
         st.write('Detalle :  ' +  det )
         st.write('link' +  link )
         st.write( img )
+        dres = dresf.append({'tit': titu, 'det': det, 'link': link,'img': img}, ignore_index=True)
+return dres      
 
     
 
@@ -439,6 +442,8 @@ def_scrapping():
             st.write('Titulo :  ' + title)
             st.write('Detalle :  ' + det)
             st.write('Imagen :  ' +  img)
+            dres = dresf.append({'tit': title, 'det': det, 'link': href,'img': img}, ignore_index=True)
+            
           eje_nuri = 0
           peso = 0
           eje_nuri = buscareje(df1[0],title + ' ' + det)
