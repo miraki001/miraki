@@ -88,7 +88,7 @@ if selected4=="Duplicar":
     duplicar()  
 if selected4=="Verificar":
     st.switch_page("./pages/verificar.py") 
-if selected4=="Verificar":
+if selected4=="Analizar":
     st.switch_page("./pages/analizar.py") 
   
     
