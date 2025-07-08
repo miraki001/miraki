@@ -88,6 +88,9 @@ if selected4=="Duplicar":
     duplicar()  
 if selected4=="Verificar":
     st.switch_page("./pages/verificar.py") 
+if selected4=="Verificar":
+    st.switch_page("./pages/analizar.py") 
+  
     
 tnuri = 0
 vtitulo= ''
