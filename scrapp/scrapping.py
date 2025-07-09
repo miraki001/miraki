@@ -302,12 +302,13 @@ def scrapping():
         #st.write('Titulo  :  '  + titu)
         #st.write('Detalle :  ' +  det )
         #st.write('link' +  link )
-        st.write( vurl )
+        #st.write( vurl )
         if link != None:
           if not link.startswith('http'):
               link = "/link/" + link
-              st.write(vurl)
-              link = urljoin(vurl, link)
+              #st.write(vurl)
+              #link = urljoin(vurl, link)
+              link = vurl+ link
         eje_nuri = buscareje(df1[0],titu + ' ' + det)
         peso = buscarpalabras(df2[0],titu + ' ' + det)
         ap = pd.DataFrame([{'tit': titu, 'det': det, 'link': link,'img': img,'eje': eje_nuri,'peso': peso}])
