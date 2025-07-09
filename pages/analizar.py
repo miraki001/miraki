@@ -13,7 +13,7 @@ def buscar_not(vtitu,vfuente,vproyecto):
     buscar = buscar  + " where titulo = :titu  " 
     buscar = buscar + " and fuente_nuri = :fuente"
     buscar = buscar + " and proyecto_nuri = :proyecto ;"
-    df2 = conn.query(buscar, ttl="0",params={"titu": vtitu,"fuente": vfuente,"proyecto": vproyecto})
+    df2 = conn.query(buscar, ttl="0",params={"titu": vtitu,"fuente": vfuente,"proyecto": vproyecto}),
     st.write(df2['cnt'])
     vcnt = df2['cnt']
     st.write(vcnt)
