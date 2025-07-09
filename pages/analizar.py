@@ -14,7 +14,7 @@ def buscar_not(vtitu,vfuente,vproyecto):
     buscar = buscar + " and fuente_nuri = :fuente"
     buscar = buscar + " and proyecto_nuri = :proyecto ;"
     df2 = conn.query(buscar, ttl="0",params={"titu": vtitu,"fuente": vfuente,"proyecto": vproyecto})
-    st.write(df2)
+    st.write(df2['cnt'])
     vcnt = df2[0]
     return vcnt
 
@@ -27,7 +27,7 @@ vpro = st.session_state['vpro']
 df["activa"] = df["activa"].astype(str)
 df = df[df['activa'] == 'S']
 #df = df[df['activa'] 
-st.write(len(df))
+#st.write(len(df))
 for index in range(len(df)) :
    fnuri = df['nuri'].iloc[index]
    st.session_state['vsepa'] = df['separador'].iloc[index]
