@@ -13,6 +13,7 @@ from scrapp import scrapping
 
 dres = scrapping.scrapping() 
 st.write(dres)
+dres.dropna()
 
 col1, col2 = st.columns(2)
 
