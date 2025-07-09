@@ -12,6 +12,7 @@ import time
 from scrapp import scrapping
 
 dres = scrapping.scrapping() 
+st.write(dres)
 
 col1, col2 = st.columns(2)
 
