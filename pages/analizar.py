@@ -17,6 +17,8 @@ def buscar_not(vtitu,vfuente,vproyecto):
     st.write(df2['cnt'])
     vcnt = df2['cnt']
     st.write(vcnt)
+    cnt = df2[0].to_string(columns=['cnt'], header=False, index=False)
+    st.write(cnt)
     return vcnt
 
 activa = "S"
