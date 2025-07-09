@@ -76,6 +76,7 @@ dres = scrapping.scrapping()
 #dres = dres.mask(dres.eq('None')).dropna()
 #dres = dres.mask(dres.astype(object).eq('None')).dropna()
 #dres = dres.dropna(how='any',axis=0)
+st.write("Cantidad de Noticias : " + str(len(dres)))
 
 #col1, col2 = st.columns(2)
 
