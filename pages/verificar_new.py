@@ -15,6 +15,7 @@ dres = scrapping.scrapping()
 st.write(dres)
 dres.dropna()
 dres.mask(dres.eq('None')).dropna()
+dres.mask(dres.astype(object).eq('None')).dropna()
 
 col1, col2 = st.columns(2)
 
