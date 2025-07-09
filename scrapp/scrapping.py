@@ -27,7 +27,8 @@ CLEANR = re.compile('<.*?>')
 
 
 def scrapping():
-  dres = pd.DataFrame(columns=['tit','det','link','img','sel','eje','peso'], index=[0])
+  #dres = pd.DataFrame(columns=['tit','det','link','img','sel','eje','peso'], index=[0])
+  dres = pd.DataFrame(columns=['tit','det','link','img','sel','eje','peso'])
   def get_driver():
     options = webdriver.ChromeOptions()
 
