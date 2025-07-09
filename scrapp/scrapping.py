@@ -77,10 +77,13 @@ def scrapping():
          st.session_state['vejenuri'] = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          if vnuri == None:
            vnuri = 6
+           st.write("si")
          if vnuri == '':
            vnuri = 6
+           st.write("si")
          if math.isnan(vnuri): 
            vnuri = 6
+           st.write("si")
          return vnuri
     for texto in df['palabraclave_en']:
        vnuri = 6
@@ -91,10 +94,13 @@ def scrapping():
          st.session_state['vejenuri'] = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          if vnuri == None:
            vnuri = 6
+           st.write("si")
          if vnuri == '':
            vnuri = 6
+           st.write("si")
          if math.isnan(vnuri): 
            vnuri = 6
+           st.write("si")
          return vnuri
 #result = pd.DataFrame(None)
 
