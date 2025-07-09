@@ -216,7 +216,7 @@ def scrapping():
       img = ''
       if pref > 0 :
         sep = ximage[:pref-1]
-        st.write(sep)
+        #st.write(sep)
         ll = entry.find(re.compile("^" + sep) )    
         #ll = entry.find(re.compile("^enclosure") )    
         img =  ll['url']
@@ -299,10 +299,10 @@ def scrapping():
         img = ''
         if ximage != 'none':
           vimg = product[ximage]
-        st.write('Titulo  :  '  + titu)
-        st.write('Detalle :  ' +  det )
-        st.write('link' +  link )
-        st.write( img )
+        #st.write('Titulo  :  '  + titu)
+        #st.write('Detalle :  ' +  det )
+        #st.write('link' +  link )
+        #st.write( img )
         ap = pd.DataFrame([{'tit': titu, 'det': det, 'link': link,'img': img}])
         dres = pd.concat([dres,ap])            
       
@@ -330,9 +330,9 @@ def scrapping():
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
         time.sleep(1)        
         #WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "id_of_element_present_in_all_situation")))
-        st.write(driver.page_source)
+        #st.write(driver.page_source)
         soup = BeautifulSoup(driver.page_source, 'lxml')
-        st.write(soup)
+        #st.write(soup)
     else:
         response = requests.get(url,headers=headers)
         ret = requests.get(url, cookies=cookies ,headers=headers)
@@ -401,7 +401,6 @@ def scrapping():
           if not href.startswith('http'):
               href = urljoin(vurl, href)
 
-        col1, col2 = st.columns(2)
         eje_nuri = 0
         peso = 0
         eje_nuri = buscareje(df1[0],title + ' ' + det)
