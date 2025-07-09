@@ -303,6 +303,10 @@ def scrapping():
         #st.write('Detalle :  ' +  det )
         #st.write('link' +  link )
         #st.write( img )
+        if link != None:
+          if not link.startswith('http'):
+              link = urljoin(vurl, href)
+      
         ap = pd.DataFrame([{'tit': titu, 'det': det, 'link': link,'img': img}])
         dres = pd.concat([dres,ap])            
       
