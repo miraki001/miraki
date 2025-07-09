@@ -19,7 +19,7 @@ def buscar_not(vtitu,vfuente,vproyecto):
     #st.write(vcnt)
     cnt = df2[0].to_string(columns=['cnt'], header=False, index=False)
     st.write(cnt)
-    return vcnt
+    return cnt
 
 activa = "S"
 qq = 'select * from fuentes_py where proyecto_nuri = 1 and nuri = 6073 ;'
