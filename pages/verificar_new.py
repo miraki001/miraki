@@ -68,16 +68,16 @@ if selected2713=="Informes":
   st.switch_page("./pages/informes.py") 
 
 
-st.write("aca")
+
 dres = scrapping.scrapping() 
 #st.write(dres)
-st.write("aca")
+
 #dres = dres.dropna()
 #dres = dres.mask(dres.eq('None')).dropna()
 #dres = dres.mask(dres.astype(object).eq('None')).dropna()
 #dres = dres.dropna(how='any',axis=0)
 
-col1, col2 = st.columns(2)
+col1, col2 = st.columns([3, 1])
 
 for index in range(len(dres)) :
    tit = dres['tit'].iloc[index]
