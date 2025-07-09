@@ -11,6 +11,62 @@ import numpy as np
 import time
 from scrapp import scrapping
 
+
+
+
+st.set_page_config(initial_sidebar_state="collapsed",
+                  layout="wide",menu_items=None,page_title="Miraki")
+
+
+st.markdown(
+    """
+        <style>
+                .stAppHeader {
+                    background-color: rgba(255, 255, 255, 0.0);  /* Transparent background */
+                    background-image: url(http://placekitten.com/200/200);
+                    background-position: 20px 20px;
+                    visibility: visible;  /* Ensure the header is visible */
+                }
+
+               .block-container {
+                    padding-top: 0rem;
+                    padding-bottom: 0rem;
+                    padding-left: 5rem;
+                    padding-right: 2rem;
+                }
+        </style>
+        """,
+    unsafe_allow_html=True,
+)
+
+st.logo(
+    "https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/MARCA%20ARRIBA%20PNG.png?alt=media&token=46705f1e-7f86-4d2b-b2ab-a7188a30b379",
+    icon_image="https://firebasestorage.googleapis.com/v0/b/miraki-7ca50.appspot.com/o/MARCA%20ARRIBA%20PNG.png?alt=media&token=46705f1e-7f86-4d2b-b2ab-a7188a30b379",
+    size="large",
+)
+
+st.subheader("Verficar fuentes")
+
+
+selected2713 = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Parametros'], 
+        icons=['house', 'newspaper' , 'filetype-html','globe-americas','gear'] , menu_icon="cast",orientation="horizontal", default_index=0,
+        styles={
+        "container": {"padding": "0!important", "background-color": "#604283"},
+        "icon": {"color": "orange", "font-size": "14px"}, 
+        "nav-link": {"color": "white",  "font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#B3D3F0"},
+        "nav-link-selected": {"background-color": "#604283"}
+        }
+  )
+
+if selected2713=="Fuentes":
+  st.switch_page("./pages/fuentes.py")
+if selected2713=="Novedades":
+  st.switch_page("./pages/novedades.py")       
+if selected2713=="Parametros":
+  st.switch_page("./pages/parametros.py")        
+if selected2713=="Informes":
+  st.switch_page("./pages/informes.py") 
+   
 dres = scrapping.scrapping() 
 #st.write(dres)
 #dres = dres.dropna()
