@@ -16,6 +16,7 @@ st.write(dres)
 dres = dres.dropna()
 dres = dres.mask(dres.eq('None')).dropna()
 dres = dres.mask(dres.astype(object).eq('None')).dropna()
+dres = dres.dropna(how='any',axis=0)
 
 col1, col2 = st.columns(2)
 
