@@ -437,6 +437,9 @@ def scrapping():
         peso = 0
         eje_nuri = buscareje(df1[0],title + ' ' + det)
         peso = buscarpalabras(df2[0],title + ' ' + det)
+        if eje_nuri == None:
+          eje_nuri = 6
+          st.write("aca")
       
         ap = pd.DataFrame([{'tit': title, 'det': det, 'link': href,'img': img,'eje': eje_nuri,'peso': peso}])
         dres = pd.concat([dres,ap])            
