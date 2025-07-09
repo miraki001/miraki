@@ -6,11 +6,23 @@ from streamlit_option_menu import option_menu
 from scrapp import scrapping
 
 conn = st.connection("postgresql", type="sql")
+
+def buscar_not(vtitu,vfuente,vproyecto):
+  with conn.session as session:
+    buscar = "count(nuri) as cnt from novedades "
+    buscar = buscar  + " where titulo = :titu  " 
+    buscar = buscar + " and fuente_nuri = :fuente"
+    buscar = buscar + " and proyecto_nuri = :proyecto ;"
+    df2 = conn.query(buscar, ttl="0",params={"titu": vtitu,"fuente": vfuente,"proyecto": vproyecto})
+    vcnt = df2[0].to_string(columns=['cnt'], header=False, index=False)
+    return vcnt
+
 activa = "S"
 qq = 'select * from fuentes_py where proyecto_nuri = 1 and nuri = 6073 ;'
 df1 = conn.query(qq, ttl="0"),
 df = df1[0]
 st.write(df)
+vpro = st.session_state['vpro']
 df["activa"] = df["activa"].astype(str)
 df = df[df['activa'] == 'S']
 #df = df[df['activa'] 
@@ -42,9 +54,22 @@ for index in range(len(df)) :
    st.session_state['vnuri'] =  df['nuri'].iloc[index]
    st.session_state['vpais'] = df['pais'].iloc[index]
    st.session_state['vactiva'] = df['activa'].iloc[index]
+   st.session_state['vbuscapers'] = df['busqueda_pers'].iloc[index]
+   buscar_pers =  df['busqueda_pers'].iloc[index]
 
    tnuri = st.session_state['vnuri']
-   vcnt = 1
+   dres = scrapping.scrapping()
+   vcnt = len(dres)
+   for index in range(len(dres)) :
+      tit = dres['tit'].iloc[index]
+      det = dres['det'].iloc[index]
+      link = dres['link'].iloc[index]
+      img = dres['img'].iloc[index]
+      eje = dres['eje'].iloc[index]
+      peso = dres['peso'].iloc[index]
+      encontrada = buscar_not(tit,fnuri,vpro)
+      st.write("encontrada " + encontrada)
+   
    vcnt1 = 1
 
    with conn.session as session:
