@@ -407,7 +407,7 @@ def scrapping():
         peso = buscarpalabras(df2[0],title + ' ' + det)
       
         ap = pd.DataFrame([{'tit': title, 'det': det, 'link': href,'img': img,'eje': eje_nuri,'peso': peso}])
-        dres = pd.concat([dres,ap])            
+        #dres = pd.concat([dres,ap])            
                   
 
 
