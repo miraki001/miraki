@@ -9,4 +9,31 @@ from sqlalchemy import text
 from streamlit_option_menu import option_menu
 import numpy as np
 import time
+from scrapp import scrapping
 
+dres = scrapping.scrapping() 
+
+col1, col2 = st.columns(2)
+
+for index in range(len(dres)) :
+   tit = dres['tit'].iloc[index]
+   det = dres['det'].iloc[index]
+   link = dres['link'].iloc[index]
+   img = dres['img'].iloc[index]
+   eje = dres['eje'].iloc[index]
+   peso = dres['peso'].iloc[index]
+
+   with col1:
+     st.write('Link : ' + link)
+     st.write('Titulo :  ' + tit)
+     st.write('Detalle :  ' + det)
+     st.write('Imagen :  ' +  img)
+     st.write('Peso :  ' +  peso)
+     st.write('Eje :  ' +  eje)
+     
+   with col2:
+        if img != '':
+            st.image(
+                img,
+                width=200, # Manually Adjust the width of the image as per requirement
+            )
