@@ -15,7 +15,7 @@ def buscar_not(vtitu,vfuente,vproyecto):
     buscar = buscar + " and proyecto_nuri = :proyecto ;"
     df2 = conn.query(buscar, ttl="0",params={"titu": vtitu,"fuente": vfuente,"proyecto": vproyecto})
     st.write(df2[0])
-    vcnt = df2[0].to_string(columns=['cnt'], header=False, index=False)
+    vcnt = df2[0]
     return vcnt
 
 activa = "S"
