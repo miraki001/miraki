@@ -234,7 +234,10 @@ def scrapping():
       #det = re.sub(CLEANR, '', det)
     
       #det =  det.encode('latin-1')
-      ap = pd.DataFrame([{'tit': tit, 'det': det, 'link': link,'img': img}])
+      
+      eje_nuri = buscareje(df1[0],tit + ' ' + det)
+      peso = buscarpalabras(df2[0],tit + ' ' + det)
+      ap = pd.DataFrame([{'tit': tit, 'det': det, 'link': link,'img': img,'eje': eje_nuri,'peso': peso}])
       dres = pd.concat([dres,ap])            
       
   if tipobusq== 'json':
