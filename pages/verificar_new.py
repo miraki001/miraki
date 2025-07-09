@@ -77,7 +77,7 @@ dres = scrapping.scrapping()
 #dres = dres.mask(dres.astype(object).eq('None')).dropna()
 #dres = dres.dropna(how='any',axis=0)
 
-col1, col2 = st.columns(2)
+#col1, col2 = st.columns(2)
 
 for index in range(len(dres)) :
    tit = dres['tit'].iloc[index]
@@ -87,6 +87,7 @@ for index in range(len(dres)) :
    eje = dres['eje'].iloc[index]
    peso = dres['peso'].iloc[index]
    #st.write(link)
+   col1, col2 = st.columns(2)
 
    with col1:
      st.write('Link : ' + link)
