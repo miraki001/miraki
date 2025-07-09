@@ -3,6 +3,7 @@ import os
 import re
 import sys
 import psutil
+import math
 import requests
 from bs4 import BeautifulSoup
 from lxml import html
@@ -78,6 +79,8 @@ def scrapping():
            vnuri = 6
          if vnuri == '':
            vnuri = 6
+         if math.isnan(vnuri): 
+           vnuri = 6
          return vnuri
     for texto in df['palabraclave_en']:
        vnuri = 6
@@ -89,6 +92,8 @@ def scrapping():
          if vnuri == None:
            vnuri = 6
          if vnuri == '':
+           vnuri = 6
+         if math.isnan(vnuri): 
            vnuri = 6
          return vnuri
 #result = pd.DataFrame(None)
