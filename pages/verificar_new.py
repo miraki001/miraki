@@ -66,7 +66,9 @@ if selected2713=="Parametros":
   st.switch_page("./pages/parametros.py")        
 if selected2713=="Informes":
   st.switch_page("./pages/informes.py") 
-   
+
+
+st.write("aca")
 dres = scrapping.scrapping() 
 #st.write(dres)
 #dres = dres.dropna()
