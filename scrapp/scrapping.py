@@ -66,7 +66,7 @@ def scrapping():
     vnuri = 0
     st.session_state['vejenuri'] = ''
     index = -1
-    #st.write(tira)
+    st.write(tira)
     for texto in df['palabraclave_es']:
        vnuri = 6
        index = tira.find(texto)
