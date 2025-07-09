@@ -9,7 +9,7 @@ conn = st.connection("postgresql", type="sql")
 
 def buscar_not(vtitu,vfuente,vproyecto):
   with conn.session as session:
-    buscar = "count(nuri) as cnt from novedades "
+    buscar = "select count(nuri) as cnt from novedades "
     buscar = buscar  + " where titulo = :titu  " 
     buscar = buscar + " and fuente_nuri = :fuente"
     buscar = buscar + " and proyecto_nuri = :proyecto ;"
