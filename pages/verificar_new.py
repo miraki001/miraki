@@ -31,7 +31,7 @@ st.markdown(
                .block-container {
                     padding-top: 0rem;
                     padding-bottom: 0rem;
-                    padding-left: 1rem;
+                    padding-left: 2rem;
                     padding-right: 1rem;
                 }
         </style>
@@ -71,6 +71,7 @@ if selected2713=="Informes":
 st.write("aca")
 dres = scrapping.scrapping() 
 #st.write(dres)
+st.write("aca")
 #dres = dres.dropna()
 #dres = dres.mask(dres.eq('None')).dropna()
 #dres = dres.mask(dres.astype(object).eq('None')).dropna()
