@@ -73,14 +73,18 @@ def scrapping():
          #st.write(result)
          vnuri = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          st.session_state['vejenuri'] = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
-         return int(vnuri)
+         if vnuri == None:
+           vnuri = 0
+         return vnuri
     for texto in df['palabraclave_en']:
        index = tira.find(texto)
        if index > 0:
          result = df[df['palabraclave_en'] == texto]
          vnuri = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
          st.session_state['vejenuri'] = result.to_string(columns=['eje_nuri'], header=False, index=False)[0]
-         return int(vnuri)
+         if vnuri == None:
+           vnuri = 0
+         return vnuri
 #result = pd.DataFrame(None)
 
 
