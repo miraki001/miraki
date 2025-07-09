@@ -74,13 +74,13 @@ for index in range(len(df)) :
    vcnt1 = 0
    for index in range(len(dres)) :
       tit = dres['tit'].iloc[index]
-      tit = tit[0,600]
+      tit = tit[0:600]
       det = dres['det'].iloc[index]
-      det = det[0,40000]
+      det = det[0:40000]
       link = dres['link'].iloc[index]
-      link = link[0,1500]
+      link = link[0:1500]
       img = dres['img'].iloc[index]
-      img = img[0,800]
+      img = img[0:800]
       eje = dres['eje'].iloc[index]
       peso = dres['peso'].iloc[index]
       encontrada = buscar_not(tit,int(fnuri),int(vpro))
