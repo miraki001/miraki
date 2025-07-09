@@ -12,11 +12,11 @@ import time
 from scrapp import scrapping
 
 dres = scrapping.scrapping() 
-st.write(dres)
-dres = dres.dropna()
-dres = dres.mask(dres.eq('None')).dropna()
-dres = dres.mask(dres.astype(object).eq('None')).dropna()
-dres = dres.dropna(how='any',axis=0)
+#st.write(dres)
+#dres = dres.dropna()
+#dres = dres.mask(dres.eq('None')).dropna()
+#dres = dres.mask(dres.astype(object).eq('None')).dropna()
+#dres = dres.dropna(how='any',axis=0)
 
 col1, col2 = st.columns(2)
 
@@ -27,7 +27,7 @@ for index in range(len(dres)) :
    img = dres['img'].iloc[index]
    eje = dres['eje'].iloc[index]
    peso = dres['peso'].iloc[index]
-   st.write(link)
+   #st.write(link)
 
    with col1:
      st.write('Link : ' + link)
