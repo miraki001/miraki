@@ -67,7 +67,7 @@ for index in range(len(df)) :
       img = dres['img'].iloc[index]
       eje = dres['eje'].iloc[index]
       peso = dres['peso'].iloc[index]
-      encontrada = buscar_not(tit,fnuri,vpro)
+      encontrada = buscar_not(tit,int(fnuri),int(vpro))
       st.write("encontrada " + encontrada)
    
    vcnt1 = 1
