@@ -77,7 +77,7 @@ dres = scrapping.scrapping()
 #dres = dres.mask(dres.astype(object).eq('None')).dropna()
 #dres = dres.dropna(how='any',axis=0)
 
-col1, col2 = st.columns([3, 1])
+col1, col2 = st.columns(2)
 
 for index in range(len(dres)) :
    tit = dres['tit'].iloc[index]
