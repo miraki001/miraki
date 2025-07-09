@@ -22,14 +22,15 @@ for index in range(len(dres)) :
    img = dres['img'].iloc[index]
    eje = dres['eje'].iloc[index]
    peso = dres['peso'].iloc[index]
+   st.write(link)
 
    with col1:
      st.write('Link : ' + link)
      st.write('Titulo :  ' + tit)
      st.write('Detalle :  ' + det)
      st.write('Imagen :  ' +  img)
-     st.write('Peso :  ' +  peso)
-     st.write('Eje :  ' +  eje)
+     st.write('Peso :  ' +  str(peso))
+     st.write('Eje :  ' +  str(eje))
      
    with col2:
         if img != '':
