@@ -117,11 +117,22 @@ def scrapping():
   headers={
         'User-Agent': 'python-requests/2.31.0',
   }
-
+  """
   headers = {
    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36  (Windows NT 6.1; WOW64; rv:12.0) Gecko/20100101 Firefox/12.0 "
+      
   }
+  """ 
 
+  headers = {
+    "authority": "www.google.com",
+    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+    "accept-language": "en-US,en;q=0.9",
+    "cache-control": "max-age=0",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36",
+    # add more headers as needed
+  }
+  
   conn = st.connection("postgresql", type="sql")
   qq = 'select eje_nuri,palabraclave_es,palabraclave_en from palabrasclaves  ;'
   df1 = conn.query(qq, ttl="0"),
