@@ -371,7 +371,7 @@ def scrapping():
         noticias = soup.find_all(separador,newv)
     if vatrib1 == '':    
         noticias = soup.find_all(separador)
-
+    st.write("aca")
     for p in noticias:
         title = p.find(xlink)
         if title==None:
