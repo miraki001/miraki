@@ -338,7 +338,7 @@ def scrapping():
 
   if tipobusq != 'json' and tipobusq != 'rss' :
     url = vurl
-    st.write("aca 1")
+    #st.write("aca 1")
     cookies = {
         "Hm_lpvt_7cd4710f721b473263eed1f0840391b4": "1548175412",
         "Hm_lvt_7cd4710f721b473263eed1f0840391b4": "1548140525",
@@ -361,13 +361,13 @@ def scrapping():
         #st.write(driver.page_source)
         soup = BeautifulSoup(driver.page_source, 'lxml')
         #st.write(soup)
-        st.write("sele")
+        #st.write("sele")
     else:
         st.write("otro hast aca ")
         response = requests.get(url,headers=headers)
-        st.write(response)
+        #st.write(response)
         ret = requests.get(url, cookies=cookies ,headers=headers)
-        st.write(ret)
+        #st.write(ret)
         html_content = response.text
         soup = BeautifulSoup(html_content, 'lxml')
   
@@ -375,7 +375,7 @@ def scrapping():
         noticias = soup.find_all(separador,newv)
     if vatrib1 == '':    
         noticias = soup.find_all(separador)
-    st.write("aca")
+    #st.write("aca")
     for p in noticias:
         title = p.find(xlink)
         if title==None:
