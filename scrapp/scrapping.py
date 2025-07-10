@@ -338,6 +338,7 @@ def scrapping():
 
   if tipobusq != 'json' and tipobusq != 'rss' :
     url = vurl
+    st.write("aca 1")
     cookies = {
         "Hm_lpvt_7cd4710f721b473263eed1f0840391b4": "1548175412",
         "Hm_lvt_7cd4710f721b473263eed1f0840391b4": "1548140525",
