@@ -363,6 +363,7 @@ def scrapping():
         #st.write(soup)
         st.write("sele")
     else:
+        st.write("otro")
         response = requests.get(url,headers=headers)
         ret = requests.get(url, cookies=cookies ,headers=headers)
         st.write(response)
