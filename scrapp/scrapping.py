@@ -377,7 +377,7 @@ def scrapping():
         #st.write("otro hast aca ")
         response = requests.get(url,headers=headers)
         st.write(response)
-        time.sleep(3) 
+        time.sleep(4) 
         ret = requests.get(url, cookies=cookies ,headers=headers)
         #st.write(ret)
         html_content = response.text
