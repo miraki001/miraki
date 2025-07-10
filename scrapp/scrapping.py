@@ -366,7 +366,7 @@ def scrapping():
         #st.write("otro hast aca ")
         response = requests.get(url,headers=headers)
         #st.write(response)
-        time.sleep(2) 
+        time.sleep(1) 
         ret = requests.get(url, cookies=cookies ,headers=headers)
         #st.write(ret)
         html_content = response.text
@@ -376,7 +376,7 @@ def scrapping():
         noticias = soup.find_all(separador,newv)
     if vatrib1 == '':    
         noticias = soup.find_all(separador)
-    st.write(noticias)
+    #st.write(noticias)
     for p in noticias:
         title = p.find(xlink)
         if title==None:
