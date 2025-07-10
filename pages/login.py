@@ -51,7 +51,7 @@ col = st.columns((6.5, 4.5, 2), gap='medium')
 nuri = 0
 
 with col[0]:
-  vusuario = st.text_input("Ingreseo su nombre de usuario")
+  vusuario = st.text_input("Ingrese su nombre de usuario")
   vclave = st.text_input("ingrese su Contraseña", type="password")
 
 
