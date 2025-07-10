@@ -361,6 +361,7 @@ def scrapping():
         #st.write(driver.page_source)
         soup = BeautifulSoup(driver.page_source, 'lxml')
         #st.write(soup)
+        st.write("sele")
     else:
         response = requests.get(url,headers=headers)
         ret = requests.get(url, cookies=cookies ,headers=headers)
