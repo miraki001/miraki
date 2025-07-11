@@ -380,6 +380,9 @@ def scrapping():
         #st.write("sele")
     else:
         st.write("otro hast aca ")
+        headers={
+            'User-Agent': 'python-requests/2.31.0',
+        }      
         response = requests.get(url,headers=headers)
         st.write(response)
         time.sleep(2) 
