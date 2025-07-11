@@ -21,6 +21,7 @@ networkx
 streamlit_elements
 urllib3
 selenium==4.28.1
+undetected_chromedriver
 
 
 
