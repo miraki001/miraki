@@ -384,6 +384,7 @@ def scrapping():
             'User-Agent': 'python-requests/2.31.0',
         }      
         response = requests.get(url,headers=headers)
+        st.write(response.status_code)
         st.write(response)
         time.sleep(2) 
         ret = requests.get(url, cookies=cookies ,headers=headers)
