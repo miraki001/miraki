@@ -384,6 +384,20 @@ def scrapping():
         headers={
             'User-Agent': 'python-requests/2.31.0',
         }      
+
+        options = uc.ChromeOptions()
+        # add headless mode
+        options.headless = False
+
+        # instantiate a Chrome browser and add the options
+        driver = uc.Chrome(
+            use_subprocess=False,
+            options=options,
+        )
+
+        # visit the target URL
+        driver.get(url)      
+        st.write(driver)
         response = requests.get(url,headers=headers)
         st.write(response.status_code)
         st.write(response)
