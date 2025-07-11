@@ -221,6 +221,7 @@ def scrapping():
 
 
   if tipobusq == 'rss':
+    st.write("antes")
     resp = requests.get(vurl)
     st.write(resp)  
     #soup = BeautifulSoup(resp.text, 'html.parser')
