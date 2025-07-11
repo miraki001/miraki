@@ -379,7 +379,7 @@ def scrapping():
         #st.write(soup)
         #st.write("sele")
     else:
-        #st.write("otro hast aca ")
+        st.write("otro hast aca ")
         response = requests.get(url,headers=headers)
         st.write(response)
         time.sleep(2) 
