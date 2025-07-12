@@ -118,7 +118,7 @@ if tipoe == 'Editar':
     observa = st.session_state['vobserva']
     vpostit = st.session_state['vpostit']
     vposdet = st.session_state['vposdet']  
-    vposlinl = st.session_state['vposlink']
+    vposlink = st.session_state['vposlink']
     vpostit = int(vpostit)
     vposdet = int(vposdet)
     vposlink = int(vposlink)
