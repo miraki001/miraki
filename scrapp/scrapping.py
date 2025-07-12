@@ -464,7 +464,8 @@ def scrapping():
         if title==None:
             #st.write("primero")
             title= p.get("href")
-            title = title[vposlink].text
+            if vposlink > 0
+               title = title[vposlink].text
             href = title
         else:
             href = title.get("href") 
