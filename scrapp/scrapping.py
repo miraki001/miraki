@@ -225,6 +225,56 @@ def scrapping():
 
   if tipobusq == 'rss':
 
+   
+    headers={
+        'User-Agent': 'python-requests/2.31.0',
+    }    
+    st.write("antes")
+    resp = requests.get(vurl, headers=headers, timeout=None)
+    st.write(resp)  
+    #soup = BeautifulSoup(resp.text, 'html.parser')
+    soup = BeautifulSoup(resp.text, 'xml')
+    pp = soup.find_all(separador)
+    #st.write(pp)
+    for entry in soup.find_all(separador):
+      tit = entry.find(xtitulo).text
+      pref = xlink.find('href')
+      if pref > 0 :
+        ll = entry.find(re.compile("^link") )    
+        link =  ll['href']
+      else:
+        link =  entry.find(xlink).text
+      try:  
+        det =  entry.find(xdetalle).text
+      except:
+        det = 'No'
+      pref = ximage.find('url')
+      img = ''
+      if pref > 0 :
+        sep = ximage[:pref-1]
+        #st.write(sep)
+        ll = entry.find(re.compile("^" + sep) )    
+        #ll = entry.find(re.compile("^enclosure") )    
+        img =  ll['url']
+      else:
+        if ximage != 'none':
+            img =  entry.find(ximage).text
+
+      
+      #vimg =  entry.find(re.compile("^enclosure")) 
+      #img =  vimg['url']  
+      #det = re.sub(CLEANR, '', det)
+    
+      #det =  det.encode('latin-1')
+      
+      eje_nuri = buscareje(df1[0],tit + ' ' + det)
+      peso = buscarpalabras(df2[0],tit + ' ' + det)
+      ap = pd.DataFrame([{'tit': tit, 'det': det, 'link': link,'img': img,'eje': eje_nuri,'peso': peso}])
+      dres = pd.concat([dres,ap])            
+
+
+  if tipobusq == 'rsssele':
+
     options = Options()
     options.add_argument('--headless')
     options.add_argument('--log-level=3')
@@ -239,9 +289,9 @@ def scrapping():
     headers={
         'User-Agent': 'python-requests/2.31.0',
     }    
-    st.write("antes")
-    resp = requests.get(vurl, headers=headers, timeout=None)
-    st.write(resp)  
+    #st.write("antes")
+    #resp = requests.get(vurl, headers=headers, timeout=None)
+    #st.write(resp)  
     #soup = BeautifulSoup(resp.text, 'html.parser')
     #soup = BeautifulSoup(resp.text, 'xml')
     pp = soup.find_all(separador)
@@ -280,7 +330,7 @@ def scrapping():
       eje_nuri = buscareje(df1[0],tit + ' ' + det)
       peso = buscarpalabras(df2[0],tit + ' ' + det)
       ap = pd.DataFrame([{'tit': tit, 'det': det, 'link': link,'img': img,'eje': eje_nuri,'peso': peso}])
-      dres = pd.concat([dres,ap])            
+      dres = pd.concat([dres,ap])   
       
   if tipobusq== 'json':
     my_url = vurl
