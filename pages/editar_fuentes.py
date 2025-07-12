@@ -66,9 +66,9 @@ conn = st.connection("postgresql", type="sql")
 def ingresar():
     conn = st.connection("postgresql", type="sql")
     with conn.session as session:
-        actualiza = "insert into fuentes_py (nuri, fuente, activa, xpath_titulo, descrip, proyecto_nuri,pais,separador,atributo1,atributo2,xpath_detalle,xpath_link,xpath_image,tipo,busqueda_pers,idioma,cod_pais,tipo_busq,fuente_org,posjson,urllink,postit,posdet )"
-        actualiza = actualiza + " values (  nextval('fuentes_py_seq'),:fuente, :activa, :xpath_titulo ,:desc, 1,:pais,:separador,:atributo1,:atributo2,:xpath_detalle,:xpath_link,:xpath_image,:tipo,:busqueda_pers,:idioma,:cod_pais,:tipo_busq,:fuente_org,:posjson,:urllink,:postit,:posdet  );"
-        session.execute(text(actualiza), {"fuente": vurl,"activa" :activa,"xpath_titulo" :xpath_tit,"desc" :vtitle,"pais" :pais,"separador" :separador,"atributo1" :atributo1,"atributo2" :atributo2,"xpath_detalle" :xpath_det, "xpath_link" :xpath_link,"xpath_image" :xpath_image,"tipo" :tipo,"busqueda_pers" :busqueda, "idioma" :idioma,"cod_pais" :codigo ,"tipo_busq" :tipobus ,"fuente_org" :fuenteorg,"posjson" :posjson, "urllink" :urllink,"postit" :postit,"posdet" :posdet})
+        actualiza = "insert into fuentes_py (nuri, fuente, activa, xpath_titulo, descrip, proyecto_nuri,pais,separador,atributo1,atributo2,xpath_detalle,xpath_link,xpath_image,tipo,busqueda_pers,idioma,cod_pais,tipo_busq,fuente_org,posjson,urllink,postit,posdet,poslink )"
+        actualiza = actualiza + " values (  nextval('fuentes_py_seq'),:fuente, :activa, :xpath_titulo ,:desc, 1,:pais,:separador,:atributo1,:atributo2,:xpath_detalle,:xpath_link,:xpath_image,:tipo,:busqueda_pers,:idioma,:cod_pais,:tipo_busq,:fuente_org,:posjson,:urllink,:postit,:posdet,:poslink  );"
+        session.execute(text(actualiza), {"fuente": vurl,"activa" :activa,"xpath_titulo" :xpath_tit,"desc" :vtitle,"pais" :pais,"separador" :separador,"atributo1" :atributo1,"atributo2" :atributo2,"xpath_detalle" :xpath_det, "xpath_link" :xpath_link,"xpath_image" :xpath_image,"tipo" :tipo,"busqueda_pers" :busqueda, "idioma" :idioma,"cod_pais" :codigo ,"tipo_busq" :tipobus ,"fuente_org" :fuenteorg,"posjson" :posjson, "urllink" :urllink,"postit" :postit,"posdet" :posdet,"poslink" : poslink})
       
         session.commit()    
 def borrar():
@@ -118,8 +118,10 @@ if tipoe == 'Editar':
     observa = st.session_state['vobserva']
     vpostit = st.session_state['vpostit']
     vposdet = st.session_state['vposdet']  
+    vposlinl = st.session_state['vposlink']
     vpostit = int(vpostit)
     vposdet = int(vposdet)
+    vposlink = int(vposlink)
 
 if tipoe == 'Ingresar':
     fuente = ''
@@ -149,6 +151,7 @@ if tipoe == 'Ingresar':
     tipoimg = ''
     vpostit= 0
     vposdet= 0
+    vposlink = 0
 
 st.markdown("""
 <style>
@@ -188,6 +191,7 @@ with col[1]:
 
 with col[2]:
     xpath_link = st.text_input("xpath link", xpath_link)
+    poslink = st.text_input("Posición link", min_value=0,max_value=100,value=vposlink)
     xpath_image = st.text_input("xpath imagen", xpath_image)
     urllink = st.text_input("Url Link", urllink)
     tipoimg = st.text_input("Tipo de Img", tipoimg)
@@ -227,8 +231,9 @@ if col10.button(":red[**Grabar**]"):
             actualiza = actualiza + "tipo_img = :tipoimg,  "
             actualiza = actualiza + "postit = :postit,  "
             actualiza = actualiza + "posdet = :posdet  "
+            actualiza = actualiza + "poslink = :poslink  "
             actualiza = actualiza + " WHERE nuri= :nuri"        
-            session.execute(text(actualiza), {"url": vurl,"activa": activa,"tit": xpath_tit,"desc": vtitle, "pais": pais,"separador": separador,"atributo1": atributo1,"atributo2": atributo2, "det": xpath_det, "link": xpath_link,"image": xpath_image, "tipo": tipo,"busq": busqueda, "idioma": idioma,"cod": codigo,"tipo_busq" : tipobus ,"fuente_org": fuenteorg,"posjson": posjson, "urllink": urllink,"tipoimg" : tipoimg ,"postit" : postit,"posdet": posdet, "nuri": tnuri})
+            session.execute(text(actualiza), {"url": vurl,"activa": activa,"tit": xpath_tit,"desc": vtitle, "pais": pais,"separador": separador,"atributo1": atributo1,"atributo2": atributo2, "det": xpath_det, "link": xpath_link,"image": xpath_image, "tipo": tipo,"busq": busqueda, "idioma": idioma,"cod": codigo,"tipo_busq" : tipobus ,"fuente_org": fuenteorg,"posjson": posjson, "urllink": urllink,"tipoimg" : tipoimg ,"postit" : postit,"posdet": posdet,"poslink": poslink, "nuri": tnuri})
                         
             session.commit()
             st.success("Data sent")
