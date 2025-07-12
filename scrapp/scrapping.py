@@ -160,9 +160,11 @@ def scrapping():
   posjson = st.session_state['vposjson'] 
   vpostit = st.session_state['vpostit']
   vposdet = st.session_state['vposdet']
+  vposlink = st.session_state['vposlink']
   vpos = int(posjson)
   vpostit = int(vpostit)
   vposdet = int(vposdet)
+  vposlink = int(vposlink)
   ptipoimg =  st.session_state['vtipoimg'] 
   #st.write('atributo 1 ' + vatrib1)
   p = xtitulo.find("{")
@@ -400,9 +402,16 @@ def scrapping():
         title = p.find(xlink)
         if title==None:
             title= p.get("href")
+            title = title[vposlink].text
             href = title
         else:
             href = title.get("href") 
+            if vposlink > 0:
+                vtitle = p.find_all(xlink)
+                title = vtitle[vposlink].text
+                href = title
+                
+          
         if titulodict == 'S':
             try:
               vtitle = p.find_all(sep,dictitu )  
