@@ -410,9 +410,9 @@ def scrapping():
             if vposlink > 0:
                 #st.write("segundo")
                 vtitle = p.find_all(xlink)
-                st.write(vtitle)
-                title = vtitle[vposlink].text
-                st.write(vtitle[vposlink].get("href"))
+                #st.write(vtitle)
+                #title = vtitle[vposlink].text
+                #st.write(vtitle[vposlink].get("href"))
                 href = vtitle[vposlink].get("href")
                 
           
