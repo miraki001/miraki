@@ -401,15 +401,16 @@ def scrapping():
     for p in noticias:
         title = p.find(xlink)
         if title==None:
-            st.write("primero")
+            #st.write("primero")
             title= p.get("href")
             title = title[vposlink].text
             href = title
         else:
             href = title.get("href") 
             if vposlink > 0:
-                st.write("segundo")
+                #st.write("segundo")
                 vtitle = p.find_all(xlink)
+                st.write(vtitle)
                 title = vtitle[vposlink].text
                 href = title
                 
