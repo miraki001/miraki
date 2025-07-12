@@ -225,6 +225,17 @@ def scrapping():
 
   if tipobusq == 'rss':
 
+    options = Options()
+    options.add_argument('--headless')
+    options.add_argument('--log-level=3')
+    driver = get_driver()
+    driver.implicitly_wait(10)
+    driver.get(url)
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
+    time.sleep(1)        
+    soup = BeautifulSoup(driver.page_source, 'xml')
+
+    
     headers={
         'User-Agent': 'python-requests/2.31.0',
     }    
