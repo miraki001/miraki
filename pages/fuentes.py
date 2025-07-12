@@ -179,7 +179,7 @@ if cnt>0:
   st.session_state['vtipoimg'] = df3.to_string(columns=['tipo_img'], header=False, index=False)
   st.session_state['vpostit'] = df3.to_string(columns=['postit'], header=False, index=False)
   st.session_state['vposdet'] = df3.to_string(columns=['posdet'], header=False, index=False)
-  st.session_state['vposlink'] = df3.to_string(columns=['posdlink'], header=False, index=False)
+  st.session_state['vposlink'] = df3.to_string(columns=['poslink'], header=False, index=False)
   st.session_state['vbuscaper'] = df3.to_string(columns=['busqueda_pers'], header=False, index=False)
 
 
