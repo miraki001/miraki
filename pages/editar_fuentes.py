@@ -191,7 +191,7 @@ with col[1]:
 
 with col[2]:
     xpath_link = st.text_input("xpath link", xpath_link)
-    poslink = st.text_input("Posición link", min_value=0,max_value=100,value=vposlink)
+    poslink = st.number_input("Posición link", min_value=0,max_value=100,value=vposlink)
     xpath_image = st.text_input("xpath imagen", xpath_image)
     urllink = st.text_input("Url Link", urllink)
     tipoimg = st.text_input("Tipo de Img", tipoimg)
