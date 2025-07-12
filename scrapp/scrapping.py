@@ -413,7 +413,7 @@ def scrapping():
                 st.write(vtitle)
                 title = vtitle[vposlink].text
                 st.write(vtitle[vposlink].get("href"))
-                href = title
+                href = vtitle[vposlink].get("href")
                 
           
         if titulodict == 'S':
