@@ -224,7 +224,14 @@ def scrapping():
     newv = {vatrib1:pattern}
     #newv = {vatrib1:vatrib2}
 
-
+  if tipobusq == 'feedparser':
+    d = feedparser.parse(vurl)
+    st.write(d['feed']['title']   )
+    st.write(len(d['items']))
+    for index in len(d['items']:
+       e = d['items'][index]
+       st.write(e['title'])
+      
   if tipobusq == 'rss':
 
    
