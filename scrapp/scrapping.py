@@ -227,8 +227,9 @@ def scrapping():
   if tipobusq == 'feedparser':
     d = feedparser.parse(vurl)
     st.write(d['feed']['title']   )
+    cnt = len(d['items'])
     st.write(len(d['items']))
-    for index in len(d['items']):
+    for index in cnt:
        e = d['items'][index]
        st.write(e['title'])
       
