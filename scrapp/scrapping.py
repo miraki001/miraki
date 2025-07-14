@@ -226,9 +226,13 @@ def scrapping():
   if tipobusq == 'rss':
 
    
+    #headers={
+    #    'User-Agent': 'python-requests/2.31.0',
+    #}    
     headers={
-        'User-Agent': 'python-requests/2.31.0',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:12.0) Gecko/20100101 Firefox/12.0',
     }    
+    
     st.write("antes")
     resp = requests.get(vurl, headers=headers, timeout=None)
     st.write(resp)  
