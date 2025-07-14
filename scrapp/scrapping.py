@@ -440,7 +440,7 @@ def scrapping():
 
     
 
-  if tipobusq != 'json' and tipobusq != 'rss' :
+  if tipobusq != 'json' and tipobusq != 'rss' and tipobusq != 'rsssel' and tipobusq != 'feedparser'  :
     url = vurl
     #st.write("aca 1")
     cookies = {
