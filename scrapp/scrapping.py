@@ -239,7 +239,7 @@ def scrapping():
     #soup = BeautifulSoup(resp.text, 'html.parser')
     soup = BeautifulSoup(resp.text, 'xml')
     pp = soup.find_all(separador)
-    #st.write(pp)
+    st.write(pp)
     for entry in soup.find_all(separador):
       tit = entry.find(xtitulo).text
       pref = xlink.find('href')
