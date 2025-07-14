@@ -234,7 +234,11 @@ def scrapping():
     headers={
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:12.0) Gecko/20100101 Firefox/12.0',
     }    
-    
+
+
+
+    d = feedparser.parse(vurl)
+    st.write(d['feed']['title']   )
     st.write("antes")
     resp = requests.get(vurl, headers=headers, timeout=None)
     st.write(resp)  
