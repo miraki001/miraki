@@ -253,17 +253,13 @@ def scrapping():
 
 
 
-    d = feedparser.parse(vurl)
-    st.write(d['feed']['title']   )
-    st.write(len(d['items']))
-    st.write("antes")
     resp = requests.get(vurl, headers=headers, timeout=None)
     st.write(resp)  
     soup = BeautifulSoup(resp.text, 'html.parser')
     #soup = BeautifulSoup(resp.text, 'xml')
-    st.write(soup)
+    #st.write(soup)
     pp = soup.find_all(separador)
-    st.write(pp)
+    #st.write(pp)
     for entry in soup.find_all(separador):
       tit = entry.find(xtitulo).text
       pref = xlink.find('href')
