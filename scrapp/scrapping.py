@@ -229,8 +229,8 @@ def scrapping():
     st.write(d['feed']['title']   )
     cnt = len(d['items'])
     st.write(len(d['items']))
-    for index in cnt:
-       e = d['items'][index]
+    for i in range(1, cnt):
+       e = d['items'][i]
        st.write(e['title'])
       
   if tipobusq == 'rss':
