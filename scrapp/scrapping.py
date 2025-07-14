@@ -231,7 +231,15 @@ def scrapping():
     st.write(len(d['items']))
     for i in range(1, cnt):
        e = d['items'][i]
-       st.write(e['title'])
+       tit = e['title']
+       det = e['description']
+       link = e['link']
+       img = ''
+       eje_nuri = buscareje(df1[0],tit + ' ' + det)
+       peso = buscarpalabras(df2[0],tit + ' ' + det)
+       ap = pd.DataFrame([{'tit': tit, 'det': det, 'link': link,'img': img,'eje': eje_nuri,'peso': peso}])
+       dres = pd.concat([dres,ap])            
+
       
   if tipobusq == 'rss':
 
