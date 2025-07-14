@@ -228,7 +228,7 @@ def scrapping():
     d = feedparser.parse(vurl)
     st.write(d['feed']['title']   )
     st.write(len(d['items']))
-    for index in len(d['items']:
+    for index in len(d['items']):
        e = d['items'][index]
        st.write(e['title'])
       
