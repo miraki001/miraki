@@ -239,6 +239,7 @@ def scrapping():
 
     d = feedparser.parse(vurl)
     st.write(d['feed']['title']   )
+    st.write(len(d['items']))
     st.write("antes")
     resp = requests.get(vurl, headers=headers, timeout=None)
     st.write(resp)  
