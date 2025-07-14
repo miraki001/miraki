@@ -562,9 +562,9 @@ def scrapping():
         if eje_nuri == None:
           eje_nuri = 6
 
-      
-        ap = pd.DataFrame([{'tit': title, 'det': det, 'link': href,'img': img,'eje': eje_nuri,'peso': peso}])
-        dres = pd.concat([dres,ap])            
+        if tit !='':
+           ap = pd.DataFrame([{'tit': title, 'det': det, 'link': href,'img': img,'eje': eje_nuri,'peso': peso}])
+           dres = pd.concat([dres,ap])            
                   
 
 
