@@ -236,6 +236,9 @@ def scrapping():
        link = e['link']
        tit = re.sub(r"<.*?>", "", tit)
        det = re.sub(r"<.*?>", "", det)
+       clean = re.compile('<.*?>')
+       tit = re.sub(clean, '', tit)
+       det = re.sub(clean, '', det)
        img = ''
        eje_nuri = buscareje(df1[0],tit + ' ' + det)
        peso = buscarpalabras(df2[0],tit + ' ' + det)
