@@ -263,12 +263,13 @@ def scrapping():
     for entry in soup.find_all(separador):
       tit = entry.find(xtitulo).text
       pref = xlink.find('href')
+      st.write(pref)
       if pref > 0 :
         ll = entry.find(re.compile("^link") )    
         link =  ll['href']
       else:
         link =  entry.find(xlink).text
-        st.write(link)
+        st.write("aca")
       try:  
         det =  entry.find(xdetalle).text
       except:
