@@ -268,6 +268,9 @@ def scrapping():
         ll = entry.find(re.compile("^link") )    
         link =  ll['href']
       else:
+        ll = entry.find(re.compile("^link") )    
+        link =  ll['href']
+        st.write(link)
         link =  entry.find(xlink).text
         st.write(xlink)
         st.write(link)
