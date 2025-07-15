@@ -257,7 +257,7 @@ def scrapping():
     st.write(resp)  
     soup = BeautifulSoup(resp.text, 'html.parser')
     #soup = BeautifulSoup(resp.text, 'xml')
-    #st.write(soup)
+    st.write(soup)
     pp = soup.find_all(separador)
     #st.write(pp)
     for entry in soup.find_all(separador):
@@ -268,10 +268,6 @@ def scrapping():
         ll = entry.find(re.compile("^link") )    
         link =  ll['href']
       else:
-        ll = entry.find(re.compile("^link") )    
-        st.write(ll)
-        link =  ll['href']
-        st.write(link)
         link =  entry.find(xlink).text
         st.write(xlink)
         st.write(link)
