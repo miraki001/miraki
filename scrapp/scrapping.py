@@ -234,6 +234,8 @@ def scrapping():
        tit = e['title']
        det = e['description']
        link = e['link']
+       tit = re.sub(r"<.*?>", "", tit)
+       det = re.sub(r"<.*?>", "", det)
        img = ''
        eje_nuri = buscareje(df1[0],tit + ' ' + det)
        peso = buscarpalabras(df2[0],tit + ' ' + det)
@@ -291,6 +293,9 @@ def scrapping():
       #vimg =  entry.find(re.compile("^enclosure")) 
       #img =  vimg['url']  
       #det = re.sub(CLEANR, '', det)
+      tit = re.sub(r"<.*?>", "", tit)
+      det = re.sub(r"<.*?>", "", det)
+
     
       #det =  det.encode('latin-1')
       
