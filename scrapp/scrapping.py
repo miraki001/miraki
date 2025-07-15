@@ -239,7 +239,7 @@ def scrapping():
        #clean = re.compile('<.*?>')
        #tit = re.sub(clean, '', tit)
        #det = re.sub(clean, '', det)
-       st.write("aca")
+       st.write("aca nuevo")
        st.write(det)
        img = ''
        eje_nuri = buscareje(df1[0],tit + ' ' + det)
