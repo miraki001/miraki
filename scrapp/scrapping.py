@@ -269,7 +269,8 @@ def scrapping():
         link =  ll['href']
       else:
         link =  entry.find(xlink).text
-        st.write("aca")
+        st.write(xlink)
+        st.write(link)
       try:  
         det =  entry.find(xdetalle).text
       except:
