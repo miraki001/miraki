@@ -265,14 +265,11 @@ def scrapping():
     for entry in soup.find_all(separador):
       tit = entry.find(xtitulo).text
       pref = xlink.find('href')
-      st.write(pref)
       if pref > 0 :
         ll = entry.find(re.compile("^link") )    
         link =  ll['href']
       else:
         link =  entry.find(xlink).text
-        st.write(xlink)
-        st.write(link)
       try:  
         det =  entry.find(xdetalle).text
       except:
@@ -358,6 +355,9 @@ def scrapping():
       #det = re.sub(CLEANR, '', det)
     
       #det =  det.encode('latin-1')
+      tit = re.sub(r"<.*?>", "", tit)
+      det = re.sub(r"<.*?>", "", det)
+      
       
       eje_nuri = buscareje(df1[0],tit + ' ' + det)
       peso = buscarpalabras(df2[0],tit + ' ' + det)
@@ -567,6 +567,9 @@ def scrapping():
 
         eje_nuri = 0
         peso = 0
+        title = re.sub(r"<.*?>", "", title)
+        det = re.sub(r"<.*?>", "", det)
+      
         eje_nuri = buscareje(df1[0],title + ' ' + det)
         peso = buscarpalabras(df2[0],title + ' ' + det)
         if eje_nuri == None:
