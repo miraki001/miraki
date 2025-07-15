@@ -236,9 +236,9 @@ def scrapping():
        link = e['link']
        tit = re.sub(r"<.*?>", "", tit)
        det = re.sub(r"<.*?>", "", det)
-       clean = re.compile('<.*?>')
-       tit = re.sub(clean, '', tit)
-       det = re.sub(clean, '', det)
+       #clean = re.compile('<.*?>')
+       #tit = re.sub(clean, '', tit)
+       #det = re.sub(clean, '', det)
        st.write("aca")
        st.write(det)
        img = ''
