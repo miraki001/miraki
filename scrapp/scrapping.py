@@ -475,8 +475,8 @@ def scrapping():
         time.sleep(3)        
         #WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "id_of_element_present_in_all_situation")))
         #st.write(driver.page_source)
-        soup = BeautifulSoup(driver.page_source, 'lxml')
-        #soup = BeautifulSoup(driver.page_source, 'html.parser')
+        #soup = BeautifulSoup(driver.page_source, 'lxml')
+        soup = BeautifulSoup(driver.page_source, 'html.parser')
       
         #st.write(soup)
         time.sleep(3)        
