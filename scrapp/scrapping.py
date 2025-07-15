@@ -491,6 +491,7 @@ def scrapping():
         #st.write(ret)
         html_content = response.text
         soup = BeautifulSoup(html_content, 'lxml')
+        st.write(soup)
   
     if vatrib1 != '':
         noticias = soup.find_all(separador,newv)
