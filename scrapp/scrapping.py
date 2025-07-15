@@ -236,7 +236,7 @@ def scrapping():
        link = e['link']
        tit = re.sub(r"<.*?>", "", tit)
        det = re.sub(r"<.*?>", "", det)
-       img = e['enclosure']
+       img = e['url']
        eje_nuri = buscareje(df1[0],tit + ' ' + det)
        peso = buscarpalabras(df2[0],tit + ' ' + det)
        ap = pd.DataFrame([{'tit': tit, 'det': det, 'link': link,'img': img,'eje': eje_nuri,'peso': peso}])
