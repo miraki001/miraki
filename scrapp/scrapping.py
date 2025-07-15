@@ -236,7 +236,7 @@ def scrapping():
        link = e['link']
        tit = re.sub(r"<.*?>", "", tit)
        det = re.sub(r"<.*?>", "", det)
-       img = e['url']
+       img = ''
        eje_nuri = buscareje(df1[0],tit + ' ' + det)
        peso = buscarpalabras(df2[0],tit + ' ' + det)
        ap = pd.DataFrame([{'tit': tit, 'det': det, 'link': link,'img': img,'eje': eje_nuri,'peso': peso}])
@@ -257,8 +257,8 @@ def scrapping():
 
     resp = requests.get(vurl, headers=headers, timeout=None)
     st.write(resp)  
-    soup = BeautifulSoup(resp.text, 'html.parser')
-    #soup = BeautifulSoup(resp.text, 'xml')
+    #soup = BeautifulSoup(resp.text, 'html.parser')
+    soup = BeautifulSoup(resp.text, 'xml')
     st.write(soup)
     pp = soup.find_all(separador)
     #st.write(pp)
