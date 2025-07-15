@@ -259,7 +259,7 @@ def scrapping():
     st.write(resp)  
     #soup = BeautifulSoup(resp.text, 'html.parser')
     soup = BeautifulSoup(resp.text, 'xml')
-    st.write(soup)
+    #st.write(soup)
     pp = soup.find_all(separador)
     #st.write(pp)
     for entry in soup.find_all(separador):
