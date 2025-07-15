@@ -497,13 +497,13 @@ def scrapping():
         #st.write(ret)
         html_content = response.text
         soup = BeautifulSoup(html_content, 'lxml')
-        st.write(soup)
+        #st.write(soup)
   
     if vatrib1 != '':
         noticias = soup.find_all(separador,newv)
     if vatrib1 == '':    
         noticias = soup.find_all(separador)
-    st.write(noticias)
+    #st.write(noticias)
     for p in noticias:
         title = p.find(xlink)
         if title==None:
