@@ -76,6 +76,8 @@ dres = scrapping.scrapping()
 #dres = dres.mask(dres.eq('None')).dropna()
 #dres = dres.mask(dres.astype(object).eq('None')).dropna()
 #dres = dres.dropna(how='any',axis=0)
+if dres.shape[0] == 0 and dres.shape[1] == 0:
+    st.write("DataFrame is empty")
 st.write(dres.dropna(how='all').empty )
 df_empty = dres
 if df_empty == True:
