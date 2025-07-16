@@ -484,7 +484,7 @@ def scrapping():
         
         #st.write("sele")
     else:
-        st.write("otro hast aca ")
+        st.write("otro hasta aca ")
 
         headers = {
            'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/117.0'
