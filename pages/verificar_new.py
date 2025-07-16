@@ -76,7 +76,7 @@ dres = scrapping.scrapping()
 #dres = dres.mask(dres.eq('None')).dropna()
 #dres = dres.mask(dres.astype(object).eq('None')).dropna()
 #dres = dres.dropna(how='any',axis=0)
-df_empty = dres()
+df_empty = dres
 if df_empty == True:
   st.write("nada que mostrar")
 else:
