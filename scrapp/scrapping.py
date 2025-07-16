@@ -478,7 +478,7 @@ def scrapping():
         soup = BeautifulSoup(driver.page_source, 'lxml')
         #soup = BeautifulSoup(driver.page_source, 'html.parser')
       
-        st.write(soup)
+        #st.write(soup)
         time.sleep(3)        
         
         #st.write("sele")
@@ -506,7 +506,7 @@ def scrapping():
     if tipobusq == 'sub':
       data1 = soup.find(vatrib1,vatrib2)
       noticias = data1.find_all(separador)
-    st.write(noticias)
+    #st.write(noticias)
     for p in noticias:
         title = p.find(xlink)
         if title==None:
