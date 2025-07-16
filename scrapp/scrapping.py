@@ -4,6 +4,7 @@ import re
 import sys
 import psutil
 import requests
+import cssutils
 from bs4 import BeautifulSoup
 from lxml import html
 import psycopg2
@@ -570,7 +571,10 @@ def scrapping():
             except:
               img = ''
 
-            
+        if ximage == 'background':
+          div_style = p.find('div')['style']
+          style = cssutils.parseStyle(div_style)
+          img = style['background-image']
         if href != None:
           if not href.startswith('http'):
               href = urljoin(vurl, href)
