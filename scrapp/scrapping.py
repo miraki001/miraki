@@ -492,6 +492,7 @@ def scrapping():
         try:
            response = requests.get(url,headers=headers)
            st.write("no no")
+           st.write(response)
         except:
           st.write("no")
         st.write(response.status_code)
