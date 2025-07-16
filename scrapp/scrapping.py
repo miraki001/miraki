@@ -506,7 +506,7 @@ def scrapping():
         noticias = soup.find_all(separador)
     if tipobusq == 'sub':
       if vatrib2 == '':
-        data1 = soup.find(vatrib1)
+        data1 = soup.find_all(vatrib1)
       else:
        data1 = soup.find(vatrib1,vatrib2)
       noticias = data1.find_all(separador)
