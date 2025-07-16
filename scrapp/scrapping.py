@@ -572,7 +572,7 @@ def scrapping():
               img = ''
 
         if ximage == 'background':
-          div_style = p.find('div')['style']
+          div_style = p.find(ptipoimg)['style']
           style = cssutils.parseStyle(div_style)
           img = style['background-image']
           img = img.replace('url(', '').replace(')', '') 
