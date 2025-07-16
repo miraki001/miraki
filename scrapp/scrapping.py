@@ -478,7 +478,7 @@ def scrapping():
         soup = BeautifulSoup(driver.page_source, 'lxml')
         #soup = BeautifulSoup(driver.page_source, 'html.parser')
       
-        #st.write(soup)
+        st.write(soup)
         time.sleep(3)        
         
         #st.write("sele")
@@ -497,7 +497,7 @@ def scrapping():
         #st.write(ret)
         html_content = response.text
         soup = BeautifulSoup(html_content, 'lxml')
-        st.write(soup)
+        #st.write(soup)
   
     if vatrib1 != '':
         noticias = soup.find_all(separador,newv)
