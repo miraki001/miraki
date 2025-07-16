@@ -575,6 +575,7 @@ def scrapping():
           div_style = p.find('div')['style']
           style = cssutils.parseStyle(div_style)
           img = style['background-image']
+          img = img.replace('url(', '').replace(')', '') 
         if href != None:
           if not href.startswith('http'):
               href = urljoin(vurl, href)
