@@ -503,6 +503,9 @@ def scrapping():
         noticias = soup.find_all(separador,newv)
     if vatrib1 == '':    
         noticias = soup.find_all(separador)
+    if tipobusq == 'sub':
+      data1 = soup.find(vatrib1)
+      noticias = data1.find_all(vatrib2)
     st.write(noticias)
     for p in noticias:
         title = p.find(xlink)
