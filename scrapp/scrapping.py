@@ -479,7 +479,7 @@ def scrapping():
         soup = BeautifulSoup(driver.page_source, 'lxml')
         #soup = BeautifulSoup(driver.page_source, 'html.parser')
       
-        #st.write(soup)
+        st.write(soup)
         time.sleep(3)        
         
         #st.write("sele")
