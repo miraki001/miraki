@@ -24,3 +24,4 @@ selenium==4.28.1
 undetected_chromedriver
 feedparser
 pandasai
+cssutils
