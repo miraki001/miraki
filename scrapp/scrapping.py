@@ -495,6 +495,7 @@ def scrapping():
            st.stop()
            st.write(response)
         except:
+          st.stop()
           st.write("no")
         st.write(response.status_code)
         st.write(response)
