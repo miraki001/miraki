@@ -40,6 +40,13 @@ df = df[df['activa'] == 'S']
 #df = df[df['activa'] 
 #st.write(len(df))
 
+conn = st.connection("postgresql", type="sql")
+qq = 'select eje_nuri,palabraclave_es,palabraclave_en from palabrasclaves  ;'
+deje = conn.query(qq, ttl="0"),
+#st.write(df1[0])
+qq = 'select peso,palabra from palabras_a_buscar  ;'
+dpeso = conn.query(qq, ttl="0"),
+
 progress_text = "Operación en Progreso, Por favor espere."
 my_bar = st.progress(0, text=progress_text)
 for index in range(len(df)) :
@@ -81,10 +88,10 @@ for index in range(len(df)) :
   
 
    tnuri = st.session_state['vnuri']
-   dres = scrapping.scrapping()
+   dres = scrapping.scrapping(deje,dpeso)
    seguir = 'Si'
    if dres.empty:
-       st.write("nada que mostrar")
+       #st.write("nada que mostrar")
        seguir = 'No'
    if seguir == 'Si':
      vcnt = len(dres)
