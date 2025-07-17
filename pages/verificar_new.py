@@ -79,7 +79,7 @@ st.write(dres)
 seguir = 'Si'
 if dres == None:
    st.write("nada que mostrar")
-  seguir = 'No'
+   seguir = 'No'
 if seguir == 'Si':
   if dres.empty:
     st.write("nada que mostrar")
