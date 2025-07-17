@@ -83,11 +83,7 @@ for index in range(len(df)) :
    tnuri = st.session_state['vnuri']
    dres = scrapping.scrapping()
    seguir = 'Si'
-   if dres == None:
-     st.write("nada que mostrar")
-     seguir = 'No'
-   if seguir == 'Si':
-     if dres.empty:
+   if dres.empty:
        st.write("nada que mostrar")
        seguir = 'No'
    if seguir == 'Si':
