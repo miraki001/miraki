@@ -486,7 +486,7 @@ def scrapping():
         
         #st.write("sele")
     else:
-        st.write("otro hasta aca 1")
+        #st.write("otro hasta aca 1")
 
         headers = {
            'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/117.0'
@@ -500,7 +500,7 @@ def scrapping():
           return dres
           #st.write("no")
         #st.write(response.status_code)
-        st.write(response)
+        #st.write(response)
         time.sleep(2) 
         ret = requests.get(url, cookies=cookies ,headers=headers)
         #st.write(ret)
