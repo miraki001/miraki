@@ -492,7 +492,7 @@ def scrapping():
         try:
            response = requests.get(url,headers=headers, timeout=2)
            st.write("no no")
-           st.stop()
+           #st.stop()
            st.write(response)
         except:
           return
