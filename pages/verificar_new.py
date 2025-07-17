@@ -67,9 +67,14 @@ if selected2713=="Parametros":
 if selected2713=="Informes":
   st.switch_page("./pages/informes.py") 
 
+conn = st.connection("postgresql", type="sql")
+qq = 'select eje_nuri,palabraclave_es,palabraclave_en from palabrasclaves  ;'
+deje = conn.query(qq, ttl="0"),
+#st.write(df1[0])
+qq = 'select peso,palabra from palabras_a_buscar  ;'
+dpeso = conn.query(qq, ttl="0"),
 
-
-dres = scrapping.scrapping() 
+dres = scrapping.scrapping(deje,dpeso) 
 st.write(dres)
 
 #dres = dres.dropna()
