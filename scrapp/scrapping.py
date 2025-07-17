@@ -491,14 +491,14 @@ def scrapping():
         }      
         try:
            response = requests.get(url,headers=headers, timeout=2)
-           st.write("no no")
+           #st.write("no no")
            #st.stop()
-           st.write(response)
+           #st.write(response)
         except:
           return
-          st.write("no")
-        st.write(response.status_code)
-        st.write(response)
+          #st.write("no")
+        #st.write(response.status_code)
+        #st.write(response)
         time.sleep(2) 
         ret = requests.get(url, cookies=cookies ,headers=headers)
         #st.write(ret)
@@ -517,7 +517,7 @@ def scrapping():
         data1 = soup.find(vatrib1,vatrib2)
       #st.write(data1)  
       noticias = data1.find_all(separador)
-    st.write(noticias)
+    #st.write(noticias)
     for p in noticias:
         title = p.find(xlink)
         if title==None:
