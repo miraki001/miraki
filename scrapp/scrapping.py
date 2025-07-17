@@ -217,7 +217,7 @@ def scrapping(deje,dpeso):
 
   tnuri = st.session_state['vnuri']
   vurl = st.session_state['vfuente']
-  st.write('Fuente a Verificar :  ' + vurl)
+  #st.write('Fuente a Verificar :  ' + vurl)
   #st.write(xtitulo)
   #st.write(sepd)
   newv = ''
