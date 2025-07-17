@@ -33,8 +33,8 @@ CLEANR = re.compile('<.*?>')
 def scrapping():
   #dres = pd.DataFrame(columns=['tit','det','link','img','sel','eje','peso'], index=[0])
   dres = pd.DataFrame(columns=['tit','det','link','img','sel','eje','peso'])
-  st.write(dres)
-  st.write("inicio")
+  #st.write(dres)
+  #st.write("inicio")
   def get_driver():
     options = webdriver.ChromeOptions()
 
@@ -497,7 +497,7 @@ def scrapping():
            #st.stop()
            #st.write(response)
         except:
-          return
+          return dres
           #st.write("no")
         #st.write(response.status_code)
         #st.write(response)
