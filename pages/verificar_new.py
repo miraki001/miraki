@@ -76,35 +76,40 @@ st.write(dres)
 #dres = dres.mask(dres.eq('None')).dropna()
 #dres = dres.mask(dres.astype(object).eq('None')).dropna()
 #dres = dres.dropna(how='any',axis=0)
+seguir = 'Si'
 if dres == None:
    st.write("nada que mostrar")
-if dres.empty:
-  st.write("nada que mostrar")
-else:
+  seguir = 'No'
+if seguir == 'Si':
+  if dres.empty:
+    st.write("nada que mostrar")
+    seguir = 'No'
+if seguir == 'Si':
+
   st.write("Cantidad de Noticias : " + str(len(dres)))
   st.write(dres)
 
-#col1, col2 = st.columns(2)
+  #col1, col2 = st.columns(2)
 
-for index in range(len(dres)) :
-   tit = dres['tit'].iloc[index]
-   det = dres['det'].iloc[index]
-   link = dres['link'].iloc[index]
-   img = dres['img'].iloc[index]
-   eje = dres['eje'].iloc[index]
-   peso = dres['peso'].iloc[index]
-   #st.write(link)
-   col1, col2 = st.columns([3,1])
+  for index in range(len(dres)) :
+     tit = dres['tit'].iloc[index]
+     det = dres['det'].iloc[index]
+     link = dres['link'].iloc[index]
+     img = dres['img'].iloc[index]
+     eje = dres['eje'].iloc[index]
+     peso = dres['peso'].iloc[index]
+     #st.write(link)
+     col1, col2 = st.columns([3,1])
 
-   with col1:
-     st.write('Link : ' + link)
-     st.write('Titulo :  ' + tit)
-     st.write('Detalle :  ' + det)
-     st.write('Imagen :  ' +  img)
-     st.write('Peso :  ' +  str(peso))
-     st.write('Eje :  ' +  str(eje))
+     with col1:
+       st.write('Link : ' + link)
+       st.write('Titulo :  ' + tit)
+       st.write('Detalle :  ' + det)
+       st.write('Imagen :  ' +  img)
+       st.write('Peso :  ' +  str(peso))
+       st.write('Eje :  ' +  str(eje))
      
-   with col2:
+     with col2:
         if img != '':
             st.image(
                 img,
