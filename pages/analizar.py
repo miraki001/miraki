@@ -37,8 +37,13 @@ df["activa"] = df["activa"].astype(str)
 df = df[df['activa'] == 'S']
 #df = df[df['activa'] 
 #st.write(len(df))
+
+progress_text = "Operación en Progreso, Por favor espere."
+my_bar = st.progress(0, text=progress_text)
 for index in range(len(df)) :
    fnuri = df['nuri'].iloc[index]
+   p = (index *100) / len(df)
+   my_bar.progress(p, text=progress_text)
    st.session_state['vsepa'] = df['separador'].iloc[index]
    st.session_state['vtit'] = df['xpath_titulo'].iloc[index]
    st.session_state['vdet'] = df['xpath_detalle'].iloc[index]
@@ -72,34 +77,43 @@ for index in range(len(df)) :
 
    tnuri = st.session_state['vnuri']
    dres = scrapping.scrapping()
-   vcnt = len(dres)
-   vcnt1 = 0
-   for index in range(len(dres)) :
-      tit = dres['tit'].iloc[index]
-      tit = tit[0:600]
-      det = dres['det'].iloc[index]
-      det = det[0:40000]
-      link = dres['link'].iloc[index]
-      link = link[0:1500]
-      img = dres['img'].iloc[index]
-      img = img[0:800]
-      eje = dres['eje'].iloc[index]
-      peso = dres['peso'].iloc[index]
-      encontrada = buscar_not(tit,int(fnuri),int(vpro))
-      st.write("encontrada :" + str(encontrada))
-      if buscar_pers == 'S' and peso > 3:
-        ingresar(tit,fuente,int(vpro),int(fnuri),det,link,eje,img,peso,tipo)
-        vcnt1 = vcnt1 + 1
-      if buscar_pers == 'N':
-        ingresar(tit,fuente,int(vpro),int(fnuri),det,link,eje,img,peso,tipo)
-        vcnt1 = vcnt1 + 1
+   seguir = 'Si'
+   if dres == None:
+     st.write("nada que mostrar")
+     seguir = 'No'
+   if seguir == 'Si':
+     if dres.empty:
+       st.write("nada que mostrar")
+       seguir = 'No'
+   if seguir == 'Si':
+     vcnt = len(dres)
+     vcnt1 = 0
+     for index in range(len(dres)) :
+       tit = dres['tit'].iloc[index]
+       tit = tit[0:600]
+       det = dres['det'].iloc[index]
+       det = det[0:40000]
+       link = dres['link'].iloc[index]
+       link = link[0:1500]
+       img = dres['img'].iloc[index]
+       img = img[0:800]
+       eje = dres['eje'].iloc[index]
+       peso = dres['peso'].iloc[index]
+       encontrada = buscar_not(tit,int(fnuri),int(vpro))
+       st.write("encontrada :" + str(encontrada))
+       if buscar_pers == 'S' and peso > 3:
+         #ingresar(tit,fuente,int(vpro),int(fnuri),det,link,eje,img,peso,tipo)
+         vcnt1 = vcnt1 + 1
+       if buscar_pers == 'N':
+         #ingresar(tit,fuente,int(vpro),int(fnuri),det,link,eje,img,peso,tipo)
+         vcnt1 = vcnt1 + 1
 
 
-   with conn.session as session:
-      actualiza = "UPDATE fuentes_py SET  fecha_act = current_date,cnt_noticias = :cnt, cnt_encontradas = :cnt1"
-      actualiza = actualiza + " WHERE nuri= :nuri"  
-      session.execute(text(actualiza), {"cnt": vcnt,"cnt1": vcnt1, "nuri": str(fnuri)} )
-      session.commit()
-      dres = scrapping.scrapping()  
-      st.write(dres)
+     with conn.session as session:
+       actualiza = "UPDATE fuentes_py SET  fecha_act = current_date,cnt_noticias = :cnt, cnt_encontradas = :cnt1"
+       actualiza = actualiza + " WHERE nuri= :nuri"  
+       session.execute(text(actualiza), {"cnt": vcnt,"cnt1": vcnt1, "nuri": str(fnuri)} )
+       session.commit()
+       #dres = scrapping.scrapping()  
+       st.write(dres)
 st.write("Listo")
