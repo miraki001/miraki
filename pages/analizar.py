@@ -46,6 +46,7 @@ for index in range(len(df)) :
    fnuri = df['nuri'].iloc[index]
    p = (index *100) / len(df)
    progress_text = 'Fuente : '  + df['descrip'] + str(index) + ' de ' + str(len(df))
+   st.write(progress_text)
    my_bar.progress(p, text=progress_text)
    st.session_state['vsepa'] = df['separador'].iloc[index]
    st.session_state['vtit'] = df['xpath_titulo'].iloc[index]
