@@ -103,7 +103,7 @@ vimagen = ''
    
   
 conn = st.connection("postgresql", type="sql")
-qq = 'select nuri,fuente as url,activa,separador,atributo1,atributo2,fecha_act,descrip as fuente,pais,fuente_org,urllink,tipo_busq,posjson,tipo_img,postit,posdet from fuentes_py where proyecto_nuri = 1  ;'
+qq = 'select nuri,fuente as url,activa,separador,atributo1,atributo2,fecha_act,descrip as fuente,pais,fuente_org,urllink,tipo_busq,posjson,tipo_img,postit,posdet,xpath_image from fuentes_py where proyecto_nuri = 1  ;'
 df1 = conn.query(qq, ttl="0"),
 df = df1[0]
 
