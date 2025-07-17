@@ -500,7 +500,7 @@ def scrapping():
           return dres
           #st.write("no")
         #st.write(response.status_code)
-        #st.write(response)
+        st.write(response)
         time.sleep(2) 
         ret = requests.get(url, cookies=cookies ,headers=headers)
         #st.write(ret)
