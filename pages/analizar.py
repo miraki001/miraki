@@ -30,6 +30,7 @@ def ingresar(vtitu,vfuente,vproyecto,vfuente_nuri,vdet,vlink,veje,vimg,vpeso,vti
 activa = "S"
 #qq = 'select * from fuentes_py where proyecto_nuri = 1 and nuri = 6073 ;'
 qq = 'select * from fuentes_py where proyecto_nuri = 1 ;'
+@st.cache_data
 
 df1 = conn.query(qq, ttl="0"),
 df = df1[0]
