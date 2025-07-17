@@ -28,7 +28,9 @@ def ingresar(vtitu,vfuente,vproyecto,vfuente_nuri,vdet,vlink,veje,vimg,vpeso,vti
         session.execute(text(actualiza), {"fuente": vfuente,"titulo": vtitu,"detalle": vdet,"tipo": vtipo,"selec": 'N',"origen": 'A',"link": vlink,"tema": '',"proyecto_nuri": vproyecto,"web": 'N',"alerta": 'N',"imagen": vimg,"fuente_nuri": vfuente_nuri,"eje_nuri": veje,"nro": 5,"leido": 'N',"puntaje": vpeso})
         session.commit()
 activa = "S"
-qq = 'select * from fuentes_py where proyecto_nuri = 1 and nuri = 6073 ;'
+#qq = 'select * from fuentes_py where proyecto_nuri = 1 and nuri = 6073 ;'
+qq = 'select * from fuentes_py where proyecto_nuri = 1 ;'
+
 df1 = conn.query(qq, ttl="0"),
 df = df1[0]
 st.write(df)
@@ -43,6 +45,7 @@ my_bar = st.progress(0, text=progress_text)
 for index in range(len(df)) :
    fnuri = df['nuri'].iloc[index]
    p = (index *100) / len(df)
+   progress_text = "Fuente :"  + df['descrip'] + str(index) + " de " + str(len(df))
    my_bar.progress(p, text=progress_text)
    st.session_state['vsepa'] = df['separador'].iloc[index]
    st.session_state['vtit'] = df['xpath_titulo'].iloc[index]
