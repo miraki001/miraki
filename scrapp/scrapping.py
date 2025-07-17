@@ -545,7 +545,7 @@ def scrapping(deje,dpeso):
               #st.write(vtitle)  
               title = vtitle[vpostit].text
             except:
-              title ='no lo encontro'
+              title =''
         else:                
             try:
                 vtitle = p.find_all(xtitulo)
