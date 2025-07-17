@@ -30,7 +30,7 @@ import feedparser
 CLEANR = re.compile('<.*?>') 
 
 
-def scrapping():
+def scrapping(deje,dpeso):
   #dres = pd.DataFrame(columns=['tit','det','link','img','sel','eje','peso'], index=[0])
   dres = pd.DataFrame(columns=['tit','det','link','img','sel','eje','peso'])
   #st.write(dres)
@@ -139,12 +139,12 @@ def scrapping():
     # add more headers as needed
   }
   
-  conn = st.connection("postgresql", type="sql")
-  qq = 'select eje_nuri,palabraclave_es,palabraclave_en from palabrasclaves  ;'
-  df1 = conn.query(qq, ttl="0"),
+  #conn = st.connection("postgresql", type="sql")
+  #qq = 'select eje_nuri,palabraclave_es,palabraclave_en from palabrasclaves  ;'
+  #df1 = conn.query(qq, ttl="0"),
   #st.write(df1[0])
-  qq = 'select peso,palabra from palabras_a_buscar  ;'
-  df2 = conn.query(qq, ttl="0"),
+  #qq = 'select peso,palabra from palabras_a_buscar  ;'
+  #df2 = conn.query(qq, ttl="0"),
 
   #tira= 'Studies sedes aire plagas stress on the preparation of a sufficient carrier from egg protein and carrageenan for cellulase with optimization and application'
   #buscareje(df1[0],tira.split())
@@ -240,8 +240,8 @@ def scrapping():
        tit = re.sub(r"<.*?>", "", tit)
        det = re.sub(r"<.*?>", "", det)
        img = ''
-       eje_nuri = buscareje(df1[0],tit + ' ' + det)
-       peso = buscarpalabras(df2[0],tit + ' ' + det)
+       eje_nuri = buscareje(deje[0],tit + ' ' + det)
+       peso = buscarpalabras(dpeso[0],tit + ' ' + det)
        ap = pd.DataFrame([{'tit': tit, 'det': det, 'link': link,'img': img,'eje': eje_nuri,'peso': peso}])
        dres = pd.concat([dres,ap])            
 
@@ -299,8 +299,8 @@ def scrapping():
     
       #det =  det.encode('latin-1')
       
-      eje_nuri = buscareje(df1[0],tit + ' ' + det)
-      peso = buscarpalabras(df2[0],tit + ' ' + det)
+      eje_nuri = buscareje(deje[0],tit + ' ' + det)
+      peso = buscarpalabras(dpeso[0],tit + ' ' + det)
       ap = pd.DataFrame([{'tit': tit, 'det': det, 'link': link,'img': img,'eje': eje_nuri,'peso': peso}])
       dres = pd.concat([dres,ap])            
 
@@ -362,8 +362,8 @@ def scrapping():
       det = re.sub(r"<.*?>", "", det)
       
       
-      eje_nuri = buscareje(df1[0],tit + ' ' + det)
-      peso = buscarpalabras(df2[0],tit + ' ' + det)
+      eje_nuri = buscareje(deje[0],tit + ' ' + det)
+      peso = buscarpalabras(dpeso[0],tit + ' ' + det)
       ap = pd.DataFrame([{'tit': tit, 'det': det, 'link': link,'img': img,'eje': eje_nuri,'peso': peso}])
       dres = pd.concat([dres,ap])   
       
@@ -443,8 +443,8 @@ def scrapping():
               #st.write(vurl)
               #link = urljoin(vurl, link)
               link = vurl+ link
-        eje_nuri = buscareje(df1[0],titu + ' ' + det)
-        peso = buscarpalabras(df2[0],titu + ' ' + det)
+        eje_nuri = buscareje(deje[0],titu + ' ' + det)
+        peso = buscarpalabras(dpeso[0],titu + ' ' + det)
         ap = pd.DataFrame([{'tit': titu, 'det': det, 'link': link,'img': img,'eje': eje_nuri,'peso': peso}])
         dres = pd.concat([dres,ap])            
       
@@ -597,8 +597,8 @@ def scrapping():
         title = re.sub(r"<.*?>", "", title)
         det = re.sub(r"<.*?>", "", det)
       
-        eje_nuri = buscareje(df1[0],title + ' ' + det)
-        peso = buscarpalabras(df2[0],title + ' ' + det)
+        eje_nuri = buscareje(deje[0],title + ' ' + det)
+        peso = buscarpalabras(dpeso[0],title + ' ' + det)
         if eje_nuri == None:
           eje_nuri = 6
 
