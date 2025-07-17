@@ -77,13 +77,9 @@ st.write(dres)
 #dres = dres.mask(dres.astype(object).eq('None')).dropna()
 #dres = dres.dropna(how='any',axis=0)
 seguir = 'Si'
-if dres == None:
-   st.write("nada que mostrar")
-   seguir = 'No'
-if seguir == 'Si':
-  if dres.empty:
-    st.write("nada que mostrar")
-    seguir = 'No'
+if dres.empty:
+  st.write("nada que mostrar")
+  seguir = 'No'
 if seguir == 'Si':
 
   st.write("Cantidad de Noticias : " + str(len(dres)))
