@@ -46,8 +46,8 @@ for index in range(len(df)) :
    fnuri = df['nuri'].iloc[index]
    fuente = df['descrip'].iloc[index]
    p = (index *100) / len(df)
-   progress_text = 'Fuente : '  + fuente + str(index) + ' de ' + str(len(df))
-   st.write(progress_text)
+   progress_text = 'Fuente :  '  + fuente + ' ' + str(index) + ' de ' + str(len(df))
+   #st.write(progress_text)
    my_bar.progress(p, text=progress_text)
    st.session_state['vsepa'] = df['separador'].iloc[index]
    st.session_state['vtit'] = df['xpath_titulo'].iloc[index]
@@ -101,7 +101,7 @@ for index in range(len(df)) :
        eje = dres['eje'].iloc[index]
        peso = dres['peso'].iloc[index]
        encontrada = buscar_not(tit,int(fnuri),int(vpro))
-       st.write("encontrada :" + str(encontrada))
+       #st.write("encontrada :" + str(encontrada))
        if buscar_pers == 'S' and peso > 3:
          #ingresar(tit,fuente,int(vpro),int(fnuri),det,link,eje,img,peso,tipo)
          vcnt1 = vcnt1 + 1
@@ -116,5 +116,5 @@ for index in range(len(df)) :
        session.execute(text(actualiza), {"cnt": vcnt,"cnt1": vcnt1, "nuri": str(fnuri)} )
        session.commit()
        #dres = scrapping.scrapping()  
-       st.write(dres)
+       #st.write(dres)
 st.write("Listo")
