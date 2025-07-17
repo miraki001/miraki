@@ -70,7 +70,7 @@ if selected2713=="Informes":
 
 
 dres = scrapping.scrapping() 
-#st.write(dres)
+st.write(dres)
 
 #dres = dres.dropna()
 #dres = dres.mask(dres.eq('None')).dropna()
