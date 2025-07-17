@@ -44,8 +44,9 @@ progress_text = "Operación en Progreso, Por favor espere."
 my_bar = st.progress(0, text=progress_text)
 for index in range(len(df)) :
    fnuri = df['nuri'].iloc[index]
+   fuente = df['descrip'].iloc[index]
    p = (index *100) / len(df)
-   progress_text = 'Fuente : '  + df['descrip'] + str(index) + ' de ' + str(len(df))
+   progress_text = 'Fuente : '  + fuente + str(index) + ' de ' + str(len(df))
    st.write(progress_text)
    my_bar.progress(p, text=progress_text)
    st.session_state['vsepa'] = df['separador'].iloc[index]
