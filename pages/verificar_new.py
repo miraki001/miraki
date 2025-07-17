@@ -76,7 +76,8 @@ st.write(dres)
 #dres = dres.mask(dres.eq('None')).dropna()
 #dres = dres.mask(dres.astype(object).eq('None')).dropna()
 #dres = dres.dropna(how='any',axis=0)
-
+if dres == None:
+   st.write("nada que mostrar")
 if dres.empty:
   st.write("nada que mostrar")
 else:
