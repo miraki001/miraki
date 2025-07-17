@@ -33,7 +33,7 @@ qq = 'select * from fuentes_py where proyecto_nuri = 1 ;'
 
 df1 = conn.query(qq, ttl="0"),
 df = df1[0]
-st.write(df)
+#st.write(df)
 vpro = st.session_state['vpro']
 df["activa"] = df["activa"].astype(str)
 df = df[df['activa'] == 'S']
@@ -45,7 +45,7 @@ my_bar = st.progress(0, text=progress_text)
 for index in range(len(df)) :
    fnuri = df['nuri'].iloc[index]
    p = (index *100) / len(df)
-   progress_text = "Fuente :"  + df['descrip'] + str(index) + " de " + str(len(df))
+   progress_text = 'Fuente : '  + df['descrip'] + str(index) + ' de ' + str(len(df))
    my_bar.progress(p, text=progress_text)
    st.session_state['vsepa'] = df['separador'].iloc[index]
    st.session_state['vtit'] = df['xpath_titulo'].iloc[index]
