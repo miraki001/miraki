@@ -592,7 +592,7 @@ def scrapping(deje,dpeso):
           if img == '':
              img = style['background']
              #img = img.replace('url(', '').replace(')', '')    
-             img.split("('", 1)[1].split("')")[0]
+             img.split("('", 1)[0].split("')")[0]
         if not img.startswith('http'):
            img = urljoin(vurl, img)
         if href != None:
