@@ -587,10 +587,12 @@ def scrapping(deje,dpeso):
           div_style = p.find(ptipoimg)['style']
           style = cssutils.parseStyle(div_style)
           img = style['background-image']
+          #style.split("('", 1)[1].split("')")[0]
           img = img.replace('url(', '').replace(')', '') 
           if img == '':
              img = style['background']
-             img = img.replace('url(', '').replace(')', '')       
+             #img = img.replace('url(', '').replace(')', '')    
+             img.split("('", 1)[1].split("')")[0
         if not img.startswith('http'):
            img = urljoin(vurl, img)
         if href != None:
