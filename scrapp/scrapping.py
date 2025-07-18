@@ -589,6 +589,7 @@ def scrapping(deje,dpeso):
           img = style['background-image']
           #style.split("('", 1)[1].split("')")[0]
           img = img.replace('url(', '').replace(')', '') 
+          st.write(img)
           if img == '':
              img = style['background']
              #img = img.replace('url(', '').replace(')', '')   
