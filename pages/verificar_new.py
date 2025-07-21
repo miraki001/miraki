@@ -75,7 +75,7 @@ qq = 'select peso,palabra from palabras_a_buscar  ;'
 dpeso = conn.query(qq, ttl="0"),
 
 dres = scrapping.scrapping(deje,dpeso) 
-st.write(dres)
+#st.write(dres)
 
 #dres = dres.dropna()
 #dres = dres.mask(dres.eq('None')).dropna()
@@ -88,7 +88,7 @@ if dres.empty:
 if seguir == 'Si':
 
   st.write("Cantidad de Noticias : " + str(len(dres)))
-  st.write(dres)
+  #st.write(dres)
 
   #col1, col2 = st.columns(2)
 
