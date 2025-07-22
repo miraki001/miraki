@@ -84,6 +84,7 @@ for index in range(len(df)) :
    st.session_state['vpais'] = df['pais'].iloc[index]
    st.session_state['vactiva'] = df['activa'].iloc[index]
    st.session_state['vbuscapers'] = df['busqueda_pers'].iloc[index]
+   st.session_state['vposlink'] = df['poslink'].iloc[index]
    buscar_pers =  df['busqueda_pers'].iloc[index]
    fuente = df['descrip'].iloc[index]
    tipo = df['tipo'].iloc[index]
