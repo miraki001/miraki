@@ -229,9 +229,9 @@ def scrapping(deje,dpeso):
 
   if tipobusq == 'feedparser':
     d = feedparser.parse(vurl)
-    st.write(d['feed']['title']   )
+    #st.write(d['feed']['title']   )
     cnt = len(d['items'])
-    st.write(len(d['items']))
+    #st.write(len(d['items']))
     for i in range(1, cnt):
        e = d['items'][i]
        tit = e['title']
@@ -259,7 +259,7 @@ def scrapping(deje,dpeso):
 
 
     resp = requests.get(vurl, headers=headers, timeout=None)
-    st.write(resp)  
+    #st.write(resp)  
     #soup = BeautifulSoup(resp.text, 'html.parser')
     soup = BeautifulSoup(resp.text, 'xml')
     #st.write(soup)
