@@ -285,8 +285,11 @@ def scrapping(deje,dpeso):
         #st.write(pref)
         st.write(sep)
         ll = entry.find(re.compile("^" + sep) )    
-        #ll = entry.find(re.compile("^enclosure") )    
-        img =  ll['url']
+        #ll = entry.find(re.compile("^enclosure") ) 
+        try:
+           img =  ll['url']
+        except:
+           img ='' 
       else:
         if ximage != 'none':
             img =  entry.find(ximage).text
