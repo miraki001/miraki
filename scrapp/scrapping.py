@@ -283,7 +283,7 @@ def scrapping(deje,dpeso):
       if pref > 0 :
         sep = ximage[:pref-1]
         #st.write(pref)
-        #st.write(sep)
+        st.write(sep)
         ll = entry.find(re.compile("^" + sep) )    
         #ll = entry.find(re.compile("^enclosure") )    
         img =  ll['url']
