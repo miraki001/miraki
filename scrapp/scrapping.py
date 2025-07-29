@@ -279,11 +279,11 @@ def scrapping(deje,dpeso):
         det = 'No'
       pref = ximage.find('url')
       img = ''
-      st.write(pref)
+      #st.write(pref)
       if pref > 0 :
         sep = ximage[:pref-1]
         #st.write(pref)
-        st.write(sep)
+        #st.write(sep)
         ll = entry.find(re.compile("^" + sep) )    
         #ll = entry.find(re.compile("^enclosure") ) 
         try:
