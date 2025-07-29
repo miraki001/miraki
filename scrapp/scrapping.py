@@ -281,6 +281,7 @@ def scrapping(deje,dpeso):
       img = ''
       if pref > 0 :
         sep = ximage[:pref-1]
+        st.write(pref)
         #st.write(sep)
         ll = entry.find(re.compile("^" + sep) )    
         #ll = entry.find(re.compile("^enclosure") )    
