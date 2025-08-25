@@ -111,14 +111,17 @@ if selected241=="Desmarcar":
 if selected241=="Proyecto":
     st.switch_page("./pages/selecproyecto.py")
 
-off = 0
-st.session_state['offset'] = 0
+#off = 0
+off = st.session_state['offset']
+#st.session_state['offset'] = 0
 left, right = st.columns(2)
 if left.button("", icon="⏪",use_container_width=True):
   if off > 0 :
       off = off-100
+      st.session_state['offset'] = off
 if right.button("", icon="⏩", use_container_width=True):
     off = off + 100
+    st.session_state['offset'] = off
 
 
 vquery = "select  nuri,fuente,leido,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje  from nov_web where proyecto_nuri = :proyecto offset :offset  limit 200 ;"
