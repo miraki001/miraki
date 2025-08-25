@@ -173,6 +173,7 @@ event = st.dataframe(
 
 people = event.selection.rows
 #st.write(people)
+st.write(off)
 
 
 
