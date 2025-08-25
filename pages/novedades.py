@@ -119,9 +119,11 @@ if left.button("", icon="⏪",use_container_width=True):
   if off > 0 :
       off = off-100
       st.session_state['offset'] = off
+      st.write(off)
 if right.button("", icon="⏩", use_container_width=True):
     off = off + 100
     st.session_state['offset'] = off
+    st.write(off)
 
 
 vquery = "select  nuri,fuente,leido,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje  from nov_web where proyecto_nuri = :proyecto offset :offset  limit 200 ;"
