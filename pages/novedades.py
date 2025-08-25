@@ -173,6 +173,7 @@ selection  =df.iloc[people]
 #st.write(selection.index[0])
 #st.write(selection)
 #st.session_state['recno'] =  people[0]
+st.button("Reset", type="primary")
 cnt = len(selection)
 
 if cnt>0:
