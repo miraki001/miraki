@@ -164,9 +164,9 @@ people = event.selection.rows
 
 
 left, right = st.columns(2)
-if left.button("retroceder", icon="⏪",use_container_width=True):
+if left.button("", icon="⏪",use_container_width=True):
     left.markdown("You clicked the emoji button.")
-if right.button("", icon="⏩", width="stretch"):
+if right.button("", icon="⏩", use_container_width=True)):
     right.markdown("You clicked the Material button.")
 
 selection  =df.iloc[people]
