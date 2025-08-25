@@ -116,7 +116,7 @@ if selected241=="Proyecto":
     st.switch_page("./pages/selecproyecto.py")
 
 
- 
+ st.button("Res3333et", type="primary")
 
 
 
