@@ -75,6 +75,7 @@ selected2 = option_menu(None, ["Miraki", 'Novedades','Fuentes', 'Informes','Para
 if selected2=="Fuentes":
   st.switch_page("./pages/fuentes.py")
 if selected2=="Novedades":
+  st.session_state['offset'] = 0	
   st.switch_page("./pages/novedades.py")       
 if selected2=="Parametros":
   st.switch_page("./pages/parametros.py")        
