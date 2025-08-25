@@ -119,14 +119,14 @@ if left.button("", icon="⏪",use_container_width=True):
   if off > 0 :
       off = off-100
       st.session_state['offset'] = off
-      st.write(off)
+      #st.write(off)
 if right.button("", icon="⏩", use_container_width=True):
     off = off + 100
     st.session_state['offset'] = off
-    st.write(off)
+    #st.write(off)
 
 
-vquery = "select  nuri,fuente,leido,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje  from nov_web where proyecto_nuri = :proyecto offset :offset  limit 200 ;"
+vquery = "select  nuri,fuente,leido,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje  from nov_web where proyecto_nuri = :proyecto offset :offset  limit 100 ;"
 df1 = conn.query(vquery, ttl="0",params={"proyecto": proy_nuri,"offset": off}),
 #df1 = conn.query('select nuri,fuente,leido,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje from nov_web limit 50;', ttl="0"),
 df = df1[0]
@@ -158,7 +158,7 @@ def color_vowel(value):
     return f"color: red;" if  value in [*"N"] else None
 
 
-st.write(off)
+st.write('de ' + str(off) + ' hasta ' str(off+100))
 df_style= df.style.applymap(color_vowel, subset=["leido"])
 
 
@@ -175,7 +175,7 @@ event = st.dataframe(
 
 people = event.selection.rows
 #st.write(people)
-st.write(off)
+#st.write(off)
 
 
 
