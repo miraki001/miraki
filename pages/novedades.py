@@ -157,6 +157,8 @@ config = {
 def color_vowel(value):
     return f"color: red;" if  value in [*"N"] else None
 
+
+st.write(off)
 df_style= df.style.applymap(color_vowel, subset=["leido"])
 
 
