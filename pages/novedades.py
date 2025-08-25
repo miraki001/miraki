@@ -74,10 +74,6 @@ def desmarcar(df):
 
 conn = st.connection("postgresql", type="sql")
 
-vquery = "select  nuri,fuente,leido,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje  from nov_web where proyecto_nuri = :proyecto  limit 200 ;"
-df1 = conn.query(vquery, ttl="0",params={"proyecto": proy_nuri}),
-#df1 = conn.query('select nuri,fuente,leido,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje from nov_web limit 50;', ttl="0"),
-df = df1[0]
 
 
 vnuri = 500
@@ -115,9 +111,19 @@ if selected241=="Desmarcar":
 if selected241=="Proyecto":
     st.switch_page("./pages/selecproyecto.py")
 
+off = 0
+left, right = st.columns(2)
+if left.button("", icon="⏪",use_container_width=True):
+  if off > 0 :
+      off = off-100
+if right.button("", icon="⏩", use_container_width=True):
+    off = off + 10
 
 
-
+vquery = "select  nuri,fuente,leido,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje  from nov_web where proyecto_nuri = :proyecto offset :offset  limit 200 ;"
+df1 = conn.query(vquery, ttl="0",params={"proyecto": proy_nuri,"offset": off}),
+#df1 = conn.query('select nuri,fuente,leido,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje from nov_web limit 50;', ttl="0"),
+df = df1[0]
 
 
 st.markdown(""" <style> .font {
@@ -163,17 +169,11 @@ people = event.selection.rows
 #st.write(people)
 
 
-left, right = st.columns(2)
-if left.button("", icon="⏪",use_container_width=True):
-    left.markdown("You clicked the emoji button.")
-if right.button("", icon="⏩", use_container_width=True):
-    right.markdown("You clicked the Material button.")
 
 selection  =df.iloc[people]
 #st.write(selection.index[0])
 #st.write(selection)
 #st.session_state['recno'] =  people[0]
-st.button("Reset", type="primary")
 cnt = len(selection)
 
 if cnt>0:
