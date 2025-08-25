@@ -158,7 +158,7 @@ def color_vowel(value):
     return f"color: red;" if  value in [*"N"] else None
 
 
-st.write('de ' + str(off) + ' hasta ' str(off+100))
+st.write("de " + str(off) + " hasta " + str(off+100))
 df_style= df.style.applymap(color_vowel, subset=["leido"])
 
 
