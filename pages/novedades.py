@@ -162,6 +162,13 @@ event = st.dataframe(
 people = event.selection.rows
 #st.write(people)
 
+
+left, right = st.columns(2)
+if left.button("Emoji button", icon="⏪", width="stretch"):
+    middle.markdown("You clicked the emoji button.")
+if right.button("Material button", icon="⏩", width="stretch"):
+    right.markdown("You clicked the Material button.")
+
 selection  =df.iloc[people]
 #st.write(selection.index[0])
 #st.write(selection)
