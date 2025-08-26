@@ -118,8 +118,10 @@ for index in range(len(df)) :
            ingresar(tit,fuente,int(vpro),int(fnuri),det,link,eje,img,peso,tipo)
            vcnt1 = vcnt1 + 1
          if buscar_pers == 'N':
+           st.write('voy a grabar')
            ingresar(tit,fuente,int(vpro),int(fnuri),det,link,eje,img,peso,tipo)
            vcnt1 = vcnt1 + 1
+           st.write(vcnt1)
 
 
      with conn.session as session:
