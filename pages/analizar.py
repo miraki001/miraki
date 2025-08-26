@@ -111,7 +111,7 @@ for index in range(len(df)) :
        eje = dres['eje'].iloc[index]
        peso = dres['peso'].iloc[index]
        encontrada = buscar_not(tit,int(fnuri),int(vpro))
-       #st.write("encontrada :" + str(encontrada))
+       st.write("encontrada :" + str(encontrada))
        if encontrada == 0:
          if buscar_pers == 'S' and peso > 3:
            ingresar(tit,fuente,int(vpro),int(fnuri),det,link,eje,img,peso,tipo)
