@@ -28,6 +28,7 @@ def ingresar(vtitu,vfuente,vproyecto,vfuente_nuri,vdet,vlink,veje,vimg,vpeso,vti
         actualiza = actualiza + "VALUES (nextval('novedades_seq'), :fuente, :titulo,:detalle,:tipo,current_date,:selec,:origen,:link,:tema,:proyecto_nuri,:web,:alerta,:imagen,:fuente_nuri,:eje_nuri,:nro,:leido,:puntaje);"
         session.execute(text(actualiza), {"fuente": vfuente,"titulo": vtitu,"detalle": vdet,"tipo": vtipo,"selec": 'N',"origen": 'A',"link": vlink,"tema": '',"proyecto_nuri": vproyecto,"web": 'N',"alerta": 'N',"imagen": vimg,"fuente_nuri": vfuente_nuri,"eje_nuri": veje,"nro": 5,"leido": 'N',"puntaje": vpeso})
         session.commit()
+      st.write('grabada')
 activa = "S"
 #qq = 'select * from fuentes_py where proyecto_nuri = 1 and nuri = 6073 ;'
 qq = 'select * from fuentes_py where proyecto_nuri = 1 ;'
@@ -111,7 +112,7 @@ for index in range(len(df)) :
        eje = dres['eje'].iloc[index]
        peso = dres['peso'].iloc[index]
        encontrada = buscar_not(tit,int(fnuri),int(vpro))
-       st.write("encontrada :" + str(encontrada))
+       #st.write("encontrada :" + str(encontrada))
        if encontrada == 0:
          if buscar_pers == 'S' and peso > 3:
            ingresar(tit,fuente,int(vpro),int(fnuri),det,link,eje,img,peso,tipo)
