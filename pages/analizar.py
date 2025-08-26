@@ -6,7 +6,7 @@ from streamlit_option_menu import option_menu
 from scrapp import scrapping
 
 conn = st.connection("postgresql", type="sql")
-@st.cache_data
+#@st.cache_data
 
 def buscar_not(vtitu,vfuente,vproyecto):
   with conn.session as session:
@@ -30,8 +30,8 @@ def ingresar(vtitu,vfuente,vproyecto,vfuente_nuri,vdet,vlink,veje,vimg,vpeso,vti
         session.commit()
       st.write('grabada')
 activa = "S"
-#qq = 'select * from fuentes_py where proyecto_nuri = 1 and nuri = 6073 ;'
-qq = 'select * from fuentes_py where proyecto_nuri = 1 ;'
+qq = 'select * from fuentes_py where proyecto_nuri = 1 and nuri = 6073 ;'
+#qq = 'select * from fuentes_py where proyecto_nuri = 1 ;'
 
 
 df1 = conn.query(qq, ttl="0"),
