@@ -25,7 +25,7 @@ def ingresar(vtitu,vfuente,vproyecto,vfuente_nuri,vdet,vlink,veje,vimg,vpeso,vti
       with conn.session as session:
         actualiza = "INSERT INTO novedades( nuri, fuente, titulo,detalle,tipo,fecha,selec,origen,link,tema,proyecto_nuri,select_web,selec_alerta,imagen,fuente_nuri,eje_nuri,orden,leido,puntaje) "
         actualiza = actualiza + "VALUES (nextval('novedades_seq'), :fuente, :titulo,:detalle,:tipo,current_date,:selec,:origen,:link,:tema,:proyecto_nuri,:web,:alerta,:imagen,:fuente_nuri,:eje_nuri,:nro,:leido,:puntaje);"
-        session.execute(text(actualiza), {"fuente": vfuente,"titulo": vtitu,"detalle": vdet,"tipo": vtipo,"selec": 'N',"origen": 'A',"link": vlink,"tema": '',"proyecto_nuri": vproyecto,"web": 'N',"alerta": 'N',"imagen": vimg,"fuente_nuri": vfuente_nuri,"eje_nuri": int(veje),"nro": 5,"leido": 'N',"puntaje": vpeso})
+        session.execute(text(actualiza), {"fuente": vfuente,"titulo": vtitu,"detalle": vdet,"tipo": vtipo,"selec": 'N',"origen": 'A',"link": vlink,"tema": '',"proyecto_nuri": vproyecto,"web": 'N',"alerta": 'N',"imagen": vimg,"fuente_nuri": vfuente_nuri,"eje_nuri": veje,"nro": 5,"leido": 'N',"puntaje": vpeso})
         session.commit()
 activa = "S"
 #qq = 'select * from fuentes_py where proyecto_nuri = 1 and nuri = 5817 ;'
