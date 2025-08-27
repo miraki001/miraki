@@ -112,7 +112,10 @@ for index in range(len(df)) :
        peso = dres['peso'].iloc[index]
        encontrada = buscar_not(tit,int(fnuri),int(vpro))
        st.write("encontrada :" + str(encontrada))
-       if encontrada == 0:
+       st.write('valor de encontrada')
+       if int(encontrada) != 0:
+         st.write('dice que no es cero')
+       if int(encontrada) == 0:
          st.write('abajo')
          if buscar_pers == 'S' and peso > 3:
            ingresar(tit,fuente,int(vpro),int(fnuri),det,link,eje,img,peso,tipo)
