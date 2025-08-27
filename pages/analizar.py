@@ -30,7 +30,7 @@ def ingresar(vtitu,vfuente,vproyecto,vfuente_nuri,vdet,vlink,veje,vimg,vpeso,vti
         session.commit()
       st.write('grabada')
 activa = "S"
-qq = 'select * from fuentes_py where proyecto_nuri = 1 and nuri = 6073 ;'
+qq = 'select * from fuentes_py where proyecto_nuri = 1 and nuri = 5817 ;'
 #qq = 'select * from fuentes_py where proyecto_nuri = 1 ;'
 
 
