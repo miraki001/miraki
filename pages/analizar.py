@@ -125,8 +125,10 @@ for index in range(len(df)) :
      vcnt1 = 0
      for index in range(len(dres)) :
        tit = dres['tit'].iloc[index]
+       tit = tit.strip()
        tit = tit[0:600]
        det = dres['det'].iloc[index]
+       det = det.strip()  
        det = det[0:40000]
        link = dres['link'].iloc[index]
        link = link[0:1500]
