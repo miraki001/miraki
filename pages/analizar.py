@@ -13,6 +13,24 @@ SQLALCHEMY_ENGINE_OPTIONS = {
     "pool_timeout": 60,
 }
 
+
+st.components.v1.html(
+    """
+    <script>
+    let lastActivity = Date.now();
+    const INACTIVITY_DELAY = 5000; // 5 seconds
+    setInterval(() => {
+      if (Date.now() - lastActivity > INACTIVITY_DELAY) {
+        window.location.href = "about:blank";
+      }
+    }, 1000);
+    document.onmousemove = () => lastActivity = Date.now();
+    document.onkeypress = () => lastActivity = Date.now();
+    </script>
+    """,
+    height=0,
+)
+
 def buscar_not(vtitu,vfuente,vproyecto):
   with conn.session as session:
     buscar = "select count(nuri) as cnt from novedades "
@@ -20,6 +38,7 @@ def buscar_not(vtitu,vfuente,vproyecto):
     buscar = buscar + " and fuente_nuri = :fuente"
     buscar = buscar + " and proyecto_nuri = :proyecto ;"
     df2 = conn.query(buscar, ttl="0",params={"titu": vtitu,"fuente": vfuente,"proyecto": vproyecto}),
+    session.commit()  
     #st.write(df2)
     #vcnt = df2['cnt']
     #st.write(vcnt)
