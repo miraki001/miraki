@@ -7,6 +7,12 @@ from scrapp import scrapping
 
 conn = st.connection("postgresql", type="sql")
 
+SQLALCHEMY_ENGINE_OPTIONS = {
+    "pool_size": 20,
+    "max_overflow": 30,
+    "pool_timeout": 60,
+}
+
 def buscar_not(vtitu,vfuente,vproyecto):
   with conn.session as session:
     buscar = "select count(nuri) as cnt from novedades "
