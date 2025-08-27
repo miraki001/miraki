@@ -1,6 +1,5 @@
 [server]
 fileWatcherType = "poll"
-#enableCORS = false
 [ui]
 hideTopBar = true
 [client]
@@ -8,5 +7,3 @@ showSidebarNavigation = false
 toolbarMode = 'minimal'
 [theme] #
 backgroundColor = '#fcf9f9' 
-#[browser]
-#gatherUsageStats = false
