@@ -111,6 +111,8 @@ for index in range(len(df)) :
        peso = dres['peso'].iloc[index]
        if eje == '':
          eje = 6
+       if eje == ' ':
+         eje = 6
        if eje == '0':
          eje = 6
          
