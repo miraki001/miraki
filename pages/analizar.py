@@ -109,6 +109,8 @@ for index in range(len(df)) :
        img = img[0:800]
        eje = dres['eje'].iloc[index]
        peso = dres['peso'].iloc[index]
+       if eje == '':
+         eje = 7
        encontrada = buscar_not(tit,int(fnuri),int(vpro))
        #st.write("encontrada :" + str(encontrada))
        #st.write('valor de encontrada')
