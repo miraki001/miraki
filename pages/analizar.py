@@ -6,6 +6,7 @@ from streamlit_option_menu import option_menu
 from scrapp import scrapping
 
 conn = st.connection("postgresql", type="sql")
+conn1 = st.connection("postgresql", type="sql")
 
 SQLALCHEMY_ENGINE_OPTIONS = {
     "pool_size": 300,
@@ -32,12 +33,12 @@ st.components.v1.html(
 )
 
 def buscar_not(vtitu,vfuente,vproyecto):
-  with conn.session as session:
+  with conn1.session as session:
     buscar = "select count(nuri) as cnt from novedades "
     buscar = buscar  + " where titulo = :titu  " 
     buscar = buscar + " and fuente_nuri = :fuente"
     buscar = buscar + " and proyecto_nuri = :proyecto ;"
-    df2 = conn.query(buscar, ttl="0",params={"titu": vtitu,"fuente": vfuente,"proyecto": vproyecto}),
+    df2 = conn1.query(buscar, ttl="0",params={"titu": vtitu,"fuente": vfuente,"proyecto": vproyecto}),
     session.commit()  
     #st.write(df2)
     #vcnt = df2['cnt']
@@ -148,10 +149,10 @@ for index in range(len(df)) :
        #st.write('valor de encontrada')
        if int(encontrada) == 0:
          if buscar_pers == 'S' and peso > 3:
-           ingresar(tit,fuente,int(vpro),int(fnuri),det,link,eje,img,peso,tipo)
+           #ingresar(tit,fuente,int(vpro),int(fnuri),det,link,eje,img,peso,tipo)
            vcnt1 = vcnt1 + 1
          if buscar_pers == 'N':
-           ingresar(tit,fuente,int(vpro),int(fnuri),det,link,eje,img,peso,tipo)
+           #ingresar(tit,fuente,int(vpro),int(fnuri),det,link,eje,img,peso,tipo)
            vcnt1 = vcnt1 + 1
 
 
