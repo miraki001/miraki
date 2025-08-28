@@ -1,5 +1,6 @@
 [server]
 fileWatcherType = "poll"
+server.enableCORS=false
 [ui]
 hideTopBar = true
 [client]
