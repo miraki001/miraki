@@ -8,8 +8,8 @@ from scrapp import scrapping
 conn = st.connection("postgresql", type="sql")
 
 SQLALCHEMY_ENGINE_OPTIONS = {
-    "pool_size": 20,
-    "max_overflow": 30,
+    "pool_size": 300,
+    "max_overflow": 300,
     "pool_timeout": 60,
 }
 
@@ -18,7 +18,7 @@ st.components.v1.html(
     """
     <script>
     let lastActivity = Date.now();
-    const INACTIVITY_DELAY = 5000; // 5 seconds
+    const INACTIVITY_DELAY = 8000; // 5 seconds
     setInterval(() => {
       if (Date.now() - lastActivity > INACTIVITY_DELAY) {
         window.location.href = "about:blank";
