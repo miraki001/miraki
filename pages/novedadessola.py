@@ -83,8 +83,8 @@ vimagen = ''
 
 #aca
 
-selected241 = option_menu(None, ["Novedades", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar','Proyecto' ], 
-      icons=['newspaper', 'plus' ,'pencil-square','eraser','chek','patch-chek','building-fill' ] , menu_icon="cast",orientation="horizontal", default_index=0,
+selected241 = option_menu(None, ["Novedades", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar','Analizar''Proyecto' ], 
+      icons=['newspaper', 'plus' ,'pencil-square','eraser','chek','patch-chek','patch-chek' ,'building-fill' ] , menu_icon="cast",orientation="horizontal", default_index=0,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#898989"},
@@ -105,6 +105,9 @@ if selected241=="Seleccionar":
     seleccionar(df)
 if selected241=="Desmarcar":
     desmarcar(df)
+if selected241=="Analizar":
+    desmarcar(df)
+  
 if selected241=="Proyecto":
     st.switch_page("./pages/selecproyecto.py")
 
