@@ -106,8 +106,7 @@ if selected241=="Seleccionar":
 if selected241=="Desmarcar":
     desmarcar(df)
 if selected241=="Analizar":
-    desmarcar(df)
-  
+    st.switch_page("./pages/analizar.py")  
 if selected241=="Proyecto":
     st.switch_page("./pages/selecproyecto.py")
 
