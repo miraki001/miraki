@@ -149,10 +149,10 @@ for index in range(len(df)) :
        #st.write('valor de encontrada')
        if int(encontrada) == 0:
          if buscar_pers == 'S' and peso > 3:
-           #ingresar(tit,fuente,int(vpro),int(fnuri),det,link,eje,img,peso,tipo)
+           ingresar(tit,fuente,int(vpro),int(fnuri),det,link,eje,img,peso,tipo)
            vcnt1 = vcnt1 + 1
          if buscar_pers == 'N':
-           #ingresar(tit,fuente,int(vpro),int(fnuri),det,link,eje,img,peso,tipo)
+           ingresar(tit,fuente,int(vpro),int(fnuri),det,link,eje,img,peso,tipo)
            vcnt1 = vcnt1 + 1
 
 
