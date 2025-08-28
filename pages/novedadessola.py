@@ -84,7 +84,7 @@ vimagen = ''
 #aca
 
 selected241 = option_menu(None, ["Novedades", 'Ingresar','Editar','Borrar','Seleccionar','Desmarcar','Analizar','Proyecto' ], 
-      icons=['newspaper', 'plus' ,'pencil-square','eraser','chek','check', 'disc' ,'building-fill' ] , menu_icon="cast",orientation="horizontal", default_index=0,
+      icons=['newspaper', 'plus' ,'pencil-square','eraser','check-circle-fill','check-circle', 'disc' ,'building-fill' ] , menu_icon="cast",orientation="horizontal", default_index=0,
                 
       styles={
         "container": {"padding": "0!important", "background-color": "#898989"},
