@@ -41,6 +41,7 @@ st.subheader("Login")
 
 def ingresar(vadmin):
   if vadmin == 'N':
+    st.session_state['offset'] = 0
     st.switch_page("./pages/novedadessola.py")
   if vadmin == 'S':
     st.switch_page("./pages/home.py")
