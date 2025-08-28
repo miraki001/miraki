@@ -71,8 +71,8 @@ def desmarcar(df):
 
 
 conn = st.connection("postgresql", type="sql")
-df1 = conn.query('select nuri,fuente,leido,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje from nov_web limit 50;', ttl="0"),
-df = df1[0]
+#df1 = conn.query('select nuri,fuente,leido,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje from nov_web limit 50;', ttl="0"),
+#df = df1[0]
 
 
 vnuri = 500
@@ -111,8 +111,23 @@ if selected241=="Proyecto":
     st.switch_page("./pages/selecproyecto.py")
 
 
+off = st.session_state['offset']
+#st.session_state['offset'] = 0
+left, right = st.columns(2)
+if left.button("", icon="⏪",use_container_width=True):
+  if off > 0 :
+      off = off-100
+      st.session_state['offset'] = off
+      #st.write(off)
+if right.button("", icon="⏩", use_container_width=True):
+    off = off + 100
+    st.session_state['offset'] = off
+    #st.write(off)
 
- 
+
+vquery = "select  nuri,fuente,leido,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje  from nov_web where proyecto_nuri = :proyecto offset :offset  limit 100 ;"
+df1 = conn.query(vquery, ttl="0",params={"proyecto": proy_nuri,"offset": off}),
+df = df1[0] 
 
 
 
