@@ -36,6 +36,7 @@ st.components.v1.html(
 
 def buscar_not(vtitu,vfuente,vproyecto):
   with conn1.session as session:
+    cnt = 0  
     buscar = "select count(nuri) as cnt from novedades "
     buscar = buscar  + " where titulo = :titu  " 
     buscar = buscar + " and fuente_nuri = :fuente"
@@ -145,7 +146,7 @@ for index in range(len(df)) :
          eje = 6
        if eje == '0':
          eje = 6
-         
+       encontrada = 0  
        encontrada = buscar_not(tit,int(fnuri),int(vpro))
        #st.write("encontrada :" + str(encontrada))
        #st.write('valor de encontrada')
