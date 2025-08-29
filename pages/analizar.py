@@ -7,7 +7,7 @@ from scrapp import scrapping
 
 conn = st.connection("postgresql", type="sql")
 conn1 = st.connection("postgresql", type="sql")
-@st.cache_data(ttl=300)
+
 
 SQLALCHEMY_ENGINE_OPTIONS = {
     "pool_size": 300,
@@ -32,6 +32,7 @@ st.components.v1.html(
     """,
     height=0,
 )
+@st.cache_data(ttl=300)
 
 def buscar_not(vtitu,vfuente,vproyecto):
   with conn1.session as session:
