@@ -7,6 +7,7 @@ from scrapp import scrapping
 
 conn = st.connection("postgresql", type="sql")
 conn1 = st.connection("postgresql", type="sql")
+@st.cache_data(ttl=300)
 
 SQLALCHEMY_ENGINE_OPTIONS = {
     "pool_size": 300,
