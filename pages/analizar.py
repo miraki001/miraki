@@ -32,7 +32,7 @@ st.components.v1.html(
     """,
     height=0,
 )
-@st.cache_data(ttl=600)
+@st.cache_data(ttl=800)
 
 def buscar_not(vtitu,vfuente,vproyecto):
   with conn1.session as session:
