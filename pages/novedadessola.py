@@ -95,22 +95,6 @@ selected241 = option_menu(None, ["Novedades", 'Ingresar','Editar','Borrar','Sele
 )
 
 
-if selected241=="Ingresar":
-    st.session_state['vTipo'] = 'Ingresar'
-    st.switch_page("./pages/ingnovedades.py")   
-if selected241=="Editar":
-    st.session_state['vTipo'] = 'Editar'
-    st.switch_page("./pages/editarnovedades.py") 
-if selected241=="Seleccionar":
-    seleccionar(df)
-if selected241=="Desmarcar":
-    desmarcar(df)
-if selected241=="Analizar":
-    st.switch_page("./pages/analizar.py")  
-if selected241=="Proyecto":
-    st.switch_page("./pages/selecproyecto.py")
-
-
 off = st.session_state['offset']
 #st.session_state['offset'] = 0
 left, right = st.columns(2)
@@ -128,6 +112,24 @@ if right.button("", icon="⏩", use_container_width=True):
 vquery = "select  nuri,fuente,leido,fecha,titulo,sel,link,imagen, detalle,titulo_es,detalle_es,eje_nuri,eje  from nov_web where proyecto_nuri = :proyecto offset :offset  limit 100 ;"
 df1 = conn.query(vquery, ttl="0",params={"proyecto": proy_nuri,"offset": off}),
 df = df1[0] 
+
+
+if selected241=="Ingresar":
+    st.session_state['vTipo'] = 'Ingresar'
+    st.switch_page("./pages/ingnovedades.py")   
+if selected241=="Editar":
+    st.session_state['vTipo'] = 'Editar'
+    st.switch_page("./pages/editarnovedades.py") 
+if selected241=="Seleccionar":
+    seleccionar(df)
+if selected241=="Desmarcar":
+    desmarcar(df)
+if selected241=="Analizar":
+    st.switch_page("./pages/analizar.py")  
+if selected241=="Proyecto":
+    st.switch_page("./pages/selecproyecto.py")
+
+
 
 
 
